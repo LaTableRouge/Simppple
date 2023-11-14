@@ -1,0 +1,13 @@
+{
+  "authors": [
+    {
+      "name": "VDIANA DEV",
+      "homepage": "https://mlnop.fr",
+      "role": "Simple man"
+    }
+  ],
+  "require-dev": {
+    "friendsofphp/php-cs-fixer": "v3.37.1",
+    "wp-cli/wp-cli-bundle": "v2.8.1"
+  }
+}

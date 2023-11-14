@@ -1,0 +1,6 @@
+/node_modules
+/vendor
+.php-cs-fixer.cache
+/build
+/components/**/build
+*.zip

@@ -1,0 +1,9 @@
+@charset "UTF-8";
+
+html.highfive-modal-deployed {
+  overflow: hidden;
+}
+
+.wp-block-highfive-modal {
+  @import 'components/modal';
+}
