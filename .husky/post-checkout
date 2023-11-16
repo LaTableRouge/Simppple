@@ -8,4 +8,4 @@ blue='\033[0;34m'
 no_color='\033[0m'
 
 echo -e ""
-echo -e "${red}ε=ε=ε=┌( >_<)┘ ❗Les fichiers compilés de ce projet ne sont pas versionnés, un npm run prod est peut-être nécessaire ❗ε=ε=ε=┌( >_<)┘${no_color}"
+echo -e "${red}ε=ε=ε=┌( >_<)┘ ❗The compiled files for this project are not versioned, so an npm run prod may be necessary. ❗ε=ε=ε=┌( >_<)┘${no_color}"

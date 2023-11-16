@@ -11,4 +11,4 @@ echo ""
 echo -e "${blue}(╭ರ_•́) Validate Branch Name  (╭ರ_•́)${no_color}"
 echo ""
 
-npx --no-install validate-branch-name    # Vérifie le nom de la branche
+npx --no-install validate-branch-name # Check the branch name

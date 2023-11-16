@@ -30,6 +30,6 @@ echo ""
 
 exec >/dev/tty 2>&1
 
-npx --no-install git-precommit-checks   # Vérifie si le code est propre
-npx --no-install lint-staged   # VLint le SCSS et JS
+npx --no-install git-precommit-checks # Check if code is clean
+npx --no-install lint-staged # VLint SCSS & JS
 

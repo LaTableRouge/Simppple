@@ -8,5 +8,5 @@ blue='\033[0;34m'
 no_color='\033[0m'
 
 echo ""
-echo -e "${green}～(´･ω･｀～)(～´･ω･｀)～ Commit réussi ! ～(´･ω･｀～)(～´･ω･｀)～${no_color}"
+echo -e "${green}～(´･ω･｀～)(～´･ω･｀)～ Commit success! ～(´･ω･｀～)(～´･ω･｀)～${no_color}"
 echo ""

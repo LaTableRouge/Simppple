@@ -30,8 +30,8 @@ jobs:
         with:
           type: 'zip'
           filename: '${{ env.RELEASE_NAME }}.zip'
-          path: 'functions.php style.css theme.json templates/ styles/ parts/ lang/ inc/ components/ build/ acf-json/'
-          exclusions: 'components/**/scss/ components/**/js/'
+          path: 'LICENSE screenshot.jpg functions.php style.css theme.json styles/ templates/ parts/ patterns/ blocks/ lang/ inc/ build/ acf-json/'
+          exclusions: 'templates/**/js/ templates/**/scss/ parts/**/js/ parts/**/scss/ patterns/**/js/ patterns/**/scss/ blocks/react/src/ blocks/**/js/ blocks/**/scss/'
 
       # Publish the release
       - name: Publish release

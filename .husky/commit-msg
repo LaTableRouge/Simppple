@@ -8,7 +8,7 @@ blue='\033[0;34m'
 no_color='\033[0m'
 
 echo ""
-echo -e "${blue}(╭ರ_•́) Vérification du nom du commit (╭ರ_•́)${no_color}"
+echo -e "${blue}(╭ರ_•́) Checking commit name (╭ರ_•́)${no_color}"
 echo ""
 
 npx --no-install commitlint --edit $1   # Vérifie le nom du commit
