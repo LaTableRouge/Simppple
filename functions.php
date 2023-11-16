@@ -5,8 +5,6 @@ if (!defined('ABSPATH')) {
 }
 
 define('IS_VITE_DEVELOPMENT', false);
-define('VITE_SERVER', 'http://localhost:5173');
-define('DIST_FOLDER', 'build');
 
 define('PICTURE_FOLDER', defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT ? '/assets/img' : '/build/assets/img');
 
@@ -39,4 +37,3 @@ require get_template_directory() . '/inc/blocks/react/blocks-register.php';
 
 // Patterns
 require get_template_directory() . '/inc/patterns/categories-register.php';
-require get_template_directory() . '/inc/patterns/patterns-register.php';

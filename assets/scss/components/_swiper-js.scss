@@ -1,0 +1,45 @@
+.swiper {
+  --swiper-navigation-size: 18px;
+  --swiper-navigation-color: var(--wp--preset--color--white);
+
+  display: grid;
+  grid-template-areas: 'empty-left nav-prev nav-next' 'product-grid product-grid product-grid';
+  grid-template-columns: 1fr auto auto;
+  gap: var(--wp--preset--spacing--10);
+
+  .swiper-wrapper {
+    grid-area: product-grid;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    position: static;
+    width: calc(var(--swiper-navigation-size) * 2);
+    height: calc(var(--swiper-navigation-size) * 2);
+    margin: 0;
+    border-radius: 200px;
+    background-color: var(--wp--preset--color--contrast);
+
+    &::after {
+      content: $icon-simple-arrow-left;
+      font-family: $icomoon-font-family;
+    }
+
+    &.swiper-button-disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+  }
+
+  .swiper-button-prev {
+    grid-area: nav-prev;
+  }
+
+  .swiper-button-next {
+    grid-area: nav-next;
+
+    &::after {
+      transform: rotate(180deg);
+    }
+  }
+}

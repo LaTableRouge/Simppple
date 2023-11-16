@@ -16,4 +16,3 @@ function register_blocks_category($categories, $post) {
 }
 add_filter('block_categories_all', 'register_blocks_category', 10, 2);
 
-

@@ -7,31 +7,57 @@ function register_react_blocks() {
      * through the block editor in the corresponding context.
      *
      * @see https://developer.wordpress.org/reference/functions/register_block_type/
+     * @see wp-includes\blocks.php
      */
 
-    // Blocks slug list to be included
-    $react_blocks = [];
+    // Include all files in the block react folder
+    $dirpath = get_template_directory() . '/blocks/react/build/';
 
-    if (!empty($react_blocks)) {
-        foreach ($react_blocks as $blockSlug) {
-            $path = get_theme_file_path("/components/blocks/react/build/{$blockSlug}");
-            if (file_exists($path)) {
-                register_block_type($path);
+    $files = [];
+    $files = glob($dirpath . '**/block.json');
+
+    if (!empty($files)) {
+        foreach ($files as $file) {
+            if (file_exists($file)) {
+
+                // Get all the block metadata
+                $metadata = wp_json_file_decode($file, ['associative' => true]);
+                if (!is_array($metadata) || empty($metadata['name'])) {
+                    continue;
+                }
+
+                // Register the block
+                $metadata['file'] = wp_normalize_path(realpath($file));
+                register_block_type($metadata['file']);
+
+                // Handle translation for the block
+                $scriptEditorHandle = generate_block_asset_handle($metadata['name'], 'editorScript');
+                $scriptHandle = generate_block_asset_handle($metadata['name'], 'viewScript');
+                $handles = [];
+                if (is_array($scriptEditorHandle)) {
+                    array_merge($handles, $scriptEditorHandle);
+                } else {
+                    $handles[] = $scriptEditorHandle;
+                }
+                if (is_array($scriptHandle)) {
+                    array_merge($handles, $scriptHandle);
+                } else {
+                    $handles[] = $scriptHandle;
+                }
+
+                if (!empty($handles)) {
+                    foreach ($handles as $handle) {
+                        wp_set_script_translations(
+                            $handle,
+                            'hmb-blocks',
+                            get_template_directory() . '/lang'
+                        );
+                    }
+                }
             }
 
-            // Pass des json de traductions au scripts
-            wp_set_script_translations(
-                "highfive-{$blockSlug}-script",
-                'highfive',
-                get_template_directory() . '/lang'
-            );
-            wp_set_script_translations(
-                "highfive-{$blockSlug}-editor-script",
-                'highfive',
-                get_template_directory() . '/lang'
-            );
         }
     }
 }
-add_action('init', 'register_react_blocks');
+add_action('init', 'register_react_blocks', 9);
 

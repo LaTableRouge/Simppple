@@ -22,8 +22,8 @@
     "watch": "vite",
     "prod": "vite build",
     "build": "npm run prod --chore=all",
-    "watch:react-blocks": "wp-scripts start --webpack-src-dir=components/blocks/react/src --output-path=components/blocks/react/build",
-    "build:react-blocks": "wp-scripts build --webpack-src-dir=components/blocks/react/src --output-path=components/blocks/react/build",
+    "watch:react-blocks": "wp-scripts start --webpack-src-dir=blocks/react/src --output-path=blocks/react/build",
+    "build:react-blocks": "wp-scripts build --webpack-src-dir=blocks/react/src --output-path=blocks/react/build",
     "prepare": "husky install && composer install && npm run prod && npm run build:react-blocks"
   },
   "devDependencies": {
@@ -59,9 +59,12 @@
     "validate-branch-name": "^1.3.0",
     "vite": "^4.5.0",
     "vite-plugin-run": "^0.4.1",
+    "vite-plugin-sass-glob-import": "^2.0.0",
     "vite-plugin-static-copy": "^0.17.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "gridjs": "^6.0.6"
+  },
   "lint-staged": {
     "assets/scss/**/*.scss": [
       "npx stylelint --allow-empty-input --fix",
@@ -228,7 +231,7 @@
       "wp": true,
       "jQuery": true,
       "block_params": true,
-      "plugin_params": true
+      "wpparams": true
     },
     "plugins": [
       "unused-imports",

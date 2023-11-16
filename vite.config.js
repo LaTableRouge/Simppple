@@ -1,6 +1,7 @@
 import autoprefixer from 'autoprefixer'
 import { defineConfig } from 'vite'
 import { run } from 'vite-plugin-run'
+import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 const { resolve } = require('path')
 const { stringReplaceOpenAndWrite, stringReplace } = require('@mlnop/string-replace')
@@ -17,7 +18,7 @@ const isProduction = process.env.NODE_ENV === 'production'
  | Destination path
  |
  */
-const themeName = 'basic'
+const themeName = 'simple'
 const assetsPath = 'assets'
 const distPath = 'build'
 
@@ -89,35 +90,43 @@ const entryFiles = [
  */
 const beautifyObject = {
   js_lint: {
-    config: `npx eslint --config ${resolve(__dirname, '.eslintrc.js')} --no-error-on-unmatched-pattern --ignore-path ${resolve(__dirname, '.eslintignore')} --fix`,
+    config: 'npx eslint --no-error-on-unmatched-pattern --fix',
     files: [
       ...Array.from(new Set(entryFiles.flatMap(element => element.scripts.flatMap(script => script.input)))),
-      'components/blocks',
-      'components/patterns'
+      'blocks',
+      'parts',
+      'templates',
+      'patterns'
     ]
   },
   js_prettier: {
-    config: `npx prettier --config ${resolve(__dirname, '.prettierrc.js')} --no-error-on-unmatched-pattern --ignore-path ${resolve(__dirname, '.prettierignore')} --write`,
+    config: 'npx prettier --no-error-on-unmatched-pattern --write',
     files: [
       ...Array.from(new Set(entryFiles.flatMap(element => element.scripts.flatMap(script => script.input)))),
-      'components/blocks',
-      'components/patterns'
+      'blocks',
+      'parts',
+      'templates',
+      'patterns'
     ]
   },
   scss_lint: {
-    config: `npx stylelint --config ${resolve(__dirname, '.stylelintrc.json')} --allow-empty-input --ignore-path ${resolve(__dirname, '.stylelintignore')} --fix`,
+    config: 'npx stylelint --allow-empty-input --fix',
     files: [
       ...Array.from(new Set(entryFiles.flatMap(element => element.styles.flatMap(style => style.input)))),
-      'components/blocks',
-      'components/patterns'
+      'blocks',
+      'parts',
+      'templates',
+      'patterns'
     ]
   },
   scss_prettier: {
-    config: `npx prettier --config ${resolve(__dirname, '.prettierrc.js')} --no-error-on-unmatched-pattern --ignore-path ${resolve(__dirname, '.prettierignore')} --write`,
+    config: 'npx prettier --no-error-on-unmatched-pattern --write',
     files: [
       ...Array.from(new Set(entryFiles.flatMap(element => element.styles.flatMap(style => style.input)))),
-      'components/blocks',
-      'components/patterns'
+      'blocks',
+      'parts',
+      'templates',
+      'patterns'
     ]
   },
   php_lint: {
@@ -125,8 +134,8 @@ const beautifyObject = {
     files: [
       'inc',
       'functions.php',
-      'components/patterns',
-      'components/blocks'
+      'patterns',
+      'blocks'
     ]
   }
 }
@@ -177,7 +186,7 @@ const filesToEdit = [
 const filesToCopy = [
   {
     src: `${assetsPath}/img`,
-    dest: `assets/`
+    dest: 'assets/'
   }
 ]
 
@@ -298,6 +307,8 @@ if (chore !== 'ci') {
 export default defineConfig({
   base: isProduction ? './' : `/wp-content/themes/${themeName}`, // Url to apply refresh
   plugins: [
+    sassGlobImports(),
+
     isProduction && chore === 'all'
       ? stringReplace(filesToEdit)
       : false,

@@ -1,0 +1,29 @@
+.select2.select2-container {
+  .selection {
+    .select2-selection {
+      height: initial;
+      padding: 8px 16px;
+      border-radius: 5px;
+      border-color: hsla(var(--wp--custom--color-4-hsl), 0.1);
+
+      &__arrow {
+        top: 50%;
+        height: initial;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+.select2-dropdown {
+  border-color: hsla(var(--wp--custom--color-4-hsl), 0.1);
+
+  .select2-search {
+    .select2-search__field {
+      height: initial;
+      padding: 8px 16px;
+      border-radius: 5px;
+      border-color: hsla(var(--wp--custom--color-4-hsl), 0.1);
+    }
+  }
+}

@@ -4,6 +4,8 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
+define('VITE_SERVER', 'http://localhost:5173');
+define('DIST_FOLDER', 'build');
 define('DIST_URI', get_template_directory_uri() . '/' . DIST_FOLDER);
 define('DIST_PATH', get_template_directory() . '/' . DIST_FOLDER);
 
@@ -58,7 +60,7 @@ function vite_enqueue_dev_dependencies() {
     wp_enqueue_script('wp-i18n');
     wp_enqueue_script('wp-blocks');
     echo "<script>
-            const wp_params = {
+            const wpparams = {
                 ajax_url: '" . admin_url('admin-ajax.php') . "',
                 rest_url: '" . esc_url_raw(get_rest_url(null, '/wp/v2')) . "',
                 rest_nonce: '" . wp_create_nonce('wp_rest') . "',
@@ -176,13 +178,13 @@ function vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $foot
 
                     wp_set_script_translations(
                         $fileSlug,
-                        'highfive',
+                        'simple',
                         get_template_directory() . '/lang'
                     );
 
                     wp_localize_script(
                         $fileSlug,
-                        'wp_params',
+                        'wpparams',
                         [
                             'ajax_url' => admin_url('admin-ajax.php'),
                             'rest_url' => esc_url_raw(get_rest_url(null, '/wp/v2')),
