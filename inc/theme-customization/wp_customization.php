@@ -11,14 +11,11 @@ if (!defined('ABSPATH')) {
 * Call textdomain
 */
 function theme_setup() {
-    // !!!! l'utilisation des "@import" dans le style casse l'appel de ce dernier dans gutenberg !!!!
+    // !!!! usage of @import in style break the call of the file in gutenberg !!!!
     add_theme_support('editor-styles');
     add_theme_support('custom-spacing');
 
     remove_theme_support('core-block-patterns');
-    // Remove des ajouts de classes & d'inline styles rajouté en front
-    // remove_filter('render_block', 'wp_render_layout_support_flag', 10, 2);
-    // remove_filter('render_block', 'gutenberg_render_layout_support_flag', 10, 2);
 
     load_child_theme_textdomain('simple', get_template_directory() . '/lang');
 }
@@ -283,14 +280,14 @@ add_filter('rest_authentication_errors', function ($errors) {
             if (!isset($_REQUEST['nonce'])) {
                 return new WP_Error(
                     'rest_not_logged_in',
-                    __('Paramètre nonce manquant dans la requête', 'simple'),
+                    __('Nonce parameter missing in the request', 'simple'),
                     ['status' => 401]
                 );
             } else {
                 if (!wp_verify_nonce($_REQUEST['nonce'], 'wp_rest')) {
                     return new WP_Error(
                         'rest_not_logged_in',
-                        __('Paramètre nonce incorrect dans la requête', 'simple'),
+                        __('Incorrect nonce parameter in the request', 'simple'),
                         ['status' => 401]
                     );
                 }

@@ -1,19 +1,27 @@
-# Core blocks
+# Core Blocks
 
-- Placer ici les fichiers de surcharge des blocks natifs de gutenberg
-    1. Créer un dossier **block-to-override/** contenant les assets à compiler
+- Place the files for overriding Gutenberg native blocks here
+  1. Create a **block-to-override/** folder containing assets to be compiled
 
 ## Assets
 
+### File Structure
+
+- 📂 block-paragraph
+  - 📂 scss
+    - \_block.scss
+    - \_editor.scss
+  - 📂 js
+
 ### Enqueue
 
-- Les assets scss sont appelés automatiquement grâce à la méthode glob de sass
-    - [front.scss](../../assets/scss/front.scss)
-    - [editor.scss](../../assets/scss/editor.scss)
-- Les assets js sont appelés automatiquement grâce à la méthode glob de vite.js
-    - [front.js](../../assets/js/front.js)
-    - [editor.js](../../assets/js/editor.js)
+- The scss assets are automatically called using the sass glob method
+  - [front.scss](../../assets/scss/front.scss)
+  - [editor.scss](../../assets/scss/editor.scss)
+- The js assets are automatically called using the vite.js glob method
+  - [front.js](../../assets/js/front.js)
+  - [editor.js](../../assets/js/editor.js)
 
 ### Compilation
 
-- voir [package.json](../../package.json)
+- see [package.json](../../package.json)

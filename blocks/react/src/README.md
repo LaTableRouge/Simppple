@@ -1,11 +1,25 @@
-# React blocks
+# React Blocks
 
-- Les blocks sont créés en se référant à ce [tutoriel](https://developer.wordpress.org/block-editor/getting-started/create-block/), ou bien en se référant à un block existant dans ce dossier.
+- Blocks are created by referring to this [tutorial](https://developer.wordpress.org/block-editor/getting-started/create-block/), or by referring to an existing block in this directory.
+
+## File Structure
+
+- 📂 your-block
+  - 📂 assets
+    - 📂 scss
+      - editor.scss
+      - style.scss
+    - 📂 js
+      - save.jsx
+      - edit.jsx
+  - index.jsx
+  - view.js
+  - block.json
 
 ## Compilation
 
-- voir [package.json](../../../package.json)
+- see [package.json](../../../package.json)
 
-## Traduction
+## Translation
 
-- Les traductions des blocs sont à générer en même temps que celles du thème (Voir [README](../../../README.md#traduction))
+- The translations for the blocks should be generated at the same time as those for the theme (See [README](../../../README.md#translation))

@@ -26,8 +26,8 @@ const { __ } = wp.i18n
 // Register a variation for the block "group"
 wp.blocks.registerBlockVariation('core/group', {
   name: 'simple/group-shadow',
-  title: __('Groupe avec une ombre', 'simple'),
-  description: __('Une variation du bloc groupe avec une ombre portée', 'simple'),
+  title: __('Group with a shadow', 'simple'),
+  description: __('A variation of the group block with a drop shadow', 'simple'),
   attributes: {
     className: 'group-shadow'
   }
@@ -36,7 +36,7 @@ wp.blocks.registerBlockVariation('core/group', {
 // Register a variation for the block "media-text"
 wp.blocks.registerBlockVariation('core/media-text', {
   name: 'simple/group-media-stretched',
-  title: __('Groupe avec un média étiré', 'simple'),
+  title: __('Group with a stretched media', 'simple'),
   attributes: {
     className: 'group-media-stretched'
   }
@@ -44,7 +44,7 @@ wp.blocks.registerBlockVariation('core/media-text', {
 
 wp.blocks.registerBlockVariation('core/search', {
   name: 'simple/testimony-search',
-  title: __('Recherche de témoignages', 'simple'),
+  title: __('Testimony search', 'simple'),
   attributes: {
     query: {
       post_type: 'testimony'
@@ -54,7 +54,7 @@ wp.blocks.registerBlockVariation('core/search', {
 
 wp.blocks.registerBlockVariation('core/table', {
   name: 'simple/table-paginate',
-  title: __('Tableau avec une pagination', 'simple'),
+  title: __('Table with pagination', 'simple'),
   attributes: {
     className: 'table-paginate'
   }

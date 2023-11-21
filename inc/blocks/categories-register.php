@@ -7,7 +7,7 @@ function register_blocks_category($categories, $post) {
         [
             [
                 'slug' => 'simple-blocks',
-                'title' => __('Simple - Blocs', 'simple'),
+                'title' => __('Simple - Blocks', 'simple'),
                 'icon' => null, // Pour la gestion de l'icone de la catégorie voir editor.js
             ],
         ],

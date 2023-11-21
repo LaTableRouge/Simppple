@@ -698,7 +698,6 @@
       "core/widget-area": {},
       "core/widget-group": {},
       "woocommerce/mini-cart": {}
-      }
     },
     "color": {
       "background": "var(--wp--preset--color--white)",

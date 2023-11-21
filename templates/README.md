@@ -1,18 +1,27 @@
 # Templates
 
-- Placer ici les fichiers des templates
- 1. Un fichier template **your-template.html**
- 2. Si nécéssaire, un dossier **your-template/** contenant les assets à compiler
+- Place template files here
+
+1. A template file **your-template.html**
+2. If necessary, a **your-template/** folder containing assets to be compiled
 
 ## Assets
 
+### File Structure
+
+- 📂 your-template
+  - 📂 scss
+    - \_template.scss
+  - 📂 js
+- your-template.html
+
 ### Enqueue
 
-- Les assets scss sont appelés automatiquement grâce à la méthode glob de sass
-    - [front.scss](../assets/scss/front.scss)
-- Les assets js sont à enqueue dans les fichiers du thème
-    - [front.js](../assets/js/front.js)
+- The scss assets are automatically called using the sass glob method
+  - [front.scss](../assets/scss/front.scss)
+- The js assets need to be enqueued in the theme files
+  - [front.js](../assets/js/front.js)
 
 ### Compilation
 
-- voir [package.json](../package.json)
+- see [package.json](../package.json)

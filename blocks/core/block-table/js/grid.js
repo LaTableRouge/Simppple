@@ -19,7 +19,7 @@ export const blockTableGridJSInit = () => {
         language: {
           ...frFR,
           search: {
-            placeholder: __('Rechercher...', 'simple')
+            placeholder: __('Search...', 'simple')
           }
         },
         search: true,
