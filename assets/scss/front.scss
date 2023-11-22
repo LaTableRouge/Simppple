@@ -22,11 +22,10 @@
 @import 'components/html-components/html';
 @import 'components/title';
 @import 'components/notification';
-@import 'components/swiper-js';
-@import 'components/select2';
 @import 'components/grid-js';
-@import 'components/gravity-form';
 @import 'components/socials';
+
+/* stylelint-disable scss/at-import-no-partial-leading-underscore */
 @import '../../blocks/**/scss/_block.scss';
 @import '../../patterns/**/scss/_pattern.scss';
 
@@ -35,3 +34,4 @@
 
 // 6. template-specific styles
 @import '../../templates/**/scss/_template.scss';
+/* stylelint-enable scss/at-import-no-partial-leading-underscore */

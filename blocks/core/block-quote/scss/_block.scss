@@ -1,5 +1,5 @@
 .wp-block-quote {
-  --icon-size: #{min-max-interpolation(80, 130, 992, 1920)};
+  --icon-size: #{min-max-interpolation(80, 120, 600, 1280)};
 
   &:not(.is-style-plain) {
     & > * {
@@ -13,7 +13,7 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      opacity: 0.2;
+      opacity: 0.1;
       color: var(--wp--preset--color--accent);
       font-family: $icomoon-font-family;
       font-size: var(--icon-size);
@@ -24,7 +24,7 @@
         top: initial;
         right: var(--wp--preset--spacing--40);
         bottom: var(--wp--preset--spacing--40);
-        opacity: 0.4;
+        opacity: 0.15;
       }
     }
   }

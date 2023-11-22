@@ -1,6 +1,10 @@
 <?php
 
-function register_blocks_category($categories, $post) {
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+function simple_register_blocks_category ($categories, $post) {
     $category_slugs = wp_list_pluck($categories, 'slug');
 
     return in_array('simple-blocks', $category_slugs, true) ? $categories : array_merge(
@@ -14,5 +18,5 @@ function register_blocks_category($categories, $post) {
         $categories
     );
 }
-add_filter('block_categories_all', 'register_blocks_category', 10, 2);
+add_filter('block_categories_all', 'simple_register_blocks_category', 10, 2);
 

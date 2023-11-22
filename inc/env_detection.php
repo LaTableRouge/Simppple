@@ -1,9 +1,14 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    exit;
+}
+
 /*
 * ================================ Display ENV in Back-office
 */
 if (wp_get_environment_type() !== 'production') {
-    add_action('admin_head', function () {
+    function simple_display_env_back_office () {
         $css = '<style>
             body::before {
                 content: "";
@@ -34,5 +39,7 @@ if (wp_get_environment_type() !== 'production') {
         </style>';
 
         echo $css;
-    });
+    }
+
+    add_action('admin_head', 'simple_display_env_back_office');
 }

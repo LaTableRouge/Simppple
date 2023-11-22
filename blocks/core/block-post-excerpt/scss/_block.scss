@@ -32,7 +32,7 @@
       &::after {
         content: $icon-simple-arrow-right-plain;
         margin-left: 5px;
-        transition: margin-left 0.2s ease-in-out;
+        transition: var(--nomotion, margin-left 0.2s ease-in-out);
         font-family: $icomoon-font-family;
         font-weight: normal;
       }

@@ -1,6 +1,10 @@
 <?php
 
-function register_react_blocks() {
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+function simple_register_react_blocks() {
     /**
      * Registers the blocks using the metadata loaded from the `block.json` files.
      * Behind the scenes, it registers also all assets so they can be enqueued
@@ -59,5 +63,5 @@ function register_react_blocks() {
         }
     }
 }
-add_action('init', 'register_react_blocks', 9);
+add_action('init', 'simple_register_react_blocks', 9);
 

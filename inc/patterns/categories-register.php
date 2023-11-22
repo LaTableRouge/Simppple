@@ -1,6 +1,10 @@
 <?php
 
-function register_pattern_category() {
+if (!defined('ABSPATH')) {
+    exit;
+}
+
+function simple_register_pattern_category() {
     register_block_pattern_category(
         'simple-sections',
         [
@@ -29,4 +33,4 @@ function register_pattern_category() {
         ]
     );
 }
-add_action('init', 'register_pattern_category', 9);
+add_action('init', 'simple_register_pattern_category', 9);

@@ -7,7 +7,7 @@
     }
   ],
   "require-dev": {
-    "friendsofphp/php-cs-fixer": "v3.37.1",
+    "friendsofphp/php-cs-fixer": "v3.38.2",
     "wp-cli/wp-cli-bundle": "v2.8.1"
   }
 }

@@ -10,7 +10,7 @@ if (!defined('ABSPATH')) {
 * Manage block specific styles
 * Call textdomain
 */
-function theme_setup() {
+function simple_theme_setup() {
     // !!!! usage of @import in style break the call of the file in gutenberg !!!!
     add_theme_support('editor-styles');
     add_theme_support('custom-spacing');
@@ -19,14 +19,14 @@ function theme_setup() {
 
     load_child_theme_textdomain('simple', get_template_directory() . '/lang');
 }
-add_action('after_setup_theme', 'theme_setup', 20);
+add_action('after_setup_theme', 'simple_theme_setup', 20);
 
 /*
  * ================================
  *  Login page - Logo, link, title, text
  */
 add_action('login_enqueue_scripts', function () {
-    $img = get_template_directory_uri() . PICTURE_FOLDER . '/login-logo.png';
+    $img = get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/login-logo.png';
     $img_size = getimagesize($img);
     ?>
     <style type="text/css">
@@ -59,7 +59,7 @@ add_filter('login_display_language_dropdown', '__return_false');
  * ================================
  *  Disable useless dashboard widgets
  */
-function disable_dashboard_widgets() {
+function simple_disable_dashboard_widgets() {
     global $wp_meta_boxes;
     // wp..
     unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
@@ -74,13 +74,13 @@ function disable_dashboard_widgets() {
     unset($wp_meta_boxes['dashboard']['normal']['core']['simple_history_dashboard_widget']);
     unset($wp_meta_boxes['dashboard']['normal']['core']['rg_forms_dashboard']);
 }
-add_action('wp_dashboard_setup', 'disable_dashboard_widgets', 999);
+add_action('wp_dashboard_setup', 'simple_disable_dashboard_widgets', 999);
 
 /*
  * ================================
  *  Disable useless admin toolbar node
  */
-function remove_toolbar_node($wp_admin_bar) {
+function simple_remove_toolbar_node($wp_admin_bar) {
     $wp_admin_bar->remove_node('new-content');
     $wp_admin_bar->remove_node('comments');
     $wp_admin_bar->remove_node('search');
@@ -88,13 +88,13 @@ function remove_toolbar_node($wp_admin_bar) {
     $wp_admin_bar->remove_node('duplicate-post');
     $wp_admin_bar->remove_node('wp-logo');
 }
-add_action('admin_bar_menu', 'remove_toolbar_node', 999);
+add_action('admin_bar_menu', 'simple_remove_toolbar_node', 999);
 
 /*
  * ================================
  *  Add current post slug to body class
  */
-function add_slug_body_class($classes) {
+function simple_add_slug_body_class($classes) {
     global $post;
     if (isset($post)) {
         $classes[] = $post->post_type . '__' . $post->post_name;
@@ -102,44 +102,44 @@ function add_slug_body_class($classes) {
 
     return $classes;
 }
-add_filter('body_class', 'add_slug_body_class');
+add_filter('body_class', 'simple_add_slug_body_class');
 
-function author_page_redirect($link) {
+function simple_author_page_redirect($link) {
     $link = '';
 
     return $link;
 }
-add_action('author_link', 'author_page_redirect');
+add_action('author_link', 'simple_author_page_redirect');
 
 /*
  * ================================
  *  Remove comment author URL
  */
-function remove_comment_author_link($return, $author, $comment_ID) {
+function simple_remove_comment_author_link($return, $author, $comment_ID) {
     return $author;
 }
-add_filter('get_comment_author_link', 'remove_comment_author_link', 10, 3);
+add_filter('get_comment_author_link', 'simple_remove_comment_author_link', 10, 3);
 
 /*
  * ================================
  *  Remove comment website URL
  */
-function disable_comment_url($fields) {
+function simple_disable_comment_url($fields) {
     unset($fields['url']);
 
     return $fields;
 }
-function add_comment_url_filter() {
-    add_filter('comment_form_default_fields', 'disable_comment_url', 20);
+function simple_add_comment_url_filter() {
+    add_filter('comment_form_default_fields', 'simple_disable_comment_url', 20);
 }
-add_action('after_setup_theme', 'add_comment_url_filter');
+add_action('after_setup_theme', 'simple_add_comment_url_filter');
 
 /*
  * ================================
  *  Disable emoji's
  */
 //Filter function used to remove the tinymce emoji plugin.
-function disable_emojis_tinymce($plugins) {
+function simple_disable_emojis_tinymce($plugins) {
     if (is_array($plugins)) {
         return array_diff($plugins, ['wpemoji']);
     } else {
@@ -148,7 +148,7 @@ function disable_emojis_tinymce($plugins) {
 }
 
 //Remove emoji CDN hostname from DNS prefetching hints.
-function disable_emojis_remove_dns_prefetch($urls, $relation_type) {
+function simple_disable_emojis_remove_dns_prefetch($urls, $relation_type) {
     if ('dns-prefetch' == $relation_type) {
         $emoji_svg_url = apply_filters('emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/');
         $urls = array_diff($urls, [$emoji_svg_url]);
@@ -157,7 +157,7 @@ function disable_emojis_remove_dns_prefetch($urls, $relation_type) {
     return $urls;
 }
 
-function disable_emojis() {
+function simple_disable_emojis() {
     remove_action('wp_head', 'print_emoji_detection_script', 7);
     remove_action('admin_print_scripts', 'print_emoji_detection_script');
     remove_action('wp_print_styles', 'print_emoji_styles');
@@ -165,22 +165,22 @@ function disable_emojis() {
     remove_filter('the_content_feed', 'wp_staticize_emoji');
     remove_filter('comment_text_rss', 'wp_staticize_emoji');
     remove_filter('wp_mail', 'wp_staticize_emoji_for_email');
-    add_filter('tiny_mce_plugins', 'disable_emojis_tinymce');
-    add_filter('wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2);
+    add_filter('tiny_mce_plugins', 'simple_disable_emojis_tinymce');
+    add_filter('wp_resource_hints', 'simple_disable_emojis_remove_dns_prefetch', 10, 2);
 }
-add_action('init', 'disable_emojis');
+add_action('init', 'simple_disable_emojis');
 
 /*
  * ================================
  *  Disable Dashicons CSS for non-logged-in users
  */
-function adminify_remove_dashicons() {
+function simple_adminify_remove_dashicons() {
     if (!is_admin_bar_showing() && !is_customize_preview()) {
         wp_dequeue_style('dashicons');
         wp_deregister_style('dashicons');
     }
 }
-add_action('wp_print_styles', 'adminify_remove_dashicons', 100);
+add_action('wp_print_styles', 'simple_adminify_remove_dashicons', 100);
 
 /*
  * ================================
@@ -193,7 +193,7 @@ remove_action('wp_head', 'rsd_link');
  * ================================
  *  Disable jQuery migrate
  */
-function remove_jquery_migrate($scripts) {
+function simple_remove_jquery_migrate($scripts) {
     if (!is_admin() && isset($scripts->registered['jquery'])) {
         $script = $scripts->registered['jquery'];
         if ($script->deps) {
@@ -202,16 +202,16 @@ function remove_jquery_migrate($scripts) {
         }
     }
 }
-add_action('wp_default_scripts', 'remove_jquery_migrate');
+add_action('wp_default_scripts', 'simple_remove_jquery_migrate');
 
 /*
  * ================================
  *  Hide WP version
  */
-function remove_version() {
+function simple_remove_version() {
     return '';
 }
-add_filter('the_generator', 'remove_version');
+add_filter('the_generator', 'simple_remove_version');
 remove_action('wp_head', 'wp_generator');
 
 /*
@@ -258,7 +258,7 @@ remove_action('wp_head', 'feed_links', 2);
  * ================================
  *  Disable Self Pingbacks
  */
-function no_self_ping(&$links) {
+function simple_no_self_ping(&$links) {
     $home = get_option('home');
     foreach ($links as $l => $link) {
         if (0 === strpos($link, $home)) {
@@ -266,13 +266,13 @@ function no_self_ping(&$links) {
         }
     }
 }
-add_action('pre_ping', 'no_self_ping');
+add_action('pre_ping', 'simple_no_self_ping');
 
 /*
  * ================================
  *  Condition access to REST API
  */
-add_filter('rest_authentication_errors', function ($errors) {
+function simple_secure_rest($errors) {
     $route = $GLOBALS['wp']->query_vars['rest_route'];
 
     if (str_contains($route, '/wp/v2/')) {
@@ -296,7 +296,8 @@ add_filter('rest_authentication_errors', function ($errors) {
     }
 
     return $errors;
-});
+}
+add_filter('rest_authentication_errors', 'simple_secure_rest');
 
 /*
  * ================================
@@ -320,7 +321,7 @@ remove_action('admin_color_scheme_picker', 'admin_color_scheme_picker');
 /*
 * ================================ Add classes to native blocks
 */
-add_filter('render_block_core/paragraph', function ($block_content) {
+function simple_add_class_to_core_paragraph($block_content) {
     $p = new WP_HTML_Tag_Processor($block_content);
 
     if ($p->next_tag()) {
@@ -331,9 +332,10 @@ add_filter('render_block_core/paragraph', function ($block_content) {
     }
 
     return $p->get_updated_html();
-});
+}
+add_filter('render_block_core/paragraph', 'simple_add_class_to_core_paragraph');
 
-add_filter('render_block_core/list', function ($block_content) {
+function simple_add_class_to_core_list($block_content) {
     $list = new WP_HTML_Tag_Processor($block_content);
 
     if ($list->next_tag()) {
@@ -341,9 +343,10 @@ add_filter('render_block_core/list', function ($block_content) {
     }
 
     return $list->get_updated_html();
-});
+}
+add_filter('render_block_core/list', 'simple_add_class_to_core_list');
 
-add_filter('render_block_core/image', function ($block_content) {
+function simple_add_class_to_core_image($block_content) {
     $picture = new WP_HTML_Tag_Processor($block_content);
 
     if ($picture->next_tag('img')) {
@@ -351,9 +354,10 @@ add_filter('render_block_core/image', function ($block_content) {
     }
 
     return $picture->get_updated_html();
-});
+}
+add_filter('render_block_core/image', 'simple_add_class_to_core_image');
 
-function add_context_to_html_tag($output) {
+function simple_add_context_to_html_tag($output) {
     if (is_admin()) {
         $output .= ' data-context="back"';
     } else {
@@ -362,4 +366,4 @@ function add_context_to_html_tag($output) {
 
     return $output;
 }
-add_filter('language_attributes', 'add_context_to_html_tag');
+add_filter('language_attributes', 'simple_add_context_to_html_tag');

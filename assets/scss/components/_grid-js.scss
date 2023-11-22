@@ -35,4 +35,9 @@
 
   // .gridjs-footer {
   // }
+
+  th.gridjs-th {
+    background-color: var(--bg-color);
+    color: var(--wp--preset--color--contrast);
+  }
 }

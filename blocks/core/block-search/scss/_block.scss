@@ -1,5 +1,5 @@
 .wp-block-search {
-  --radius: 32px;
+  --radius: 30px;
 
   &.wp-block-search__no-button {
     .wp-block-search__inside-wrapper {
@@ -123,7 +123,7 @@
       }
 
       .wp-block-search__button {
-        transition: border-radius 0.2s ease-in-out;
+        transition: var(--nomotion, border-radius 0.2s ease-in-out), var(--nomotion, background-color 0.2s ease-in-out);
         border-radius: var(--radius);
       }
     }
@@ -144,7 +144,7 @@
       overflow: hidden;
       border: none;
       border-radius: var(--radius);
-      background-color: #fff;
+      background-color: var(--wp--preset--color--white);
       box-shadow: var(--wp--preset--shadow--input);
       font-size: var(--wp--preset--font-size--16);
 

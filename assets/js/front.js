@@ -9,12 +9,12 @@ import { fixedHeader, getHeaderHeight } from './components/header'
 import { inputNumber } from './components/html-components/input-quantity'
 import { pictureErrorHandler } from './components/picture-error'
 
-window.addEventListener('DOMContentLoaded', (e) => {
-  import.meta.glob(['../../blocks/**/js/*.js', '!**/build/*.js'], { as: 'blocks', eager: true })
-  import.meta.glob('../../patterns/**/js/*.js', { as: 'patterns', eager: true })
-  import.meta.glob('../../parts/**/js/*.js', { as: 'parts', eager: true })
-  import.meta.glob('../../templates/**/js/*.js', { as: 'templates', eager: true })
+import.meta.glob(['../../blocks/**/js/*.js', '!**/build/*.js'], { as: 'blocks', eager: true })
+import.meta.glob('../../patterns/**/js/*.js', { as: 'patterns', eager: true })
+import.meta.glob('../../parts/**/js/*.js', { as: 'parts', eager: true })
+import.meta.glob('../../templates/**/js/*.js', { as: 'templates', eager: true })
 
+window.addEventListener('DOMContentLoaded', (e) => {
   /*
    * Add usefull values to css
    * - scrollbar size

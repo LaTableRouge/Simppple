@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 // https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
-function removeDefaultValuesFromCSSVariables($themeJSON) {
+function simple_remove_default_values_from_CSS_variables($themeJSON) {
     // Only do this in the front-end
 
     $data = $themeJSON->get_data();
@@ -37,4 +37,4 @@ function removeDefaultValuesFromCSSVariables($themeJSON) {
 
     return $themeJSON;
 }
-add_filter('wp_theme_json_data_default', 'removeDefaultValuesFromCSSVariables');
+add_filter('wp_theme_json_data_default', 'simple_remove_default_values_from_CSS_variables');

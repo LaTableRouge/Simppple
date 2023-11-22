@@ -1,17 +1,7 @@
-ul.wp-block-list {
-  list-style: none;
-
+.wp-block-list {
   li {
-    position: relative;
-
-    &::before {
-      content: $icon-simple-arrow-right;
-      position: absolute;
-      top: 5px;
-      right: calc(100% + 7px);
+    &::marker {
       color: var(--wp--preset--color--accent);
-      font-family: $icomoon-font-family;
-      font-size: 15px;
     }
   }
 }
@@ -19,7 +9,6 @@ ul.wp-block-list {
 ol.wp-block-list {
   li {
     &::marker {
-      color: var(--wp--preset--color--accent);
       font-weight: bold;
     }
   }

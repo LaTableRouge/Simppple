@@ -8,6 +8,8 @@
 
 - 📂 your-block
   - 📂 scss
+    - \_block.scss
+    - \_editor.scss
   - 📂 js
   - block.json
   - your-block.php

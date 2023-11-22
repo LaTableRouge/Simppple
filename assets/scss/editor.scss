@@ -23,8 +23,10 @@
 @import 'components/notification';
 
 .editor-styles-wrapper {
+  /* stylelint-disable scss/at-import-no-partial-leading-underscore */
   @import '../../blocks/core/**/scss/_block.scss';
   @import '../../blocks/core/**/scss/_editor.scss';
   @import '../../patterns/**/scss/_pattern.scss';
   @import '../../patterns/**/scss/_editor.scss';
+  /* stylelint-enable scss/at-import-no-partial-leading-underscore */
 }

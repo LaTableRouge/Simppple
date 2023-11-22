@@ -258,8 +258,8 @@ if (chore !== 'ci') {
       resolve(__dirname, 'functions.php'),
       [
         {
-          from: /\bdefine\([ ]?'IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
-          to: "define('IS_VITE_DEVELOPMENT', false);"
+          from: /\bdefine\([ ]?'SIMPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
+          to: "define('SIMPLE_IS_VITE_DEVELOPMENT', false);"
         }
       ]
     )
@@ -269,8 +269,8 @@ if (chore !== 'ci') {
       resolve(__dirname, 'functions.php'),
       [
         {
-          from: /\bdefine\([ ]?'IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
-          to: "define('IS_VITE_DEVELOPMENT', true);"
+          from: /\bdefine\([ ]?'SIMPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
+          to: "define('SIMPLE_IS_VITE_DEVELOPMENT', true);"
         }
       ]
     )

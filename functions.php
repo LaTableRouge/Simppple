@@ -4,9 +4,9 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('IS_VITE_DEVELOPMENT', false);
+define('SIMPLE_IS_VITE_DEVELOPMENT', false);
 
-define('PICTURE_FOLDER', defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT ? '/assets/img' : '/build/assets/img');
+define('SIMPLE_PICTURE_FOLDER', defined('SIMPLE_IS_VITE_DEVELOPMENT') && SIMPLE_IS_VITE_DEVELOPMENT ? '/assets/img' : '/build/assets/img');
 
 /*
  * ================================
@@ -14,13 +14,13 @@ define('PICTURE_FOLDER', defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT ?
  */
 require get_template_directory() . '/inc/vite.php';
 // Front assets
-vite_enqueue_script('assets/js/front.js', 'wp_enqueue_scripts', 'wp_footer');
+simple_vite_enqueue_script('assets/js/front.js', 'wp_enqueue_scripts', 'wp_footer');
 
 // Admin assets
-vite_enqueue_script('assets/js/admin.js', 'admin_enqueue_scripts', 'admin_footer');
+simple_vite_enqueue_script('assets/js/admin.js', 'admin_enqueue_scripts', 'admin_footer');
 
 // Editor assets
-vite_enqueue_script('assets/js/editor.js', 'enqueue_block_editor_assets');
+simple_vite_enqueue_script('assets/js/editor.js', 'enqueue_block_editor_assets');
 
 // Helpers
 require get_template_directory() . '/inc/env_detection.php';

@@ -108,7 +108,7 @@
         },
         {
           "name": "Card",
-          "shadow": "0 0 25px 0 hsla(210, 8%, 42%, 0.15)",
+          "shadow": "0 4px 12px 0 hsla(0, 0%, 0%, 0.08)",
           "slug": "card"
         },
         {
@@ -132,34 +132,29 @@
       },
       "spacingSizes": [
         {
-          "name": "1",
-          "size": "1rem",
+          "name": "Extra small",
+          "size": "0.625rem",
           "slug": "10"
         },
         {
-          "name": "2",
-          "size": "min(1.5rem, 2vw)",
-          "slug": "20"
-        },
-        {
-          "name": "3",
-          "size": "min(2.5rem, 3vw)",
+          "name": "Small",
+          "size": "1.875rem",
           "slug": "30"
         },
         {
-          "name": "4",
-          "size": "min(4rem, 5vw)",
+          "name": "Medium",
+          "size": "clamp(1rem, -0.385rem + 2.88vw, 2.5rem)",
           "slug": "40"
         },
         {
-          "name": "5",
-          "size": "min(6.5rem, 8vw)",
-          "slug": "50"
+          "name": "Large",
+          "size": "clamp(1.5rem, -1.731rem + 6.73vw, 5rem)",
+          "slug": "80"
         },
         {
-          "name": "6",
-          "size": "min(10.5rem, 13vw)",
-          "slug": "60"
+          "name": "Extra large",
+          "size": "clamp(3.75rem, 0.4411764706rem + 8.8235294118vw, 7.5rem)",
+          "slug": "120"
         }
       ],
       "units": [
@@ -277,8 +272,8 @@
             "spacing": {
               "padding": {
                 "bottom": "8px",
-                "left": "32px",
-                "right": "32px",
+                "left": "30px",
+                "right": "30px",
                 "top": "8px"
               }
             }
@@ -287,15 +282,16 @@
         "spacing": {
           "padding": {
             "bottom": "8px",
-            "left": "32px",
-            "right": "32px",
+            "left": "30px",
+            "right": "30px",
             "top": "8px"
           }
         },
         "typography": {
           "fontSize": "var(--wp--preset--font-size--16)",
           "lineHeight": "1.31"
-        }
+        },
+        "css": "transition: var(--nomotion, background-color 0.2s ease-in-out)"
       },
       "core/buttons": {},
       "core/calendar": {},
@@ -376,11 +372,10 @@
       "core/list": {
         "spacing": {
           "margin": {
-            "bottom": "32px",
-            "left": "32px"
+            "bottom": "15px"
           },
           "padding": {
-            "left": "32px"
+            "left": "15px"
           }
         },
         "typography": {
@@ -738,10 +733,10 @@
         },
         "spacing": {
           "padding": {
-            "bottom": "8px",
-            "left": "32px",
-            "right": "32px",
-            "top": "8px"
+            "bottom": "10px",
+            "left": "30px",
+            "right": "30px",
+            "top": "10px"
           }
         },
         "typography": {

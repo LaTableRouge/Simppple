@@ -35,12 +35,12 @@
 
     &::before {
       transform: translateY(-50%) rotate(180deg);
-      transition: transform 0.2s ease-in-out;
+      transition: var(--nomotion, transform 0.2s ease-in-out);
     }
 
     &::after {
       transform: translateY(-50%) rotate(90deg);
-      transition: transform 0.3s ease-in-out;
+      transition: var(--nomotion, transform 0.3s ease-in-out);
     }
   }
 

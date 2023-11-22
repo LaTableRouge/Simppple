@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 // https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
-function addRGBValuesToCSSVariables($themeJSON) {
+function simple_add_RGB_values_to_CSS_variables($themeJSON) {
     // Only do this in the front-end
     // if (!is_admin()) {
     $data = $themeJSON->get_data();
@@ -54,4 +54,4 @@ function addRGBValuesToCSSVariables($themeJSON) {
 
     return $themeJSON;
 }
-add_filter('wp_theme_json_data_theme', 'addRGBValuesToCSSVariables');
+add_filter('wp_theme_json_data_theme', 'simple_add_RGB_values_to_CSS_variables');

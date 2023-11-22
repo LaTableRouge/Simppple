@@ -4,20 +4,20 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('VITE_SERVER', 'http://localhost:5173');
-define('DIST_FOLDER', 'build');
-define('DIST_URI', get_template_directory_uri() . '/' . DIST_FOLDER);
-define('DIST_PATH', get_template_directory() . '/' . DIST_FOLDER);
+define('SIMPLE_VITE_SERVER', 'http://localhost:5173');
+define('SIMPLE_DIST_FOLDER', 'build');
+define('SIMPLE_DIST_URI', get_template_directory_uri() . '/' . SIMPLE_DIST_FOLDER);
+define('SIMPLE_DIST_PATH', get_template_directory() . '/' . SIMPLE_DIST_FOLDER);
 
-function vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
+function simple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     $returnedArray = [];
 
     $fileName = basename($fileThemePath);
     $fileNameWithoutExtension = substr($fileName, 0, strrpos($fileName, '.'));
 
     // Use manifest json to know which asset to enqueue
-    if (file_exists(DIST_PATH . '/manifest.json')) {
-        $manifest = json_decode(file_get_contents(DIST_PATH . '/manifest.json'), true);
+    if (file_exists(SIMPLE_DIST_PATH . '/manifest.json')) {
+        $manifest = json_decode(file_get_contents(SIMPLE_DIST_PATH . '/manifest.json'), true);
 
         if (is_array($manifest)) {
             $manifest_keys = array_keys($manifest);
@@ -31,8 +31,8 @@ function vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
 
             if ($fileKey && isset($manifest[$fileKey])) {
                 $returnedArray = [
-                    'path' => DIST_URI . "/{$manifest[$fileKey]['file']}",
-                    'slug' => "vite_{$fileNameWithoutExtension}_{$assetType}"
+                    'path' => SIMPLE_DIST_URI . "/{$manifest[$fileKey]['file']}",
+                    'slug' => "simple_vite_{$fileNameWithoutExtension}_{$assetType}"
                 ];
 
                 // In case of scss files included in Javascript
@@ -43,8 +43,8 @@ function vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
                         $styleFileWithoutVersionning = substr($styleFile, 0, strrpos($styleFileWithoutExtension, '.'));
 
                         $returnedArray['css'][] = [
-                            'path' => DIST_URI . "/{$stylePath}",
-                            'slug' => "vite_{$styleFileWithoutVersionning}_style"
+                            'path' => SIMPLE_DIST_URI . "/{$stylePath}",
+                            'slug' => "simple_vite_{$styleFileWithoutVersionning}_style"
                         ];
                     }
                 }
@@ -55,7 +55,7 @@ function vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     return $returnedArray;
 }
 
-function vite_enqueue_dev_dependencies() {
+function simple_vite_enqueue_dev_dependencies() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('wp-i18n');
     wp_enqueue_script('wp-blocks');
@@ -66,13 +66,13 @@ function vite_enqueue_dev_dependencies() {
                 rest_nonce: '" . wp_create_nonce('wp_rest') . "',
                 stylesheet_directory: '" . get_template_directory_uri() . "',
                 plugins_directory: '" . plugins_url() . "',
-                pictures_directory: '" . get_template_directory_uri() . PICTURE_FOLDER . "',
+                pictures_directory: '" . get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . "',
                 posts_per_page: '" . get_option('posts_per_page') . "'
             }
         </script>";
 }
 
-function vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
+function simple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -82,19 +82,19 @@ function vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
         return;
     }
 
-    if (defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT === true) {
+    if (defined('SIMPLE_IS_VITE_DEVELOPMENT') && SIMPLE_IS_VITE_DEVELOPMENT === true) {
         /*
         * ================================ Inject assets in DOM
         * insert link tag for styles
         */
         add_action($hookDev, function () use ($fileThemePath) {
-            echo '<link rel="stylesheet" href="' . VITE_SERVER . '/' . $fileThemePath . '">';
+            echo '<link rel="stylesheet" href="' . SIMPLE_VITE_SERVER . '/' . $fileThemePath . '">';
         });
     } else {
         /*
         * ================================ Call assets with WP hooks
         */
-        $manifestFileInfos = vite_fetch_asset_from_manifest($fileThemePath, 'style');
+        $manifestFileInfos = simple_vite_fetch_asset_from_manifest($fileThemePath, 'style');
         if (!empty($manifestFileInfos)) {
             $filePath = $manifestFileInfos['path'];
             $fileSlug = $manifestFileInfos['slug'];
@@ -115,7 +115,7 @@ function vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
     }
 }
 
-function vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
+function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -125,20 +125,20 @@ function vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $foot
         return;
     }
 
-    if (defined('IS_VITE_DEVELOPMENT') && IS_VITE_DEVELOPMENT === true) {
+    if (defined('SIMPLE_IS_VITE_DEVELOPMENT') && SIMPLE_IS_VITE_DEVELOPMENT === true) {
         /*
         * ================================ Inject assets in DOM
         * insert script tag for scripts
         */
-        add_action($hookDev, 'vite_enqueue_dev_dependencies');
+        add_action($hookDev, 'simple_vite_enqueue_dev_dependencies');
         add_action($hookDev, function () use ($fileThemePath) {
-            echo '<script type="module" crossorigin src="' . VITE_SERVER . '/' . $fileThemePath . '"></script>';
+            echo '<script type="module" crossorigin src="' . SIMPLE_VITE_SERVER . '/' . $fileThemePath . '"></script>';
         });
     } else {
         /*
         * ================================ Call assets with WP hooks
         */
-        $manifestFileInfos = vite_fetch_asset_from_manifest($fileThemePath, 'script');
+        $manifestFileInfos = simple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
         if (!empty($manifestFileInfos)) {
             if (isset($manifestFileInfos['css'])) {
                 foreach ($manifestFileInfos['css'] as $style) {
@@ -191,7 +191,7 @@ function vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $foot
                             'rest_nonce' => wp_create_nonce('wp_rest'),
                             'stylesheet_directory' => get_template_directory_uri(),
                             'plugins_directory' => plugins_url(),
-                            'pictures_directory' => get_template_directory_uri() . PICTURE_FOLDER,
+                            'pictures_directory' => get_template_directory_uri() . SIMPLE_PICTURE_FOLDER,
                             'posts_per_page' => get_option('posts_per_page'),
                         ]
                     );
@@ -204,11 +204,11 @@ function vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $foot
     }
 }
 
-function vite_enqueue_style_editor($fileThemePath, $hook) {
+function simple_vite_enqueue_style_editor($fileThemePath, $hook) {
     /*
     * ================================ Call assets with WP hooks
     */
-    $manifestFileInfos = vite_fetch_asset_from_manifest($fileThemePath, 'script');
+    $manifestFileInfos = simple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
     if (!empty($manifestFileInfos)) {
         $filePath = $manifestFileInfos['path'];
 

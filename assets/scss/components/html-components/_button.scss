@@ -1,5 +1,6 @@
 .cta {
-  padding: 8px 32px;
+  padding: 10px 30px;
+  transition: var(--nomotion, background-color 0.2s ease-in-out);
   border-width: 0;
   border-radius: var(--wp--custom--border-radius-button);
   background-color: var(--wp--preset--color--accent);
