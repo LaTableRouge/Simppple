@@ -246,3 +246,4 @@ fabric.properties
 /build
 /blocks/react/build
 *.zip
+vite.config.mjs.timestamp-*

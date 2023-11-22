@@ -123,7 +123,7 @@ wp i18n make-json lang/ --no-purge
 
 ## Roadmap
 
-- [ ] Prefix functions
+- [X] Prefix functions
 - [ ] Automatic release
 - [ ] Automatic updates
 - [ ] Translations (English)

@@ -20,10 +20,6 @@
     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
     <div class="wp-block-group">
         <!-- wp:pattern {"slug":"simple/search-modal"} /-->
-
-        <!-- wp:woocommerce/customer-account {"displayStyle":"icon_only","iconStyle":"alt","iconClass":"wc-block-customer-account__account-icon","className":"header-top-section__account"} /-->
-
-        <!-- wp:woocommerce/mini-cart {"miniCartIcon":"bag-alt","hasHiddenPrice":true,"className":"header-top-section__cart"} /-->
     </div>
     <!-- /wp:group -->
 </div>

@@ -16,8 +16,8 @@ function simple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     $fileNameWithoutExtension = substr($fileName, 0, strrpos($fileName, '.'));
 
     // Use manifest json to know which asset to enqueue
-    if (file_exists(SIMPLE_DIST_PATH . '/manifest.json')) {
-        $manifest = json_decode(file_get_contents(SIMPLE_DIST_PATH . '/manifest.json'), true);
+    if (file_exists(SIMPLE_DIST_PATH . '/.vite/manifest.json')) {
+        $manifest = json_decode(file_get_contents(SIMPLE_DIST_PATH . '/.vite/manifest.json'), true);
 
         if (is_array($manifest)) {
             $manifest_keys = array_keys($manifest);

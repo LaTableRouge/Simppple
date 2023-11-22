@@ -90,15 +90,15 @@
     </div>
     <!-- /wp:columns -->
 
-    <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|10"}}},"backgroundColor":"color-6"} -->
+    <!-- wp:separator {"style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|10"}}},"backgroundColor":"base-2"} -->
     <hr
-        class="wp-block-separator has-text-color has-color-6-color has-alpha-channel-opacity has-color-6-background-color has-background"
+        class="wp-block-separator has-text-color has-base-2-color has-alpha-channel-opacity has-base-2-background-color has-background"
         style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--10)"
     />
     <!-- /wp:separator -->
 
     <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"0","top":"0"}}},"fontSize":"16"} -->
-    <p class="has-text-align-center has-16-font-size" style="margin-top:0;margin-bottom:0">&copy;<?php date('Y'); ?> <?php echo esc_html_x('Votre entreprise', 'sample content', 'simple'); ?> • <a href="#"><?php echo esc_html_x('Mentions légales', 'sample content', 'simple'); ?></a> • <a href="#"><?php echo esc_html_x('Politique de confidentialité', 'sample content', 'simple'); ?></a></p>
+    <p class="has-text-align-center has-16-font-size" style="margin-top:0;margin-bottom:0">&copy;<?php date('Y'); ?> <?php echo esc_html_x('Your company', 'sample content', 'simple'); ?> • <a href="#"><?php echo esc_html_x('Legal Notice', 'sample content', 'simple'); ?></a> • <a href="#"><?php echo esc_html_x('Privacy Policy', 'sample content', 'simple'); ?></a></p>
     <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

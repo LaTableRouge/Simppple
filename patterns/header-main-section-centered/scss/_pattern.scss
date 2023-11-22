@@ -26,7 +26,7 @@
       display: block !important;
       border-radius: initial;
       background-color: initial;
-      color: var(--wp--preset--color--color-4);
+      color: var(--wp--preset--color--contrast);
     }
 
     &:hover,
@@ -58,7 +58,7 @@
             @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
               border-radius: initial;
               background-color: initial;
-              color: var(--wp--preset--color--color-4);
+              color: var(--wp--preset--color--contrast);
             }
 
             &:hover,
@@ -188,7 +188,7 @@
                   height: 4px;
                   transform: translateX(-50%) translateY(-50%);
                   border-radius: 5px;
-                  background-color: var(--wp--preset--color--color-1);
+                  background-color: var(--wp--preset--color--accent);
                 }
               }
 

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-17T07:38:41+00:00\n"
+"POT-Creation-Date: 2023-11-22T10:04:44+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simple\n"
@@ -31,39 +31,131 @@ msgstr ""
 msgid "VDIANA DEV"
 msgstr ""
 
-#: inc/blocks/categories-register.php:10
-msgid "Simple - Blocs"
+#: inc/blocks/categories-register.php:14
+msgid "Simple - Blocks"
 msgstr ""
 
-#: inc/patterns/categories-register.php:7
-msgid "Simple - Sections de page"
+#: inc/patterns/categories-register.php:11
+msgid "Simple - Page Sections"
 msgstr ""
 
-#: inc/patterns/categories-register.php:14
-msgid "Simple - Modèles de page"
+#: inc/patterns/categories-register.php:18
+msgid "Simple - Page Templates"
 msgstr ""
 
-#: inc/patterns/categories-register.php:21
-msgid "Simple - En-têtes"
+#: inc/patterns/categories-register.php:25
+msgid "Simple - Headers"
 msgstr ""
 
-#: inc/patterns/categories-register.php:28
-msgid "Simple - Pieds de page"
+#: inc/patterns/categories-register.php:32
+msgid "Simple - Footers"
 msgstr ""
 
-#: inc/theme-customization/wp_customization.php:286
-msgid "Paramètre nonce manquant dans la requête"
+#: inc/theme-customization/wp_customization.php:283
+msgid "Nonce parameter missing in the request"
 msgstr ""
 
-#: inc/theme-customization/wp_customization.php:293
-msgid "Paramètre nonce incorrect dans la requête"
+#: inc/theme-customization/wp_customization.php:290
+msgid "Incorrect nonce parameter in the request"
 msgstr ""
 
-#: patterns/gallery.php
+#: patterns/footer.php
 msgctxt "Pattern title"
-msgid "Gallerie"
+msgid "Footer"
+msgstr ""
+
+#: patterns/footer.php:26
+msgid "Suivez-nous sur les réseaux sociaux"
+msgstr ""
+
+#: patterns/footer.php:58
+msgid "Solutions"
+msgstr ""
+
+#: patterns/footer.php:68
+msgid "Company"
+msgstr ""
+
+#: patterns/footer.php:78
+msgid "Support"
+msgstr ""
+
+#: patterns/footer.php:101
+msgctxt "sample content"
+msgid "Votre entreprise"
+msgstr ""
+
+#: patterns/footer.php:101
+msgctxt "sample content"
+msgid "Mentions légales"
+msgstr ""
+
+#: patterns/footer.php:101
+msgctxt "sample content"
+msgid "Politique de confidentialité"
+msgstr ""
+
+#: patterns/header-main-section-centered.php
+msgctxt "Pattern title"
+msgid "Header main section centered"
+msgstr ""
+
+#: patterns/header-main-section.php
+msgctxt "Pattern title"
+msgid "Header main section"
+msgstr ""
+
+#: patterns/header-top-section.php
+msgctxt "Pattern title"
+msgid "Header top section"
+msgstr ""
+
+#: patterns/header-top-section.php:17
+msgid "This is a section of some simple filler text, also known as placeholder text."
+msgstr ""
+
+#: patterns/search-modal.php
+msgctxt "Pattern title"
+msgid "Search popup"
+msgstr ""
+
+#: patterns/search-modal.php:19
+msgid "Ouvrir la recherche"
+msgstr ""
+
+#: patterns/search-modal.php:26
+msgid "Fermer la recherche"
+msgstr ""
+
+#: patterns/search-modal.php:34
+msgid "Search"
+msgstr ""
+
+#: patterns/search-modal.php:47
+msgid "Menu"
 msgstr ""
 
 #: blocks/core/block-table/js/grid.js:22
-msgid "Rechercher..."
+#: build/assets/front-w00Upso-.js:1
+msgid "Search..."
+msgstr ""
+
+#: build/assets/editor-30IIOkl9.js:1
+msgid "Group with a shadow"
+msgstr ""
+
+#: build/assets/editor-30IIOkl9.js:1
+msgid "A variation of the group block with a drop shadow"
+msgstr ""
+
+#: build/assets/editor-30IIOkl9.js:1
+msgid "Group with a stretched media"
+msgstr ""
+
+#: build/assets/editor-30IIOkl9.js:1
+msgid "Testimony search"
+msgstr ""
+
+#: build/assets/editor-30IIOkl9.js:1
+msgid "Table with pagination"
 msgstr ""
