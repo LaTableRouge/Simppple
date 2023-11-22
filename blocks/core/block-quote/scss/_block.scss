@@ -1,31 +1,31 @@
 .wp-block-quote {
-  --icon-size: #{min-max-interpolation(80, 120, 600, 1280)};
+	--icon-size: #{min-max-interpolation(80, 120, 600, 1280)};
 
-  &:not(.is-style-plain) {
-    & > * {
-      margin-top: 0;
-    }
+	&:not(.is-style-plain) {
+		& > * {
+			margin-top: 0;
+		}
 
-    position: relative;
+		position: relative;
 
-    &::after {
-      content: $icon-simple-quote;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      opacity: 0.1;
-      color: var(--wp--preset--color--accent);
-      font-family: $icomoon-font-family;
-      font-size: var(--icon-size);
-      font-style: normal;
-      line-height: 0.75;
+		&::after {
+			content: $icon-simple-quote;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			opacity: 0.1;
+			color: var(--wp--preset--color--accent);
+			font-family: $icomoon-font-family;
+			font-size: var(--icon-size);
+			font-style: normal;
+			line-height: 0.75;
 
-      @include media-breakpoint-up(lg) {
-        top: initial;
-        right: var(--wp--preset--spacing--40);
-        bottom: var(--wp--preset--spacing--40);
-        opacity: 0.15;
-      }
-    }
-  }
+			@include media-breakpoint-up(lg) {
+				top: initial;
+				right: var(--wp--preset--spacing--40);
+				bottom: var(--wp--preset--spacing--40);
+				opacity: 0.15;
+			}
+		}
+	}
 }

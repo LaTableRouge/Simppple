@@ -26,20 +26,6 @@ add_action('after_setup_theme', 'simple_theme_setup', 20);
  *  Login page - Logo, link, title, text
  */
 add_action('login_enqueue_scripts', function () {
-    $img = get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/login-logo.png';
-    $img_size = getimagesize($img);
-    ?>
-    <style type="text/css">
-        #login h1 a,
-        .login h1 a {
-            background-image: url('<?php echo $img; ?>');
-            width: <?php echo $img_size[0]; ?>px;
-            height: <?php echo $img_size[1]; ?>px;
-            background-size: 100%;
-        }
-    </style>
-    <?php
-
     add_filter('login_headerurl', function () {
         return home_url();
     });

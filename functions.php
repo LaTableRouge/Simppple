@@ -14,13 +14,13 @@ define('SIMPLE_PICTURE_FOLDER', defined('SIMPLE_IS_VITE_DEVELOPMENT') && SIMPLE_
  */
 require get_template_directory() . '/inc/vite.php';
 // Front assets
-simple_vite_enqueue_script('assets/js/front.js', 'wp_enqueue_scripts', 'wp_footer');
+simple_vite_enqueue_script('/assets/js/front.js', 'wp_enqueue_scripts', 'wp_footer');
 
 // Admin assets
-simple_vite_enqueue_script('assets/js/admin.js', 'admin_enqueue_scripts', 'admin_footer');
+simple_vite_enqueue_script('/assets/js/admin.js', 'admin_enqueue_scripts', 'admin_footer');
 
 // Editor assets
-simple_vite_enqueue_script('assets/js/editor.js', 'enqueue_block_editor_assets');
+simple_vite_enqueue_script('/assets/js/editor.js', 'enqueue_block_editor_assets');
 
 // Helpers
 require get_template_directory() . '/inc/env_detection.php';

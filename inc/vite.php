@@ -87,8 +87,11 @@ function simple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false)
         * ================================ Inject assets in DOM
         * insert link tag for styles
         */
-        add_action($hookDev, function () use ($fileThemePath) {
-            echo '<link rel="stylesheet" href="' . SIMPLE_VITE_SERVER . '/' . $fileThemePath . '">';
+        $themePath = get_template_directory_uri();
+        $themePath = parse_url($themePath, PHP_URL_PATH);
+
+        add_action($hookDev, function () use ($themePath, $fileThemePath) {
+            echo '<link rel="stylesheet" href="' . SIMPLE_VITE_SERVER . $themePath . $fileThemePath . '">';
         });
     } else {
         /*
@@ -130,9 +133,12 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
         * ================================ Inject assets in DOM
         * insert script tag for scripts
         */
+        $themePath = get_template_directory_uri();
+        $themePath = parse_url($themePath, PHP_URL_PATH);
+
         add_action($hookDev, 'simple_vite_enqueue_dev_dependencies');
-        add_action($hookDev, function () use ($fileThemePath) {
-            echo '<script type="module" crossorigin src="' . SIMPLE_VITE_SERVER . '/' . $fileThemePath . '"></script>';
+        add_action($hookDev, function () use ($themePath, $fileThemePath) {
+            echo '<script type="module" crossorigin src="' . SIMPLE_VITE_SERVER . $themePath . $fileThemePath . '"></script>';
         });
     } else {
         /*

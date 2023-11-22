@@ -15,40 +15,40 @@ import.meta.glob('../../parts/**/js/*.js', { as: 'parts', eager: true })
 import.meta.glob('../../templates/**/js/*.js', { as: 'templates', eager: true })
 
 window.addEventListener('DOMContentLoaded', (e) => {
-  /*
-   * Add usefull values to css
-   * - scrollbar size
-   * - css breakpoints
-   * - header height
-   * */
-  const cssBreakpoints = getCSSVariables('breakpoint')
-  if (cssBreakpoints.length) {
-    cssBreakpoints.forEach((breakpoint) => {
-      const breakpointPrefix = breakpoint[0].split('-').pop()
-      variables.breakpoints[breakpointPrefix] = breakpoint[1]
-    })
-  }
-  putScrollbarSizeInCSSVariables()
-  getHeaderHeight()
+	/*
+	 * Add usefull values to css
+	 * - scrollbar size
+	 * - css breakpoints
+	 * - header height
+	 * */
+	const cssBreakpoints = getCSSVariables('breakpoint')
+	if (cssBreakpoints.length) {
+		cssBreakpoints.forEach((breakpoint) => {
+			const breakpointPrefix = breakpoint[0].split('-').pop()
+			variables.breakpoints[breakpointPrefix] = breakpoint[1]
+		})
+	}
+	putScrollbarSizeInCSSVariables()
+	getHeaderHeight()
 
-  /*
-   * Add '.has-admin-bar' class to html tag if admin bar is present
-   * Not mandatory if :has() has is fully supported in css
-   * */
-  adminBar()
+	/*
+	 * Add '.has-admin-bar' class to html tag if admin bar is present
+	 * Not mandatory if :has() has is fully supported in css
+	 * */
+	adminBar()
 
-  /*
-   * Add a class when the page is scrolled
-   * */
-  fixedHeader(100)
+	/*
+	 * Add a class when the page is scrolled
+	 * */
+	fixedHeader(100)
 
-  /*
-   * Display a placeholder picture if the picture is 404
-   * */
-  pictureErrorHandler()
+	/*
+	 * Display a placeholder picture if the picture is 404
+	 * */
+	pictureErrorHandler()
 
-  /*
-   * Improve the UX of the input[type="number"]
-   * */
-  inputNumber()
+	/*
+	 * Improve the UX of the input[type="number"]
+	 * */
+	inputNumber()
 })

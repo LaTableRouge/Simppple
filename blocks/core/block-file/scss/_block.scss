@@ -1,58 +1,58 @@
 .wp-block-file {
-  @keyframes fall-down {
-    from {
-      transform: translateY(-15px) rotate(90deg);
-      opacity: 0;
-    }
+	@keyframes fall-down {
+		from {
+			transform: translateY(-15px) rotate(90deg);
+			opacity: 0;
+		}
 
-    to {
-      transform: translateY(0) rotate(90deg);
-      opacity: 1;
-    }
-  }
+		to {
+			transform: translateY(0) rotate(90deg);
+			opacity: 1;
+		}
+	}
 
-  a {
-    &:not(.wp-block-file__button):hover + .wp-block-file__button,
-    &.wp-block-file__button:hover {
-      padding-left: calc(30px + 12px);
+	a {
+		&:not(.wp-block-file__button):hover + .wp-block-file__button,
+		&.wp-block-file__button:hover {
+			padding-left: calc(30px + 12px);
 
-      &::before,
-      &::after {
-        transition-duration: 0.3s;
-        opacity: 1;
-      }
+			&::before,
+			&::after {
+				transition-duration: 0.3s;
+				opacity: 1;
+			}
 
-      &::before {
-        animation: fall-down 1s ease-in-out 0s infinite;
-      }
-    }
+			&::before {
+				animation: fall-down 1s ease-in-out 0s infinite;
+			}
+		}
 
-    &.wp-block-file__button {
-      position: relative;
-      transition: var(--nomotion, padding-left 0.2s ease-in-out);
+		&.wp-block-file__button {
+			position: relative;
+			transition: var(--nomotion, padding-left 0.2s ease-in-out);
 
-      &::before,
-      &::after {
-        position: absolute;
-        left: 18px;
-        transition: var(--nomotion, opacity 0.2s ease-in-out);
-        opacity: 0;
-      }
+			&::before,
+			&::after {
+				position: absolute;
+				left: 18px;
+				transition: var(--nomotion, opacity 0.2s ease-in-out);
+				opacity: 0;
+			}
 
-      &::before {
-        content: $icon-simple-arrow-right-plain;
-        transform: rotate(90deg);
-        font-family: $icomoon-font-family;
-      }
+			&::before {
+				content: $icon-simple-arrow-right-plain;
+				transform: rotate(90deg);
+				font-family: $icomoon-font-family;
+			}
 
-      &::after {
-        content: '';
-        bottom: 10px;
-        width: 16px;
-        height: 3px;
-        border-radius: 200px;
-        background-color: currentColor;
-      }
-    }
-  }
+			&::after {
+				content: '';
+				bottom: 10px;
+				width: 16px;
+				height: 3px;
+				border-radius: 200px;
+				background-color: currentColor;
+			}
+		}
+	}
 }

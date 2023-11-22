@@ -25,54 +25,54 @@ const { __ } = wp.i18n
 
 // Register a variation for the block "group"
 wp.blocks.registerBlockVariation('core/group', {
-  name: 'simple/group-shadow',
-  title: __('Group with a shadow', 'simple'),
-  description: __('A variation of the group block with a drop shadow', 'simple'),
-  attributes: {
-    className: 'group-shadow'
-  }
+	name: 'simple/group-shadow',
+	title: __('Group with a shadow', 'simple'),
+	description: __('A variation of the group block with a drop shadow', 'simple'),
+	attributes: {
+		className: 'group-shadow'
+	}
 })
 
 // Register a variation for the block "media-text"
 wp.blocks.registerBlockVariation('core/media-text', {
-  name: 'simple/group-media-stretched',
-  title: __('Group with a stretched media', 'simple'),
-  attributes: {
-    className: 'group-media-stretched'
-  }
+	name: 'simple/group-media-stretched',
+	title: __('Group with a stretched media', 'simple'),
+	attributes: {
+		className: 'group-media-stretched'
+	}
 })
 
 wp.blocks.registerBlockVariation('core/search', {
-  name: 'simple/testimony-search',
-  title: __('Testimony search', 'simple'),
-  attributes: {
-    query: {
-      post_type: 'testimony'
-    }
-  }
+	name: 'simple/testimony-search',
+	title: __('Testimony search', 'simple'),
+	attributes: {
+		query: {
+			post_type: 'testimony'
+		}
+	}
 })
 
 wp.blocks.registerBlockVariation('core/table', {
-  name: 'simple/table-paginate',
-  title: __('Table with pagination', 'simple'),
-  attributes: {
-    className: 'table-paginate'
-  }
+	name: 'simple/table-paginate',
+	title: __('Table with pagination', 'simple'),
+	attributes: {
+		className: 'table-paginate'
+	}
 })
 
 // Gutenberg ready
 if (document.querySelector('.block-editor__container')) {
-  let blocksLoaded = false
-  const blocksLoadedInterval = setInterval(function () {
-    const editorWrapper = document.querySelector('.editor-styles-wrapper')
-    if (editorWrapper) {
-      blocksLoaded = true
+	let blocksLoaded = false
+	const blocksLoadedInterval = setInterval(function () {
+		const editorWrapper = document.querySelector('.editor-styles-wrapper')
+		if (editorWrapper) {
+			blocksLoaded = true
 
-      // DO code here
-    }
+			// DO code here
+		}
 
-    if (blocksLoaded) {
-      clearInterval(blocksLoadedInterval)
-    }
-  }, 500)
+		if (blocksLoaded) {
+			clearInterval(blocksLoadedInterval)
+		}
+	}, 500)
 }

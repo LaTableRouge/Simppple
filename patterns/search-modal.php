@@ -16,14 +16,14 @@ function pattern_search_modal_icon($html, $block) {
         // Replace labels
         $parsedHTML = new WP_HTML_Tag_Processor($html);
         if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-open'])) {
-            $parsedHTML->set_attribute('aria-label', esc_attr__('Open Search', 'simple'));
+            $parsedHTML->set_attribute('aria-label', esc_attr__('Ouvrir la recherche', 'simple'));
         }
 
         if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-container'])) {
             if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-close'])) {
                 if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-dialog'])) {
                     if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-close'])) {
-                        $parsedHTML->set_attribute('aria-label', esc_attr__('Close Search', 'simple'));
+                        $parsedHTML->set_attribute('aria-label', esc_attr__('Fermer la recherche', 'simple'));
                     }
                 }
             }
@@ -53,5 +53,6 @@ add_filter('render_block', 'pattern_search_modal_icon', 10, 2);
 
 ?>
 <!-- wp:navigation {"hasIcon":false,"overlayMenu":"always","className":"pattern---search-modal","layout":{"type":"flex"}} -->
-<!-- wp:search {"label":"Search","showLabel":false,"buttonText":"Search","buttonPosition":"no-button"} /-->
+<!-- wp:navigation-link {"label":"placeholder","rel":"placeholder","url":"placeholder","title":"placeholder","kind":"custom"} /-->
+<!-- wp:search {"label":"<?php _e('Search', 'simple') ?>","showLabel":false,"buttonText":"<?php _e('Search', 'simple') ?>","buttonPosition":"no-button"} /-->
 <!-- /wp:navigation -->

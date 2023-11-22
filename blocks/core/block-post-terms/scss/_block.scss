@@ -1,11 +1,11 @@
 .wp-block-post-terms {
-  a {
-    & + a {
-      &::before {
-        content: '|';
-        margin-right: 4px;
-        color: var(--wp--preset--color--accent);
-      }
-    }
-  }
+	a {
+		& + a {
+			&::before {
+				content: '|';
+				margin-right: 4px;
+				color: var(--wp--preset--color--accent);
+			}
+		}
+	}
 }

@@ -1,33 +1,33 @@
 [type='radio'] {
-  display: inline-grid;
-  width: var(--radio-size, 20px);
-  height: var(--radio-size, 20px);
-  margin: 0;
-  border: 2px solid var(--radio-border-color, hsla(var(--wp--custom--contrast-hsl), 0.1));
-  border-radius: 4px;
-  background-color: var(--radio-bg-color, var(--wp--preset--color--white));
-  color: currentColor;
-  cursor: pointer;
-  appearance: none;
-  place-content: center;
+	display: inline-grid;
+	width: var(--radio-size, 20px);
+	height: var(--radio-size, 20px);
+	margin: 0;
+	border: 2px solid var(--radio-border-color, hsla(var(--wp--custom--contrast-hsl), 0.1));
+	border-radius: 4px;
+	background-color: var(--radio-bg-color, var(--wp--preset--color--white));
+	color: currentColor;
+	cursor: pointer;
+	appearance: none;
+	place-content: center;
 
-  &::before,
-  & {
-    border-radius: 200px;
-  }
+	&::before,
+	& {
+		border-radius: 200px;
+	}
 
-  &::before {
-    content: '';
-    width: calc(var(--radio-size, 20px) / 2);
-    height: calc(var(--radio-size, 20px) / 2);
-    transform: scale(0);
-    transition: var(--nomotion, transform 0.2s ease-in-out);
-    background-color: var(--radio-check-color, var(--wp--preset--color--accent));
-  }
+	&::before {
+		content: '';
+		width: calc(var(--radio-size, 20px) / 2);
+		height: calc(var(--radio-size, 20px) / 2);
+		transform: scale(0);
+		transition: var(--nomotion, transform 0.2s ease-in-out);
+		background-color: var(--radio-check-color, var(--wp--preset--color--accent));
+	}
 
-  &:checked {
-    &::before {
-      transform: scale(1);
-    }
-  }
+	&:checked {
+		&::before {
+			transform: scale(1);
+		}
+	}
 }

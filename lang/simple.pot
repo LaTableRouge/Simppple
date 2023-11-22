@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-22T10:04:44+00:00\n"
+"POT-Creation-Date: 2023-11-22T19:57:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simple\n"
@@ -51,12 +51,47 @@ msgstr ""
 msgid "Simple - Footers"
 msgstr ""
 
-#: inc/theme-customization/wp_customization.php:283
+#: inc/theme-customization/wp_customization.php:269
 msgid "Nonce parameter missing in the request"
 msgstr ""
 
-#: inc/theme-customization/wp_customization.php:290
+#: inc/theme-customization/wp_customization.php:276
 msgid "Incorrect nonce parameter in the request"
+msgstr ""
+
+#: patterns/404.php
+msgctxt "Pattern title"
+msgid "404"
+msgstr ""
+
+#: patterns/404.php:19
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: patterns/404.php:23
+msgid "It looks like nothing was found at this location. Maybe try searching?"
+msgstr ""
+
+#: patterns/404.php:26
+#: patterns/search-modal.php:34
+#: patterns/search-modal.php:57
+msgid "Search"
+msgstr ""
+
+#: patterns/404.php:26
+msgid "Search a post, a page..."
+msgstr ""
+
+#: patterns/404.php:29
+msgid "Or"
+msgstr ""
+
+#: patterns/404.php:34
+msgid "Back to home page"
+msgstr ""
+
+#: patterns/404.php:43
+msgid "404 picture"
 msgstr ""
 
 #: patterns/footer.php
@@ -127,35 +162,31 @@ msgstr ""
 msgid "Fermer la recherche"
 msgstr ""
 
-#: patterns/search-modal.php:34
-msgid "Search"
-msgstr ""
-
 #: patterns/search-modal.php:47
 msgid "Menu"
 msgstr ""
 
 #: blocks/core/block-table/js/grid.js:22
-#: build/assets/front-w00Upso-.js:1
+#: build/assets/front-qfkLFaLq.js:3
 msgid "Search..."
 msgstr ""
 
-#: build/assets/editor-30IIOkl9.js:1
+#: build/assets/editor-bBIA0cAk.js:1
 msgid "Group with a shadow"
 msgstr ""
 
-#: build/assets/editor-30IIOkl9.js:1
+#: build/assets/editor-bBIA0cAk.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr ""
 
-#: build/assets/editor-30IIOkl9.js:1
+#: build/assets/editor-bBIA0cAk.js:1
 msgid "Group with a stretched media"
 msgstr ""
 
-#: build/assets/editor-30IIOkl9.js:1
+#: build/assets/editor-bBIA0cAk.js:1
 msgid "Testimony search"
 msgstr ""
 
-#: build/assets/editor-30IIOkl9.js:1
+#: build/assets/editor-bBIA0cAk.js:1
 msgid "Table with pagination"
 msgstr ""

@@ -1,54 +1,54 @@
 .social-element,
 .social-element > a {
-  &::before {
-    display: inline-block;
-    font-family: $icomoon-font-family;
-  }
+	&::before {
+		display: inline-block;
+		font-family: $icomoon-font-family;
+	}
 
-  &[href*='linkedin'] {
-    &::before {
-      content: $icon-simple-linkedin;
-    }
-  }
+	&[href*='linkedin'] {
+		&::before {
+			content: $icon-simple-linkedin;
+		}
+	}
 
-  &[href*='instagram'] {
-    &::before {
-      content: $icon-simple-instagram;
-    }
-  }
+	&[href*='instagram'] {
+		&::before {
+			content: $icon-simple-instagram;
+		}
+	}
 
-  &[href*='youtube'] {
-    &::before {
-      content: $icon-simple-youtube;
-    }
-  }
+	&[href*='youtube'] {
+		&::before {
+			content: $icon-simple-youtube;
+		}
+	}
 
-  &[href*='twitter'] {
-    &::before {
-      content: $icon-simple-twitter;
-    }
-  }
+	&[href*='twitter'] {
+		&::before {
+			content: $icon-simple-twitter;
+		}
+	}
 
-  &[href*='facebook'] {
-    &::before {
-      content: $icon-simple-facebook;
-    }
-  }
+	&[href*='facebook'] {
+		&::before {
+			content: $icon-simple-facebook;
+		}
+	}
 
-  &[href^='tel:'] {
-    &::before {
-      content: $icon-simple-phone;
-    }
-  }
+	&[href^='tel:'] {
+		&::before {
+			content: $icon-simple-phone;
+		}
+	}
 
-  &[href^='mailto:'] {
-    &::before {
-      content: $icon-simple-mail;
-    }
-  }
+	&[href^='mailto:'] {
+		&::before {
+			content: $icon-simple-mail;
+		}
+	}
 }
 
 .social-element > a {
-  display: inline-flex;
-  gap: 10px;
+	display: inline-flex;
+	gap: 10px;
 }

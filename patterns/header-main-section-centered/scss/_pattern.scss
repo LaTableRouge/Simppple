@@ -1,211 +1,211 @@
 .pattern---header-main-section-centered {
-  $menu-responsive-breakpoint: lg;
-  $menu-padding-bottom: var(--wp--preset--spacing--40);
+	$menu-responsive-breakpoint: lg;
+	$menu-padding-bottom: var(--wp--preset--spacing--40);
 
-  --logo-max-height: 30px;
+	--logo-max-height: 30px;
 
-  @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-    --logo-max-height: 42px;
-  }
+	@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+		--logo-max-height: 42px;
+	}
 
-  .wp-block-site-logo {
-    .custom-logo-link {
-      height: var(--logo-max-height);
-      aspect-ratio: 250 / 47;
-    }
-  }
+	.wp-block-site-logo {
+		.custom-logo-link {
+			height: var(--logo-max-height);
+			aspect-ratio: 250 / 47;
+		}
+	}
 
-  & > .wp-block-site-logo {
-    @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-      display: none;
-    }
-  }
+	& > .wp-block-site-logo {
+		@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+			display: none;
+		}
+	}
 
-  .wp-block-navigation__responsive-container-open {
-    @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-      display: block !important;
-      border-radius: initial;
-      background-color: initial;
-      color: var(--wp--preset--color--contrast);
-    }
+	.wp-block-navigation__responsive-container-open {
+		@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+			display: block !important;
+			border-radius: initial;
+			background-color: initial;
+			color: var(--wp--preset--color--contrast);
+		}
 
-    &:hover,
-    &:focus {
-      @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-        background: initial;
-      }
-    }
-  }
+		&:hover,
+		&:focus {
+			@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+				background: initial;
+			}
+		}
+	}
 
-  // full menu
-  .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
-    @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-      display: none !important;
-    }
-  }
+	// full menu
+	.wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
+		@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+			display: none !important;
+		}
+	}
 
-  nav {
-    @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-      width: 100%;
+	nav {
+		@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+			width: 100%;
 
-      --navigation-layout-justify: center;
-    }
+			--navigation-layout-justify: center;
+		}
 
-    .wp-block-navigation__responsive-container {
-      .wp-block-navigation__responsive-close {
-        .wp-block-navigation__responsive-dialog {
-          .wp-block-navigation__responsive-container-close {
-            @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-              border-radius: initial;
-              background-color: initial;
-              color: var(--wp--preset--color--contrast);
-            }
+		.wp-block-navigation__responsive-container {
+			.wp-block-navigation__responsive-close {
+				.wp-block-navigation__responsive-dialog {
+					.wp-block-navigation__responsive-container-close {
+						@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+							border-radius: initial;
+							background-color: initial;
+							color: var(--wp--preset--color--contrast);
+						}
 
-            &:hover,
-            &:focus {
-              @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-                background: initial;
-              }
-            }
-          }
-        }
-      }
+						&:hover,
+						&:focus {
+							@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+								background: initial;
+							}
+						}
+					}
+				}
+			}
 
-      &.is-menu-open {
-        .wp-block-navigation__responsive-container-content {
-          padding-top: var(--wp--preset--spacing--40);
+			&.is-menu-open {
+				.wp-block-navigation__responsive-container-content {
+					padding-top: var(--wp--preset--spacing--40);
 
-          & > ul {
-            & > li {
-              padding-right: var(--wp--preset--spacing--40);
-              padding-left: var(--wp--preset--spacing--40);
+					& > ul {
+						& > li {
+							padding-right: var(--wp--preset--spacing--40);
+							padding-left: var(--wp--preset--spacing--40);
 
-              &.wp-block-navigation-item {
-                .wp-block-site-logo {
-                  position: absolute;
-                  top: -20px;
-                  left: 0;
-                }
-              }
+							&.wp-block-navigation-item {
+								.wp-block-site-logo {
+									position: absolute;
+									top: -20px;
+									left: 0;
+								}
+							}
 
-              &.has-child {
-                .wp-block-navigation__submenu-container {
-                  padding: calc(var(--wp--preset--spacing--10) * 2);
-                }
-              }
-            }
-          }
-        }
-      }
+							&.has-child {
+								.wp-block-navigation__submenu-container {
+									padding: calc(var(--wp--preset--spacing--10) * 2);
+								}
+							}
+						}
+					}
+				}
+			}
 
-      .wp-block-navigation__responsive-container-content {
-        & > ul {
-          @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-            gap: var(--wp--preset--spacing--80);
-            justify-content: center;
-          }
+			.wp-block-navigation__responsive-container-content {
+				& > ul {
+					@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+						gap: var(--wp--preset--spacing--80);
+						justify-content: center;
+					}
 
-          & > li {
-            min-height: var(--logo-max-height);
+					& > li {
+						min-height: var(--logo-max-height);
 
-            &.wp-block-navigation-item {
-              // TODO : trouver un workaround pour les navigateurs non compatible avec :has
-              &:has(.wp-block-site-logo) {
-                @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-                  order: -1;
-                }
+						&.wp-block-navigation-item {
+							// TODO : trouver un workaround pour les navigateurs non compatible avec :has
+							&:has(.wp-block-site-logo) {
+								@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+									order: -1;
+								}
 
-                flex-grow: 1;
-                justify-content: center;
-              }
-            }
-          }
-        }
-      }
+								flex-grow: 1;
+								justify-content: center;
+							}
+						}
+					}
+				}
+			}
 
-      ul {
-        li {
-          font-weight: normal;
+			ul {
+				li {
+					font-weight: normal;
 
-          &.current-menu-item,
-          &.current-menu-ancestor {
-            font-weight: 600;
-          }
+					&.current-menu-item,
+					&.current-menu-ancestor {
+						font-weight: 600;
+					}
 
-          &.has-child {
-            @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-              position: relative;
-              padding-right: var(--wp--preset--spacing--30);
-            }
+					&.has-child {
+						@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+							position: relative;
+							padding-right: var(--wp--preset--spacing--30);
+						}
 
-            .wp-block-navigation-submenu__toggle {
-              @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                position: absolute;
-                top: 50%;
-                right: 0;
-                width: 15px;
-                height: 15px;
-                margin: 0;
-                transform: translateY(-50%);
-              }
-            }
+						.wp-block-navigation-submenu__toggle {
+							@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+								position: absolute;
+								top: 50%;
+								right: 0;
+								width: 15px;
+								height: 15px;
+								margin: 0;
+								transform: translateY(-50%);
+							}
+						}
 
-            .wp-block-navigation__submenu-container {
-              @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                top: calc(100% + $menu-padding-bottom);
-                left: 50%;
-                width: max-content !important;
-                padding: var(--wp--preset--spacing--40);
-                transform: translateX(-50%);
-                border: none;
-                border-bottom-right-radius: 15px;
-                border-bottom-left-radius: 15px;
-                box-shadow: var(--wp--preset--shadow--header);
-              }
+						.wp-block-navigation__submenu-container {
+							@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+								top: calc(100% + $menu-padding-bottom);
+								left: 50%;
+								width: max-content !important;
+								padding: var(--wp--preset--spacing--40);
+								transform: translateX(-50%);
+								border: none;
+								border-bottom-right-radius: 15px;
+								border-bottom-left-radius: 15px;
+								box-shadow: var(--wp--preset--shadow--header);
+							}
 
-              &::before,
-              &::after {
-                @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                  content: '';
-                  position: absolute;
-                }
-              }
+							&::before,
+							&::after {
+								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+									content: '';
+									position: absolute;
+								}
+							}
 
-              &::before {
-                @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                  top: calc($menu-padding-bottom * -1);
-                  right: 0;
-                  left: 0;
-                  height: $menu-padding-bottom;
-                }
-              }
+							&::before {
+								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+									top: calc($menu-padding-bottom * -1);
+									right: 0;
+									left: 0;
+									height: $menu-padding-bottom;
+								}
+							}
 
-              &::after {
-                @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                  top: 0;
-                  left: 50%;
-                  width: 45px;
-                  height: 4px;
-                  transform: translateX(-50%) translateY(-50%);
-                  border-radius: 5px;
-                  background-color: var(--wp--preset--color--accent);
-                }
-              }
+							&::after {
+								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+									top: 0;
+									left: 50%;
+									width: 45px;
+									height: 4px;
+									transform: translateX(-50%) translateY(-50%);
+									border-radius: 5px;
+									background-color: var(--wp--preset--color--accent);
+								}
+							}
 
-              li {
-                & + li {
-                  margin-top: calc(var(--wp--preset--spacing--10) * 2);
-                }
+							li {
+								& + li {
+									margin-top: calc(var(--wp--preset--spacing--10) * 2);
+								}
 
-                a {
-                  padding: 0;
-                  font-weight: 600;
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
+								a {
+									padding: 0;
+									font-weight: 600;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

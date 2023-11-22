@@ -98,7 +98,7 @@
     <!-- /wp:separator -->
 
     <!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"0","top":"0"}}},"fontSize":"16"} -->
-    <p class="has-text-align-center has-16-font-size" style="margin-top:0;margin-bottom:0">&copy;<?php date('Y'); ?> <?php echo esc_html_x('Your company', 'sample content', 'simple'); ?> • <a href="#"><?php echo esc_html_x('Legal Notice', 'sample content', 'simple'); ?></a> • <a href="#"><?php echo esc_html_x('Privacy Policy', 'sample content', 'simple'); ?></a></p>
+    <p class="has-text-align-center has-16-font-size" style="margin-top:0;margin-bottom:0">&copy;<?php date('Y'); ?> <?php echo esc_html_x('Votre entreprise', 'sample content', 'simple'); ?> • <a href="#"><?php echo esc_html_x('Mentions légales', 'sample content', 'simple'); ?></a> • <a href="#"><?php echo esc_html_x('Politique de confidentialité', 'sample content', 'simple'); ?></a></p>
     <!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

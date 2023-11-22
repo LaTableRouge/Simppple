@@ -3,55 +3,55 @@
 // -----------------------------------------------------------------------------
 
 :root {
-  @each $state-color, $value in $state-colors {
-    --color-#{$state-color}: #{$value};
-    --color-rgb-#{$state-color}: #{hex-to-rgb($value)};
-  }
+	@each $state-color, $value in $state-colors {
+		--color-#{$state-color}: #{$value};
+		--color-rgb-#{$state-color}: #{hex-to-rgb($value)};
+	}
 
-  @each $color, $value in $colors {
-    --color-#{$color}: #{$value};
-    --color-rgb-#{$color}: #{hex-to-rgb($value)};
-  }
+	@each $color, $value in $colors {
+		--color-#{$color}: #{$value};
+		--color-rgb-#{$color}: #{hex-to-rgb($value)};
+	}
 
-  @each $font-title, $font-info in $fonts {
-    $font-name: map-get($font-info, 'name');
-    $font-serif: map-get($font-info, 'serif');
-    @if $font-serif {
-      --font-#{$font-title}: #{$font-name}, #{$font-serif};
-    } @else {
-      --font-#{$font-title}: #{$font-name};
-    }
-  }
+	@each $font-title, $font-info in $fonts {
+		$font-name: map-get($font-info, 'name');
+		$font-serif: map-get($font-info, 'serif');
+		@if $font-serif {
+			--font-#{$font-title}: #{$font-name}, #{$font-serif};
+		} @else {
+			--font-#{$font-title}: #{$font-name};
+		}
+	}
 
-  @each $size, $value in $font-sizes {
-    --font-level-#{$size}: #{$value};
-  }
+	@each $size, $value in $font-sizes {
+		--font-level-#{$size}: #{$value};
+	}
 
-  @each $bp, $value in $grid-breakpoints {
-    --breakpoint-#{$bp}: #{$value};
-  }
+	@each $bp, $value in $grid-breakpoints {
+		--breakpoint-#{$bp}: #{$value};
+	}
 
-  @each $spacing, $value in $spacings {
-    --spacing-#{$spacing}: #{$value};
-  }
+	@each $spacing, $value in $spacings {
+		--spacing-#{$spacing}: #{$value};
+	}
 
-  @each $size, $value in $sizes {
-    @if (type-of($value) == 'map') {
-      $breakpoints: $value;
+	@each $size, $value in $sizes {
+		@if (type-of($value) == 'map') {
+			$breakpoints: $value;
 
-      @each $breakpoint, $value in $breakpoints {
-        @include media-breakpoint-up($breakpoint) {
-          --#{$size}: #{$value};
-        }
-      }
-    } @else {
-      --#{$size}: #{$value};
-    }
-  }
+			@each $breakpoint, $value in $breakpoints {
+				@include media-breakpoint-up($breakpoint) {
+					--#{$size}: #{$value};
+				}
+			}
+		} @else {
+			--#{$size}: #{$value};
+		}
+	}
 
-  @media (prefers-reduced-motion: reduce) {
-    --nomotion: none;
-  }
+	@media (prefers-reduced-motion: reduce) {
+		--nomotion: none;
+	}
 
-  --screen-size: calc(100vw - var(--scrollbarsize));
+	--screen-size: calc(100vw - var(--scrollbarsize));
 }
