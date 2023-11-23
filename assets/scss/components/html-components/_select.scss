@@ -1,7 +1,7 @@
 select {
 	padding: 10px 16px;
-	border: solid 1px currentColor;
-	border-radius: 5px;
+	border: solid 1px hsla(var(--wp--custom--contrast-hsl), 0.3);
+	border-radius: var(--wp--custom--border-radius-form);
 	background-color: var(--wp--preset--color--white);
 	color: var(--wp--preset--color--contrast);
 	font-size: var(--wp--preset--font-size--16);

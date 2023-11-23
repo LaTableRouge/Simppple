@@ -3,13 +3,14 @@
 	width: var(--checkbox-size, 20px);
 	height: var(--checkbox-size, 20px);
 	margin: 0;
-	border: 2px solid var(--checkbox-border-color, hsla(var(--wp--custom--contrast-hsl), 0.1));
-	border-radius: 4px;
+	border: 2px solid var(--checkbox-border-color, hsla(var(--wp--custom--contrast-hsl), 0.3));
+	border-radius: var(--wp--custom--border-radius-form);
 	background-color: var(--checkbox-bg-color, var(--wp--preset--color--white));
 	color: currentColor;
 	cursor: pointer;
 	appearance: none;
 	place-content: center;
+	aspect-ratio: 1;
 
 	&::before {
 		content: '';

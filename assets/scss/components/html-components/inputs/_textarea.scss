@@ -1,5 +1,5 @@
 textarea {
-	border-radius: 5px;
-	border-color: hsla(var(--wp--custom--contrast-hsl), 0.1);
+	border-radius: var(--wp--custom--border-radius-form);
+	border-color: hsla(var(--wp--custom--contrast-hsl), 0.3);
 	resize: vertical;
 }

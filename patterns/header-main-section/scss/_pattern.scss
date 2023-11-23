@@ -1,6 +1,6 @@
 .pattern---header-main-section {
 	$menu-responsive-breakpoint: lg;
-	$menu-padding-bottom: var(--wp--preset--spacing--40);
+	$menu-padding-bottom: 25px;
 
 	--logo-max-height: 60px;
 
@@ -143,9 +143,8 @@
 									padding: var(--wp--preset--spacing--40);
 									transform: translateX(-50%);
 									border: none;
-									border-bottom-right-radius: 15px;
-									border-bottom-left-radius: 15px;
-									box-shadow: var(--wp--preset--shadow--header);
+									border-bottom-right-radius: 5px;
+									border-bottom-left-radius: 5px;
 								}
 
 								&::before,
@@ -179,12 +178,11 @@
 
 								li {
 									& + li {
-										margin-top: calc(var(--wp--preset--spacing--10) * 2);
+										margin-top: var(--wp--preset--spacing--10);
 									}
 
 									a {
 										padding: 0;
-										font-weight: 600;
 									}
 								}
 							}

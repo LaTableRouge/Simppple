@@ -3,13 +3,14 @@
 	width: var(--radio-size, 20px);
 	height: var(--radio-size, 20px);
 	margin: 0;
-	border: 2px solid var(--radio-border-color, hsla(var(--wp--custom--contrast-hsl), 0.1));
+	border: 2px solid var(--radio-border-color, hsla(var(--wp--custom--contrast-hsl), 0.3));
 	border-radius: 4px;
 	background-color: var(--radio-bg-color, var(--wp--preset--color--white));
 	color: currentColor;
 	cursor: pointer;
 	appearance: none;
 	place-content: center;
+	aspect-ratio: 1;
 
 	&::before,
 	& {

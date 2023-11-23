@@ -1,9 +1,8 @@
 # Simple Theme
 
-![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.4.1-blue)
+![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.4-blue)
 ![Woocommerce Version](https://img.shields.io/badge/woocommerce-%3E%3D%208.0-purple)
 ![ACF Version](https://img.shields.io/badge/acf-%3E%3D%206.0-cyan)
-![Gravity Form Version](https://img.shields.io/badge/gravityform-%3E%3D%202.7-orange)
 
 ## File Structure
 

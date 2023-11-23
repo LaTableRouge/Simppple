@@ -24,8 +24,10 @@ add_action('after_setup_theme', 'simple_theme_setup', 20);
 /*
  * ================================
  *  Login page - Logo, link, title, text
+ *  Disable login screen language switcher
  */
-add_action('login_enqueue_scripts', function () {
+function simple_customizelogin_page() {
+
     add_filter('login_headerurl', function () {
         return home_url();
     });
@@ -33,13 +35,10 @@ add_action('login_enqueue_scripts', function () {
     add_filter('login_headertext', function () {
         return get_option('blogname');
     });
-});
 
-/*
- * ================================
- *  Disable login screen language switcher
- */
-add_filter('login_display_language_dropdown', '__return_false');
+    add_filter('login_display_language_dropdown', '__return_false');
+}
+add_action('login_enqueue_scripts', 'simple_customizelogin_page');
 
 /*
  * ================================

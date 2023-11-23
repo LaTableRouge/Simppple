@@ -1,0 +1,19 @@
+.comment-form {
+	& > p {
+		label {
+			& + input,
+			& + textarea {
+				margin-top: var(--wp--preset--spacing--10);
+			}
+		}
+	}
+
+	.comment-form-cookies-consent {
+		align-items: center;
+		gap: var(--wp--preset--spacing--10);
+
+		& > input {
+			margin: 0 !important;
+		}
+	}
+}
