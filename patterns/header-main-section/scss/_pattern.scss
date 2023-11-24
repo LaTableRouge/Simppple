@@ -1,6 +1,6 @@
 .pattern---header-main-section {
 	$menu-responsive-breakpoint: lg;
-	$menu-padding-bottom: 25px;
+	$menu-padding-bottom: var(--wp--preset--spacing--10);
 
 	--logo-max-height: 60px;
 
@@ -12,6 +12,7 @@
 		}
 	}
 
+	// Responsive custom breakpoints
 	.wp-block-navigation__responsive-container-open {
 		@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
 			display: block !important;
@@ -86,7 +87,9 @@
 			.wp-block-navigation__responsive-container-content {
 				& > ul {
 					@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-						gap: var(--wp--preset--spacing--80);
+						gap: var(--wp--preset--spacing--40);
+
+						--navigation-layout-align: initial;
 					}
 
 					& > li {
@@ -95,6 +98,10 @@
 						}
 
 						&.wp-block-navigation-item {
+							&:has(.wp-block-site-logo) {
+								padding: 0;
+							}
+
 							.wp-block-site-logo {
 								position: absolute;
 								top: -60px;
@@ -105,11 +112,124 @@
 								}
 							}
 						}
+
+						&.has-child {
+							& > .wp-block-navigation__submenu-container {
+								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+									top: calc(100% + $menu-padding-bottom);
+									left: 50%;
+									transform: translateX(-50%);
+									border-bottom-right-radius: 5px;
+									border-bottom-left-radius: 5px;
+								}
+
+								&::after {
+									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+										content: '';
+										position: absolute;
+										top: 0;
+										left: 50%;
+										width: 45px;
+										height: 4px;
+										transform: translateX(-50%) translateY(-50%);
+										border-radius: 5px;
+										background-color: var(--wp--preset--color--accent);
+									}
+								}
+
+								// UX hack
+								&::before {
+									content: '';
+									position: absolute;
+									top: 0;
+									right: 0;
+									left: 0;
+									height: calc(#{$menu-padding-bottom} * 2);
+									transform: translateY(-50%);
+								}
+
+								& > li {
+									&.has-child {
+										& > .wp-block-navigation__submenu-container {
+											@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+												top: 0;
+											}
+
+											&::after {
+												@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+													content: '';
+													position: absolute;
+													top: 2px;
+													width: 4px;
+													height: 30px;
+													border-radius: 5px;
+													background-color: var(--wp--preset--color--accent);
+												}
+											}
+
+											// UX hack
+											&::before {
+												content: '';
+												position: absolute;
+												top: 0;
+												bottom: 0;
+												width: calc(#{$menu-padding-bottom} * 2);
+											}
+
+											&.items-justified-right {
+												@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+													right: 0;
+													left: initial;
+													transform: translateX(100%);
+													border-top-right-radius: 5px;
+													border-bottom-right-radius: 5px;
+												}
+
+												&::before {
+													left: 0;
+													transform: translateX(-50%);
+												}
+
+												&::after {
+													@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+														left: 0;
+														transform: translateX(-50%);
+													}
+												}
+											}
+
+											&.items-justified-left {
+												@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+													left: 0;
+													transform: translateX(-100%);
+													border-top-left-radius: 5px;
+													border-bottom-left-radius: 5px;
+												}
+
+												&::before {
+													right: 0;
+													transform: translateX(50%);
+												}
+
+												&::after {
+													@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+														right: 0;
+														transform: translateX(50%);
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
 					}
 				}
 
 				ul {
 					li {
+
+						padding: 0 var(--wp--preset--spacing--40);
 						font-weight: normal;
 
 						&.current-menu-item,
@@ -120,7 +240,6 @@
 						&.has-child {
 							@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 								position: relative;
-								padding-right: var(--wp--preset--spacing--30);
 							}
 
 							.wp-block-navigation-submenu__toggle {
@@ -136,47 +255,27 @@
 							}
 
 							.wp-block-navigation__submenu-container {
-								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-									top: calc(100% + $menu-padding-bottom);
-									left: 50%;
-									width: max-content !important;
-									padding: var(--wp--preset--spacing--40);
-									transform: translateX(-50%);
-									border: none;
-									border-bottom-right-radius: 5px;
-									border-bottom-left-radius: 5px;
-								}
+								width: max-content !important;
+								padding: var(--wp--preset--spacing--30) 0;
+								border: none;
 
-								&::before,
-								&::after {
+								.wp-block-navigation-submenu__toggle {
 									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-										content: '';
-										position: absolute;
-									}
-								}
-
-								&::before {
-									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-										top: calc($menu-padding-bottom * -1);
-										right: 0;
-										left: 0;
-										height: $menu-padding-bottom;
-									}
-								}
-
-								&::after {
-									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-										top: 0;
-										left: 50%;
-										width: 45px;
-										height: 4px;
-										transform: translateX(-50%) translateY(-50%);
-										border-radius: 5px;
-										background-color: var(--wp--preset--color--accent);
+										right: 10px;
 									}
 								}
 
 								li {
+									&.has-child {
+										padding-right: calc(var(--wp--preset--spacing--30) * 2);
+
+										.wp-block-navigation-submenu__toggle {
+											@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+												right: var(--wp--preset--spacing--30);
+											}
+										}
+									}
+
 									& + li {
 										margin-top: var(--wp--preset--spacing--10);
 									}

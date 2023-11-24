@@ -1,10 +1,13 @@
 .wp-block-post-terms {
-	a {
-		& + a {
-			&::before {
-				content: '|';
-				margin-right: 4px;
-				color: var(--wp--preset--color--accent);
+	&.is-style-pill {
+		a {
+			padding: 10px 30px;
+			transition: var(--nomotion, background-color 0.2s ease-in-out);
+			border-radius: var(--wp--custom--border-radius-form);
+			background-color: var(--wp--preset--color--white);
+
+			&:hover {
+				background-color: var(--wp--preset--color--base-2);
 			}
 		}
 	}

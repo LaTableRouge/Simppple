@@ -1,8 +1,9 @@
 .wp-block-table {
 	--th-padding: 18px 24px;
 	--td-padding: 12px 24px;
-	--border: 1px solid var(--border-color, var(--wp--preset--color--base));
-	--bg-color: var(--bg-color, var(--wp--preset--color--base));
+	--border: 1px solid var(--border-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
+	--bg-color: var(--bg-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
+	--inner-border: 1px solid var(--inner-border-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
 
 	table {
 		border-spacing: 0;
@@ -14,7 +15,7 @@
 			border: none;
 
 			& > tr {
-				background-color: var(--bg-color, var(--wp--preset--color--base-2));
+				background-color: var(--bg-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
 			}
 		}
 
@@ -25,7 +26,7 @@
 				& > tr {
 					& > td,
 					& > th {
-						border-bottom: var(--border);
+						border-bottom: var(--inner-border);
 					}
 				}
 			}
@@ -33,7 +34,7 @@
 			& > tr:not(:last-child) {
 				& > td,
 				& > th {
-					border-bottom: var(--border);
+					border-bottom: var(--inner-border);
 				}
 			}
 		}
@@ -65,12 +66,10 @@
 		text-align: center;
 	}
 
-	&.is-style-regular {
-		// Style pour un tableau simple
-	}
+	// &.is-style-regular {
+	// }
 
 	&.is-style-stripes {
-		// Style pour un tableau à rayures
 		table {
 			& > tbody {
 				& > tr {

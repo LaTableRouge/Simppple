@@ -14,18 +14,18 @@
 				top: 50%;
 				right: 10px;
 				transform: translateY(-50%);
-				color: var(--wp--preset--color--base);
+				color: var(--wp--preset--color--contrast-2);
 				font-family: $icomoon-font-family;
 				pointer-events: none;
 			}
 
 			.gridjs-search-input {
 				padding-right: 50px;
-				border-color: var(--wp--preset--color--base);
+				border-color: hsla(var(--wp--custom--contrast-hsl), 0.3);
 				font-size: var(--wp--preset--font-size--16);
 
 				&::placeholder {
-					color: var(--wp--preset--color--base);
+					color: var(--wp--preset--color--contrast-2);
 				}
 			}
 		}
