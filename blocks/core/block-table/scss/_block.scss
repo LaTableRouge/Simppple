@@ -1,9 +1,9 @@
 .wp-block-table {
 	--th-padding: 18px 24px;
 	--td-padding: 12px 24px;
-	--border: 1px solid var(--border-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
-	--bg-color: var(--bg-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
-	--inner-border: 1px solid var(--inner-border-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
+	--border: 1px solid var(--border-color, var(--wp--preset--color--contrast-3));
+	--bg-color: var(--bg-color, var(--wp--preset--color--contrast-3));
+	--inner-border: 1px solid var(--inner-border-color, var(--wp--preset--color--contrast-3));
 
 	table {
 		border-spacing: 0;
@@ -15,7 +15,7 @@
 			border: none;
 
 			& > tr {
-				background-color: var(--bg-color, hsla(var(--wp--custom--contrast-2-hsl), 0.1));
+				background-color: var(--bg-color, var(--wp--preset--color--contrast-3));
 			}
 		}
 

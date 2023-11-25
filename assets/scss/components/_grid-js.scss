@@ -21,7 +21,7 @@
 
 			.gridjs-search-input {
 				padding-right: 50px;
-				border-color: hsla(var(--wp--custom--contrast-hsl), 0.3);
+				border-color: var(--wp--preset--color--contrast-3);
 				font-size: var(--wp--preset--font-size--16);
 
 				&::placeholder {
