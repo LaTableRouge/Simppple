@@ -89,21 +89,21 @@ function simple_add_slug_body_class($classes) {
 }
 add_filter('body_class', 'simple_add_slug_body_class');
 
-function simple_author_page_redirect($link) {
-    $link = '';
+// function simple_author_page_redirect($link) {
+//     $link = '';
 
-    return $link;
-}
-add_action('author_link', 'simple_author_page_redirect');
+//     return $link;
+// }
+// add_action('author_link', 'simple_author_page_redirect');
 
 /*
  * ================================
  *  Remove comment author URL
  */
-function simple_remove_comment_author_link($return, $author, $comment_ID) {
-    return $author;
-}
-add_filter('get_comment_author_link', 'simple_remove_comment_author_link', 10, 3);
+// function simple_remove_comment_author_link($return, $author, $comment_ID) {
+//     return $author;
+// }
+// add_filter('get_comment_author_link', 'simple_remove_comment_author_link', 10, 3);
 
 /*
  * ================================

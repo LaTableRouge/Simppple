@@ -28,7 +28,7 @@
 					"slug": "base"
 				},
 				{
-					"color": "#FFFCF2",
+					"color": "#F5ECCE",
 					"name": "Base / Two",
 					"slug": "base-2"
 				},
@@ -365,8 +365,8 @@
 				},
 				"spacing": {
 					"margin": {
-						"top": "var(--wp--preset--spacing--20)",
-						"bottom": "var(--wp--preset--spacing--20)"
+						"top": "var(--wp--preset--spacing--10)",
+						"bottom": "var(--wp--preset--spacing--10)"
 					}
 				}
 			},
@@ -402,8 +402,19 @@
 			"core/comment-edit-link": {
 				"elements": {
 					"link": {
+						"border": {
+							"radius": "var(--wp--custom--border-radius-form)"
+						},
+						"spacing": {
+							"padding": {
+								"top": "var(--wp--preset--spacing--10)",
+								"bottom": "var(--wp--preset--spacing--10)",
+								"left": "var(--wp--preset--spacing--30)",
+								"right": "var(--wp--preset--spacing--30)"
+							}
+						},
 						"color": {
-							"text": "var(--wp--preset--color--contrast-2)"
+							"background": "var(--wp--preset--color--white)"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -411,6 +422,9 @@
 						":hover": {
 							"typography": {
 								"textDecoration": "underline"
+							},
+							"color": {
+								"background": "var(--wp--preset--color--base-2)"
 							}
 						}
 					}
@@ -422,8 +436,19 @@
 			"core/comment-reply-link": {
 				"elements": {
 					"link": {
+						"border": {
+							"radius": "var(--wp--custom--border-radius-form)"
+						},
+						"spacing": {
+							"padding": {
+								"top": "var(--wp--preset--spacing--10)",
+								"bottom": "var(--wp--preset--spacing--10)",
+								"left": "var(--wp--preset--spacing--30)",
+								"right": "var(--wp--preset--spacing--30)"
+							}
+						},
 						"color": {
-							"text": "var(--wp--preset--color--contrast-2)"
+							"background": "var(--wp--preset--color--white)"
 						},
 						"typography": {
 							"textDecoration": "none"
@@ -431,6 +456,9 @@
 						":hover": {
 							"typography": {
 								"textDecoration": "underline"
+							},
+							"color": {
+								"background": "var(--wp--preset--color--base-2)"
 							}
 						}
 					}
@@ -984,6 +1012,11 @@
 			"area": "header",
 			"name": "header",
 			"title": "Header"
+		},
+		{
+			"area": "header",
+			"name": "header-centered",
+			"title": "Centered header"
 		},
 		{
 			"area": "uncategorized",

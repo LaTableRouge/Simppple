@@ -330,13 +330,6 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				enforce: 'pre',
 			},
 			{
-				...viteStaticCopy({
-					targets: filesToCopy
-				}),
-				apply: 'build',
-				enforce: 'pre',
-			},
-			{
 				...run({
 					silent: false,
 					skipDts: true,
@@ -367,7 +360,10 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				}),
 				apply: 'build',
 				enforce: 'pre',
-			}
+			},
+			viteStaticCopy({
+				targets: filesToCopy
+			})
 		].filter(Boolean),
 
 		esbuild: isProduction

@@ -1,71 +1,48 @@
 <!-- wp:group {"tagName":"header","style":{"position":{"type":"sticky","top":"0px"}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
 <header class="wp-block-group has-white-background-color has-background">
-    <!-- wp:template-part {"slug":"header","tagName":"div"} /-->
+	<!-- wp:template-part {"slug":"header","theme":"simple","tagName":"div"} /-->
 </header>
 <!-- /wp:group -->
 
 <!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
 <main
-    class="wp-block-group"
-    style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"
+	class="wp-block-group"
+	style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"
 >
-    <!-- wp:spacer {"height":"80px"} -->
-    <div
-        style="height:80px"
-        aria-hidden="true"
-        class="wp-block-spacer"
-    ></div>
-    <!-- /wp:spacer -->
+	<!-- wp:spacer {"height":"80px"} -->
+	<div
+		style="height:80px"
+		aria-hidden="true"
+		class="wp-block-spacer"
+	></div>
+	<!-- /wp:spacer -->
 
-    <!-- wp:heading {"textAlign":"center","level":1,"className":"underlined-title"} -->
-    <h1 class="wp-block-heading has-text-align-center underlined-title">Blog</h1>
-    <!-- /wp:heading -->
+	<!-- wp:heading {"textAlign":"center","level":1,"className":"underlined-title"} -->
+	<h1 class="wp-block-heading has-text-align-center underlined-title">Posts</h1>
+	<!-- /wp:heading -->
 
-    <!-- wp:paragraph {"align":"center"} -->
-    <p class="has-text-align-center">This is a section of some simple filler text, also known as placeholder text. It shares some<br>characteristics of a real written text but is random or otherwise generated.</p>
-    <!-- /wp:paragraph -->
+	<!-- wp:paragraph {"align":"center"} -->
+	<p class="has-text-align-center">This is a section of some simple filler text, also known as placeholder text. It shares some<br>characteristics of a real written text but is random or otherwise generated.</p>
+	<!-- /wp:paragraph -->
 
-    <!-- wp:spacer {"height":"40px"} -->
-    <div
-        style="height:40px"
-        aria-hidden="true"
-        class="wp-block-spacer"
-    ></div>
-    <!-- /wp:spacer -->
+	<!-- wp:spacer {"height":"40px"} -->
+	<div
+		style="height:40px"
+		aria-hidden="true"
+		class="wp-block-spacer"
+	></div>
+	<!-- /wp:spacer -->
 
-    <!-- wp:query {"queryId":0,"query":{"perPage":"3","pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false},"displayLayout":{"type":"flex","columns":3},"layout":{"type":"constrained"}} -->
-    <div class="wp-block-query">
-        <!-- wp:post-template {"align":"wide"} -->
-        <!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"264px","align":"wide"} /-->
+	<!-- wp:pattern {"slug":"simple/posts-2-col"} /-->
 
-        <!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|40","right":"var:preset|spacing|40","bottom":"var:preset|spacing|40","left":"var:preset|spacing|40"}}},"layout":{"type":"constrained"}} -->
-        <div
-            class="wp-block-group"
-            style="padding-top:var(--wp--preset--spacing--40);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--40)"
-        >
-            <!-- wp:post-date {"isLink":true,"style":{"spacing":{"margin":{"bottom":"var:preset|spacing|8"}}}} /-->
-
-            <!-- wp:post-excerpt {"moreText":"Lire l'article"} /-->
-        </div>
-        <!-- /wp:group -->
-        <!-- /wp:post-template -->
-
-        <!-- wp:query-pagination {"paginationArrow":"arrow","layout":{"type":"flex","justifyContent":"space-between"}} -->
-        <!-- wp:query-pagination-previous {"label":"Newer Posts"} /-->
-
-        <!-- wp:query-pagination-next {"label":"Older Posts"} /-->
-        <!-- /wp:query-pagination -->
-    </div>
-    <!-- /wp:query -->
-
-    <!-- wp:spacer {"height":"120px"} -->
-    <div
-        style="height:120px"
-        aria-hidden="true"
-        class="wp-block-spacer"
-    ></div>
-    <!-- /wp:spacer -->
+	<!-- wp:spacer {"height":"120px"} -->
+	<div
+		style="height:120px"
+		aria-hidden="true"
+		class="wp-block-spacer"
+	></div>
+	<!-- /wp:spacer -->
 </main>
 <!-- /wp:group -->
 
-<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
+<!-- wp:template-part {"slug":"footer","theme":"simple","tagName":"footer"} /-->
