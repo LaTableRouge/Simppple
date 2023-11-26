@@ -22,7 +22,6 @@ jobs:
       - name: Compile CSS and Javascript
         run: |
           npm ci
-          npm run prod && npm run build:react-blocks
 
       # Zip the theme into a clean release
       - name: Zip release
