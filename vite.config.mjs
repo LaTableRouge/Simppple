@@ -268,6 +268,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 	 |
 	 */
 	if (chore !== 'ci') {
+		console.log('ayaya')
 		if (isProduction) {
 			await stringReplaceOpenAndWrite(
 				resolve(__dirname, 'functions.php'),
@@ -321,10 +322,16 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 		base: isProduction ? './' : `/wp-content/themes/${themeName}`, // Url to apply refresh
 		plugins: [
 			{
-				...stringReplace(filesToEdit),
-				apply: 'build',
+				...sassGlobImports(),
 				enforce: 'pre',
 			},
+			chore === 'all'
+				? {
+					...stringReplace(filesToEdit),
+					apply: 'build',
+					enforce: 'pre',
+				}
+				: false,
 			{
 				...run({
 					silent: false,
@@ -357,7 +364,6 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				apply: 'build',
 				enforce: 'pre',
 			},
-			sassGlobImports(),
 			viteStaticCopy({
 				targets: filesToCopy
 			})
