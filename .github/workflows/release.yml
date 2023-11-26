@@ -9,7 +9,7 @@ jobs:
   build-zip-upload:
     runs-on: ubuntu-latest
     env:
-      RELEASE_NAME: 'Simple'
+      RELEASE_NAME: 'simple'
     permissions:
       contents: write
     steps:
@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 18
 
-        # Compile the theme
+      # Compile the theme
       - name: Compile CSS and Javascript
         run: |
           npm ci --ignore-scripts
