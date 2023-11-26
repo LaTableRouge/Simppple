@@ -40,3 +40,4 @@ GNU General Public License for more details.
 
 placeholder.webp - https://unsplash.com/fr/photos/tre-uccelli-bianchi-su-una-superficie-di-cemento-marrone-sotto-nuvole-bianche-e-cielo-blu-durante-il-giorno-9cKVKzUJ6o0
 404.webp - https://thenounproject.com/icon/seagull-217946/
+block-icon.svg - https://thenounproject.com/icon/seagull-217076/
