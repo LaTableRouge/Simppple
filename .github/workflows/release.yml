@@ -21,7 +21,8 @@ jobs:
         # Compile the theme
       - name: Compile CSS and Javascript
         run: |
-          npm i
+          npm ci
+          npm run prod && npm run build:react-blocks
 
       # Zip the theme into a clean release
       - name: Zip release
@@ -30,7 +31,6 @@ jobs:
           type: 'zip'
           filename: '${{ env.RELEASE_NAME }}.zip'
           path: 'LICENSE readme.txt screenshot.jpg functions.php style.css theme.json styles/ templates/*.html parts/*.html patterns/*.php blocks/react/build lang/ inc/ build/ acf-json/'
-          exclusions: './**/scss/ ./**/js/'
 
       # Publish the release
       - name: Publish release
