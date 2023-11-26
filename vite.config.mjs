@@ -321,10 +321,6 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 		base: isProduction ? './' : `/wp-content/themes/${themeName}`, // Url to apply refresh
 		plugins: [
 			{
-				...sassGlobImports(),
-				enforce: 'pre',
-			},
-			{
 				...stringReplace(filesToEdit),
 				apply: 'build',
 				enforce: 'pre',
@@ -361,6 +357,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				apply: 'build',
 				enforce: 'pre',
 			},
+			sassGlobImports(),
 			viteStaticCopy({
 				targets: filesToCopy
 			})
