@@ -503,7 +503,12 @@
 			"core/gallery": {},
 			"core/group": {},
 			"core/heading": {
-				"css": "& > strong { color: var(--wp--preset--color--accent); }"
+				"css": "& > strong { color: var(--wp--preset--color--accent); }",
+				"spacing": {
+					"margin": {
+						"bottom": "var(--wp--preset--spacing--30)"
+					}
+				}
 			},
 			"core/home-link": {},
 			"core/html": {},
@@ -985,7 +990,8 @@
 				"left": "var(--wp--preset--spacing--30)",
 				"right": "var(--wp--preset--spacing--30)",
 				"top": "var(--wp--preset--spacing--40)"
-			}
+			},
+			"blockGap": "0"
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--segoe-ui)",

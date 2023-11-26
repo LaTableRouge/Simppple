@@ -22,9 +22,6 @@ simple_vite_enqueue_script('/assets/js/admin.js', 'admin_enqueue_scripts', 'admi
 // Editor assets
 simple_vite_enqueue_script('/assets/js/editor.js', 'enqueue_block_editor_assets');
 
-// Helpers
-// require get_template_directory() . '/inc/env_detection.php';
-
 // Theme customization
 require get_template_directory() . '/inc/theme-customization/wp_customization.php';
 require get_template_directory() . '/inc/theme-customization/theme-remove-default-settings.php';

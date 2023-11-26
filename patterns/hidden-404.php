@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: 404
- * Slug: simple/404
+ * Slug: simple/hidden-404
  * Categories: simple-templates
  * Keywords: 404
  */
