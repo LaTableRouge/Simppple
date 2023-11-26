@@ -21,7 +21,7 @@ jobs:
         # Compile the theme
       - name: Compile CSS and Javascript
         run: |
-          npm ci
+          npm ci --ignore-scripts
           npm run prod --chore=ci && npm run build:react-blocks
 
       # Zip the theme into a clean release
