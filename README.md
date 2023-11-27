@@ -13,8 +13,6 @@ Simple comes with some style variations to help the creativity of the site build
 ## File Structure
 
 - 📂 **Simple**
-  - 📂 [acf-json](./acf-json/)
-    - Contains the configurations for ACFs (Custom Post Types, Taxonomies, Field Groups, etc...)
   - 📂 [assets](./assets/)
     - Contains assets that will be compiled (scss, js, fonts, img, etc...)
     - 📂 fonts
@@ -25,20 +23,11 @@ Simple comes with some style variations to help the creativity of the site build
   - 📂 build
     - Contains all the compiled assets (css, js, fonts, img, etc...)
   - 📂 blocks
-    - 📂 [acf](./blocks/acf/README.md)
-    - 📂 react
-      - 📂 [src](./blocks/react/src/README.md)
     - 📂 [core](./blocks/core/README.md)
     - 📂 [woocommerce](./blocks/woocommerce/README.md)
   - 📂 [patterns](./patterns/README.md)
   - 📂 [inc](./inc/)
     - Contains PHP files that are used to customize the theme & assist in theme development
-    - 📂 blocks
-      - Everything related to custom blocks (category creation, etc...)
-      - 📂 acf
-        - Everything related to ACF blocks (block registration, etc...)
-      - 📂 react
-        - Everything related to React blocks (block registration, etc...)
     - 📂 pattern
       - Everything related to custom patterns (category creation, etc...)
     - 📂 theme-customization
