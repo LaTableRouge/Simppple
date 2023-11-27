@@ -4,6 +4,12 @@
 ![Woocommerce Version](https://img.shields.io/badge/woocommerce-%3E%3D%208.0-purple)
 ![ACF Version](https://img.shields.io/badge/acf-%3E%3D%206.0-cyan)
 
+
+Simple is a Wordpress theme designed to be flexible, versatile and applicable to any website.
+Its collection of templates and patterns tailor to different needs.
+A multitude of possibilities open up with just a few adjustments to color and typography.
+Simple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+
 ## File Structure
 
 - 📂 **Simple**
