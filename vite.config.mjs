@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 
-import { stringReplace, stringReplaceOpenAndWrite } from '@mlnop/string-replace'
+import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import autoprefixer from 'autoprefixer'
 import { defineConfig, loadEnv } from 'vite'
 import { run } from 'vite-plugin-run'
@@ -268,7 +268,6 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 	 |
 	 */
 	if (chore !== 'ci') {
-		console.log('ayaya')
 		if (isProduction) {
 			await stringReplaceOpenAndWrite(
 				resolve(__dirname, 'functions.php'),
@@ -299,8 +298,8 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 	 |
 	 | Plugins :
 	 |  - Replace in file
-	 |  - Live reload :
-	 |    - Files to refresh
+	 |  - Enable Sass glob imports
+	 |  - Static files copy
 	 |  - Run :
 	 |    - execute scss lint command
 	 |    - execute scss prettier command
@@ -327,7 +326,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			},
 			chore === 'all'
 				? {
-					...stringReplace(filesToEdit),
+					...viteStringReplace(filesToEdit),
 					apply: 'build',
 					enforce: 'pre',
 				}
