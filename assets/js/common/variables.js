@@ -1,5 +1,5 @@
 export const variables = {}
-variables.stylesheetDirectory = wpparams.stylesheet_directory
+variables.templateDirectory = wpparams.template_directory
 variables.picturesDirectory = wpparams.pictures_directory
 variables.pluginsDirectory = wpparams.plugins_directory
 variables.ajaxURL = wpparams.ajax_url

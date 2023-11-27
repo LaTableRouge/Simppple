@@ -1,4 +1,4 @@
-# Copyright (C) 2023 VDIANA DEV
+# Copyright (C) 2023 MLNOP
 # This file is distributed under the .
 msgid ""
 msgstr ""
@@ -28,7 +28,7 @@ msgid "A simple basic gutenberg theme"
 msgstr ""
 
 #. Author of the theme
-msgid "VDIANA DEV"
+msgid "MLNOP"
 msgstr ""
 
 #: inc/blocks/categories-register.php:14

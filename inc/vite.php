@@ -64,7 +64,7 @@ function simple_vite_enqueue_dev_dependencies() {
                 ajax_url: '" . admin_url('admin-ajax.php') . "',
                 rest_url: '" . esc_url_raw(get_rest_url(null, '/wp/v2')) . "',
                 rest_nonce: '" . wp_create_nonce('wp_rest') . "',
-                stylesheet_directory: '" . get_template_directory_uri() . "',
+                template_directory: '" . get_template_directory_uri() . "',
                 plugins_directory: '" . plugins_url() . "',
                 pictures_directory: '" . get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . "',
                 posts_per_page: '" . get_option('posts_per_page') . "'
@@ -136,6 +136,7 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
         $themePath = get_template_directory_uri();
         $themePath = parse_url($themePath, PHP_URL_PATH);
 
+        remove_action($hookDev, 'simple_vite_enqueue_dev_dependencies');
         add_action($hookDev, 'simple_vite_enqueue_dev_dependencies');
         add_action($hookDev, function () use ($themePath, $fileThemePath) {
             echo '<script type="module" crossorigin src="' . SIMPLE_VITE_SERVER . $themePath . $fileThemePath . '"></script>';
@@ -174,7 +175,7 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
                     wp_register_script(
                         $fileSlug,
                         $filePath,
-                        ['jquery', 'wp-i18n', 'wp-blocks'], // Libraries to use
+                        [], // Libraries to use
                         time(),
                         [
                             'in_footer' => $footerEnqueue,
@@ -195,7 +196,7 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
                             'ajax_url' => admin_url('admin-ajax.php'),
                             'rest_url' => esc_url_raw(get_rest_url(null, '/wp/v2')),
                             'rest_nonce' => wp_create_nonce('wp_rest'),
-                            'stylesheet_directory' => get_template_directory_uri(),
+                            'template_directory' => get_template_directory_uri(),
                             'plugins_directory' => plugins_url(),
                             'pictures_directory' => get_template_directory_uri() . SIMPLE_PICTURE_FOLDER,
                             'posts_per_page' => get_option('posts_per_page'),

@@ -991,7 +991,7 @@
 				"right": "var(--wp--preset--spacing--30)",
 				"top": "var(--wp--preset--spacing--40)"
 			},
-			"blockGap": "0"
+			"blockGap": "24px"
 		},
 		"typography": {
 			"fontFamily": "var(--wp--preset--font-family--segoe-ui)",

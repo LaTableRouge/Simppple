@@ -70,7 +70,7 @@
 			<!-- wp:image {"id":302,"aspectRatio":"3/4","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-style-rounded"} -->
 			<figure class="wp-block-image size-full is-resized is-style-rounded">
 				<img
-					src="<?php echo get_template_directory_uri() . SIMPLE_PICTURE_FOLDER; ?>/404.webp"
+					src="<?php echo esc_url(get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/404.webp'); ?>"
 					alt=""
 					class="wp-image-302"
 					style="aspect-ratio:3/4;object-fit:cover"
