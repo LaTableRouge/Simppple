@@ -16,10 +16,10 @@ Simple comes with some style variations to help the creativity of the site build
 
 == Changelog ==
 
-= 1.0 =
-* Released: November 7, 2023
+= 0.0.1 =
+* Released: November 28, 2023
 
-https://wordpress.org/documentation/article/twenty-twenty-four-changelog/#Version_1.0
+https://github.com/MLNOP/Simple/releases/tag/0.0.1
 
 == Copyright ==
 
