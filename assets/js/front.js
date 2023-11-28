@@ -5,7 +5,7 @@ import { putScrollbarSizeInCSSVariables } from './common/functions'
 import { variables } from './common/variables'
 import { adminBar } from './components/admin-bar'
 import { getCSSVariables } from './components/css-variables'
-import { fixedHeader, getHeaderHeight } from './components/header'
+import { getHeaderHeight } from './components/header'
 import { inputNumber } from './components/html-components/input-quantity'
 import { pictureErrorHandler } from './components/picture-error'
 
@@ -36,11 +36,6 @@ window.addEventListener('DOMContentLoaded', (e) => {
 	 * Not mandatory if :has() has is fully supported in css
 	 * */
 	adminBar()
-
-	/*
-	 * Add a class when the page is scrolled
-	 * */
-	fixedHeader(100)
 
 	/*
 	 * Display a placeholder picture if the picture is 404

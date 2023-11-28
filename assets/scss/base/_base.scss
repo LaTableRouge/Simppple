@@ -40,18 +40,6 @@ body:not(.wp-admin) {
 		color: var(--wp--preset--color--white);
 	}
 
-	// Exemple d'appel d'images du thème
-	// &::before {
-	//   content: '';
-	//   background-image: url('#{$pictures-path}/placeholder.jpg');
-	// }
-
-	// Exemple d'appel d'une incone icomoon
-	// &::before {
-	//   content: $icon-simple-logo-glanum !important;
-	//   font-family: $icomoon-font-family;
-	// }
-
 	&.no-scroll {
 		overflow: hidden;
 	}
@@ -70,11 +58,6 @@ body:not(.wp-admin) {
 		& > main {
 			flex-grow: 1;
 			width: 100%;
-			// max-width: var(--wp--style--global--content-size);
-			// margin-right: auto;
-			// margin-left: auto;
-			// padding-right: var(--wp--preset--spacing--30);
-			// padding-left: var(--wp--preset--spacing--30);
 		}
 	}
 }

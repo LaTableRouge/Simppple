@@ -1023,11 +1023,6 @@
 			"area": "header",
 			"name": "header-centered",
 			"title": "Centered header"
-		},
-		{
-			"area": "uncategorized",
-			"name": "post-meta",
-			"title": "Post Meta"
 		}
 	]
 }

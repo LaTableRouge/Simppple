@@ -32,25 +32,6 @@ wp.blocks.registerBlockVariation('core/group', {
 	}
 })
 
-// Register a variation for the block "media-text"
-wp.blocks.registerBlockVariation('core/media-text', {
-	name: 'simple/group-media-stretched',
-	title: __('Group with a stretched media', 'simple'),
-	attributes: {
-		className: 'group-media-stretched'
-	}
-})
-
-wp.blocks.registerBlockVariation('core/search', {
-	name: 'simple/testimony-search',
-	title: __('Testimony search', 'simple'),
-	attributes: {
-		query: {
-			post_type: 'testimony'
-		}
-	}
-})
-
 wp.blocks.registerBlockVariation('core/table', {
 	name: 'simple/table-paginate',
 	title: __('Table with pagination', 'simple'),

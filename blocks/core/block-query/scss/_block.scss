@@ -53,24 +53,26 @@
 			background-color: var(--wp--preset--color--white);
 			box-shadow: var(--wp--preset--shadow--card);
 
-			.wp-block-post-terms {
-				display: flex;
-				flex-wrap: wrap;
-				gap: var(--wp--preset--spacing--10);
+			& > .wp-block-group {
+				& > .wp-block-post-terms {
+					display: flex;
+					flex-wrap: wrap;
+					gap: var(--wp--preset--spacing--10);
 
-				&__separator {
-					display: none;
-				}
+					&__separator {
+						display: none;
+					}
 
-				& > a {
-					@extend .cta;
-
-					padding: calc(var(--wp--preset--spacing--10) / 2) calc(var(--wp--preset--spacing--10) * 2) !important;
-				}
-
-				&.taxonomy-post_tag {
 					& > a {
-						@extend .cta-outline;
+						@extend .cta;
+
+						padding: calc(var(--wp--preset--spacing--10) / 2) calc(var(--wp--preset--spacing--10) * 2) !important;
+					}
+
+					&.taxonomy-post_tag {
+						& > a {
+							@extend .cta-outline;
+						}
 					}
 				}
 			}

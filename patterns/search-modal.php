@@ -16,14 +16,14 @@ function pattern_search_modal_icon($html, $block) {
         // Replace labels
         $parsedHTML = new WP_HTML_Tag_Processor($html);
         if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-open'])) {
-            $parsedHTML->set_attribute('aria-label', esc_attr__('Ouvrir la recherche', 'simple'));
+            $parsedHTML->set_attribute('aria-label', esc_attr__('Open search', 'simple'));
         }
 
         if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-container'])) {
             if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-close'])) {
                 if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-dialog'])) {
                     if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-close'])) {
-                        $parsedHTML->set_attribute('aria-label', esc_attr__('Fermer la recherche', 'simple'));
+                        $parsedHTML->set_attribute('aria-label', esc_attr__('Close search', 'simple'));
                     }
                 }
             }
