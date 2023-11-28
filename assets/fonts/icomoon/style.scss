@@ -1,134 +1,134 @@
-@import "variables";
+@import 'variables';
 
 @font-face {
-  font-family: '#{$icomoon-font-family}';
-  src:
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?2z4419') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?2z4419') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?2z4419##{$icomoon-font-family}') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
+	font-family: '#{$icomoon-font-family}';
+	src:
+		url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?2z4419') format('truetype'),
+		url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?2z4419') format('woff'),
+		url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?2z4419##{$icomoon-font-family}') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
 }
 
-[class^="icon-simple-"], [class*=" icon-simple-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: '#{$icomoon-font-family}' !important;
-  speak: never;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
+[class^='icon-sample-'],
+[class*=' icon-sample-'] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: '#{$icomoon-font-family}' !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-simple-filter {
-  &:before {
-    content: $icon-simple-filter; 
-  }
-}
-.icon-simple-mail {
-  &:before {
-    content: $icon-simple-mail; 
-  }
-}
-.icon-simple-phone {
-  &:before {
-    content: $icon-simple-phone; 
-  }
-}
-.icon-simple-check {
-  &:before {
-    content: $icon-simple-check; 
-  }
-}
-.icon-simple-eye {
-  &:before {
-    content: $icon-simple-eye; 
-  }
-}
-.icon-simple-cross {
-  &:before {
-    content: $icon-simple-cross; 
-  }
-}
-.icon-simple-information {
-  &:before {
-    content: $icon-simple-information; 
-  }
-}
-.icon-simple-search {
-  &:before {
-    content: $icon-simple-search; 
-  }
-}
-.icon-simple-heart {
-  &:before {
-    content: $icon-simple-heart; 
-  }
-}
-.icon-simple-cart {
-  &:before {
-    content: $icon-simple-cart; 
-  }
-}
-.icon-simple-arrow-left {
-  &:before {
-    content: $icon-simple-arrow-left; 
-  }
-}
-.icon-simple-arrow-right-plain {
-  &:before {
-    content: $icon-simple-arrow-right-plain; 
-  }
-}
-.icon-simple-arrow-left-plain {
-  &:before {
-    content: $icon-simple-arrow-left-plain; 
-  }
-}
-.icon-simple-facebook {
-  &:before {
-    content: $icon-simple-facebook; 
-  }
-}
-.icon-simple-instagram {
-  &:before {
-    content: $icon-simple-instagram; 
-  }
-}
-.icon-simple-linkedin {
-  &:before {
-    content: $icon-simple-linkedin; 
-  }
-}
-.icon-simple-twitter {
-  &:before {
-    content: $icon-simple-twitter; 
-  }
-}
-.icon-simple-youtube {
-  &:before {
-    content: $icon-simple-youtube; 
-  }
-}
-.icon-simple-arrow-right {
-  &:before {
-    content: $icon-simple-arrow-right; 
-  }
-}
-.icon-simple-user {
-  &:before {
-    content: $icon-simple-user; 
-  }
-}
-.icon-simple-quote {
-  &:before {
-    content: $icon-simple-quote; 
-  }
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-sample-filter {
+	&:before {
+		content: $icon-sample-filter;
+	}
+}
+.icon-sample-mail {
+	&:before {
+		content: $icon-sample-mail;
+	}
+}
+.icon-sample-phone {
+	&:before {
+		content: $icon-sample-phone;
+	}
+}
+.icon-sample-check {
+	&:before {
+		content: $icon-sample-check;
+	}
+}
+.icon-sample-eye {
+	&:before {
+		content: $icon-sample-eye;
+	}
+}
+.icon-sample-cross {
+	&:before {
+		content: $icon-sample-cross;
+	}
+}
+.icon-sample-information {
+	&:before {
+		content: $icon-sample-information;
+	}
+}
+.icon-sample-search {
+	&:before {
+		content: $icon-sample-search;
+	}
+}
+.icon-sample-heart {
+	&:before {
+		content: $icon-sample-heart;
+	}
+}
+.icon-sample-cart {
+	&:before {
+		content: $icon-sample-cart;
+	}
+}
+.icon-sample-arrow-left {
+	&:before {
+		content: $icon-sample-arrow-left;
+	}
+}
+.icon-sample-arrow-right-plain {
+	&:before {
+		content: $icon-sample-arrow-right-plain;
+	}
+}
+.icon-sample-arrow-left-plain {
+	&:before {
+		content: $icon-sample-arrow-left-plain;
+	}
+}
+.icon-sample-facebook {
+	&:before {
+		content: $icon-sample-facebook;
+	}
+}
+.icon-sample-instagram {
+	&:before {
+		content: $icon-sample-instagram;
+	}
+}
+.icon-sample-linkedin {
+	&:before {
+		content: $icon-sample-linkedin;
+	}
+}
+.icon-sample-twitter {
+	&:before {
+		content: $icon-sample-twitter;
+	}
+}
+.icon-sample-youtube {
+	&:before {
+		content: $icon-sample-youtube;
+	}
+}
+.icon-sample-arrow-right {
+	&:before {
+		content: $icon-sample-arrow-right;
+	}
+}
+.icon-sample-user {
+	&:before {
+		content: $icon-sample-user;
+	}
+}
+.icon-sample-quote {
+	&:before {
+		content: $icon-sample-quote;
+	}
+}

@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Masonry/Text
- * Slug: simple/masonry-text
- * Categories: simple-sections
+ * Slug: sample/masonry-text
+ * Categories: sample-sections
  * Keywords: pictures, text, masonry
  */
 ?>
@@ -24,7 +24,7 @@
 				<!-- wp:image {"id":52,"sizeSlug":"medium","linkDestination":"none","style":{"border":{"radius":"10px"}}} -->
 				<figure class="wp-block-image size-medium has-custom-border">
 					<img
-						src="<?php echo esc_url(get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
+						src="<?php echo esc_url(get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
 						alt=""
 						class="wp-image-52"
 						style="border-radius:10px"
@@ -35,7 +35,7 @@
 				<!-- wp:image {"id":53,"sizeSlug":"medium","linkDestination":"none","style":{"border":{"radius":"10px"}}} -->
 				<figure class="wp-block-image size-medium has-custom-border">
 					<img
-						src="<?php echo esc_url(get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
+						src="<?php echo esc_url(get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
 						alt=""
 						class="wp-image-53"
 						style="border-radius:10px"
@@ -46,7 +46,7 @@
 				<!-- wp:image {"id":50,"sizeSlug":"medium","linkDestination":"none","style":{"border":{"radius":"10px"}}} -->
 				<figure class="wp-block-image size-medium has-custom-border">
 					<img
-						src="<?php echo esc_url(get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
+						src="<?php echo esc_url(get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
 						alt=""
 						class="wp-image-50"
 						style="border-radius:10px"
@@ -57,7 +57,7 @@
 				<!-- wp:image {"id":47,"sizeSlug":"medium","linkDestination":"none","style":{"border":{"radius":"10px"}}} -->
 				<figure class="wp-block-image size-medium has-custom-border">
 					<img
-						src="<?php echo esc_url(get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
+						src="<?php echo esc_url(get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
 						alt=""
 						class="wp-image-47"
 						style="border-radius:10px"
@@ -71,13 +71,10 @@
 
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:heading {"className":"underlined-title"} -->
-			<h2 class="wp-block-heading underlined-title">Title</h2>
-			<!-- /wp:heading -->
+			<!-- wp:pattern {"slug":"sample/hidden-sample-title"} /-->
 
-			<!-- wp:paragraph -->
-			<p>This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.<br>This is a <a href="#">section of some</a> simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated. This is a section of some simple filler text, also known as placeholder text. It shares some.<br>This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.<br>This is a section of some simple filler text, also known as placeholder text.</p>
-			<!-- /wp:paragraph -->
+			<!-- wp:pattern {"slug":"sample/hidden-sample-paragraph"} /-->
+			<!-- wp:pattern {"slug":"sample/hidden-sample-paragraph"} /-->
 		</div>
 		<!-- /wp:column -->
 	</div>

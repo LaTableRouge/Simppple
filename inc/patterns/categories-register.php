@@ -4,33 +4,33 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-function simple_register_pattern_category() {
+function sample_register_pattern_category() {
     register_block_pattern_category(
-        'simple-sections',
+        'sample-sections',
         [
-            'label' => esc_html__('Simple - Page Sections', 'simple')
+            'label' => esc_html__('Sample - Page Sections', 'sample')
         ]
     );
 
     register_block_pattern_category(
-        'simple-templates',
+        'sample-templates',
         [
-            'label' => esc_html__('Simple - Page Templates', 'simple')
+            'label' => esc_html__('Sample - Page Templates', 'sample')
         ]
     );
 
     register_block_pattern_category(
-        'simple-site-header',
+        'sample-site-header',
         [
-            'label' => esc_html__('Simple - Headers', 'simple')
+            'label' => esc_html__('Sample - Headers', 'sample')
         ]
     );
 
     register_block_pattern_category(
-        'simple-site-footer',
+        'sample-site-footer',
         [
-            'label' => esc_html__('Simple - Footers', 'simple')
+            'label' => esc_html__('Sample - Footers', 'sample')
         ]
     );
 }
-add_action('init', 'simple_register_pattern_category', 9);
+add_action('init', 'sample_register_pattern_category', 9);

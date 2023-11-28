@@ -7,43 +7,43 @@
 
 	&[href*='linkedin'] {
 		&::before {
-			content: $icon-simple-linkedin;
+			content: $icon-sample-linkedin;
 		}
 	}
 
 	&[href*='instagram'] {
 		&::before {
-			content: $icon-simple-instagram;
+			content: $icon-sample-instagram;
 		}
 	}
 
 	&[href*='youtube'] {
 		&::before {
-			content: $icon-simple-youtube;
+			content: $icon-sample-youtube;
 		}
 	}
 
 	&[href*='twitter'] {
 		&::before {
-			content: $icon-simple-twitter;
+			content: $icon-sample-twitter;
 		}
 	}
 
 	&[href*='facebook'] {
 		&::before {
-			content: $icon-simple-facebook;
+			content: $icon-sample-facebook;
 		}
 	}
 
 	&[href^='tel:'] {
 		&::before {
-			content: $icon-simple-phone;
+			content: $icon-sample-phone;
 		}
 	}
 
 	&[href^='mailto:'] {
 		&::before {
-			content: $icon-simple-mail;
+			content: $icon-sample-mail;
 		}
 	}
 }

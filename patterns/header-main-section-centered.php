@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Header centered main section
- * Slug: simple/header-main-section-centered
- * Categories: simple-site-header
+ * Slug: sample/header-main-section-centered
+ * Categories: sample-site-header
  * Keywords: header, menu
  */
 

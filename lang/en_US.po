@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simple 0.0.1\n"
+"Project-Id-Version: Sample 0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simple\n"
-"POT-Creation-Date: 2023-11-28T08:16:42+00:00\n"
-"PO-Revision-Date: 2023-11-28 09:17+0100\n"
+"POT-Creation-Date: 2023-11-28T10:03:40+00:00\n"
+"PO-Revision-Date: 2023-11-28 11:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en_US\n"
@@ -13,29 +13,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.1\n"
-"X-Domain: simple\n"
+"X-Domain: sample\n"
 
 #. Theme Name of the theme
-msgid "Simple"
-msgstr "Simple"
+msgid "Sample"
+msgstr "Sample"
 
 #. Theme URI of the theme
-msgid "https://github.com/MLNOP/Simple/releases/latest/"
-msgstr "https://github.com/MLNOP/Simple/releases/latest/"
+msgid "https://github.com/MLNOP/Sample/releases/latest/"
+msgstr "https://github.com/MLNOP/Sample/releases/latest/"
 
 #. Description of the theme
 msgid ""
-"Simple is designed to be flexible, versatile and applicable to any website. "
+"Sample is designed to be flexible, versatile and applicable to any website. "
 "Its collection of templates and patterns tailor to different needs. A "
 "multitude of possibilities open up with just a few adjustments to color and "
-"typography. Simple comes with some style variations to help the creativity "
+"typography. Sample comes with some style variations to help the creativity "
 "of the site building process, it's fully compatible with the site editor, "
 "and takes advantage of new design tools introduced in WordPress 6.4."
 msgstr ""
-"Simple is designed to be flexible, versatile and applicable to any website. "
+"Sample is designed to be flexible, versatile and applicable to any website. "
 "Its collection of templates and patterns tailor to different needs. A "
 "multitude of possibilities open up with just a few adjustments to color and "
-"typography. Simple comes with some style variations to help the creativity "
+"typography. Sample comes with some style variations to help the creativity "
 "of the site building process, it's fully compatible with the site editor, "
 "and takes advantage of new design tools introduced in WordPress 6.4."
 
@@ -48,20 +48,20 @@ msgid "https://wordpress.org"
 msgstr "https://wordpress.org"
 
 #: inc/patterns/categories-register.php:11
-msgid "Simple - Page Sections"
-msgstr "Simple - Page Sections"
+msgid "Sample - Page Sections"
+msgstr "Sample - Page Sections"
 
 #: inc/patterns/categories-register.php:18
-msgid "Simple - Page Templates"
-msgstr "Simple - Page Templates"
+msgid "Sample - Page Templates"
+msgstr "Sample - Page Templates"
 
 #: inc/patterns/categories-register.php:25
-msgid "Simple - Headers"
-msgstr "Simple - Headers"
+msgid "Sample - Headers"
+msgstr "Sample - Headers"
 
 #: inc/patterns/categories-register.php:32
-msgid "Simple - Footers"
-msgstr "Simple - Footers"
+msgid "Sample - Footers"
+msgstr "Sample - Footers"
 
 #: patterns/footer.php
 msgctxt "Pattern title"
@@ -100,30 +100,9 @@ msgstr "Header top section"
 
 #: patterns/header-top-section.php:17
 msgid ""
-"This is a section of some simple filler text, also known as placeholder text."
+"This is a section of some sample filler text, also known as placeholder text."
 msgstr ""
-"This is a section of some simple filler text, also known as placeholder text."
-
-#: patterns/hidden-404.php
-msgctxt "Pattern title"
-msgid "404"
-msgstr "404"
-
-#: patterns/hidden-404.php:34
-msgid "Oops! That page can't be found."
-msgstr "Oops! That page can't be found."
-
-#: patterns/hidden-404.php:38
-msgid "It looks like nothing was found at this location. Maybe try searching?"
-msgstr "It looks like nothing was found at this location. Maybe try searching?"
-
-#: patterns/hidden-404.php:47
-msgid "Or"
-msgstr "Or"
-
-#: patterns/hidden-404.php:57
-msgid "Back to home page"
-msgstr "Back to home page"
+"This is a section of some sample filler text, also known as placeholder text."
 
 #: patterns/hidden-comments.php
 msgctxt "Pattern title"
@@ -138,11 +117,6 @@ msgstr "Comments"
 msgctxt "Pattern title"
 msgid "No results"
 msgstr "No results"
-
-#: patterns/hidden-no-results.php:9
-msgctxt "Message explaining that there are no results returned from a search"
-msgid "No posts were found."
-msgstr "No posts were found."
 
 #: patterns/hidden-post-navigation.php
 msgctxt "Pattern title"
@@ -166,6 +140,43 @@ msgctxt ""
 msgid "Next: "
 msgstr "Next: "
 
+#: patterns/hidden-sample-paragraph-centerd.php
+#| msgctxt "Pattern title"
+#| msgid "Sample paragraph"
+msgctxt "Pattern title"
+msgid "Sample paragraph centered"
+msgstr "Sample paragraph centered"
+
+#: patterns/hidden-sample-paragraph-centerd.php:10
+#: patterns/hidden-sample-paragraph.php:10
+msgid ""
+"This is a section of some simple filler text, also known as placeholder text."
+msgstr ""
+"This is a section of some sample filler text, also known as placeholder text."
+
+#: patterns/hidden-sample-paragraph-centerd.php:10
+#: patterns/hidden-sample-paragraph.php:10
+msgid ""
+"It shares some characteristics of a real written text but is random or "
+"otherwise generated."
+msgstr ""
+"It shares some characteristics of a real written text but is random or "
+"otherwise generated."
+
+#: patterns/hidden-sample-paragraph.php
+msgctxt "Pattern title"
+msgid "Sample paragraph"
+msgstr "Sample paragraph"
+
+#: patterns/hidden-sample-title.php
+msgctxt "Pattern title"
+msgid "Sample title"
+msgstr "Sample title"
+
+#: patterns/hidden-sample-title.php:10
+msgid "Title"
+msgstr "Title"
+
 #: patterns/img-img.php
 msgctxt "Pattern title"
 msgid "Image/Image"
@@ -175,6 +186,27 @@ msgstr "Image/Image"
 msgctxt "Pattern title"
 msgid "Masonry/Text"
 msgstr "Masonry/Text"
+
+#: patterns/page-404.php
+msgctxt "Pattern title"
+msgid "404"
+msgstr "404"
+
+#: patterns/page-404.php:34
+msgid "Oops! That page can't be found."
+msgstr "Oops! That page can't be found."
+
+#: patterns/page-404.php:38
+msgid "It looks like nothing was found at this location. Maybe try searching?"
+msgstr "It looks like nothing was found at this location. Maybe try searching?"
+
+#: patterns/page-404.php:47
+msgid "Or"
+msgstr "Or"
+
+#: patterns/page-404.php:57
+msgid "Back to home page"
+msgstr "Back to home page"
 
 #: patterns/post-date-author-terms.php
 msgctxt "Pattern title"
@@ -242,18 +274,23 @@ msgstr "Search"
 msgid "Menu"
 msgstr "Menu"
 
-#: blocks/core/block-table/js/grid.js:22 build/assets/front-7jWrICar.js:3
+#: blocks/core/block-table/js/grid.js:22 build/assets/front-tO0TzStX.js:3
 msgid "Search..."
 msgstr "Search..."
 
-#: build/assets/editor-D1m26htK.js:1
+#: build/assets/editor-pf4hWOzw.js:1
 msgid "Group with a shadow"
 msgstr "Group with a shadow"
 
-#: build/assets/editor-D1m26htK.js:1
+#: build/assets/editor-pf4hWOzw.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr "A variation of the group block with a drop shadow"
 
-#: build/assets/editor-D1m26htK.js:1
+#: build/assets/editor-pf4hWOzw.js:1
 msgid "Table with pagination"
 msgstr "Table with pagination"
+
+#~ msgctxt ""
+#~ "Message explaining that there are no results returned from a search"
+#~ msgid "No posts were found."
+#~ msgstr "No posts were found."

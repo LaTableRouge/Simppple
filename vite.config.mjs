@@ -16,7 +16,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
  | Destination path
  |
  */
-const themeName = 'simple'
+const themeName = 'sample'
 const assetsPath = 'assets'
 const distPath = 'build'
 

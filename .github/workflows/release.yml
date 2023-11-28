@@ -9,7 +9,7 @@ jobs:
   build-zip-upload:
     runs-on: ubuntu-latest
     env:
-      RELEASE_NAME: 'simple'
+      RELEASE_NAME: 'sample'
     permissions:
       contents: write
     steps:

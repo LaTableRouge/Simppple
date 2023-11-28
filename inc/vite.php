@@ -9,7 +9,7 @@ define('SIMPLE_DIST_FOLDER', 'build');
 define('SIMPLE_DIST_URI', get_template_directory_uri() . '/' . SIMPLE_DIST_FOLDER);
 define('SIMPLE_DIST_PATH', get_template_directory() . '/' . SIMPLE_DIST_FOLDER);
 
-function simple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
+function sample_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     $returnedArray = [];
 
     $fileName = basename($fileThemePath);
@@ -32,7 +32,7 @@ function simple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
             if ($fileKey && isset($manifest[$fileKey])) {
                 $returnedArray = [
                     'path' => SIMPLE_DIST_URI . "/{$manifest[$fileKey]['file']}",
-                    'slug' => "simple_vite_{$fileNameWithoutExtension}_{$assetType}"
+                    'slug' => "sample_vite_{$fileNameWithoutExtension}_{$assetType}"
                 ];
 
                 // In case of scss files included in Javascript
@@ -44,7 +44,7 @@ function simple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
 
                         $returnedArray['css'][] = [
                             'path' => SIMPLE_DIST_URI . "/{$stylePath}",
-                            'slug' => "simple_vite_{$styleFileWithoutVersionning}_style"
+                            'slug' => "sample_vite_{$styleFileWithoutVersionning}_style"
                         ];
                     }
                 }
@@ -55,7 +55,7 @@ function simple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     return $returnedArray;
 }
 
-function simple_vite_enqueue_dev_dependencies() {
+function sample_vite_enqueue_dev_dependencies() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('wp-i18n');
     wp_enqueue_script('wp-blocks');
@@ -66,13 +66,13 @@ function simple_vite_enqueue_dev_dependencies() {
                 rest_nonce: '" . wp_create_nonce('wp_rest') . "',
                 template_directory: '" . get_template_directory_uri() . "',
                 plugins_directory: '" . plugins_url() . "',
-                pictures_directory: '" . get_template_directory_uri() . SIMPLE_PICTURE_FOLDER . "',
+                pictures_directory: '" . get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . "',
                 posts_per_page: '" . get_option('posts_per_page') . "'
             }
         </script>";
 }
 
-function simple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
+function sample_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -97,7 +97,7 @@ function simple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false)
         /*
         * ================================ Call assets with WP hooks
         */
-        $manifestFileInfos = simple_vite_fetch_asset_from_manifest($fileThemePath, 'style');
+        $manifestFileInfos = sample_vite_fetch_asset_from_manifest($fileThemePath, 'style');
         if (!empty($manifestFileInfos)) {
             $filePath = $manifestFileInfos['path'];
             $fileSlug = $manifestFileInfos['slug'];
@@ -118,7 +118,7 @@ function simple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false)
     }
 }
 
-function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
+function sample_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -136,8 +136,8 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
         $themePath = get_template_directory_uri();
         $themePath = parse_url($themePath, PHP_URL_PATH);
 
-        remove_action($hookDev, 'simple_vite_enqueue_dev_dependencies');
-        add_action($hookDev, 'simple_vite_enqueue_dev_dependencies');
+        remove_action($hookDev, 'sample_vite_enqueue_dev_dependencies');
+        add_action($hookDev, 'sample_vite_enqueue_dev_dependencies');
         add_action($hookDev, function () use ($themePath, $fileThemePath) {
             echo '<script type="module" crossorigin src="' . SIMPLE_VITE_SERVER . $themePath . $fileThemePath . '"></script>';
         });
@@ -145,7 +145,7 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
         /*
         * ================================ Call assets with WP hooks
         */
-        $manifestFileInfos = simple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
+        $manifestFileInfos = sample_vite_fetch_asset_from_manifest($fileThemePath, 'script');
         if (!empty($manifestFileInfos)) {
             if (isset($manifestFileInfos['css'])) {
                 foreach ($manifestFileInfos['css'] as $style) {
@@ -185,7 +185,7 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
 
                     wp_set_script_translations(
                         $fileSlug,
-                        'simple',
+                        'sample',
                         get_template_directory() . '/lang'
                     );
 
@@ -198,7 +198,7 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
                             'rest_nonce' => wp_create_nonce('wp_rest'),
                             'template_directory' => get_template_directory_uri(),
                             'plugins_directory' => plugins_url(),
-                            'pictures_directory' => get_template_directory_uri() . SIMPLE_PICTURE_FOLDER,
+                            'pictures_directory' => get_template_directory_uri() . SAMPLE_PICTURE_FOLDER,
                             'posts_per_page' => get_option('posts_per_page'),
                         ]
                     );
@@ -211,11 +211,11 @@ function simple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false
     }
 }
 
-function simple_vite_enqueue_style_editor($fileThemePath, $hook) {
+function sample_vite_enqueue_style_editor($fileThemePath, $hook) {
     /*
     * ================================ Call assets with WP hooks
     */
-    $manifestFileInfos = simple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
+    $manifestFileInfos = sample_vite_fetch_asset_from_manifest($fileThemePath, 'script');
     if (!empty($manifestFileInfos)) {
         $filePath = $manifestFileInfos['path'];
 
