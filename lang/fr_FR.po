@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sample 0.0.1\n"
+"Project-Id-Version: Simppple 0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simple\n"
-"POT-Creation-Date: 2023-11-28T10:03:40+00:00\n"
-"PO-Revision-Date: 2023-11-28 11:03+0100\n"
+"POT-Creation-Date: 2023-11-29T09:32:00+00:00\n"
+"PO-Revision-Date: 2023-11-29 10:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -13,29 +13,29 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.1\n"
-"X-Domain: sample\n"
+"X-Domain: simppple\n"
 
 #. Theme Name of the theme
-msgid "Sample"
-msgstr "Sample"
+msgid "Simppple"
+msgstr "Simppple"
 
 #. Theme URI of the theme
-msgid "https://github.com/MLNOP/Sample/releases/latest/"
-msgstr "https://github.com/MLNOP/Sample/releases/latest/"
+msgid "https://github.com/MLNOP/Simppple/releases/latest/"
+msgstr "https://github.com/MLNOP/Simppple/releases/latest/"
 
 #. Description of the theme
 msgid ""
-"Sample is designed to be flexible, versatile and applicable to any website. "
-"Its collection of templates and patterns tailor to different needs. A "
-"multitude of possibilities open up with just a few adjustments to color and "
-"typography. Sample comes with some style variations to help the creativity "
-"of the site building process, it's fully compatible with the site editor, "
-"and takes advantage of new design tools introduced in WordPress 6.4."
+"Simppple is designed to be flexible, versatile and applicable to any "
+"website. Its collection of templates and patterns tailor to different needs. "
+"A multitude of possibilities open up with just a few adjustments to color "
+"and typography. Simppple comes with some style variations to help the "
+"creativity of the site building process, it's fully compatible with the site "
+"editor, and takes advantage of new design tools introduced in WordPress 6.4."
 msgstr ""
-"Sample est conçu pour être flexible, polyvalent et applicable à tout site "
+"Simppple est conçu pour être flexible, polyvalent et applicable à tout site "
 "web. Sa collection de modèles et de motifs s'adapte à différents besoins. "
 "Une multitude de possibilités s'ouvrent avec quelques ajustements de "
-"couleurs et de typographie. Sample est livré avec quelques variations de "
+"couleurs et de typographie. Simppple est livré avec quelques variations de "
 "style pour aider à la créativité du processus de construction du site, il "
 "est entièrement compatible avec l'éditeur de site, et tire parti des "
 "nouveaux outils de conception introduits dans WordPress 6.4."
@@ -49,20 +49,20 @@ msgid "https://wordpress.org"
 msgstr "https://wordpress.org"
 
 #: inc/patterns/categories-register.php:11
-msgid "Sample - Page Sections"
-msgstr "Sample - Sections de page"
+msgid "Simppple - Page Sections"
+msgstr "Simppple - Sections de page"
 
 #: inc/patterns/categories-register.php:18
-msgid "Sample - Page Templates"
-msgstr "Sample - Modèles de page"
+msgid "Simppple - Page Templates"
+msgstr "Simppple - Modèles de page"
 
 #: inc/patterns/categories-register.php:25
-msgid "Sample - Headers"
-msgstr "Sample - En-têtes"
+msgid "Simppple - Headers"
+msgstr "Simppple - En-têtes"
 
 #: inc/patterns/categories-register.php:32
-msgid "Sample - Footers"
-msgstr "Sample - Pieds de page"
+msgid "Simppple - Footers"
+msgstr "Simppple - Pieds de page"
 
 #: patterns/footer.php
 msgctxt "Pattern title"
@@ -70,17 +70,17 @@ msgid "Footer"
 msgstr "Pied de page"
 
 #: patterns/footer.php:36
-msgctxt "sample content"
+msgctxt "simple content"
 msgid "Your company"
 msgstr "Votre société"
 
 #: patterns/footer.php:36
-msgctxt "sample content"
+msgctxt "simple content"
 msgid "Terms and Conditions"
 msgstr "Conditions générales d'utilisation"
 
 #: patterns/footer.php:36
-msgctxt "sample content"
+msgctxt "simple content"
 msgid "Privacy Policy"
 msgstr "Politique de confidentialité"
 
@@ -100,8 +100,10 @@ msgid "Header top section"
 msgstr "Section supérieure de l'entête"
 
 #: patterns/header-top-section.php:17
+#: patterns/hidden-sample-paragraph-centered.php:10
+#: patterns/hidden-sample-paragraph.php:10
 msgid ""
-"This is a section of some sample filler text, also known as placeholder text."
+"This is a section of some simple filler text, also known as placeholder text."
 msgstr ""
 "Il s'agit d'une section de texte de remplissage, également connu sous le nom "
 "de \"texte de remplissage\"."
@@ -119,6 +121,11 @@ msgstr "Commentaires"
 msgctxt "Pattern title"
 msgid "No results"
 msgstr "Aucun résultat"
+
+#: patterns/hidden-no-results.php:9
+msgctxt "Message explaining that there are no results returned from a search"
+msgid "No posts were found."
+msgstr "Aucun article n'a été trouvé."
 
 #: patterns/hidden-post-navigation.php
 msgctxt "Pattern title"
@@ -142,20 +149,12 @@ msgctxt ""
 msgid "Next: "
 msgstr "Suivant : "
 
-#: patterns/hidden-sample-paragraph-centerd.php
+#: patterns/hidden-sample-paragraph-centered.php
 msgctxt "Pattern title"
-msgid "Sample paragraph centered"
+msgid "Simple paragraph centered"
 msgstr "Paragraphe d'exemple centré"
 
-#: patterns/hidden-sample-paragraph-centerd.php:10
-#: patterns/hidden-sample-paragraph.php:10
-msgid ""
-"This is a section of some simple filler text, also known as placeholder text."
-msgstr ""
-"Il s'agit d'une section de texte de remplissage, également connu sous le nom "
-"de \"texte de remplissage\"."
-
-#: patterns/hidden-sample-paragraph-centerd.php:10
+#: patterns/hidden-sample-paragraph-centered.php:10
 #: patterns/hidden-sample-paragraph.php:10
 msgid ""
 "It shares some characteristics of a real written text but is random or "
@@ -166,12 +165,12 @@ msgstr ""
 
 #: patterns/hidden-sample-paragraph.php
 msgctxt "Pattern title"
-msgid "Sample paragraph"
+msgid "Simple paragraph"
 msgstr "Paragraphe d'exemple"
 
 #: patterns/hidden-sample-title.php
 msgctxt "Pattern title"
-msgid "Sample title"
+msgid "Simple title"
 msgstr "Titre d'exemple"
 
 #: patterns/hidden-sample-title.php:10
@@ -202,6 +201,15 @@ msgid "It looks like nothing was found at this location. Maybe try searching?"
 msgstr ""
 "Il semble que rien n'ait été trouvé à cet endroit. Essayez peut-être de "
 "faire une recherche ?"
+
+#: patterns/page-404.php:41 patterns/search-modal.php:34
+#: patterns/search-modal.php:57
+msgid "Search"
+msgstr "Recherche"
+
+#: patterns/page-404.php:41
+msgid "Search a post, a page..."
+msgstr "Rechercher un article, une page..."
 
 #: patterns/page-404.php:47
 msgid "Or"
@@ -269,34 +277,25 @@ msgstr "Ouvrir la recherche"
 msgid "Close search"
 msgstr "Fermer la recherche"
 
-#: patterns/search-modal.php:34 patterns/search-modal.php:57
-msgid "Search"
-msgstr "Recherche"
-
 #: patterns/search-modal.php:47
 msgid "Menu"
 msgstr "Menu"
 
-#: blocks/core/block-table/js/grid.js:22 build/assets/front-tO0TzStX.js:3
+#: blocks/core/block-table/js/grid.js:22 build/assets/front-11-PhtWF.js:3
 msgid "Search..."
 msgstr "Rechercher…"
 
-#: build/assets/editor-pf4hWOzw.js:1
+#: build/assets/editor-a45D9bbP.js:1
 msgid "Group with a shadow"
 msgstr "Groupe avec une ombre"
 
-#: build/assets/editor-pf4hWOzw.js:1
+#: build/assets/editor-a45D9bbP.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr "Une variante du bloc groupe avec une ombre portée"
 
-#: build/assets/editor-pf4hWOzw.js:1
+#: build/assets/editor-a45D9bbP.js:1
 msgid "Table with pagination"
 msgstr "Tableau avec pagination"
-
-#~ msgctxt ""
-#~ "Message explaining that there are no results returned from a search"
-#~ msgid "No posts were found."
-#~ msgstr "Aucun article n'a été trouvé."
 
 #~ msgctxt "Prefix for the post author block: By author name"
 #~ msgid "by"

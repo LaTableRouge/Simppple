@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
-	"title": "Sample",
+	"title": "Simppple",
 	"version": 2,
 	"settings": {
 		"appearanceTools": true,

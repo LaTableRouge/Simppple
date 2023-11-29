@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Image/Image
- * Slug: sample/img-img
- * Categories: sample-sections
+ * Slug: simppple/img-img
+ * Categories: simppple-sections
  * Keywords: pictures in 2 columns
  */
 ?>
@@ -19,7 +19,7 @@
 			<!-- wp:image {"id":50,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"var(--wp--custom--border-radius-picture)"}}} -->
 				<figure class="wp-block-image size-large has-custom-border">
 					<img
-						src="<?php echo esc_url(get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
+						src="<?php echo esc_url(get_template_directory_uri() . SIMPPPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
 						alt=""
 						class="wp-image-50"
 						style="border-radius:var(--wp--custom--border-radius-picture);"
@@ -34,7 +34,7 @@
 			<!-- wp:image {"id":50,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"var(--wp--custom--border-radius-picture)"}}} -->
 			<figure class="wp-block-image size-large has-custom-border">
 				<img
-					src="<?php echo esc_url(get_template_directory_uri() . SAMPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
+					src="<?php echo esc_url(get_template_directory_uri() . SIMPPPLE_PICTURE_FOLDER . '/placeholder.webp'); ?>"
 					alt=""
 					class="wp-image-50"
 					style="border-radius:var(--wp--custom--border-radius-picture);"

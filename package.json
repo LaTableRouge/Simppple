@@ -1,5 +1,5 @@
 {
-	"name": "sample",
+	"name": "simppple",
 	"version": "1.0.0",
 	"description": "A simple basic gutenberg theme",
 	"main": "vite.config.mjs",
@@ -10,13 +10,12 @@
 		"blocks",
 		"patterns",
 		"theme",
-		"simple",
-		"sample"
+		"simppple"
 	],
 	"author": "MLNOP",
 	"license": "GPLv3 or later",
 	"repository": {
-		"url": "https://github.com/MLNOP/Sample"
+		"url": "https://github.com/MLNOP/Simppple"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",

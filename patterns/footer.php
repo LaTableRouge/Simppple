@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Footer
- * Slug: sample/footer
- * Categories: sample-site-footer
+ * Slug: simppple/footer
+ * Categories: simppple-site-footer
  * Keywords: footer
  * Block Types: core/template-part/footer
  */
@@ -33,7 +33,7 @@
 <!-- /wp:separator -->
 
 	<!-- wp:paragraph {"align":"center","style":{"spacing":{"margin":{"bottom":"0","top":"0"}}},"fontSize":"16"} -->
-	<p class="has-text-align-center has-16-font-size" style="margin-top:0;margin-bottom:0">&copy;<?php date('Y'); ?> <?php echo esc_html_x('Your company', 'sample content', 'sample'); ?> • <a href="#"><?php echo esc_html_x('Terms and Conditions', 'sample content', 'sample'); ?></a> • <a href="#"><?php echo esc_html_x('Privacy Policy', 'sample content', 'sample'); ?></a></p>
+	<p class="has-text-align-center has-16-font-size" style="margin-top:0;margin-bottom:0">&copy;<?php date('Y'); ?> <?php echo esc_html_x('Your company', 'simple content', 'simppple'); ?> • <a href="#"><?php echo esc_html_x('Terms and Conditions', 'simple content', 'simppple'); ?></a> • <a href="#"><?php echo esc_html_x('Privacy Policy', 'simple content', 'simppple'); ?></a></p>
 	<!-- /wp:paragraph -->
 </div>
 <!-- /wp:group -->

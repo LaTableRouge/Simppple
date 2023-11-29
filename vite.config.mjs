@@ -16,7 +16,7 @@ import { viteStaticCopy } from 'vite-plugin-static-copy'
  | Destination path
  |
  */
-const themeName = 'sample'
+const themeName = 'simppple'
 const assetsPath = 'assets'
 const distPath = 'build'
 
@@ -273,8 +273,8 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				resolve(__dirname, 'functions.php'),
 				[
 					{
-						from: /\bdefine\([ ]?'SIMPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
-						to: "define('SIMPLE_IS_VITE_DEVELOPMENT', false);"
+						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
+						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);"
 					}
 				]
 			)
@@ -283,8 +283,8 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				resolve(__dirname, 'functions.php'),
 				[
 					{
-						from: /\bdefine\([ ]?'SIMPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
-						to: "define('SIMPLE_IS_VITE_DEVELOPMENT', true);"
+						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
+						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', true);"
 					}
 				]
 			)

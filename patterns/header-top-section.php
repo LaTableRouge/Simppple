@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Header top section
- * Slug: sample/header-top-section
- * Categories: sample-site-header
+ * Slug: simppple/header-top-section
+ * Categories: simppple-site-header
  * Keywords: header, menu
  */
 
@@ -14,12 +14,12 @@
     style="background-color:var(--wp--preset--color--base);padding-top:var(--wp--preset--spacing--10);padding-right:0;padding-bottom:var(--wp--preset--spacing--10);padding-left:0"
 >
     <!-- wp:paragraph -->
-    <p><?php _e('This is a section of some sample filler text, also known as placeholder text.', 'sample'); ?></p>
+    <p><?php _e('This is a section of some simple filler text, also known as placeholder text.', 'simppple'); ?></p>
     <!-- /wp:paragraph -->
 
     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
     <div class="wp-block-group">
-        <!-- wp:pattern {"slug":"sample/search-modal"} /-->
+        <!-- wp:pattern {"slug":"simppple/search-modal"} /-->
     </div>
     <!-- /wp:group -->
 </div>

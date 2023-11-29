@@ -1,17 +1,17 @@
-# Sample Theme
+# Simppple Theme
 
 ![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.4-blue)
 ![Woocommerce Version](https://img.shields.io/badge/woocommerce-%3E%3D%208.0-purple)
 ![ACF Version](https://img.shields.io/badge/acf-%3E%3D%206.0-cyan)
 
-Sample is a Wordpress theme designed to be flexible, versatile and applicable to any website.
+Simppple is a Wordpress theme designed to be flexible, versatile and applicable to any website.
 Its collection of templates and patterns tailor to different needs.
 A multitude of possibilities open up with just a few adjustments to color and typography.
-Sample comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
 
 ## File Structure
 
-- 📂 **Sample**
+- 📂 **Simppple**
   - 📂 [assets](./assets/)
     - Contains assets that will be compiled (scss, js, fonts, img, etc...)
     - 📂 fonts
@@ -62,8 +62,8 @@ The list of development scripts is listed below:
 
 | NPM Command                | Action                                                                                                                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| npm run prod               | compiles `Sample` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                    |
-| npm run build              | lints, formats, and compiles `Sample` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.        |
+| npm run prod               | compiles `Simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
+| npm run build              | lints, formats, and compiles `Simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
 | npm run watch              | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
 | npm run watch:react-blocks | starts the compilation of React blocks, compiles and reloads static files (\*.scss, \*.js) on each change.                                           |
 | npm run build:react-blocks | compiles React blocks, the blocks are compiled in the **blocks/react/build/** directory of the theme.                                                |
@@ -101,7 +101,7 @@ Templates can be created and edited in the `templates/` ([see README](./template
 To generate the .pot file (from the theme's directory):
 
 ```bash
-wp i18n make-pot . lang/sample.pot --domain=sample --exclude=node_modules,vendor,lang --include=*.php,blocks,build
+wp i18n make-pot . lang/simppple.pot --domain=simppple --exclude=node_modules,vendor,lang --include=*.php,blocks,build
 ```
 
 To generate the translation json files for JS (from the theme's directory):

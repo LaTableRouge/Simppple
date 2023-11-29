@@ -2,28 +2,28 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Sample 0.0.1\n"
+"Project-Id-Version: Simppple 0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simple\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-11-28T10:03:40+00:00\n"
+"POT-Creation-Date: 2023-11-29T09:32:00+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
-"X-Domain: sample\n"
+"X-Domain: simppple\n"
 
 #. Theme Name of the theme
-msgid "Sample"
+msgid "Simppple"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "https://github.com/MLNOP/Sample/releases/latest/"
+msgid "https://github.com/MLNOP/Simppple/releases/latest/"
 msgstr ""
 
 #. Description of the theme
-msgid "Sample is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs. A multitude of possibilities open up with just a few adjustments to color and typography. Sample comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4."
+msgid "Simppple is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs. A multitude of possibilities open up with just a few adjustments to color and typography. Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4."
 msgstr ""
 
 #. Author of the theme
@@ -35,19 +35,19 @@ msgid "https://wordpress.org"
 msgstr ""
 
 #: inc/patterns/categories-register.php:11
-msgid "Sample - Page Sections"
+msgid "Simppple - Page Sections"
 msgstr ""
 
 #: inc/patterns/categories-register.php:18
-msgid "Sample - Page Templates"
+msgid "Simppple - Page Templates"
 msgstr ""
 
 #: inc/patterns/categories-register.php:25
-msgid "Sample - Headers"
+msgid "Simppple - Headers"
 msgstr ""
 
 #: inc/patterns/categories-register.php:32
-msgid "Sample - Footers"
+msgid "Simppple - Footers"
 msgstr ""
 
 #: patterns/footer.php
@@ -56,17 +56,17 @@ msgid "Footer"
 msgstr ""
 
 #: patterns/footer.php:36
-msgctxt "sample content"
+msgctxt "simple content"
 msgid "Your company"
 msgstr ""
 
 #: patterns/footer.php:36
-msgctxt "sample content"
+msgctxt "simple content"
 msgid "Terms and Conditions"
 msgstr ""
 
 #: patterns/footer.php:36
-msgctxt "sample content"
+msgctxt "simple content"
 msgid "Privacy Policy"
 msgstr ""
 
@@ -86,7 +86,9 @@ msgid "Header top section"
 msgstr ""
 
 #: patterns/header-top-section.php:17
-msgid "This is a section of some sample filler text, also known as placeholder text."
+#: patterns/hidden-sample-paragraph-centered.php:10
+#: patterns/hidden-sample-paragraph.php:10
+msgid "This is a section of some simple filler text, also known as placeholder text."
 msgstr ""
 
 #: patterns/hidden-comments.php
@@ -101,6 +103,11 @@ msgstr ""
 #: patterns/hidden-no-results.php
 msgctxt "Pattern title"
 msgid "No results"
+msgstr ""
+
+#: patterns/hidden-no-results.php:9
+msgctxt "Message explaining that there are no results returned from a search"
+msgid "No posts were found."
 msgstr ""
 
 #: patterns/hidden-post-navigation.php
@@ -123,29 +130,24 @@ msgctxt "Label before the title of the next post. There is a space after the col
 msgid "Next: "
 msgstr ""
 
-#: patterns/hidden-sample-paragraph-centerd.php
+#: patterns/hidden-sample-paragraph-centered.php
 msgctxt "Pattern title"
-msgid "Sample paragraph centered"
+msgid "Simple paragraph centered"
 msgstr ""
 
-#: patterns/hidden-sample-paragraph-centerd.php:10
-#: patterns/hidden-sample-paragraph.php:10
-msgid "This is a section of some simple filler text, also known as placeholder text."
-msgstr ""
-
-#: patterns/hidden-sample-paragraph-centerd.php:10
+#: patterns/hidden-sample-paragraph-centered.php:10
 #: patterns/hidden-sample-paragraph.php:10
 msgid "It shares some characteristics of a real written text but is random or otherwise generated."
 msgstr ""
 
 #: patterns/hidden-sample-paragraph.php
 msgctxt "Pattern title"
-msgid "Sample paragraph"
+msgid "Simple paragraph"
 msgstr ""
 
 #: patterns/hidden-sample-title.php
 msgctxt "Pattern title"
-msgid "Sample title"
+msgid "Simple title"
 msgstr ""
 
 #: patterns/hidden-sample-title.php:10
@@ -173,6 +175,16 @@ msgstr ""
 
 #: patterns/page-404.php:38
 msgid "It looks like nothing was found at this location. Maybe try searching?"
+msgstr ""
+
+#: patterns/page-404.php:41
+#: patterns/search-modal.php:34
+#: patterns/search-modal.php:57
+msgid "Search"
+msgstr ""
+
+#: patterns/page-404.php:41
+msgid "Search a post, a page..."
 msgstr ""
 
 #: patterns/page-404.php:47
@@ -245,28 +257,23 @@ msgstr ""
 msgid "Close search"
 msgstr ""
 
-#: patterns/search-modal.php:34
-#: patterns/search-modal.php:57
-msgid "Search"
-msgstr ""
-
 #: patterns/search-modal.php:47
 msgid "Menu"
 msgstr ""
 
 #: blocks/core/block-table/js/grid.js:22
-#: build/assets/front-tO0TzStX.js:3
+#: build/assets/front-11-PhtWF.js:3
 msgid "Search..."
 msgstr ""
 
-#: build/assets/editor-pf4hWOzw.js:1
+#: build/assets/editor-a45D9bbP.js:1
 msgid "Group with a shadow"
 msgstr ""
 
-#: build/assets/editor-pf4hWOzw.js:1
+#: build/assets/editor-a45D9bbP.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr ""
 
-#: build/assets/editor-pf4hWOzw.js:1
+#: build/assets/editor-a45D9bbP.js:1
 msgid "Table with pagination"
 msgstr ""

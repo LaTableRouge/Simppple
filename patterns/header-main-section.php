@@ -1,8 +1,8 @@
 <?php
 /**
  * Title: Header main section
- * Slug: sample/header-main-section
- * Categories: sample-site-header
+ * Slug: simppple/header-main-section
+ * Categories: simppple-site-header
  * Keywords: header, menu
  */
 

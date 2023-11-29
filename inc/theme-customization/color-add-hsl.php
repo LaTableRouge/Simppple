@@ -5,7 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 // https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
-function sample_add_HSL_values_to_CSS_variables($themeJSON) {
+function simppple_add_HSL_values_to_CSS_variables($themeJSON) {
     // Only do this in the front-end
     // if (!is_admin()) {
     $data = $themeJSON->get_data();
@@ -96,4 +96,4 @@ function sample_add_HSL_values_to_CSS_variables($themeJSON) {
 
     return $themeJSON;
 }
-add_filter('wp_theme_json_data_theme', 'sample_add_HSL_values_to_CSS_variables');
+add_filter('wp_theme_json_data_theme', 'simppple_add_HSL_values_to_CSS_variables');
