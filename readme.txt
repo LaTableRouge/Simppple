@@ -38,6 +38,6 @@ GNU General Public License for more details.
 
 === Images ===
 
-placeholder.webp - https://unsplash.com/fr/photos/tre-uccelli-bianchi-su-una-superficie-di-cemento-marrone-sotto-nuvole-bianche-e-cielo-blu-durante-il-giorno-9cKVKzUJ6o0
+placeholder.webp - https://openverse.org/fr/image/0ccac011-406b-4b27-896d-f87a8177be99?q=seagulls
 404.webp - https://thenounproject.com/icon/seagull-217946/
 block-icon.svg - https://thenounproject.com/icon/seagull-217076/
