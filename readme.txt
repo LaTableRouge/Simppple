@@ -39,5 +39,6 @@ GNU General Public License for more details.
 === Images ===
 
 placeholder.webp - https://openverse.org/fr/image/0ccac011-406b-4b27-896d-f87a8177be99?q=seagulls
+screenshot.jpg - https://openverse.org/fr/image/0ccac011-406b-4b27-896d-f87a8177be99?q=seagulls
 404.webp - https://thenounproject.com/icon/seagull-217946/
 block-icon.svg - https://thenounproject.com/icon/seagull-217076/
