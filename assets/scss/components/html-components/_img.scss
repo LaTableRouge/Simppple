@@ -1,0 +1,37 @@
+img:not([class*='wp-']) {
+	width: 100%;
+	height: auto;
+}
+
+.picture-not-found {
+	display: block;
+	position: relative;
+
+	&::before {
+		// Only work if
+		// - Picture is 404
+		// - Picture has an alt attribute
+		display: grid;
+		position: absolute;
+		z-index: 1;
+		place-items: center;
+		padding: 10px;
+		opacity: 0.4;
+		background-image: url('#{$pictures-path}/placeholder.webp');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		text-align: center;
+		inset: 0;
+	}
+}
+
+.picture-empty-wrapper {
+	&:empty {
+		opacity: 0.4;
+		background-image: url('#{$pictures-path}/placeholder.webp');
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+}

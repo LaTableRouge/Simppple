@@ -1,0 +1,18 @@
+body.search-results {
+	main {
+		container-type: inline-size;
+		container-name: page-search-results;
+
+		& > .wp-block-query {
+			.wp-block-columns {
+				.wp-block-column {
+					&:has(.wp-block-post-featured-image) {
+						@include container-breakpoint-down(page-search-results, sm) {
+							order: -1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
