@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Simple title
- * Slug: simppple/hidden-simppple-title
+ * Title: Sample title
+ * Slug: simppple/hidden-sample-title
  * Inserter: no
  */
 ?>

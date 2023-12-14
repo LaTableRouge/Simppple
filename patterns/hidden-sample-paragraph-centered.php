@@ -1,7 +1,7 @@
 <?php
 /**
- * Title: Simple paragraph centered
- * Slug: simppple/hidden-simppple-paragraph-centered
+ * Title: Sample paragraph centered
+ * Slug: simppple/hidden-sample-paragraph-centered
  * Inserter: no
  */
 ?>

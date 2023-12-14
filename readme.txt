@@ -1,9 +1,9 @@
 === Simppple ===
-Contributors: MLNOP
+Contributors: LaTableRouge
 Requires at least: 6.4
 Tested up to: 6.4
 Requires PHP: 8.0
-Stable tag: 0.0.1
+Stable tag: 0.0.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -39,6 +39,5 @@ GNU General Public License for more details.
 === Images ===
 
 placeholder.webp - https://openverse.org/fr/image/0ccac011-406b-4b27-896d-f87a8177be99?q=seagulls
-screenshot.jpg - https://openverse.org/fr/image/0ccac011-406b-4b27-896d-f87a8177be99?q=seagulls
 404.webp - https://thenounproject.com/icon/seagull-217946/
 block-icon.svg - https://thenounproject.com/icon/seagull-217076/

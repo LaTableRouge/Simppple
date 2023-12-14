@@ -71,10 +71,10 @@
 
 		<!-- wp:column {"verticalAlignment":"center"} -->
 		<div class="wp-block-column is-vertically-aligned-center">
-			<!-- wp:pattern {"slug":"simppple/hidden-simppple-title"} /-->
+			<!-- wp:pattern {"slug":"simppple/hidden-sample-title"} /-->
 
-			<!-- wp:pattern {"slug":"simppple/hidden-simppple-paragraph"} /-->
-			<!-- wp:pattern {"slug":"simppple/hidden-simppple-paragraph"} /-->
+			<!-- wp:pattern {"slug":"simppple/hidden-sample-paragraph"} /-->
+			<!-- wp:pattern {"slug":"simppple/hidden-sample-paragraph"} /-->
 		</div>
 		<!-- /wp:column -->
 	</div>
