@@ -7,6 +7,10 @@ import { run } from 'vite-plugin-run'
 import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+const chore = process.env.npm_config_chore
+const actualVersion = process.env.npm_package_version
+const newVersion = process.env.npm_config_newversion
+
 /*
  |--------------------------------------------------------------------------
  | Global config
@@ -166,20 +170,64 @@ const beautifyObject = {
  |  ]
  |
  */
-const filesToEdit = [
-	{
-		filePath: [
-			resolve(__dirname, 'inc/'),
-			resolve(__dirname, 'functions.php')
-		],
-		replace: [
-			{
-				from: /\bvar_dump\(([^)]+)\);/g,
-				to: ''
-			}
-		]
+const filesToEdit = []
+if (chore === 'version') {
+	if (actualVersion && newVersion) {
+		const isGreaterThanOldVersion = newVersion.localeCompare(actualVersion, undefined, { numeric: true, sensitivity: 'base' })
+		if (isGreaterThanOldVersion === 1) {
+			filesToEdit.push(
+				{
+					filePath: [
+						resolve(__dirname, 'package.json'),
+						resolve(__dirname, 'update/info.json'),
+						resolve(__dirname, 'style.css')
+					],
+					replace: [
+						{
+							from: /"version":\s?"[0-9]+.[0-9]+.[0-9]+"/g,
+							to: `"version": "${newVersion}"`
+						},
+						{
+							from: /Version:\s?[0-9]+.[0-9]+.[0-9]+/g,
+							to: `Version: ${newVersion}`
+						},
+						{
+							from: /Stable tag:\s?[0-9]+.[0-9]+.[0-9]+/g,
+							to: `Stable tag: ${newVersion}`
+						},
+						{
+							from: /\/commits\/[0-9]+.[0-9]+.[0-9]+/g,
+							to: `/commits/${newVersion}`
+						},
+						{
+							from: /\/download\/[0-9]+.[0-9]+.[0-9]+/g,
+							to: `/download/${newVersion}`
+						}
+					]
+				}
+			)
+		} else {
+			console.warn('The new version is not greater than the old one')
+		}
+	} else {
+		console.warn('No version number specified please add a --newversion=x.x.x to your command line')
 	}
-]
+} else if (chore === 'all') {
+	filesToEdit.push(
+		{
+			filePath: [
+				resolve(__dirname, 'inc/'),
+				resolve(__dirname, 'functions.php')
+			],
+			replace: [
+				{
+					from: /\bvar_dump\(([^)]+)\);/g,
+					to: ''
+				}
+			]
+		}
+	)
+}
 
 /*
  |--------------------------------------------------------------------------
@@ -212,9 +260,6 @@ const filesToCopy = [
 
 export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => {
 	const isProduction = command === 'build'
-
-	const env = loadEnv(mode, process.cwd(), '')
-	const chore = env?.npm_config_chore
 
 	const entriesToCompile = []
 	if (entryFiles.length) {
@@ -324,13 +369,11 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				...sassGlobImports(),
 				enforce: 'pre',
 			},
-			chore === 'all'
-				? {
-					...viteStringReplace(filesToEdit),
-					apply: 'build',
-					enforce: 'pre',
-				}
-				: false,
+			{
+				...viteStringReplace(filesToEdit),
+				apply: 'build',
+				enforce: 'pre',
+			},
 			{
 				...run({
 					silent: false,
