@@ -6,8 +6,6 @@ if (!defined('ABSPATH')) {
 
 define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);
 
-define('SIMPPPLE_PICTURE_FOLDER', defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT ? '/assets/img' : '/build/assets/img');
-
 /*
  * ================================
  *  THEME FUNCTIONS
@@ -27,13 +25,6 @@ require get_template_directory() . '/inc/theme-customization/wp_customization.ph
 require get_template_directory() . '/inc/theme-customization/theme-remove-default-settings.php';
 require get_template_directory() . '/inc/theme-customization/color-add-rgb.php';
 require get_template_directory() . '/inc/theme-customization/color-add-hsl.php';
-
-// Blocks
-require get_template_directory() . '/inc/blocks/acf/blocks-helpers.php';
-require get_template_directory() . '/inc/blocks/acf/categories-register.php';
-require get_template_directory() . '/inc/blocks/acf/blocks-register.php';
-
-require get_template_directory() . '/inc/blocks/react/blocks-register.php';
 
 // Patterns
 require get_template_directory() . '/inc/patterns/categories-register.php';

@@ -243,7 +243,7 @@ fabric.properties
 /node_modules
 /vendor
 .php-cs-fixer.cache
-/build
-/blocks/react/build
+build/
+blocks/react/build/
 *.zip
 vite.config.mjs.timestamp-*

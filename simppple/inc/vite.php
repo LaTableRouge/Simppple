@@ -9,7 +9,7 @@ define('SIMPPPLE_DIST_FOLDER', 'build');
 define('SIMPPPLE_DIST_URI', get_template_directory_uri() . '/' . SIMPPPLE_DIST_FOLDER);
 define('SIMPPPLE_DIST_PATH', get_template_directory() . '/' . SIMPPPLE_DIST_FOLDER);
 
-function simppple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
+function simppplechild_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     $returnedArray = [];
 
     $fileName = basename($fileThemePath);
@@ -32,7 +32,7 @@ function simppple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
             if ($fileKey && isset($manifest[$fileKey])) {
                 $returnedArray = [
                     'path' => SIMPPPLE_DIST_URI . "/{$manifest[$fileKey]['file']}",
-                    'slug' => "simppple_vite_{$fileNameWithoutExtension}_{$assetType}"
+                    'slug' => "simppplechild_vite_{$fileNameWithoutExtension}_{$assetType}"
                 ];
 
                 // In case of scss files included in Javascript
@@ -44,7 +44,7 @@ function simppple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
 
                         $returnedArray['css'][] = [
                             'path' => SIMPPPLE_DIST_URI . "/{$stylePath}",
-                            'slug' => "simppple_vite_{$styleFileWithoutVersionning}_style"
+                            'slug' => "simppplechild_vite_{$styleFileWithoutVersionning}_style"
                         ];
                     }
                 }
@@ -55,7 +55,7 @@ function simppple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
     return $returnedArray;
 }
 
-function simppple_vite_enqueue_dev_dependencies() {
+function simppplechild_vite_enqueue_dev_dependencies() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('wp-i18n');
     wp_enqueue_script('wp-blocks');
@@ -66,13 +66,13 @@ function simppple_vite_enqueue_dev_dependencies() {
                 rest_nonce: '" . wp_create_nonce('wp_rest') . "',
                 template_directory: '" . get_template_directory_uri() . "',
                 plugins_directory: '" . plugins_url() . "',
-                pictures_directory: '" . get_template_directory_uri() . SIMPPPLE_PICTURE_FOLDER . "',
+                pictures_directory: '" . get_template_directory_uri() . '/build/assets/img' . "',
                 posts_per_page: '" . get_option('posts_per_page') . "'
             }
         </script>";
 }
 
-function simppple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
+function simppplechild_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = false) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -97,7 +97,7 @@ function simppple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = fals
         /*
         * ================================ Call assets with WP hooks
         */
-        $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'style');
+        $manifestFileInfos = simppplechild_vite_fetch_asset_from_manifest($fileThemePath, 'style');
         if (!empty($manifestFileInfos)) {
             $filePath = $manifestFileInfos['path'];
             $fileSlug = $manifestFileInfos['slug'];
@@ -118,7 +118,7 @@ function simppple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = fals
     }
 }
 
-function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
+function simppplechild_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -136,8 +136,8 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
         $themePath = get_template_directory_uri();
         $themePath = parse_url($themePath, PHP_URL_PATH);
 
-        remove_action($hookDev, 'simppple_vite_enqueue_dev_dependencies');
-        add_action($hookDev, 'simppple_vite_enqueue_dev_dependencies');
+        remove_action($hookDev, 'simppplechild_vite_enqueue_dev_dependencies');
+        add_action($hookDev, 'simppplechild_vite_enqueue_dev_dependencies');
         add_action($hookDev, function () use ($themePath, $fileThemePath) {
             echo '<script type="module" crossorigin src="' . SIMPPPLE_VITE_SERVER . $themePath . $fileThemePath . '"></script>';
         });
@@ -145,7 +145,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
         /*
         * ================================ Call assets with WP hooks
         */
-        $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
+        $manifestFileInfos = simppplechild_vite_fetch_asset_from_manifest($fileThemePath, 'script');
         if (!empty($manifestFileInfos)) {
             if (isset($manifestFileInfos['css'])) {
                 foreach ($manifestFileInfos['css'] as $style) {
@@ -198,7 +198,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                             'rest_nonce' => wp_create_nonce('wp_rest'),
                             'template_directory' => get_template_directory_uri(),
                             'plugins_directory' => plugins_url(),
-                            'pictures_directory' => get_template_directory_uri() . SIMPPPLE_PICTURE_FOLDER,
+                            'pictures_directory' => get_template_directory_uri() . '/build/assets/img',
                             'posts_per_page' => get_option('posts_per_page'),
                         ]
                     );
@@ -211,11 +211,11 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
     }
 }
 
-function simppple_vite_enqueue_style_editor($fileThemePath, $hook) {
+function simppplechild_vite_enqueue_style_editor($fileThemePath, $hook) {
     /*
     * ================================ Call assets with WP hooks
     */
-    $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
+    $manifestFileInfos = simppplechild_vite_fetch_asset_from_manifest($fileThemePath, 'script');
     if (!empty($manifestFileInfos)) {
         $filePath = $manifestFileInfos['path'];
 
