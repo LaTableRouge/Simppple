@@ -1,13 +1,18 @@
 # Simppple Theme
 
 ![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.4-blue)
-![Woocommerce Version](https://img.shields.io/badge/woocommerce-%3E%3D%208.0-purple)
-![ACF Version](https://img.shields.io/badge/acf-%3E%3D%206.0-cyan)
+![Node](https://img.shields.io/badge/node-%3E%3D%2018-brightgreen)
+![PHP](https://img.shields.io/badge/php-%5E8.0-blue)
 
 Simppple is a Wordpress theme designed to be flexible, versatile and applicable to any website.
 Its collection of templates and patterns tailor to different needs.
 A multitude of possibilities open up with just a few adjustments to color and typography.
 Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+
+
+**This parent theme is not meant to be modified inside a Wordpress project.** If you want to add new acf/react blocks or patterns please put it inside the child theme folder ([Child theme template](https://github.com/LaTableRouge/Simppple-child)).
+<br>
+**This parent theme will have it's own updates** (maybe once a year idk 🤷‍♀️).
 
 ## File Structure
 
@@ -62,8 +67,8 @@ The list of development scripts is listed below:
 
 | NPM Command                | Action                                                                                                                                               |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| npm run prod               | compiles `Simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
-| npm run build              | lints, formats, and compiles `Simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
+| npm run prod               | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
+| npm run build              | lints, formats, and compiles `simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
 | npm run watch              | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
 | npm run watch:react-blocks | starts the compilation of React blocks, compiles and reloads static files (\*.scss, \*.js) on each change.                                           |
 | npm run build:react-blocks | compiles React blocks, the blocks are compiled in the **blocks/react/build/** directory of the theme.                                                |
@@ -77,11 +82,11 @@ Gutenberg's native editor blocks can be overridden by creating files in the `blo
 Woocommerce's native Gutenberg blocks can be overridden by creating files in the `blocks/woocommerce/` ([see README](./blocks/woocommerce/README.md)) directory of your theme.
 
 ### Creating ACF Blocks
-
-ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/acf/` ([see README](./blocks/acf/README.md)) directory of your theme.
+TODO : redirect to child theme
+- ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/acf/` ([see README](./blocks/acf/README.md)) directory of your theme.
 
 ### Creating REACT Blocks
-
+TODO : redirect to child theme
 React blocks should be created and edited in the `blocks/react/src/` ([see README](./blocks/react/src/README.md)) directory of your theme.
 
 ### Creating Patterns
