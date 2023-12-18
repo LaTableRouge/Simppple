@@ -22,15 +22,11 @@ Simppple comes with some style variations to help the creativity of the site bui
   - 📂 build
     - Contains all the compiled assets (css, js, fonts, img, etc...)
   - 📂 blocks
-    - 📂 [acf](./blocks/acf/README.md)
-    - 📂 [react](./blocks/react/README.md)
     - 📂 [core](./blocks/core/README.md)
     - 📂 [woocommerce](./blocks/woocommerce/README.md)
   - 📂 [patterns](./patterns/README.md)
   - 📂 [inc](./inc/)
     - Contains PHP files that are used to customize the theme & assist in theme development
-    - 📂 blocks
-      - Everything related to custom blocks (category creation, register, etc...)
     - 📂 pattern
       - Everything related to custom patterns (category creation, etc...)
     - 📂 theme-customization
@@ -117,13 +113,14 @@ wp i18n make-json lang/ --no-purge
 ### Creating Child Themes
 
 - [Quick Article](https://fullsiteediting.com/lessons/child-themes/#h-what-type-of-child-themes-can-i-create)
+- Use the designated child theme [Simppple-child](https://github.com/Simppple-child/)
 
 ## Roadmap
 
 - [x] Prefix functions
-- [ ] Automatic release
-- [ ] Automatic updates
-- [ ] Translations (English)
+- [x] Automatic release
+- [x] Automatic updates
+- [x] Translations (English)
 - [ ] Woocommerce compatibility
 
 ## Additional Resources

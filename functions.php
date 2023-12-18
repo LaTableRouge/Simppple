@@ -27,12 +27,5 @@ require get_template_directory() . '/inc/theme-customization/theme-remove-defaul
 require get_template_directory() . '/inc/theme-customization/color-add-rgb.php';
 require get_template_directory() . '/inc/theme-customization/color-add-hsl.php';
 
-// Blocks
-require get_template_directory() . '/inc/blocks/acf/blocks-helpers.php';
-require get_template_directory() . '/inc/blocks/acf/categories-register.php';
-require get_template_directory() . '/inc/blocks/acf/blocks-register.php';
-
-require get_template_directory() . '/inc/blocks/react/blocks-register.php';
-
 // Patterns
 require get_template_directory() . '/inc/patterns/categories-register.php';
