@@ -7,7 +7,6 @@ import { run } from 'vite-plugin-run'
 import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
-const themeName = process.env.npm_config_theme ?? 'simppple'
 /*
  |--------------------------------------------------------------------------
  | Global config
@@ -17,8 +16,9 @@ const themeName = process.env.npm_config_theme ?? 'simppple'
  | Destination path
  |
  */
-const assetsPath = `${themeName}/assets`
-const distPath = `${themeName}/build`
+const themeName = 'simppple'
+const assetsPath = 'assets'
+const distPath = 'build'
 
 /*
  |--------------------------------------------------------------------------
@@ -91,61 +91,61 @@ const beautifyObject = {
 		config: 'npx eslint --no-error-on-unmatched-pattern --fix',
 		files: [
 			...Array.from(new Set(entryFiles.flatMap(element => element.scripts.flatMap(script => script.input)))),
-			`${themeName}/blocks/react/src`,
-			`${themeName}/blocks/acf`,
-			`${themeName}/blocks/core`,
-			`${themeName}/blocks/woocommerce`,
-			`${themeName}/parts`,
-			`${themeName}/patterns`,
-			`${themeName}/templates`
+			'blocks/react/src',
+			'blocks/acf',
+			'blocks/core',
+			'blocks/woocommerce',
+			'parts',
+			'patterns',
+			'templates'
 		]
 	},
 	js_prettier: {
 		config: 'npx prettier --no-error-on-unmatched-pattern --write',
 		files: [
 			...Array.from(new Set(entryFiles.flatMap(element => element.scripts.flatMap(script => script.input)))),
-			`${themeName}/blocks/react/src`,
-			`${themeName}/blocks/acf`,
-			`${themeName}/blocks/core`,
-			`${themeName}/blocks/woocommerce`,
-			`${themeName}/parts`,
-			`${themeName}/patterns`,
-			`${themeName}/templates`
+			'blocks/react/src',
+			'blocks/acf',
+			'blocks/core',
+			'blocks/woocommerce',
+			'parts',
+			'patterns',
+			'templates'
 		]
 	},
 	scss_lint: {
 		config: 'npx stylelint --allow-empty-input --fix',
 		files: [
 			...Array.from(new Set(entryFiles.flatMap(element => element.styles.flatMap(style => style.input)))),
-			`${themeName}/blocks/react/src`,
-			`${themeName}/blocks/acf`,
-			`${themeName}/blocks/core`,
-			`${themeName}/blocks/woocommerce`,
-			`${themeName}/parts`,
-			`${themeName}/patterns`,
-			`${themeName}/templates`
+			'blocks/react/src',
+			'blocks/acf',
+			'blocks/core',
+			'blocks/woocommerce',
+			'parts',
+			'patterns',
+			'templates'
 		]
 	},
 	scss_prettier: {
 		config: 'npx prettier --no-error-on-unmatched-pattern --write',
 		files: [
 			...Array.from(new Set(entryFiles.flatMap(element => element.styles.flatMap(style => style.input)))),
-			`${themeName}/blocks/react/src`,
-			`${themeName}/blocks/acf`,
-			`${themeName}/blocks/core`,
-			`${themeName}/blocks/woocommerce`,
-			`${themeName}/parts`,
-			`${themeName}/patterns`,
-			`${themeName}/templates`
+			'blocks/react/src',
+			'blocks/acf',
+			'blocks/core',
+			'blocks/woocommerce',
+			'parts',
+			'patterns',
+			'templates'
 		]
 	},
 	php_lint: {
 		config: `${resolve(__dirname, 'vendor/bin/php-cs-fixer.bat')} fix -v --show-progress=dots --using-cache=no --config=${resolve(__dirname, '.php-cs-fixer.php')}`,
 		files: [
-			`${themeName}/inc`,
-			`${themeName}/functions.php`,
-			`${themeName}/patterns`,
-			`${themeName}/blocks`
+			'inc',
+			'functions.php',
+			'patterns',
+			'blocks'
 		]
 	}
 }
@@ -169,8 +169,8 @@ const beautifyObject = {
 const filesToEdit = [
 	{
 		filePath: [
-			resolve(__dirname, `${themeName}/inc/`),
-			resolve(__dirname, `${themeName}/functions.php`)
+			resolve(__dirname, 'inc/'),
+			resolve(__dirname, 'functions.php')
 		],
 		replace: [
 			{
@@ -270,21 +270,21 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 	if (chore !== 'ci') {
 		if (isProduction) {
 			await stringReplaceOpenAndWrite(
-				resolve(__dirname, `${themeName}/functions.php`),
+				resolve(__dirname, 'functions.php'),
 				[
 					{
-						from: /\bdefine\([ ]?'SIMPPPLECHILD_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
-						to: "define('SIMPPPLECHILD_IS_VITE_DEVELOPMENT', false);"
+						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
+						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);"
 					}
 				]
 			)
 		} else {
 			await stringReplaceOpenAndWrite(
-				resolve(__dirname, `${themeName}/functions.php`),
+				resolve(__dirname, 'functions.php'),
 				[
 					{
-						from: /\bdefine\([ ]?'SIMPPPLECHILD_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
-						to: "define('SIMPPPLECHILD_IS_VITE_DEVELOPMENT', true);"
+						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
+						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', true);"
 					}
 				]
 			)
