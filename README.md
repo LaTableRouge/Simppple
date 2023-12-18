@@ -113,7 +113,7 @@ wp i18n make-json lang/ --no-purge
 ### Creating Child Themes
 
 - [Quick Article](https://fullsiteediting.com/lessons/child-themes/#h-what-type-of-child-themes-can-i-create)
-- Use the designated child theme [Simppple-child](https://github.com/Simppple-child/)
+- Use the designated child theme [Simppple-child](https://github.com/LaTableRouge/Simppple-child)
 
 ## Roadmap
 
