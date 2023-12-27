@@ -1,0 +1,10 @@
+.wp-block-button {
+	&.is-style-outline {
+		.wp-element-button {
+			&:hover,
+			&:focus {
+				background-color: hsla(var(--wp--custom--accent-hsl), 0.2);
+			}
+		}
+	}
+}

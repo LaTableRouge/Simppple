@@ -1,0 +1,11 @@
+.wp-block-quote {
+	&::after {
+		z-index: 0;
+		bottom: initial;
+		left: initial;
+	}
+
+	& > * {
+		z-index: 1;
+	}
+}

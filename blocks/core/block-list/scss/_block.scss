@@ -1,0 +1,15 @@
+.wp-block-list {
+	li {
+		&::marker {
+			color: var(--wp--preset--color--accent);
+		}
+	}
+}
+
+ol.wp-block-list {
+	li {
+		&::marker {
+			font-weight: bold;
+		}
+	}
+}
