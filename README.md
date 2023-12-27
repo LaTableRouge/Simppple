@@ -45,7 +45,7 @@ If you download the theme via [Github](https://github.com/LaTableRouge/Simppple/
     - Contains translation files specific to the theme
   - 📂 [parts](./parts/README.md)
     - Theme template parts (Header, Footer, etc...)
-  - 📂 styles
+  - 📂 [styles](./styles/)
     - All the style variations of the theme
   - 📂 [templates](./templates/README.md)
     - Pages templates of the theme (404, archive, single, product, etc...)
@@ -75,36 +75,34 @@ The list of development scripts is listed below:
 | npm run prod               | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
 | npm run build              | lints, formats, and compiles `simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
 | npm run watch              | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
-| npm run watch:react-blocks | starts the compilation of React blocks, compiles and reloads static files (\*.scss, \*.js) on each change.                                           |
-| npm run build:react-blocks | compiles React blocks, the blocks are compiled in the **blocks/react/build/** directory of the theme.                                                |
 
 ### Overriding Gutenberg Native Blocks
 
-Gutenberg's native editor blocks can be overridden by creating files in the `blocks/core/` ([see README](./blocks/core/README.md)) directory of your theme.
+Gutenberg's native editor blocks can be overridden by creating files in the `blocks/core/` ([see README](./blocks/core/README.md)) directory of the theme.
 
 ### Overriding Woocommerce Native Blocks
 
-Woocommerce's native Gutenberg blocks can be overridden by creating files in the `blocks/woocommerce/` ([see README](./blocks/woocommerce/README.md)) directory of your theme.
+Woocommerce's native Gutenberg blocks can be overridden by creating files in the `blocks/woocommerce/` ([see README](./blocks/woocommerce/README.md)) directory of the theme.
 
 ### Creating ACF Blocks
-TODO : redirect to child theme
-- ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/acf/` ([see README](./blocks/acf/README.md)) directory of your theme.
+
+- ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/acf/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/acf/README.md)).
 
 ### Creating REACT Blocks
-TODO : redirect to child theme
-React blocks should be created and edited in the `blocks/react/src/` ([see README](./blocks/react/src/README.md)) directory of your theme.
+
+React blocks should be created and edited in the `blocks/react/src/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/react/src/README.md)).
 
 ### Creating Patterns
 
-Patterns can be created and edited in the `patterns/` ([see README](./patterns/README.md)) directory of your theme.
+Patterns can be created and edited in the `patterns/` ([see README](./patterns/README.md)) directory of the theme.
 
 ### Creating Parts
 
-Parts can be created and edited in the `parts/` ([see README](./parts/README.md)) directory of your theme.
+Parts can be created and edited in the `parts/` ([see README](./parts/README.md)) directory of the theme.
 
 ### Creating Templates
 
-Templates can be created and edited in the `templates/` ([see README](./templates/README.md)) directory of your theme.
+Templates can be created and edited in the `templates/` ([see README](./templates/README.md)) directory of the theme.
 
 ### Translation
 
