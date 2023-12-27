@@ -12,7 +12,12 @@ Simppple comes with some style variations to help the creativity of the site bui
 
 **This parent theme is not meant to be modified inside a Wordpress project.** If you want to add new acf/react blocks or patterns please put it inside the child theme folder ([Child theme template](https://github.com/LaTableRouge/Simppple-child)).
 <br>
+<br>
 **This parent theme will have it's own updates** (maybe once a year idk 🤷‍♀️).
+<br>
+If you download the theme via [Wordpress.org](https://wordpress.org/themes/simppple/), you'll have the updates through the Wordpress system.
+<br>
+If you download the theme via [Github](https://github.com/LaTableRouge/Simppple/releases/latest/), you'll have the updates through the Github releases.
 
 ## File Structure
 

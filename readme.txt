@@ -3,7 +3,7 @@ Contributors: LaTableRouge
 Requires at least: 6.4
 Tested up to: 6.4
 Requires PHP: 8.0
-Stable tag: 0.0.3
+Stable tag: 0.0.5
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -16,6 +16,11 @@ Simppple comes with some style variations to help the creativity of the site bui
 
 == Changelog ==
 
+= 0.0.5 =
+* Released: December 27, 2023
+
+https://github.com/MLNOP/Simppple/releases/tag/0.0.5
+
 = 0.0.1 =
 * Released: November 28, 2023
 
@@ -23,7 +28,7 @@ https://github.com/MLNOP/Simppple/releases/tag/0.0.1
 
 == Copyright ==
 
-Simppple WordPress Theme, (C) 2023 WordPress.org
+Simppple WordPress Theme, (C) 2023 LaTableRouge
 Simppple is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
