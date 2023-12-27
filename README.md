@@ -130,6 +130,7 @@ wp i18n make-json lang/ --no-purge
 - [x] Automatic updates
 - [x] Translations (English)
 - [ ] Woocommerce compatibility
+- [ ] Automatic pot/po/mo json translation files
 
 ## Additional Resources
 
