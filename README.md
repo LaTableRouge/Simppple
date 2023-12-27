@@ -86,7 +86,7 @@ Woocommerce's native Gutenberg blocks can be overridden by creating files in the
 
 ### Creating ACF Blocks
 
-- ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/acf/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/acf/README.md)).
+ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/acf/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/acf/README.md)).
 
 ### Creating REACT Blocks
 
