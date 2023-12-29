@@ -60,7 +60,7 @@ function simppple_vite_enqueue_dev_dependencies() {
     wp_enqueue_script('wp-i18n');
     wp_enqueue_script('wp-blocks');
     echo "<script>
-            const wpparams = {
+            var wpparams = {
                 ajax_url: '" . admin_url('admin-ajax.php') . "',
                 rest_url: '" . esc_url_raw(get_rest_url(null, '/wp/v2')) . "',
                 rest_nonce: '" . wp_create_nonce('wp_rest') . "',

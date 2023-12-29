@@ -1,5 +1,3 @@
-import { variables } from './variables'
-
 /*
  * Add scrollbar size to root element
  * */
@@ -18,10 +16,6 @@ export const putScrollbarSizeInCSSVariables = () => {
 	setTimeout(() => {
 		document.documentElement.style.setProperty('--scrollbarsize', `${window.innerWidth - document.documentElement.clientWidth}px`)
 	}, 0)
-}
-
-export const minWidth = (value) => {
-	return window.matchMedia(`(min-width: ${variables.breakpoints[value]})`).matches
 }
 
 export const removeElement = (element) => {

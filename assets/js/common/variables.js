@@ -8,5 +8,4 @@ variables.restNonce = wpparams.rest_nonce // Mandatory pour l'utilisation de l'A
 variables.postsPerPage = wpparams.posts_per_page
 variables.breakpoints = {} // Object that will contain the breakpoints
 
-export const $ = jQuery.noConflict() // Jquery passed in the register script
 export const { __ } = wp.i18n // Translate lib passed in the register script

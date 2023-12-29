@@ -2,9 +2,7 @@ import 'gridjs/dist/theme/mermaid.css'
 import '../scss/front.scss' // mandatory for the Hot Module Reload
 
 import { putScrollbarSizeInCSSVariables } from './common/functions'
-import { variables } from './common/variables'
 import { adminBar } from './components/admin-bar'
-import { getCSSVariables } from './components/css-variables'
 import { getHeaderHeight } from './components/header'
 import { inputNumber } from './components/html-components/input-quantity'
 import { pictureErrorHandler } from './components/picture-error'
@@ -18,16 +16,8 @@ window.addEventListener('DOMContentLoaded', (e) => {
 	/*
 	 * Add usefull values to css
 	 * - scrollbar size
-	 * - css breakpoints
 	 * - header height
 	 * */
-	const cssBreakpoints = getCSSVariables('breakpoint')
-	if (cssBreakpoints.length) {
-		cssBreakpoints.forEach((breakpoint) => {
-			const breakpointPrefix = breakpoint[0].split('-').pop()
-			variables.breakpoints[breakpointPrefix] = breakpoint[1]
-		})
-	}
 	putScrollbarSizeInCSSVariables()
 	getHeaderHeight()
 
