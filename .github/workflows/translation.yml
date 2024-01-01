@@ -28,12 +28,19 @@ jobs:
     needs: [build]
     env:
       RELEASE_NAME: 'simppple'
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v2
       - name: WordPress POT/PO/MO Generator
         uses: strangerstudios/action-wp-pot-po-mo-generator@main
         with:
           destination_path: './lang'
+          generate_pot: 1
+          generate_po: 1
+          generate_mo: 1
+          generate_lang_packs: 1
+          merge_changes: 1
           slug: '${{ env.RELEASE_NAME }}'
           text_domain: '${{ env.RELEASE_NAME }}'
         env:
