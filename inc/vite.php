@@ -40,7 +40,7 @@ function simppple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
                     foreach ($manifest[$fileKey]['css'] as $stylePath) {
                         $styleFile = basename($stylePath);
                         $styleFileWithoutExtension = substr($styleFile, 0, strrpos($styleFile, '.'));
-                        $styleFileWithoutVersionning = substr($styleFile, 0, strrpos($styleFileWithoutExtension, '.'));
+                        $styleFileWithoutVersionning = substr($styleFileWithoutExtension, 0, strpos($styleFileWithoutExtension, '-'));
 
                         $returnedArray['css'][] = [
                             'path' => SIMPPPLE_DIST_URI . "/{$stylePath}",
