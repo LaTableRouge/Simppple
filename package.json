@@ -1,6 +1,6 @@
 {
 	"name": "simppple",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"description": "A simple basic gutenberg theme",
 	"main": "vite.config.mjs",
 	"keywords": [
@@ -23,7 +23,7 @@
 		"prod": "vite build",
 		"build": "npm run prod --chore=all",
 		"version-update": "npm run prod --chore=version",
-		"prepare": "husky install && composer install && npm run prod && npm run build:react-blocks"
+		"prepare": "husky install && composer install && npm run prod"
 	},
 	"devDependencies": {
 		"@commitlint/cli": "^18.4.3",

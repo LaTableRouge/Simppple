@@ -1,8 +1,8 @@
 {
-	"version": "0.0.6",
-	"download_url": "https://github.com/LaTableRouge/simppple/releases/download/0.0.6/simppple.zip",
+	"version": "0.0.7",
+	"download_url": "https://github.com/LaTableRouge/simppple/releases/download/0.0.7/simppple.zip",
 	"requires": "6.4",
 	"tested": "6.4",
 	"requires_php": "7.4",
-	"url": "https://github.com/LaTableRouge/simppple/commits/0.0.6"
+	"url": "https://github.com/LaTableRouge/simppple/commits/0.0.7"
 }

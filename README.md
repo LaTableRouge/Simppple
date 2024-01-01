@@ -109,7 +109,7 @@ Templates can be created and edited in the `templates/` ([see README](./template
 To generate the .pot file (from the theme's directory):
 
 ```bash
-wp i18n make-pot . lang/simppple.pot --domain=simppple --exclude=node_modules,vendor,lang --include=*.php,blocks,build
+wp i18n make-pot . lang/simppple.pot --domain=simppple --exclude=node_modules,vendor,lang --include=*.php,build
 ```
 
 To generate the translation json files for JS (from the theme's directory):
