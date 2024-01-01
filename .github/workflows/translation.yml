@@ -1,0 +1,63 @@
+name: Create release with translations
+
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  build:
+    name: 'Build theme'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # Compile the theme
+      - name: Compile CSS and Javascript
+        run: |
+          npm ci --ignore-scripts
+          npm run prod --chore=ci
+
+  generate-translations:
+    name: 'Generate translations'
+    runs-on: ubuntu-latest
+    needs: [build]
+    env:
+      RELEASE_NAME: 'simppple'
+    steps:
+      - uses: actions/checkout@v2
+      - name: WordPress POT/PO/MO Generator
+        uses: strangerstudios/action-wp-pot-po-mo-generator@main
+        with:
+          destination_path: './lang'
+          slug: '${{ env.RELEASE_NAME }}'
+          text_domain: '${{ env.RELEASE_NAME }}'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  zip-upload:
+    name: 'Zip theme & create release'
+    runs-on: ubuntu-latest
+    needs: [build, generate-translations]
+    env:
+      RELEASE_NAME: 'simppple'
+    permissions:
+      contents: write
+    steps:
+      # Zip the theme into a clean release
+      - name: Zip release
+        uses: thedoctor0/zip-release@0.7.1
+        with:
+          type: 'zip'
+          filename: '${{ env.RELEASE_NAME }}.zip'
+          path: 'LICENSE readme.txt screenshot.jpg functions.php style.css theme.json styles/ templates/*.html parts/*.html patterns/*.php blocks/react/build lang/ inc/ build/ acf-json/'
+
+      # Publish the release
+      - name: Publish release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: '${{ env.RELEASE_NAME }}.zip,update/info.json'
+          generateReleaseNotes: true
