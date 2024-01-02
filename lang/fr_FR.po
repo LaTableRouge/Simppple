@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simppple 0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
-"POT-Creation-Date: 2024-01-02T10:23:36+00:00\n"
-"PO-Revision-Date: 2024-01-02 11:23+0100\n"
+"POT-Creation-Date: 2024-01-02T10:48:56+00:00\n"
+"PO-Revision-Date: 2024-01-02 11:49+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -226,21 +226,6 @@ msgctxt "Pattern title"
 msgid "Business home"
 msgstr "Page d'accueil pour l'entreprise"
 
-#: patterns/page-home-business.php:74 patterns/posts-1-col.php:30
-#: patterns/posts-2-col.php:32
-msgid "Read more"
-msgstr "En savoir plus"
-
-#: patterns/page-home-business.php:88 patterns/posts-1-col.php:44
-#: patterns/posts-2-col.php:38
-msgid "Newer Posts"
-msgstr "Articles plus récents"
-
-#: patterns/page-home-business.php:90 patterns/posts-1-col.php:46
-#: patterns/posts-2-col.php:40
-msgid "Older Posts"
-msgstr "Articles plus anciens"
-
 #: patterns/post-date-author-terms.php
 msgctxt "Pattern title"
 msgid "Display the date, author & terms of the post"
@@ -263,6 +248,18 @@ msgstr "Afficher la date, l'auteur du message"
 msgctxt "Pattern title"
 msgid "List of posts, 1 column"
 msgstr "Liste des articles, 1 colonne"
+
+#: patterns/posts-1-col.php:30 patterns/posts-2-col.php:32
+msgid "Read more"
+msgstr "En savoir plus"
+
+#: patterns/posts-1-col.php:44 patterns/posts-2-col.php:38
+msgid "Newer Posts"
+msgstr "Articles plus récents"
+
+#: patterns/posts-1-col.php:46 patterns/posts-2-col.php:40
+msgid "Older Posts"
+msgstr "Articles plus anciens"
 
 #: patterns/posts-2-col.php
 msgctxt "Pattern title"
@@ -296,26 +293,25 @@ msgctxt "Pattern title"
 msgid "404 template"
 msgstr "Modèle de page 404"
 
-#: patterns/template-home-business.php
-msgctxt "Pattern title"
-msgid "Business home template"
-msgstr "Modèle de page d'accueil pour l'entreprise"
-
-#: build/assets/editor-4UBmem0O.js:1
+#: build/assets/editor-TVgEl6L8.js:1
 msgid "Group with a shadow"
 msgstr "Groupe avec une ombre"
 
-#: build/assets/editor-4UBmem0O.js:1
+#: build/assets/editor-TVgEl6L8.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr "Une variante du bloc groupe avec une ombre portée"
 
-#: build/assets/editor-4UBmem0O.js:1
+#: build/assets/editor-TVgEl6L8.js:1
 msgid "Table with pagination"
 msgstr "Tableau avec pagination"
 
-#: build/assets/front-rTdh58_v.js:3
+#: build/assets/front-h4m_Wohs.js:3
 msgid "Search..."
 msgstr "Rechercher…"
+
+#~ msgctxt "Pattern title"
+#~ msgid "Business home template"
+#~ msgstr "Modèle de page d'accueil pour l'entreprise"
 
 #~ msgid "MLNOP"
 #~ msgstr "MLNOP"
