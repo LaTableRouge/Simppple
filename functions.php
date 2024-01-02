@@ -10,6 +10,7 @@ define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);
  * ================================
  *  THEME FUNCTIONS
  */
+require get_template_directory() . '/inc/update-checker.php';
 require get_template_directory() . '/inc/vite.php';
 // Front assets
 simppple_vite_enqueue_script('/assets/js/front.js', 'wp_enqueue_scripts', 'wp_footer');
