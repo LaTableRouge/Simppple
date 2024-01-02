@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simppple 0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
-"POT-Creation-Date: 2024-01-02T10:08:51+00:00\n"
-"PO-Revision-Date: 2024-01-02 11:11+0100\n"
+"POT-Creation-Date: 2024-01-02T10:23:36+00:00\n"
+"PO-Revision-Date: 2024-01-02 11:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -194,30 +194,30 @@ msgctxt "Pattern title"
 msgid "404"
 msgstr "404"
 
-#: patterns/page-404.php:36
+#: patterns/page-404.php:34
 msgid "Oops! That page can't be found."
 msgstr "Oups ! Cette page est introuvable."
 
-#: patterns/page-404.php:40
+#: patterns/page-404.php:38
 msgid "It looks like nothing was found at this location. Maybe try searching?"
 msgstr ""
 "Il semble que rien n'ait été trouvé à cet endroit. Essayez peut-être de "
 "faire une recherche ?"
 
-#: patterns/page-404.php:43 patterns/search-modal.php:34
+#: patterns/page-404.php:41 patterns/search-modal.php:34
 #: patterns/search-modal.php:57
 msgid "Search"
 msgstr "Recherche"
 
-#: patterns/page-404.php:43
+#: patterns/page-404.php:41
 msgid "Search a post, a page..."
 msgstr "Rechercher un article, une page..."
 
-#: patterns/page-404.php:49
+#: patterns/page-404.php:47
 msgid "Or"
 msgstr "Ou bien"
 
-#: patterns/page-404.php:59
+#: patterns/page-404.php:57
 msgid "Back to home page"
 msgstr "Retour à la page d'accueil"
 
