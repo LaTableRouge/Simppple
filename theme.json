@@ -845,7 +845,16 @@
 			"core/shortcode": {},
 			"core/site-logo": {},
 			"core/site-tagline": {},
-			"core/site-title": {},
+			"core/site-title": {
+				"elements": {
+					"link": {
+						"typography": {
+							"textDecoration": "none",
+							"fontSize": "var(--wp--preset--font-size--30)"
+						}
+					}
+				}
+			},
 			"core/social-link": {},
 			"core/social-links": {},
 			"core/spacer": {},

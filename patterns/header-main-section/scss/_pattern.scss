@@ -4,6 +4,13 @@
 
 	--logo-max-height: 60px;
 
+	.wp-block-site-title {
+		@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+			position: relative;
+			z-index: 999999;
+		}
+	}
+
 	.wp-block-site-logo {
 		.custom-logo-link {
 			display: block;
