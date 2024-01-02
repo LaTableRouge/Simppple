@@ -3,7 +3,7 @@
  * Title: 404
  * Slug: simppple/page-404
  * Categories: simppple-templates
- * Keywords: 404
+ * Keywords: starter, 404
  */
 ?>
 

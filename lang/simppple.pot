@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-01T10:13:42+00:00\n"
+"POT-Creation-Date: 2024-01-02T10:08:51+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simppple\n"
@@ -169,30 +169,53 @@ msgctxt "Pattern title"
 msgid "404"
 msgstr ""
 
-#: patterns/page-404.php:34
+#: patterns/page-404.php:36
 msgid "Oops! That page can't be found."
 msgstr ""
 
-#: patterns/page-404.php:38
+#: patterns/page-404.php:40
 msgid "It looks like nothing was found at this location. Maybe try searching?"
 msgstr ""
 
-#: patterns/page-404.php:41
+#: patterns/page-404.php:43
 #: patterns/search-modal.php:34
 #: patterns/search-modal.php:57
 msgid "Search"
 msgstr ""
 
-#: patterns/page-404.php:41
+#: patterns/page-404.php:43
 msgid "Search a post, a page..."
 msgstr ""
 
-#: patterns/page-404.php:47
+#: patterns/page-404.php:49
 msgid "Or"
 msgstr ""
 
-#: patterns/page-404.php:57
+#: patterns/page-404.php:59
 msgid "Back to home page"
+msgstr ""
+
+#: patterns/page-home-business.php
+msgctxt "Pattern title"
+msgid "Business home"
+msgstr ""
+
+#: patterns/page-home-business.php:74
+#: patterns/posts-1-col.php:30
+#: patterns/posts-2-col.php:32
+msgid "Read more"
+msgstr ""
+
+#: patterns/page-home-business.php:88
+#: patterns/posts-1-col.php:44
+#: patterns/posts-2-col.php:38
+msgid "Newer Posts"
+msgstr ""
+
+#: patterns/page-home-business.php:90
+#: patterns/posts-1-col.php:46
+#: patterns/posts-2-col.php:40
+msgid "Older Posts"
 msgstr ""
 
 #: patterns/post-date-author-terms.php
@@ -217,21 +240,6 @@ msgstr ""
 #: patterns/posts-1-col.php
 msgctxt "Pattern title"
 msgid "List of posts, 1 column"
-msgstr ""
-
-#: patterns/posts-1-col.php:30
-#: patterns/posts-2-col.php:32
-msgid "Read more"
-msgstr ""
-
-#: patterns/posts-1-col.php:44
-#: patterns/posts-2-col.php:38
-msgid "Newer Posts"
-msgstr ""
-
-#: patterns/posts-1-col.php:46
-#: patterns/posts-2-col.php:40
-msgid "Older Posts"
 msgstr ""
 
 #: patterns/posts-2-col.php
@@ -259,6 +267,16 @@ msgstr ""
 
 #: patterns/search-modal.php:47
 msgid "Menu"
+msgstr ""
+
+#: patterns/template-404.php
+msgctxt "Pattern title"
+msgid "404 template"
+msgstr ""
+
+#: patterns/template-home-business.php
+msgctxt "Pattern title"
+msgid "Business home template"
 msgstr ""
 
 #: build/assets/editor-4UBmem0O.js:1
