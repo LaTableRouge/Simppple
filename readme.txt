@@ -3,7 +3,7 @@ Contributors: LaTableRouge
 Requires at least: 6.4
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 0.0.5
+Stable tag: 0.0.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,6 +15,11 @@ A multitude of possibilities open up with just a few adjustments to color and ty
 Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
 
 == Changelog ==
+
+= 0.0.8 =
+* Released: December 27, 2023
+
+https://github.com/MLNOP/Simppple/releases/tag/0.0.8
 
 = 0.0.5 =
 * Released: December 27, 2023
