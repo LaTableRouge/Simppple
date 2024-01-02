@@ -13,6 +13,6 @@
 	class="wp-block-group pattern---header-main-section-centered has-white-background-color has-background"
 	style="padding-top:var(--wp--preset--spacing--40);padding-right:0;padding-bottom:var(--wp--preset--spacing--40);padding-left:0"
 >
-	<!-- wp:navigation {"ref":293,"textColor":"contrast","icon":"menu","overlayBackgroundColor":"white","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center","orientation":"horizontal","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"20"} /-->
+	<!-- wp:navigation {"textColor":"contrast","icon":"menu","overlayBackgroundColor":"white","layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"center","orientation":"horizontal","flexWrap":"wrap"},"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"fontSize":"20"} /-->
 </div>
 <!-- /wp:group -->

@@ -3,7 +3,9 @@
  * Title: 404
  * Slug: simppple/page-404
  * Categories: simppple-templates
- * Keywords: 404
+ * Keywords: starter, 404
+ * Block Types: core/post-content
+ * Post Types: page, wp_template
  */
 ?>
 
