@@ -90,7 +90,7 @@
 			.wp-block-navigation__responsive-container-content {
 				& > ul {
 					@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-						gap: var(--wp--preset--spacing--40);
+						gap: var(--wp--preset--spacing--10);
 					}
 
 					& > li {

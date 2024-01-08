@@ -6,7 +6,7 @@ function simppple_update_themes($transient) {
     }
 
     $stylesheet = get_template();
-    $theme = wp_get_theme();
+    $theme = wp_get_theme($stylesheet);
     $tested = $theme->get('Tested');
     $version = $theme->get('Version');
     $author = $theme->get('Author');
