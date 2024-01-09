@@ -1,0 +1,107 @@
+<!-- wp:group {"tagName":"header","style":{"position":{"type":"sticky","top":"0px"}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
+<header class="wp-block-group has-white-background-color has-background">
+	<!-- wp:template-part {"slug":"header","area":"header","tagName":"div"} /-->
+</header>
+<!-- /wp:group -->
+
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"layout":{"type":"constrained"}} -->
+<main
+	class="wp-block-group"
+	style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"
+>
+	<!-- wp:cover {"url":"http://local.latablerouge.fr/wp-content/uploads/2023/11/screenshot.jpg","id":227,"dimRatio":50,"overlayColor":"color-1","focalPoint":{"x":0.5,"y":0.5},"minHeight":260,"align":"full"} -->
+	<div
+		class="wp-block-cover alignfull"
+		style="min-height:260px"
+	><span
+			aria-hidden="true"
+			class="wp-block-cover__background has-color-1-background-color has-background-dim"
+		></span><img
+			class="wp-block-cover__image-background wp-image-227"
+			alt=""
+			src="http://local.latablerouge.fr/wp-content/uploads/2023/11/screenshot.jpg"
+			style="object-position:50% 50%"
+			data-object-fit="cover"
+			data-object-position="50% 50%"
+		/>
+		<div class="wp-block-cover__inner-container">
+			<!-- wp:group {"layout":{"type":"constrained","contentSize":"1440px"}} -->
+			<div class="wp-block-group">
+				<!-- wp:woocommerce/breadcrumbs {"textColor":"white"} /-->
+
+				<!-- wp:heading {"textAlign":"center","style":{"spacing":{"margin":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"textColor":"white"} -->
+				<h2
+					class="wp-block-heading has-text-align-center has-white-color has-text-color"
+					style="margin-top:var(--wp--preset--spacing--40);margin-bottom:var(--wp--preset--spacing--40)"
+				>
+					Boutique
+				</h2>
+				<!-- /wp:heading -->
+			</div>
+			<!-- /wp:group -->
+		</div>
+	</div>
+	<!-- /wp:cover -->
+
+	<!-- wp:search {"label":"Recherche","showLabel":false,"placeholder":"Recherche de produits…","buttonText":"Recherche","buttonPosition":"no-button","query":{"post_type":"product"}} /-->
+
+	<!-- wp:spacer {"height":"var:preset|spacing|40"} -->
+	<div
+		style="height:var(--wp--preset--spacing--40)"
+		aria-hidden="true"
+		class="wp-block-spacer"
+	></div>
+	<!-- /wp:spacer -->
+
+	<!-- wp:columns -->
+	<div class="wp-block-columns">
+		<!-- wp:column {"width":"20%","style":{"spacing":{"padding":{"right":"var:preset|spacing|8","bottom":"0","left":"var:preset|spacing|8"}}}} -->
+		<div
+			class="wp-block-column"
+			style="padding-right:var(--wp--preset--spacing--8);padding-bottom:0;padding-left:var(--wp--preset--spacing--8);flex-basis:20%"
+		>
+			<!-- wp:pattern {"slug":"simppple/shop-filters-popup"} /-->
+		</div>
+		<!-- /wp:column -->
+
+		<!-- wp:column {"width":"80%","style":{"spacing":{"padding":{"right":"var:preset|spacing|8","left":"var:preset|spacing|8"}}}} -->
+		<div
+			class="wp-block-column"
+			style="padding-right:var(--wp--preset--spacing--8);padding-left:var(--wp--preset--spacing--8);flex-basis:80%"
+		>
+			<!-- wp:woocommerce/product-collection {"queryId":0,"query":{"woocommerceAttributes":[],"woocommerceStockStatus":["instock","outofstock","onbackorder"],"woocommerceOnSale":false,"woocommerceHandPickedProducts":[],"taxQuery":{},"isProductCollectionBlock":true,"perPage":9,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","author":"","search":"","exclude":[],"sticky":"","inherit":false,"featured":false},"tagName":"div","displayLayout":{"type":"flex","columns":2},"convertedFromProducts":true,"layout":{"type":"default"}} -->
+			<div class="wp-block-woocommerce-product-collection">
+				<!-- wp:woocommerce/product-template -->
+				<!-- wp:woocommerce/product-image {"imageSizing":"thumbnail","isDescendentOfQueryLoop":true} /-->
+
+				<!-- wp:post-title {"textAlign":"center","level":3,"isLink":true,"style":{"spacing":{"margin":{"bottom":"0.75rem","top":"0"}}},"fontSize":"medium","__woocommerceNamespace":"woocommerce/product-collection/product-title"} /-->
+
+				<!-- wp:woocommerce/product-price {"isDescendentOfQueryLoop":true,"textAlign":"center"} /-->
+
+				<!-- wp:woocommerce/product-button {"textAlign":"center","isDescendentOfQueryLoop":true,"fontSize":"small"} /-->
+				<!-- /wp:woocommerce/product-template -->
+
+				<!-- wp:query-pagination {"layout":{"type":"flex","justifyContent":"center"}} -->
+				<!-- wp:query-pagination-previous /-->
+
+				<!-- wp:query-pagination-numbers /-->
+
+				<!-- wp:query-pagination-next /-->
+				<!-- /wp:query-pagination -->
+
+				<!-- wp:query-no-results -->
+				<!-- wp:paragraph {"placeholder":"Ajouter un texte ou des blocs qui s’afficheront lorsqu’une requête ne renverra aucun résultat."} -->
+				<p></p>
+				<!-- /wp:paragraph -->
+				<!-- /wp:query-no-results -->
+			</div>
+			<!-- /wp:woocommerce/product-collection -->
+		</div>
+		<!-- /wp:column -->
+	</div>
+	<!-- /wp:columns -->
+
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","area":"footer","tagName":"footer"} /-->
