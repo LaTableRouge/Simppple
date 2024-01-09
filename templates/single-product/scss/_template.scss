@@ -15,60 +15,6 @@ body.single-product {
 					justify-content: flex-start;
 
 					.product-wrapper {
-						&__gallery-wrapper {
-							.wp-block-woocommerce-product-image-gallery {
-								max-width: 100%;
-
-								.onsale {
-									top: 5px;
-									left: 5px;
-									min-width: initial;
-									min-height: initial;
-									padding: 0.25em 0.75em;
-									border: none;
-									border-radius: 3px;
-									// background-color: var(--wp--preset--color--color-1);
-									// color: var(--wp--preset--color--white);
-									font-size: var(--wp--preset--font-size--14);
-									font-weight: bold;
-									line-height: 1.1;
-									text-align: center;
-									text-transform: uppercase;
-								}
-
-								.woocommerce-product-gallery {
-									margin-bottom: 0;
-
-									.flex-control-nav.flex-control-thumbs {
-										display: flex;
-										position: absolute;
-										top: 70px;
-										right: 29px;
-										flex-direction: column;
-										gap: var(--wp--preset--spacing--10);
-
-										li {
-											width: 9px;
-											height: 9px;
-											border: solid 1px;
-											// border-color: var(--wp--preset--color--color-3);
-											border-radius: 50%;
-
-											&:has(img.flex-active) {
-												// TODO trouver un workaround pour les navigateur qui n'ont pas encore le :has
-												border-width: 3px;
-											}
-
-											img {
-												opacity: 0;
-												cursor: pointer;
-											}
-										}
-									}
-								}
-							}
-						}
-
 						&__infos-wrapper {
 							@include container-breakpoint-up(page-single-product, xl) {
 								max-width: calc(var(--wp--style--global--content-size) / 2);
@@ -98,6 +44,8 @@ body.single-product {
 
 										tbody {
 											tr {
+												margin-bottom: var(--wp--preset--spacing--20);
+
 												th,
 												td {
 													vertical-align: initial;
@@ -125,70 +73,26 @@ body.single-product {
 
 									.single_variation_wrap {
 										.single_variation {
-											margin-bottom: var(--wp--preset--spacing--32);
+											margin-bottom: var(--wp--preset--spacing--30);
+										}
+
+										.woocommerce-variation-price {
+											.price {
+												font-size: var(--wp--preset--font-size--20);
+												font-weight: 600;
+											}
 										}
 
 										.woocommerce-variation-add-to-cart {
 											display: flex;
 											flex-wrap: wrap;
-											gap: var(--wp--preset--spacing--32);
+											gap: var(--wp--preset--spacing--30);
 
 											.quantity {
 												.qty {
 													margin: 0;
 												}
 											}
-										}
-									}
-								}
-							}
-
-							.wc-upsells {
-								h2 {
-									// background-color: red;
-								}
-
-								.products {
-									.product {
-										// color: var(--wp--preset--color--color-4);
-										text-align: left;
-
-										.onsale {
-											top: 4px;
-											right: auto;
-											left: 4px;
-											min-width: initial;
-											min-height: initial;
-											margin: 0;
-											padding: 0.25em 0.75em;
-											border: none;
-											border-radius: 3px;
-											// background-color: var(--wp--preset--color--color-1);
-											// color: var(--wp--preset--color--white);
-											font-size: var(--wp--preset--font-size--14);
-											font-weight: bold;
-											line-height: initial;
-											text-transform: uppercase;
-										}
-
-										img {
-											aspect-ratio: 1 / 1;
-											border-radius: var(--wp--custom--border-radius-picture);
-										}
-
-										.woocommerce-loop-product__title {
-											// color: var(--wp--preset--color--color-4);
-											font-size: var(--wp--preset--font-size--16);
-										}
-
-										.price {
-											// color: var(--wp--preset--color--color-4);
-											font-size: var(--wp--preset--font-size--20);
-											font-weight: bold;
-										}
-
-										.add_to_cart_button {
-											display: inline-block;
 										}
 									}
 								}

@@ -1,0 +1,64 @@
+.pattern---wc-product-image-gallery {
+	.wp-block-woocommerce-product-image-gallery {
+		max-width: 100%;
+
+		.onsale {
+			top: 5px;
+			left: 5px !important;
+			min-width: initial;
+			min-height: initial;
+			padding: 0.25em 0.75em;
+			border: none;
+			border-radius: 3px;
+			background-color: var(--wp--preset--color--accent);
+			color: var(--wp--preset--color--white);
+			font-size: var(--wp--preset--font-size--14);
+			font-weight: bold;
+			line-height: 1.1;
+			text-align: center;
+			text-transform: uppercase;
+		}
+
+		.woocommerce-product-gallery {
+			margin-bottom: 0;
+
+			.flex-control-nav.flex-control-thumbs {
+				margin-top: var(--wp--preset--spacing--10);
+
+				@include media-breakpoint-up(lg) {
+					display: flex;
+					position: absolute;
+					top: 70px;
+					right: 29px;
+					flex-direction: column;
+					gap: var(--wp--preset--spacing--10);
+					margin: 0;
+				}
+
+				li {
+					@include media-breakpoint-up(lg) {
+						width: 9px;
+						height: 9px;
+						transition: border-width 0.2s ease-in-out;
+						border: solid 1px;
+						border-radius: 50%;
+					}
+
+					&:has(img.flex-active) {
+						@include media-breakpoint-up(lg) {
+							border-width: 3px;
+						}
+					}
+
+					&:hover img,
+					img {
+						@include media-breakpoint-up(lg) {
+							opacity: 0;
+							cursor: pointer;
+						}
+					}
+				}
+			}
+		}
+	}
+}

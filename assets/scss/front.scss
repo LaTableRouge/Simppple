@@ -24,8 +24,9 @@
 @import 'components/notification';
 @import 'components/socials';
 @import 'components/grid-js';
+@import 'components/swiper-js';
 
-/* stylelint-disable scss/at-import-no-partial-leading-underscore */
+/* stylelint-disable scss/load-no-partial-leading-underscore */
 @import '../../blocks/**/scss/_block.scss';
 @import '../../patterns/**/scss/_pattern.scss';
 
@@ -34,4 +35,4 @@
 
 // 6. template-specific styles
 @import '../../templates/**/scss/_template.scss';
-/* stylelint-enable scss/at-import-no-partial-leading-underscore */
+/* stylelint-enable scss/load-no-partial-leading-underscore */

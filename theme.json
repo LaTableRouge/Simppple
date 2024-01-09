@@ -675,9 +675,6 @@
 							"typography": {
 								"textDecoration": "underline"
 							}
-						},
-						"typography": {
-
 						}
 					}
 				},
@@ -881,7 +878,13 @@
 			"core/video": {},
 			"core/widget-area": {},
 			"core/widget-group": {},
-			"woocommerce/mini-cart": {}
+			"woocommerce/mini-cart": {},
+			"woocommerce/product-price": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--30)",
+					"fontWeight": "600"
+				}
+			}
 		},
 		"color": {
 			"background": "var(--wp--preset--color--base)",

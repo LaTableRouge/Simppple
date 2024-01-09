@@ -94,6 +94,12 @@
 					}
 
 					& > li {
+						&:not(.has-child) {
+							&:last-child {
+								padding-right: 0;
+							}
+						}
+
 						&.has-child {
 							min-height: var(--logo-max-height);
 

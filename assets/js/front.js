@@ -1,3 +1,4 @@
+import 'swiper/css/bundle'
 import 'gridjs/dist/theme/mermaid.css'
 import '../scss/front.scss' // mandatory for the Hot Module Reload
 

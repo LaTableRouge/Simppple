@@ -56,3 +56,6 @@ GNU General Public License for more details.
 placeholder.webp - https://openverse.org/fr/image/0ccac011-406b-4b27-896d-f87a8177be99?q=seagulls
 404.webp - https://thenounproject.com/icon/seagull-217946/
 block-icon.svg - https://thenounproject.com/icon/seagull-217076/
+secure-payment.svg - https://thenounproject.com/icon/secure-payment-6422402/
+nice-hand.svg - https://thenounproject.com/icon/nice-3016562/
+fast-delivery.svg - https://thenounproject.com/icon/fast-delivery-6082830/
