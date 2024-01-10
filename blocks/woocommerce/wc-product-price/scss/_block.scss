@@ -1,0 +1,21 @@
+.wc-block-components-product-price {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end;
+	column-gap: var(--gap, var(--wp--preset--spacing--10));
+	font-size: var(--font-size);
+	font-weight: 600;
+
+	& > del {
+		color: var(--wp--preset--color--contrast-3);
+	}
+
+	& > ins {
+		order: -1;
+		text-decoration: none;
+
+		&.is-discounted {
+			margin: 0;
+		}
+	}
+}

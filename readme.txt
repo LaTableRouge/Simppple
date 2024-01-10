@@ -59,3 +59,4 @@ block-icon.svg - https://thenounproject.com/icon/seagull-217076/
 secure-payment.svg - https://thenounproject.com/icon/secure-payment-6422402/
 nice-hand.svg - https://thenounproject.com/icon/nice-3016562/
 fast-delivery.svg - https://thenounproject.com/icon/fast-delivery-6082830/
+empty-cart.svg - https://thenounproject.com/icon/empty-cart-6018981/
