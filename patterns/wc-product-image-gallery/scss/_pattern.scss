@@ -50,7 +50,7 @@
 					@include media-breakpoint-up(lg) {
 						width: 9px;
 						height: 9px;
-						transition: border-width 0.2s ease-in-out;
+						transition: var(--nomotion, border-width 0.2s ease-in-out);
 						border: solid 1px;
 						border-radius: 50%;
 					}

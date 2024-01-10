@@ -49,7 +49,7 @@
 
 				.wp-block-navigation-item {
 					&__content {
-						transition: opacity 0.2s ease-in-out;
+						transition: var(--nomotion, opacity 0.2s ease-in-out);
 
 						&:hover {
 							opacity: 0.8;
