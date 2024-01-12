@@ -179,7 +179,6 @@ if (chore === 'version') {
 				{
 					filePath: [
 						resolve(__dirname, 'package.json'),
-						resolve(__dirname, 'update/info.json'),
 						resolve(__dirname, 'style.css')
 					],
 					replace: [
