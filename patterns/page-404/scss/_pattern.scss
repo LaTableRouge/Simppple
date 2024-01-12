@@ -1,10 +1,4 @@
-.pattern---404-v1 {
-	$tablet-breakpoint: xl;
-
+.pattern---404 {
 	container-type: inline-size;
-	container-name: pattern-404-v1;
-
-	& > .wp-block-columns {
-		gap: var(--wp--preset--spacing--120);
-	}
+	container-name: pattern-404;
 }

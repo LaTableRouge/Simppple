@@ -7,14 +7,14 @@
  */
 ?>
 
-<!-- wp:group {"tagName":"section","className":"pattern\u002d\u002d-404-v1","layout":{"type":"constrained","justifyContent":"center"}} -->
-<section class="wp-block-group pattern---404-v1">
-	<!-- wp:image {"align":"center","id":302,"width":"300px","height":"300px","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-resized is-style-rounded"} -->
+<!-- wp:group {"tagName":"section","className":"pattern\u002d\u002d-404","layout":{"type":"constrained","justifyContent":"center"}} -->
+<section class="wp-block-group pattern---404">
+	<!-- wp:image {"align":"center","width":"300px","height":"300px","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-resized is-style-rounded"} -->
 	<figure class="wp-block-image aligncenter size-full is-resized is-style-rounded">
 		<img
 			src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/404.webp'); ?>"
 			alt=""
-			class="wp-image-302"
+			class=""
 			style="object-fit:cover;width:300px;height:300px"
 		/>
 	</figure>

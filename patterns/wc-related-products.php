@@ -2,8 +2,7 @@
 /**
  * Title: Woocommerce related products
  * Slug: simppple/wc-related-products
- * Categories: simppple-sections
- * Keywords: woocommerce, products, related
+ * Inserter: no
  */
 ?>
 
