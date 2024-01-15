@@ -117,7 +117,9 @@
                 <!-- wp:button -->
                 <div class="wp-block-button"><a
                         class="wp-block-button__link wp-element-button"
-                        href="<?php if (class_exists('WooCommerce')) { echo wc_get_page_permalink('shop'); }; ?>"
+                        href="<?php if (class_exists('WooCommerce')) {
+                            echo wc_get_page_permalink('shop');
+                        } ?>"
                     ><?php echo _e('Explore the products...', 'simppple'); ?></a></div>
                 <!-- /wp:button -->
             </div>

@@ -1,9 +1,10 @@
+.wp-block-woocommerce-product-price .wc-block-components-product-price,
 .wc-block-components-product-price {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: flex-end;
 	column-gap: var(--gap, var(--wp--preset--spacing--10));
-	font-size: var(--font-size);
+	font-size: var(--font-size, var(--wp--preset--font-size--20));
 	font-weight: 600;
 
 	& > del {

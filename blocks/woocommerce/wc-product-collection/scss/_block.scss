@@ -1,0 +1,23 @@
+.wp-block-woocommerce-product-collection {
+	.wc-block-product {
+		.wc-block-components-product-sale-badge {
+			min-width: initial;
+			min-height: initial;
+			margin: 0;
+			padding: 0.25em 0.75em;
+			border: none;
+			border-radius: 3px;
+			background-color: var(--wp--preset--color--accent);
+			color: var(--wp--preset--color--white);
+			font-size: var(--wp--preset--font-size--14);
+			font-weight: bold;
+			line-height: initial;
+			text-transform: uppercase;
+		}
+
+		.wc-block-components-product-image {
+			aspect-ratio: 1 / 1;
+			border-radius: var(--wp--custom--border-radius-picture);
+		}
+	}
+}

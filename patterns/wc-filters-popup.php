@@ -1,9 +1,9 @@
 <?php
 /**
  * Title: Modale de filres
- * Slug: simppple/shop-filters-popup
+ * Slug: simppple/wc-filters-popup
  * Categories: simppple-sections
- * Keywords: filters, modal
+ * Keywords: filters, modal, woocommerce
  * Block Types: core/navigation
  */
 
@@ -11,7 +11,7 @@ function pattern_filters_popup_icon($html, $block) {
     if (
         'core/navigation' === $block['blockName']
         && isset($block['attrs']['className'])
-        && strpos($block['attrs']['className'], 'pattern---shop-filters-popup') !== false
+        && strpos($block['attrs']['className'], 'pattern---wc-filters-popup') !== false
     ) {
         // Replace labels
         $parsedHTML = new WP_HTML_Tag_Processor($html);
@@ -53,7 +53,7 @@ add_filter('render_block', 'pattern_filters_popup_icon', 10, 2);
 
 ?>
 
-<!-- wp:navigation {"icon":"menu","className":"pattern---shop-filters-popup","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
+<!-- wp:navigation {"icon":"menu","className":"pattern---wc-filters-popup","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group">
 	<!-- wp:woocommerce/filter-wrapper {"filterType":"price-filter","heading":"Filter by price"} -->

@@ -41,7 +41,7 @@
 				></div>
 				<!-- /wp:spacer -->
 
-				<!-- wp:search {"label":"Search\u003e","showLabel":false,"buttonText":"Search\u003e","buttonPosition":"no-button"} /-->
+				<!-- wp:search {"label":"<?php _e('Search', 'simppple'); ?>","showLabel":false,"buttonText":"<?php _e('Search', 'simppple'); ?>","buttonPosition":"no-button"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>
