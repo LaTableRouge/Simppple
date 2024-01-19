@@ -4,6 +4,7 @@
 	--border: 1px solid var(--border-color, var(--wp--preset--color--contrast-3));
 	--bg-color: var(--bg-color, var(--wp--preset--color--contrast-3));
 	--inner-border: 1px solid var(--inner-border-color, var(--wp--preset--color--contrast-3));
+	--inner-border-head-foot: 1px solid var(--inner-head-foot-border-color, var(--wp--preset--color--contrast));
 
 	table {
 		border-spacing: 0;
@@ -16,6 +17,22 @@
 
 			& > tr {
 				background-color: var(--bg-color, var(--wp--preset--color--contrast-3));
+
+				&:not(:last-child) {
+					& > th,
+					& > td {
+						border-bottom: var(--inner-border-head-foot);
+					}
+				}
+			}
+		}
+
+		& > tbody {
+			& > tr:not(:last-child) {
+				& > td,
+				& > th {
+					border-bottom: var(--inner-border);
+				}
 			}
 		}
 
@@ -28,13 +45,6 @@
 					& > th {
 						border-bottom: var(--inner-border);
 					}
-				}
-			}
-
-			& > tr:not(:last-child) {
-				& > td,
-				& > th {
-					border-bottom: var(--inner-border);
 				}
 			}
 		}
