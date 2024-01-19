@@ -38,7 +38,7 @@
 				><?php _e('Shop', 'simppple'); ?></h1>
 				<!-- /wp:heading -->
 
-				<!-- wp:search {"label":"<?php _e('Search a product', 'simppple'); ?>","showLabel":false,"placeholder":"<?php _e('Search a product...', 'simppple'); ?>","buttonText":"<?php _e('Search', 'simppple'); ?>","buttonPosition":"no-button"} /-->
+				<!-- wp:pattern {"slug":"simppple/hidden-search-products"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>

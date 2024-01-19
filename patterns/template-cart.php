@@ -137,7 +137,7 @@
             <h2 class="wp-block-heading has-text-align-center underlined-title"><?php echo _e('Search products…', 'simppple'); ?></h2>
             <!-- /wp:heading -->
 
-            <!-- wp:search {"label":"<?php echo _e('Search', 'simppple'); ?>","showLabel":false,"placeholder":"<?php echo _e('Search products…', 'simppple'); ?>","buttonText":"<?php echo _e('Search', 'simppple'); ?>","buttonUseIcon":true,"query":{"post_type":"product"}} /-->
+            <!-- wp:pattern {"slug":"simppple/hidden-search-products"} /-->
         </div>
         <!-- /wp:woocommerce/empty-cart-block -->
     </div>

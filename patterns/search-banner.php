@@ -41,7 +41,7 @@
 				></div>
 				<!-- /wp:spacer -->
 
-				<!-- wp:search {"label":"<?php _e('Search', 'simppple'); ?>","showLabel":false,"buttonText":"<?php _e('Search', 'simppple'); ?>","buttonPosition":"no-button"} /-->
+				<!-- wp:pattern {"slug":"simppple/hidden-search"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>

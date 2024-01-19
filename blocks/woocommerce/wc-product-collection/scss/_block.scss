@@ -14,10 +14,42 @@
 			line-height: initial;
 			text-transform: uppercase;
 		}
+	}
 
-		.wc-block-components-product-image {
-			aspect-ratio: 1 / 1;
-			border-radius: var(--wp--custom--border-radius-picture);
+	ul.wc-block-product-template {
+		&[class*='columns-'] {
+			.wc-block-product {
+				.wc-block-components-product-image {
+					aspect-ratio: 1 / 1;
+					border-radius: var(--wp--custom--border-radius-picture);
+				}
+			}
+		}
+
+		&:not([class*='columns-']) {
+			.wc-block-product {
+				& > .wp-block-group {
+					box-shadow: var(--wp--preset--shadow--card);
+
+					& > .wp-block-columns {
+						.wp-block-column {
+							.wc-block-components-product-image {
+								a {
+									display: block;
+									aspect-ratio: 16/9;
+
+									img {
+										width: 100%;
+										height: 100%;
+										object-fit: contain;
+										border-radius: var(--wp--custom--border-radius-picture);
+									}
+								}
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
