@@ -55,45 +55,34 @@ add_filter('render_block', 'pattern_filters_popup_icon', 10, 2);
 
 <!-- wp:navigation {"icon":"menu","className":"pattern---wc-filters-popup","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
 <!-- wp:group {"layout":{"type":"constrained"}} -->
-<div class="wp-block-group">
-	<!-- wp:woocommerce/filter-wrapper {"filterType":"price-filter","heading":"Filter by price"} -->
-	<div class="wp-block-woocommerce-filter-wrapper">
-		<!-- wp:heading {"level":3} -->
-		<h3 class="wp-block-heading">Filter by price</h3>
-		<!-- /wp:heading -->
+<div class="wp-block-group"><!-- wp:woocommerce/filter-wrapper {"filterType":"price-filter","heading":"<?php _e('Filter by price', 'simppple'); ?>"} -->
+<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><?php _e('Filter by price', 'simppple'); ?></h3>
+<!-- /wp:heading -->
 
-		<!-- wp:woocommerce/price-filter {"inlineInput":true,"heading":""} -->
-		<div class="wp-block-woocommerce-price-filter is-loading"><span
-				aria-hidden="true"
-				class="wc-block-product-categories__placeholder"
-			></span></div>
-		<!-- /wp:woocommerce/price-filter -->
-	</div>
-	<!-- /wp:woocommerce/filter-wrapper -->
+<!-- wp:woocommerce/price-filter {"inlineInput":true,"heading":""} -->
+<div class="wp-block-woocommerce-price-filter is-loading"><span aria-hidden="true" class="wc-block-product-categories__placeholder"></span></div>
+<!-- /wp:woocommerce/price-filter --></div>
+<!-- /wp:woocommerce/filter-wrapper -->
 
-	<!-- wp:woocommerce/filter-wrapper {"filterType":"attribute-filter","heading":"Filter by attribute"} -->
-	<div class="wp-block-woocommerce-filter-wrapper">
-		<!-- wp:heading {"level":3} -->
-		<h3 class="wp-block-heading">Filter by color</h3>
-		<!-- /wp:heading -->
+<!-- wp:woocommerce/filter-wrapper {"filterType":"attribute-filter","heading":"<?php _e('Filter by color', 'simppple'); ?>"} -->
+<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><?php _e('Filter by color', 'simppple'); ?></h3>
+<!-- /wp:heading -->
 
-		<!-- wp:woocommerce/attribute-filter {"attributeId":1,"heading":"","lock":{"remove":true}} -->
-		<div class="wp-block-woocommerce-attribute-filter is-loading"></div>
-		<!-- /wp:woocommerce/attribute-filter -->
-	</div>
-	<!-- /wp:woocommerce/filter-wrapper -->
+<!-- wp:woocommerce/attribute-filter {"attributeId":1,"heading":"","lock":{"remove":true}} -->
+<div class="wp-block-woocommerce-attribute-filter is-loading"></div>
+<!-- /wp:woocommerce/attribute-filter --></div>
+<!-- /wp:woocommerce/filter-wrapper -->
 
-	<!-- wp:woocommerce/filter-wrapper {"filterType":"attribute-filter","heading":"Filter by attribute"} -->
-	<div class="wp-block-woocommerce-filter-wrapper">
-		<!-- wp:heading {"level":3} -->
-		<h3 class="wp-block-heading">Filter by size</h3>
-		<!-- /wp:heading -->
+<!-- wp:woocommerce/filter-wrapper {"filterType":"attribute-filter","heading":"<?php _e('Filter by size', 'simppple'); ?>"} -->
+<div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3} -->
+<h3 class="wp-block-heading"><?php _e('Filter by size', 'simppple'); ?></h3>
+<!-- /wp:heading -->
 
-		<!-- wp:woocommerce/attribute-filter {"attributeId":2,"heading":"","lock":{"remove":true}} -->
-		<div class="wp-block-woocommerce-attribute-filter is-loading"></div>
-		<!-- /wp:woocommerce/attribute-filter -->
-	</div>
-	<!-- /wp:woocommerce/filter-wrapper -->
-</div>
+<!-- wp:woocommerce/attribute-filter {"attributeId":2,"heading":"","lock":{"remove":true}} -->
+<div class="wp-block-woocommerce-attribute-filter is-loading"></div>
+<!-- /wp:woocommerce/attribute-filter --></div>
+<!-- /wp:woocommerce/filter-wrapper --></div>
 <!-- /wp:group -->
 <!-- /wp:navigation -->
