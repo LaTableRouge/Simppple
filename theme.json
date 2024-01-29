@@ -1033,6 +1033,11 @@
 		},
 		{
 			"area": "header",
+			"name": "header-shop",
+			"title": "Header shop"
+		},
+		{
+			"area": "header",
 			"name": "header-centered",
 			"title": "Centered header"
 		}

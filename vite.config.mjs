@@ -410,21 +410,41 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			})
 		].filter(Boolean),
 
-		esbuild: isProduction
-			? {
-				minifyIdentifiers: false,
-				keepNames: true,
-				pure: ['console.log'],
-				reserveProps: /^__\(*$/
-			}
-			: null,
-
 		build: {
 			rollupOptions: {
 				input: entriesToCompile,
 			},
 			write: true,
-			minify: isProduction ? 'esbuild' : false,
+			minify: isProduction ? 'terser' : false,
+			terserOptions: isProduction
+				? {
+					keep_fnames: true,
+					enclose: true,
+					compress: {
+						pure_funcs: [
+							'console.log',
+							'__'
+							// 'console.error',
+							// 'console.warn',
+							// ...
+						]
+					},
+					// Make sure symbols under `pure_funcs`,
+					// are also under `mangle.reserved` to avoid mangling.
+					mangle: {
+						reserved: [
+							'console.log',
+							'__'
+							// 'console.error',
+							// 'console.warn',
+							// ...
+						]
+					},
+					output: {
+						comments: false
+					}
+				}
+				: null,
 			outDir: distPath,
 			emptyOutDir: true,
 			manifest: true,

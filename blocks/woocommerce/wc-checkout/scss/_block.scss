@@ -145,6 +145,7 @@
 
 						&__content {
 							.wc-block-components-order-summary-item {
+								position: relative;
 								font-size: var(--wp--preset--font-size--16);
 
 								&__image {
