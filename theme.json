@@ -144,7 +144,7 @@
 				},
 				{
 					"name": "Small",
-					"size": "1.875rem",
+					"size": "clamp(0.9375rem, -2.1531593407rem + 8.2417582418vw, 1.875rem)",
 					"slug": "30"
 				},
 				{
@@ -588,7 +588,6 @@
 							"text": "var(--wp--preset--color--accent)"
 						},
 						"typography": {
-							"fontSize": "var(--wp--preset--font-size--16)",
 							"textDecoration": "underline"
 						}
 					}

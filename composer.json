@@ -1,9 +1,7 @@
 {
   "authors": [
     {
-      "name": "MLNOP",
-      "homepage": "https://mlnop.fr",
-      "role": "Simple man"
+      "name": "LaTableRouge"
     }
   ],
   "require-dev": {
