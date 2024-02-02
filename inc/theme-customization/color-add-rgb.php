@@ -6,18 +6,40 @@ if (!defined('ABSPATH')) {
 
 // https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
 function simppple_add_RGB_values_to_CSS_variables($themeJSON) {
-    // Only do this in the front-end
-    // if (!is_admin()) {
     $data = $themeJSON->get_data();
 
     if (!empty($data)) {
+
         if (isset($data['settings']['color']['palette']['theme'])) {
             $rgbColorPalette = [];
 
-            // Loop through color palette
             $colorPalette = $data['settings']['color']['palette']['theme'];
-
             if (!empty($colorPalette)) {
+                // Query the global styles to find custom color palettes
+                $customStyles = false;
+                $activeThemeSlug = get_stylesheet();
+                $dbCustomStyles = get_posts([
+                    'name' => "wp-global-styles-{$activeThemeSlug}",
+                    'post_type' => 'wp_global_styles',
+                    'post_status' => 'publish'
+                ]);
+
+                if (!empty($dbCustomStyles)) {
+                    $customStyles = json_decode($dbCustomStyles[0]->post_content, true);
+                }
+
+                // find occurences in custom palette and replace them in the original one
+                if ($customStyles && isset($customStyles['settings']['color']['palette']['theme'])) {
+                    $customPalette = $customStyles['settings']['color']['palette']['theme'];
+
+                    $colorPalette = array_map(function ($value) use ($customPalette) {
+                        $customValueKey = array_search($value['slug'], array_column($customPalette, 'slug'));
+
+                        return $customValueKey ? $customPalette[$customValueKey] : $value;
+                    }, $colorPalette);
+                }
+
+                // Loop through color palette
                 foreach ($colorPalette as $color) {
                     if (!str_contains($color['slug'], '-hsl') && !str_contains($color['slug'], '-rgb')) {
                         // Convert values in rgb
@@ -50,7 +72,6 @@ function simppple_add_RGB_values_to_CSS_variables($themeJSON) {
             }
         }
     }
-    // }
 
     return $themeJSON;
 }

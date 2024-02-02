@@ -3,6 +3,8 @@
 // -----------------------------------------------------------------------------
 
 :root {
+	color-scheme: light; // not sure if it's good but prevent devices to mess up colors
+
 	@each $state-color, $value in $state-colors {
 		--color-#{$state-color}: #{$value};
 		--color-rgb-#{$state-color}: #{hex-to-rgb($value)};
