@@ -293,19 +293,19 @@ msgctxt "Pattern title"
 msgid "404 template"
 msgstr "Modèle de page 404"
 
-#: build/assets/editor-TVgEl6L8.js:1
+#: build/assets/editor-Cs_pZ94w.js:1
 msgid "Group with a shadow"
 msgstr "Groupe avec une ombre"
 
-#: build/assets/editor-TVgEl6L8.js:1
+#: build/assets/editor-Cs_pZ94w.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr "Une variante du bloc groupe avec une ombre portée"
 
-#: build/assets/editor-TVgEl6L8.js:1
+#: build/assets/editor-Cs_pZ94w.js:1
 msgid "Table with pagination"
 msgstr "Tableau avec pagination"
 
-#: build/assets/front-h4m_Wohs.js:3
+#: build/assets/front-B3brP8Me.js:3
 msgid "Search..."
 msgstr "Rechercher…"
 

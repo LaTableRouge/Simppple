@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simppple 0.0.9\n"
+"Project-Id-Version: Simppple 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-02T10:48:56+00:00\n"
+"POT-Creation-Date: 2024-03-22T10:44:46+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simppple\n"
@@ -80,15 +80,21 @@ msgctxt "Pattern title"
 msgid "Header main section"
 msgstr ""
 
-#: patterns/header-top-section.php
+#: patterns/header-shop-top-section.php
 msgctxt "Pattern title"
-msgid "Header top section"
+msgid "Header shop top section"
 msgstr ""
 
+#: patterns/header-shop-top-section.php:17
 #: patterns/header-top-section.php:17
 #: patterns/hidden-sample-paragraph-centered.php:10
 #: patterns/hidden-sample-paragraph.php:10
 msgid "This is a section of some simple filler text, also known as placeholder text."
+msgstr ""
+
+#: patterns/header-top-section.php
+msgctxt "Pattern title"
+msgid "Header top section"
 msgstr ""
 
 #: patterns/hidden-comments.php
@@ -101,6 +107,7 @@ msgid "Comments"
 msgstr ""
 
 #: patterns/hidden-no-results.php
+#: patterns/hidden-products-no-results.php
 msgctxt "Pattern title"
 msgid "No results"
 msgstr ""
@@ -130,6 +137,11 @@ msgctxt "Label before the title of the next post. There is a space after the col
 msgid "Next: "
 msgstr ""
 
+#: patterns/hidden-products-no-results.php:9
+msgctxt "Message explaining that there are no results returned from a search"
+msgid "No products were found."
+msgstr ""
+
 #: patterns/hidden-sample-paragraph-centered.php
 msgctxt "Pattern title"
 msgid "Sample paragraph centered"
@@ -145,6 +157,12 @@ msgctxt "Pattern title"
 msgid "Sample paragraph"
 msgstr ""
 
+#: patterns/hidden-sample-picture-rounded.php
+#: patterns/hidden-sample-picture.php
+msgctxt "Pattern title"
+msgid "Sample picture"
+msgstr ""
+
 #: patterns/hidden-sample-title.php
 msgctxt "Pattern title"
 msgid "Sample title"
@@ -152,6 +170,31 @@ msgstr ""
 
 #: patterns/hidden-sample-title.php:10
 msgid "Title"
+msgstr ""
+
+#: patterns/hidden-search-products.php
+msgctxt "Pattern title"
+msgid "Search products"
+msgstr ""
+
+#: patterns/hidden-search-products.php:9
+msgid "Search a product"
+msgstr ""
+
+#: patterns/hidden-search-products.php:9
+msgid "Search a product..."
+msgstr ""
+
+#: patterns/hidden-search-products.php:9
+#: patterns/hidden-search.php:9
+#: patterns/page-404.php:41
+#: patterns/search-modal.php:34
+msgid "Search"
+msgstr ""
+
+#: patterns/hidden-search.php
+msgctxt "Pattern title"
+msgid "Search"
 msgstr ""
 
 #: patterns/img-img.php
@@ -178,12 +221,6 @@ msgid "It looks like nothing was found at this location. Maybe try searching?"
 msgstr ""
 
 #: patterns/page-404.php:41
-#: patterns/search-modal.php:34
-#: patterns/search-modal.php:57
-msgid "Search"
-msgstr ""
-
-#: patterns/page-404.php:41
 msgid "Search a post, a page..."
 msgstr ""
 
@@ -198,6 +235,23 @@ msgstr ""
 #: patterns/page-home-business.php
 msgctxt "Pattern title"
 msgid "Business home"
+msgstr ""
+
+#: patterns/payment-insurance.php
+msgctxt "Pattern title"
+msgid "Payment insurance"
+msgstr ""
+
+#: patterns/payment-insurance.php:39
+msgid "Secure payment"
+msgstr ""
+
+#: patterns/payment-insurance.php:78
+msgid "Fast delivery"
+msgstr ""
+
+#: patterns/payment-insurance.php:117
+msgid "Money back guarantee"
 msgstr ""
 
 #: patterns/post-date-author-terms.php
@@ -244,6 +298,33 @@ msgctxt "Pattern title"
 msgid "List of posts, 2 columns"
 msgstr ""
 
+#: patterns/products-1-col.php
+msgctxt "Pattern title"
+msgid "List of products, 1 column"
+msgstr ""
+
+#: patterns/products-1-col.php:32
+#: patterns/products-2-col.php:22
+#: patterns/products-3-col.php:22
+msgid "Previous page"
+msgstr ""
+
+#: patterns/products-1-col.php:36
+#: patterns/products-2-col.php:26
+#: patterns/products-3-col.php:26
+msgid "Next page"
+msgstr ""
+
+#: patterns/products-2-col.php
+msgctxt "Pattern title"
+msgid "List of products, 2 columns"
+msgstr ""
+
+#: patterns/products-3-col.php
+msgctxt "Pattern title"
+msgid "List of products, 3 columns"
+msgstr ""
+
 #: patterns/search-banner.php
 msgctxt "Pattern title"
 msgid "Research banner"
@@ -271,18 +352,141 @@ msgctxt "Pattern title"
 msgid "404 template"
 msgstr ""
 
-#: build/assets/editor-TVgEl6L8.js:1
+#: patterns/template-cart.php
+msgctxt "Pattern title"
+msgid "Cart template"
+msgstr ""
+
+#: patterns/template-cart.php:38
+msgid "You may be interested in…"
+msgstr ""
+
+#: patterns/template-cart.php:112
+msgid "Your cart is empty!"
+msgstr ""
+
+#: patterns/template-cart.php:123
+msgid "Explore the products..."
+msgstr ""
+
+#: patterns/template-cart.php:137
+msgid "Search products…"
+msgstr ""
+
+#: patterns/wc-archive-banner.php
+msgctxt "Pattern title"
+msgid "Products archive banner"
+msgstr ""
+
+#: patterns/wc-breadcrumbs.php
+msgctxt "Pattern title"
+msgid "Woocommerce breadcrumbs"
+msgstr ""
+
+#: patterns/wc-filters-popup.php
+msgctxt "Pattern title"
+msgid "Modale de filres"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:19
+msgid "Open filters"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:26
+msgid "Close filters"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:34
+msgid "Filter"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:47
+msgid "Filters"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:58
+#: patterns/wc-filters-popup.php:60
+msgid "Filter by price"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:68
+#: patterns/wc-filters-popup.php:70
+msgid "Filter by color"
+msgstr ""
+
+#: patterns/wc-filters-popup.php:78
+#: patterns/wc-filters-popup.php:80
+msgid "Filter by size"
+msgstr ""
+
+#: patterns/wc-order-additional-informations.php
+#: patterns/wc-order-confirmation-addresses.php
+#: patterns/wc-order-confirmation-downloads.php
+#: patterns/wc-order-confirmation-totals.php
+msgctxt "Pattern title"
+msgid "Order additional informations"
+msgstr ""
+
+#: patterns/wc-order-additional-informations.php:12
+msgid "Additional informations"
+msgstr ""
+
+#: patterns/wc-order-confirmation-addresses.php:15
+msgid "Shipping address"
+msgstr ""
+
+#: patterns/wc-order-confirmation-addresses.php:27
+msgid "Billing address"
+msgstr ""
+
+#: patterns/wc-order-confirmation-downloads.php:11
+msgid "Downloads"
+msgstr ""
+
+#: patterns/wc-order-confirmation-totals.php:11
+msgid "Order details"
+msgstr ""
+
+#: patterns/wc-product-image-gallery.php
+msgctxt "Pattern title"
+msgid "Woocommerce product image gallery"
+msgstr ""
+
+#: patterns/wc-related-products.php
+msgctxt "Pattern title"
+msgid "Woocommerce related products"
+msgstr ""
+
+#: patterns/wc-related-products.php:12
+msgid "Related products"
+msgstr ""
+
+#: patterns/wc-search-banner.php
+msgctxt "Pattern title"
+msgid "Products research banner"
+msgstr ""
+
+#: patterns/wc-search-banner.php:38
+msgid "Shop"
+msgstr ""
+
+#: patterns/wc-store-notices.php
+msgctxt "Pattern title"
+msgid "Woocommerce store notices"
+msgstr ""
+
+#: build/assets/editor-Cs_pZ94w.js:1
 msgid "Group with a shadow"
 msgstr ""
 
-#: build/assets/editor-TVgEl6L8.js:1
+#: build/assets/editor-Cs_pZ94w.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr ""
 
-#: build/assets/editor-TVgEl6L8.js:1
+#: build/assets/editor-Cs_pZ94w.js:1
 msgid "Table with pagination"
 msgstr ""
 
-#: build/assets/front-h4m_Wohs.js:3
+#: build/assets/front-B3brP8Me.js:1
 msgid "Search..."
 msgstr ""

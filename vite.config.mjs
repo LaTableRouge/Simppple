@@ -1,8 +1,9 @@
 import { resolve } from 'path'
 
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
+import { viteEditCompiledFilesInPOT } from '@mlnop/vite-edit-compiled-files-in-pot'
 import autoprefixer from 'autoprefixer'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import { run } from 'vite-plugin-run'
 import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
@@ -407,7 +408,17 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			},
 			viteStaticCopy({
 				targets: filesToCopy
-			})
+			}),
+			{
+				...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, `lang/${themeName}.pot`, assetsPath),
+				apply: 'build',
+				enforce: 'pre',
+			},
+			{
+				...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, 'lang/fr_FR.po', assetsPath),
+				apply: 'build',
+				enforce: 'pre',
+			}
 		].filter(Boolean),
 
 		build: {
@@ -448,7 +459,12 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			outDir: distPath,
 			emptyOutDir: true,
 			manifest: true,
+			// ssrManifest: true,
 			sourcemap: !isProduction,
+			target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari14'],
+			cssCodeSplit: true,
+			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14'],
+			// cssMinify: 'lightningcss'
 		},
 
 		server: {
@@ -474,6 +490,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			}
 		},
 
-		clearScreen: false
+		clearScreen: false,
+		appType: 'custom'
 	}
 })

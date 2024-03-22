@@ -27,7 +27,7 @@
 @import 'components/grid-js';
 @import 'components/swiper-js';
 
-/* stylelint-disable scss/load-no-partial-leading-underscore */
+/* stylelint-disable scss/load-no-partial-leading-underscore, scss/at-import-partial-extension-disallowed-list */
 @import '../../blocks/**/scss/_block.scss';
 @import '../../patterns/**/scss/_pattern.scss';
 
@@ -36,4 +36,4 @@
 
 // 6. template-specific styles
 @import '../../templates/**/scss/_template.scss';
-/* stylelint-enable scss/load-no-partial-leading-underscore */
+/* stylelint-enable scss/load-no-partial-leading-underscore, scss/at-import-partial-extension-disallowed-list */

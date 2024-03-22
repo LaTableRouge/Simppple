@@ -1,4 +1,5 @@
-[type='checkbox'] {
+[type='checkbox'],
+.input-checkbox {
 	display: inline-grid;
 	width: var(--checkbox-size, 20px);
 	height: var(--checkbox-size, 20px);
