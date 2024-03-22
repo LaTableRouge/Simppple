@@ -18,6 +18,10 @@
 
 	ul.wc-block-product-template {
 		&[class*='columns-'] {
+			--gap: 1.24em; // Hotfix because woocommerce don't know that browsers can't divide a px
+
+			gap: var(--gap);
+
 			.wc-block-product {
 				.wc-block-components-product-image {
 					aspect-ratio: 1 / 1;
