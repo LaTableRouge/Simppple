@@ -1,6 +1,6 @@
 <?php
 /**
- * Title: Order additional informations
+ * Title: Order - additional informations
  * Slug: simppple/wc-order-additional-informations
  * Inserter: no
  */

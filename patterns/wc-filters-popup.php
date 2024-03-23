@@ -1,9 +1,9 @@
 <?php
 /**
- * Title: Modale de filres
+ * Title: Filters popup
  * Slug: simppple/wc-filters-popup
  * Categories: simppple-sections
- * Keywords: filters, modal, woocommerce
+ * Keywords: filters, popup, woocommerce
  * Block Types: core/navigation
  */
 
