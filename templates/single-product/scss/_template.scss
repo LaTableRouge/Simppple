@@ -38,6 +38,32 @@ body.single-product {
 									container-type: inline-size;
 									container-name: variations-form;
 
+									table.woocommerce-grouped-product-list {
+										.woocommerce-grouped-product-list-item {
+											&__quantity {
+												& > .product_type_variable {
+													margin-bottom: var(--wp--preset--spacing--10);
+												}
+											}
+
+											&__label {
+												padding-bottom: 0;
+
+												& > label {
+													margin: 0;
+												}
+											}
+
+											&__price {
+												padding-bottom: 0;
+
+												@extend .wc-block-components-product-price;
+
+												--font-size: var(--wp--preset--font-size--20);
+											}
+										}
+									}
+
 									table.variations {
 										table-layout: fixed;
 										border-collapse: collapse;

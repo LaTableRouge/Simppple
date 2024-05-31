@@ -20,7 +20,8 @@
 		&[class*='columns-'] {
 			--gap: 1.24em; // Hotfix because woocommerce don't know that browsers can't divide a px
 
-			gap: var(--gap);
+			column-gap: var(--gap);
+			row-gap: calc(var(--gap) * 2);
 
 			.wc-block-product {
 				.wc-block-components-product-image {

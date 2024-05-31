@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simppple 0.0.1\n"
+"Project-Id-Version: Simppple 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
 "POT-Creation-Date: 2024-03-23T07:54:35+00:00\n"
 "PO-Revision-Date: 2024-03-23 08:55+0100\n"
@@ -21,9 +21,9 @@ msgstr "Simppple"
 
 #. Theme URI of the theme
 msgid ""
-"https://github.com/LaTableRouge/Simppple/tree/major/wordpressorg-friendly"
+"https://github.com/LaTableRouge/Simppple/"
 msgstr ""
-"https://github.com/LaTableRouge/Simppple/tree/major/wordpressorg-friendly"
+"https://github.com/LaTableRouge/Simppple/"
 
 #. Description of the theme
 msgid ""
@@ -489,19 +489,19 @@ msgctxt "Pattern title"
 msgid "Woocommerce store notices"
 msgstr "Woocommerce - notification de boutique"
 
-#: build/assets/editor-D6P1OcCR.js:1
+#: build/assets/editor-BY9p3aWK.js:1
 msgid "Group with a shadow"
 msgstr "Groupe avec une ombre"
 
-#: build/assets/editor-D6P1OcCR.js:1
+#: build/assets/editor-BY9p3aWK.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr "Une variante du bloc groupe avec une ombre portée"
 
-#: build/assets/editor-D6P1OcCR.js:1
+#: build/assets/editor-BY9p3aWK.js:1
 msgid "Table with pagination"
 msgstr "Tableau avec pagination"
 
-#: build/assets/front-237IiONw.js:1
+#: build/assets/front-0MeISuwv.js:1
 msgid "Search..."
 msgstr "Rechercher…"
 

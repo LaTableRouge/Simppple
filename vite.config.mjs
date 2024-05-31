@@ -21,7 +21,7 @@ const newVersion = process.env.npm_config_newversion
  | Destination path
  |
  */
-const themeName = 'simppple'
+const themeName = 'Simppple'
 const assetsPath = 'assets'
 const distPath = 'build'
 
