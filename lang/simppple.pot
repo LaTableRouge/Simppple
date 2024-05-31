@@ -475,18 +475,18 @@ msgctxt "Pattern title"
 msgid "Woocommerce store notices"
 msgstr ""
 
-#: build/assets/editor-BY9p3aWK.js:1
+#: build/assets/editor-DN4voi_f.js:1
 msgid "Group with a shadow"
 msgstr ""
 
-#: build/assets/editor-BY9p3aWK.js:1
+#: build/assets/editor-DN4voi_f.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr ""
 
-#: build/assets/editor-BY9p3aWK.js:1
+#: build/assets/editor-DN4voi_f.js:1
 msgid "Table with pagination"
 msgstr ""
 
-#: build/assets/front-0MeISuwv.js:1
+#: build/assets/front-CJWy83at.js:1
 msgid "Search..."
 msgstr ""

@@ -37,4 +37,16 @@
 			font-size: var(--wp--preset--font-size--12);
 		}
 	}
+
+	.wp-block-query-pagination-numbers {
+		display: flex;
+		gap: var(--wp--preset--spacing--10);
+
+		.page-numbers {
+			&.current {
+				color: var(--wp--preset--color--accent-2);
+				font-weight: bold;
+			}
+		}
+	}
 }

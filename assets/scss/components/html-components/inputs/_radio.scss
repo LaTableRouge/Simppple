@@ -12,12 +12,16 @@
 	place-content: center;
 	aspect-ratio: 1;
 
-	&::before,
+	&::before {
+		content: none !important;
+	}
+
+	&::after,
 	& {
 		border-radius: 200px;
 	}
 
-	&::before {
+	&::after {
 		content: '';
 		width: calc(var(--radio-size, 20px) / 2);
 		height: calc(var(--radio-size, 20px) / 2);
@@ -27,7 +31,7 @@
 	}
 
 	&:checked {
-		&::before {
+		&::after {
 			transform: scale(1);
 		}
 	}
