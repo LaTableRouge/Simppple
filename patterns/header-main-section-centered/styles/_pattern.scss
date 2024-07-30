@@ -1,0 +1,281 @@
+.pattern---header-main-section-centered {
+  $menu-responsive-breakpoint: lg;
+  $menu-padding-bottom: var(--wp--preset--spacing--40);
+
+  --logo-max-height: 60px;
+
+  .wp-block-site-logo {
+    .custom-logo-link {
+      display: block;
+      height: var(--logo-max-height);
+      aspect-ratio: 120 / 86;
+    }
+  }
+
+  // Responsive custom breakpoints
+  .wp-block-navigation__responsive-container-open {
+    &:hover,
+    &:focus {
+      @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+        background: initial;
+      }
+    }
+
+    @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+      display: block !important;
+      border-radius: initial;
+      background-color: initial;
+      color: var(--wp--preset--color--contrast);
+    }
+  }
+
+  // full menu
+  .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
+    @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+      display: none !important;
+    }
+  }
+
+  nav {
+    .wp-block-navigation__responsive-container {
+      .wp-block-navigation__responsive-close {
+        .wp-block-navigation__responsive-dialog {
+          .wp-block-navigation__responsive-container-close {
+            &:hover,
+            &:focus {
+              @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+                background: initial;
+              }
+            }
+
+            @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+              border-radius: initial;
+              background-color: initial;
+              color: var(--wp--preset--color--contrast);
+            }
+          }
+        }
+      }
+
+      &.is-menu-open {
+        .wp-block-navigation__responsive-container-content {
+          padding-top: var(--wp--preset--spacing--40);
+
+          & > ul {
+            & > li {
+              padding-right: var(--wp--preset--spacing--40);
+
+              &.has-child {
+                .wp-block-navigation__submenu-container {
+                  padding: calc(var(--wp--preset--spacing--10) * 2);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .wp-block-navigation__responsive-container-content {
+        & > ul {
+          & > li {
+            &:first-child {
+              min-height: var(--logo-max-height);
+            }
+
+            &.wp-block-navigation-item {
+              &:has(.wp-block-site-logo) {
+                flex-grow: 1;
+                justify-content: center;
+
+                @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+                  order: -1;
+                }
+              }
+            }
+
+            &.has-child {
+              & > .wp-block-navigation__submenu-container {
+                &::after {
+                  @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    width: 45px;
+                    height: 4px;
+                    transform: translateX(-50%) translateY(-50%);
+                    border-radius: 5px;
+                    background-color: var(--wp--preset--color--accent);
+                  }
+                }
+
+                // UX hack
+                &::before {
+                  content: '';
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                  left: 0;
+                  height: calc(#{$menu-padding-bottom} * 2);
+                  transform: translateY(-50%);
+                }
+
+                & > li {
+                  &.has-child {
+                    & > .wp-block-navigation__submenu-container {
+                      &::after {
+                        @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                          content: '';
+                          position: absolute;
+                          top: 2px;
+                          width: 4px;
+                          height: 30px;
+                          border-radius: 5px;
+                          background-color: var(--wp--preset--color--accent);
+                        }
+                      }
+
+                      // UX hack
+                      &::before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        bottom: 0;
+                        width: calc(#{$menu-padding-bottom} * 2);
+                      }
+
+                      &.items-justified-right {
+                        &::before {
+                          left: 0;
+                          transform: translateX(-50%);
+                        }
+
+                        &::after {
+                          @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                            left: 0;
+                            transform: translateX(-50%);
+                          }
+                        }
+
+                        @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                          right: 0;
+                          left: initial;
+                          transform: translateX(100%);
+                          border-top-right-radius: 5px;
+                          border-bottom-right-radius: 5px;
+                        }
+                      }
+
+                      &.items-justified-left {
+                        &::before {
+                          right: 0;
+                          transform: translateX(50%);
+                        }
+
+                        &::after {
+                          @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                            right: 0;
+                            transform: translateX(50%);
+                          }
+                        }
+
+                        @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                          left: 0;
+                          transform: translateX(-100%);
+                          border-top-left-radius: 5px;
+                          border-bottom-left-radius: 5px;
+                        }
+                      }
+
+                      @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                        top: 0;
+                      }
+                    }
+                  }
+                }
+
+                @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                  top: calc(100% + $menu-padding-bottom);
+                  left: 50%;
+                  transform: translateX(-50%);
+                  border-bottom-right-radius: 5px;
+                  border-bottom-left-radius: 5px;
+                }
+              }
+            }
+          }
+
+          @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+            --navigation-layout-align: initial;
+
+            gap: var(--wp--preset--spacing--40);
+          }
+        }
+
+        ul {
+          li {
+            padding: 0 var(--wp--preset--spacing--40);
+            font-weight: normal;
+
+            &.current-menu-item,
+            &.current-menu-ancestor {
+              font-weight: 600;
+            }
+
+            &.has-child {
+              .wp-block-navigation-submenu__toggle {
+                @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                  position: absolute;
+                  top: 50%;
+                  right: 0;
+                  width: 15px;
+                  height: 15px;
+                  margin: 0;
+                  transform: translateY(-50%);
+                }
+              }
+
+              .wp-block-navigation__submenu-container {
+                width: max-content !important;
+                padding: var(--wp--preset--spacing--30) 0;
+                border: none;
+
+                .wp-block-navigation-submenu__toggle {
+                  @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                    right: 10px;
+                  }
+                }
+
+                li {
+                  &.has-child {
+                    .wp-block-navigation-submenu__toggle {
+                      @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                        right: var(--wp--preset--spacing--30);
+                      }
+                    }
+
+                    @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                      padding-right: calc(var(--wp--preset--spacing--30) * 2);
+                    }
+                  }
+
+                  & + li {
+                    margin-top: var(--wp--preset--spacing--10);
+                  }
+
+                  a {
+                    padding: 0;
+                  }
+                }
+              }
+
+              @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                position: relative;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

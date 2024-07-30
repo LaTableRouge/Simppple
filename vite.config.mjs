@@ -51,29 +51,29 @@ const entryFiles = [
 		scripts: [
 			{
 				name: 'front',
-				input: `${assetsPath}/js`
+				input: `${assetsPath}/scripts`
 			},
 			{
 				name: 'admin',
-				input: `${assetsPath}/js`
+				input: `${assetsPath}/scripts`
 			},
 			{
 				name: 'editor',
-				input: `${assetsPath}/js`
+				input: `${assetsPath}/scripts`
 			},
 		],
 		styles: [
 			{
 				name: 'front',
-				input: `${assetsPath}/scss`
+				input: `${assetsPath}/styles`
 			},
 			{
 				name: 'admin',
-				input: `${assetsPath}/scss`
+				input: `${assetsPath}/styles`
 			},
 			{
 				name: 'editor',
-				input: `${assetsPath}/scss`
+				input: `${assetsPath}/styles`
 			},
 		]
 	}

@@ -9,7 +9,6 @@ Its collection of templates and patterns tailor to different needs.
 A multitude of possibilities open up with just a few adjustments to color and typography.
 Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
 
-
 **This parent theme is not meant to be modified inside a Wordpress project.** If you want to add new acf/react blocks or patterns please put it inside the child theme folder ([Child theme template](https://github.com/LaTableRouge/Simppple-child)).
 <br>
 <br>
@@ -25,8 +24,8 @@ You can download the theme via [Wordpress.org](https://wordpress.org/themes/simp
     - 📂 fonts
       - 📂 icomoon
     - 📂 img
-    - 📂 js
-    - 📂 scss
+    - 📂 scripts
+    - 📂 styles
   - 📂 build
     - Contains all the compiled assets (css, js, fonts, img, etc...)
   - 📂 blocks
@@ -68,11 +67,11 @@ We use vite.js to facilitate and optimize our development.
 
 The list of development scripts is listed below:
 
-| NPM Command                | Action                                                                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| npm run prod               | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
-| npm run build              | lints, formats, and compiles `simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
-| npm run watch              | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
+| NPM Command   | Action                                                                                                                                               |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| npm run prod  | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
+| npm run build | lints, formats, and compiles `simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
+| npm run watch | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
 
 ### Overriding Gutenberg Native Blocks
 
@@ -88,7 +87,7 @@ ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/
 
 ### Creating REACT Blocks
 
-React blocks should be created and edited in the `blocks/react/src/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/react/src/README.md)).
+React blocks should be created and edited in the `blocks/react/assets/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/react/assets/README.md)).
 
 ### Creating Patterns
 

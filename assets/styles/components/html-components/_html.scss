@@ -1,0 +1,14 @@
+body:not(.wp-admin),
+.editor-styles-wrapper {
+  @import 'mark';
+  @import 'img';
+  @import 'button';
+  @import 'select';
+  @import 'quantity';
+  @import 'fieldset';
+  @import 'inputs/submit';
+  @import 'inputs/checkbox';
+  @import 'inputs/radio';
+  @import 'inputs/text';
+  @import 'inputs/textarea';
+}

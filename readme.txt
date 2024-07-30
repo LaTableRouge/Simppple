@@ -1,11 +1,11 @@
 === Simppple ===
 Contributors: LaTableRouge
 Requires at least: 6.4
-Tested up to: 6.4
+Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 0.0.9
+Stable tag: 1.0.0
 WC requires at least: 8.4.0
-WC tested up to: 8.4.0
+WC tested up to: 9.1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,29 +19,29 @@ Simppple comes with some style variations to help the creativity of the site bui
 == Changelog ==
 
 = 1.0.0 =
-* Released: January 29, 2024
+* Released: January 29, 2024 // TODO TOEDIT
 
-https://github.com/MLNOP/Simppple/releases/tag/1.0.0
+https://github.com/LaTableRouge/Simppple/releases/tag/1.0.0 // TODO TOEDIT
 
 = 0.0.9 =
 * Released: December 27, 2023
 
-https://github.com/MLNOP/Simppple/releases/tag/0.0.9
+https://github.com/LaTableRouge/Simppple/releases/tag/0.0.9
 
 = 0.0.8 =
 * Released: December 27, 2023
 
-https://github.com/MLNOP/Simppple/releases/tag/0.0.8
+https://github.com/LaTableRouge/Simppple/releases/tag/0.0.8
 
 = 0.0.5 =
 * Released: December 27, 2023
 
-https://github.com/MLNOP/Simppple/releases/tag/0.0.5
+https://github.com/LaTableRouge/Simppple/releases/tag/0.0.5
 
 = 0.0.1 =
 * Released: November 28, 2023
 
-https://github.com/MLNOP/Simppple/releases/tag/0.0.1
+https://github.com/LaTableRouge/Simppple/releases/tag/0.0.1
 
 == Copyright ==
 

@@ -1,0 +1,96 @@
+.pattern---header-top-section {
+  $menu-responsive-breakpoint: lg;
+  $menu-padding-bottom: var(--wp--preset--spacing--40);
+
+  position: relative;
+  justify-content: center;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: var(--screen-size);
+    transform: translateX(-50%);
+    background-color: inherit;
+  }
+
+  & > .wp-block-paragraph {
+    display: none;
+
+    @include media-breakpoint-up($menu-responsive-breakpoint) {
+      display: block;
+    }
+  }
+
+  & > .wp-block-group {
+    gap: var(--wp--preset--spacing--40);
+
+    & > .wp-block-navigation {
+      &.pattern---search-modal {
+        .wp-block-navigation__responsive-container-open {
+          font-size: 18px;
+
+          &:hover {
+            opacity: 0.8;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .wp-block-navigation__container {
+        gap: var(--wp--preset--spacing--40);
+
+        .wp-block-navigation-item {
+          &__content {
+            transition: var(--nomotion, opacity 0.2s ease-in-out);
+
+            &:hover {
+              opacity: 0.8;
+              text-decoration: none;
+            }
+
+            &::before {
+              font-family: $icomoon-font-family;
+              font-size: 18px;
+            }
+
+            span {
+              display: none;
+            }
+
+            &[rel='icon-simppple-search'] {
+              &::before {
+                content: $icon-simppple-search;
+              }
+            }
+
+            &[rel='icon-simppple-cart'] {
+              &::before {
+                content: $icon-simppple-cart;
+              }
+            }
+
+            &[rel='icon-simppple-user'] {
+              &::before {
+                content: $icon-simppple-user;
+              }
+            }
+
+            &[rel='icon-simppple-heart'] {
+              &::before {
+                content: $icon-simppple-heart;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @include media-breakpoint-up($menu-responsive-breakpoint) {
+    justify-content: space-between;
+  }
+}

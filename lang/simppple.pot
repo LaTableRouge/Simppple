@@ -10,6 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "POT-Creation-Date: 2024-05-31T06:52:17+00:00\n"
+"POT-Creation-Date: 2024-05-31T06:52:17+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simppple\n"
@@ -19,6 +20,7 @@ msgid "Simppple"
 msgstr ""
 
 #. Theme URI of the theme
+msgid "https://github.com/LaTableRouge/Simppple/"
 msgid "https://github.com/LaTableRouge/Simppple/"
 msgstr ""
 
@@ -475,18 +477,18 @@ msgctxt "Pattern title"
 msgid "Woocommerce store notices"
 msgstr ""
 
-#: build/assets/editor-DN4voi_f.js:1
+#: build/assets/editor-BUm04T06.js:1
 msgid "Group with a shadow"
 msgstr ""
 
-#: build/assets/editor-DN4voi_f.js:1
+#: build/assets/editor-BUm04T06.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr ""
 
-#: build/assets/editor-DN4voi_f.js:1
+#: build/assets/editor-BUm04T06.js:1
 msgid "Table with pagination"
 msgstr ""
 
-#: build/assets/front-CJWy83at.js:1
+#: build/assets/front-DCUbzFf0.js:1
 msgid "Search..."
 msgstr ""

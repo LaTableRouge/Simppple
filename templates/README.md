@@ -18,9 +18,9 @@
 ### Enqueue
 
 - The scss assets are automatically called using the sass glob method
-  - [front.scss](../assets/scss/front.scss)
+  - [front.scss](../assets/styles/front.scss)
 - The js assets need to be enqueued in the theme files
-  - [front.js](../assets/js/front.js)
+  - [front.js](../assets/scripts/front.js)
 
 ### Compilation
 

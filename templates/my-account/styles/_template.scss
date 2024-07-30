@@ -1,0 +1,390 @@
+body.woocommerce-account {
+  &.logged-in {
+    .my-account__deco-wrapper {
+      display: none;
+    }
+
+    & > .wp-site-blocks {
+      & > main {
+        .wp-block-columns {
+          .my-account__content-wrapper {
+            .woocommerce {
+              display: grid;
+              max-width: 100%;
+              gap: var(--wp--preset--spacing--80);
+
+              &::before,
+              &::after {
+                content: none;
+              }
+
+              &-MyAccount-navigation {
+                width: initial;
+                float: none;
+
+                ul {
+                  margin: 0;
+
+                  li {
+                    position: relative;
+                    margin-left: 10px;
+                    padding: 0;
+
+                    &::before {
+                      content: '';
+                      position: absolute;
+                      top: 15%;
+                      bottom: 15%;
+                      left: -10px;
+                      width: 3px;
+                      transition: var(--nomotion, background-color 0.2s ease-in-out);
+                      border-radius: 2px;
+                      background-color: var(--bg-color, transparent);
+                    }
+
+                    & + li {
+                      border-top: 1px solid var(--wp--preset--color--contrast-3);
+                    }
+
+                    &.is-active {
+                      --bg-color: var(--wp--preset--color--accent);
+                    }
+
+                    &:hover {
+                      --bg-color: hsla(var(--wp--custom--accent-hsl), 0.5);
+                    }
+
+                    a {
+                      display: block;
+                      padding: calc(var(--wp--preset--spacing--10) * 2) 0;
+                      font-weight: 600;
+                      text-decoration: none;
+                    }
+                  }
+                }
+              }
+
+              &-MyAccount-content {
+                width: initial;
+                float: none;
+
+                .wc-block-components-notice-banner {
+                  align-items: center;
+
+                  p:empty {
+                    display: none;
+                  }
+
+                  &__content {
+                    a {
+                      margin: 0;
+                      padding: 0 !important;
+                      float: right;
+                      border: 0;
+                      opacity: 0.6;
+                      background: transparent;
+                      color: #2f2f2f !important;
+                      text-decoration-line: underline;
+                      // code de woocommerce parce que ce fdp rajoute des classes différentes pour le même bouton en fonction des pages ¯\_(ツ)_/¯
+                      appearance: none;
+                      text-underline-position: under;
+                    }
+                  }
+                }
+
+                form {
+                  p {
+                    margin: 0;
+                  }
+
+                  .form-row {
+                    margin: 0;
+                    padding: 0;
+
+                    &:not(:last-child) {
+                      margin: 0 0 var(--wp--preset--spacing--30) 0;
+                    }
+
+                    label {
+                      margin-bottom: var(--wp--preset--spacing--10);
+                      line-height: 1.5;
+
+                      & + br {
+                        display: none;
+                      }
+                    }
+
+                    input {
+                      & + span {
+                        em {
+                          font-size: var(--wp--preset--font-size--12);
+                        }
+                      }
+                    }
+                  }
+
+                  fieldset {
+                    margin: 0;
+                  }
+
+                  [type='submit'] {
+                    margin-top: var(--wp--preset--spacing--40);
+                  }
+                }
+
+                table {
+                  --border-color: var(--wp--preset--color--contrast-3);
+                  --bg-color: var(--wp--preset--color--contrast-3);
+                  --table-padding-x: calc(var(--wp--preset--spacing--10) * 1.2);
+
+                  margin: 0;
+                  padding: 0;
+                  border-spacing: 0;
+                  border-collapse: separate;
+                  border: 1px solid var(--border-color);
+                  border-radius: var(--wp--custom--border-radius-table);
+
+                  thead {
+                    --table-padding-y: calc(var(--wp--preset--spacing--10) * 2);
+
+                    tr {
+                      background-color: var(--bg-color);
+                    }
+                  }
+
+                  tbody {
+                    --table-padding-y: var(--wp--preset--spacing--10);
+
+                    tr {
+                      &:nth-child(2n + 1) {
+                        background: none;
+                      }
+
+                      &:nth-child(2n) {
+                        background-color: var(--bg-color);
+                      }
+                    }
+                  }
+
+                  tfoot {
+                    --table-padding-y: var(--wp--preset--spacing--10);
+
+                    th {
+                      @include media-breakpoint-up(md) {
+                        border-top: 1px solid var(--border-color);
+                      }
+                    }
+                  }
+
+                  tr {
+                    th,
+                    td {
+                      padding: var(--table-padding-y) var(--table-padding-x);
+                      font-size: var(--wp--preset--font-size--14);
+                      line-height: 1.1;
+                      vertical-align: middle;
+
+                      &:not(:first-child) {
+                        text-align: center;
+                      }
+
+                      p {
+                        margin-top: 0;
+
+                        &:empty {
+                          display: none;
+                        }
+                      }
+
+                      a {
+                        display: inline-flex;
+                      }
+                    }
+
+                    td {
+                      @include media-breakpoint-up(md) {
+                        border-top: 1px solid var(--border-color);
+                      }
+                    }
+                  }
+
+                  & + .woocommerce-pagination {
+                    margin-top: var(--wp--preset--spacing--40);
+
+                    p {
+                      margin: 0;
+                    }
+
+                    .woocommerce-button {
+                      display: block;
+                      width: fit-content;
+
+                      &--previous {
+                        margin-right: auto;
+                      }
+
+                      &--next {
+                        margin-left: auto;
+                      }
+                    }
+                  }
+                }
+
+                .account-orders-table {
+                  // Account order table specific style
+                  .woocommerce-orders-table__cell-order-total {
+                    max-width: 150px;
+                  }
+
+                  .woocommerce-orders-table__cell-order-actions {
+                    .button {
+                      display: block;
+                      width: fit-content;
+                      margin-right: auto;
+                      margin-bottom: 0;
+                      margin-left: auto;
+                      padding: 5px 10px;
+                      font-size: var(--wp--preset--font-size--14);
+
+                      & + .button {
+                        margin-top: 5px;
+                      }
+
+                      &.pay {
+                        background-color: var(--wp--preset--color--success);
+                      }
+
+                      &.view {
+                        background-color: var(--wp--preset--color--info);
+                      }
+
+                      &.cancel {
+                        background-color: var(--wp--preset--color--error);
+                      }
+                    }
+                  }
+                }
+
+                .edit-account {
+                  // Account edit table specific style
+                }
+
+                .addresses {
+                  display: flex;
+                  flex-wrap: wrap;
+                  margin-top: var(--wp--preset--spacing--80);
+                  gap: var(--wp--preset--spacing--80);
+
+                  &::before,
+                  &::after {
+                    content: none;
+                  }
+
+                  p:empty {
+                    display: none;
+                  }
+
+                  .col-1,
+                  .col-2 {
+                    width: initial;
+                    float: none;
+
+                    h2 {
+                      font-size: var(--wp--preset--font-size--26);
+                      font-weight: bold;
+                      line-height: 1.15;
+                    }
+
+                    .title {
+                      display: grid;
+
+                      &::before,
+                      &::after {
+                        content: none;
+                      }
+
+                      & > * {
+                        float: none;
+                      }
+
+                      p {
+                        margin: 0;
+                      }
+
+                      h3 {
+                        order: 2;
+                      }
+
+                      .edit {
+                        display: inline-block;
+                        margin: 0;
+                        float: none;
+                      }
+                    }
+
+                    @include media-breakpoint-up(md) {
+                      flex: 0 0 calc((100% - var(--wp--preset--spacing--80)) / 2);
+                    }
+                  }
+                }
+              }
+
+              @include media-breakpoint-up(md) {
+                grid-template-columns: 25.5% 1fr;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &:not(.logged-in) {
+    .my-account__content-wrapper {
+      .woocommerce {
+        & > h2 {
+          @extend .underlined-title;
+        }
+
+        .form-row {
+          margin-bottom: var(--wp--preset--spacing--30);
+          padding: 0;
+
+          br {
+            display: none;
+          }
+
+          label {
+            margin-bottom: var(--wp--preset--spacing--10);
+            font-weight: 600;
+            line-height: 1.88;
+          }
+
+          [type='text'],
+          [type='email'],
+          [type='tel'],
+          [type='password'] {
+            padding: 10px 16px;
+          }
+        }
+
+        .woocommerce-form-login {
+          padding: 0;
+          border: none;
+
+          .woocommerce-form-login__rememberme {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: var(--wp--preset--spacing--10);
+          }
+
+          .woocommerce-form-login__submit {
+            margin-top: var(--wp--preset--spacing--30);
+            float: none;
+          }
+        }
+      }
+    }
+  }
+}

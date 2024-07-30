@@ -71,17 +71,6 @@ function simppple_add_class_to_core_paragraph($block_content) {
 }
 add_filter('render_block_core/paragraph', 'simppple_add_class_to_core_paragraph');
 
-function simppple_add_class_to_core_list($block_content) {
-    $list = new WP_HTML_Tag_Processor($block_content);
-
-    if ($list->next_tag()) {
-        $list->add_class('wp-block-list');
-    }
-
-    return $list->get_updated_html();
-}
-add_filter('render_block_core/list', 'simppple_add_class_to_core_list');
-
 function simppple_add_class_to_core_image($block_content) {
     $picture = new WP_HTML_Tag_Processor($block_content);
 

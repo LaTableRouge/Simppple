@@ -19,11 +19,11 @@
 ### Enqueue
 
 - The scss assets are automatically called using the sass glob method
-  - [front.scss](../assets/scss/front.scss)
-  - [editor.scss](../assets/scss/editor.scss)
+  - [front.scss](../assets/styles/front.scss)
+  - [editor.scss](../assets/styles/editor.scss)
 - The js assets are automatically called using the vite.js glob method
-  - [front.js](../assets/js/front.js)
-  - [editor.js](../assets/js/editor.js)
+  - [front.js](../assets/scripts/front.js)
+  - [editor.js](../assets/scripts/editor.js)
 
 ### Compilation
 

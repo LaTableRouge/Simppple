@@ -1,0 +1,113 @@
+.wp-block-table {
+  --th-padding: 18px 24px;
+  --td-padding: 12px 24px;
+  --border: 1px solid var(--border-color, var(--wp--preset--color--contrast-3));
+  --bg-color: var(--bg-color, var(--wp--preset--color--contrast-3));
+  --inner-border: 1px solid var(--inner-border-color, var(--wp--preset--color--contrast-3));
+  --inner-border-head-foot: 1px solid var(--inner-head-foot-border-color, var(--wp--preset--color--contrast));
+
+  table {
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: var(--wp--custom--border-radius-table);
+
+    & > thead,
+    & > tfoot {
+      border: none;
+
+      & > tr {
+        background-color: var(--bg-color, var(--wp--preset--color--contrast-3));
+
+        &:not(:last-child) {
+          & > th,
+          & > td {
+            border-bottom: var(--inner-border-head-foot);
+          }
+        }
+      }
+    }
+
+    & > tbody {
+      & > tr:not(:last-child) {
+        & > td,
+        & > th {
+          border-bottom: var(--inner-border);
+        }
+      }
+    }
+
+    & > thead,
+    & > tfoot,
+    & > tbody {
+      &:not(:last-child) {
+        & > tr {
+          & > td,
+          & > th {
+            border-bottom: var(--inner-border);
+          }
+        }
+      }
+    }
+
+    th,
+    td {
+      border: none;
+
+      &:not(:last-child) {
+        // border-right: var(--border);
+      }
+    }
+
+    th {
+      padding: var(--th-padding);
+      font-size: var(--wp--preset--font-size--18);
+      font-weight: 600;
+      text-align: left;
+    }
+
+    td {
+      padding: var(--td-padding);
+    }
+  }
+
+  figcaption {
+    padding: var(--wp--preset--spacing--10);
+    font-style: italic;
+    text-align: center;
+  }
+
+  // &.is-style-regular {
+  // }
+
+  &.is-style-stripes {
+    table {
+      & > tbody {
+        & > tr {
+          &:nth-child(2n + 1) {
+            background: none;
+          }
+
+          &:nth-child(2n) {
+            background-color: var(--bg-color);
+          }
+        }
+      }
+    }
+  }
+
+  &.table-paginate {
+    .table-paginate__grid-wrapper {
+      .gridjs {
+        .gridjs-wrapper {
+          outline: var(--border);
+          box-shadow: none;
+        }
+
+        .gridjs-footer {
+          outline: var(--border);
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}
