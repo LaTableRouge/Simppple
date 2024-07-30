@@ -9,8 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-05-31T06:52:17+00:00\n"
-"POT-Creation-Date: 2024-05-31T06:52:17+00:00\n"
+"POT-Creation-Date: 2024-07-30T12:58:11+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simppple\n"
@@ -20,7 +19,6 @@ msgid "Simppple"
 msgstr ""
 
 #. Theme URI of the theme
-msgid "https://github.com/LaTableRouge/Simppple/"
 msgid "https://github.com/LaTableRouge/Simppple/"
 msgstr ""
 
@@ -87,8 +85,8 @@ msgctxt "Pattern title"
 msgid "Header shop top section"
 msgstr ""
 
-#: patterns/header-shop-top-section.php:17
-#: patterns/header-top-section.php:17
+#: patterns/header-shop-top-section.php:16
+#: patterns/header-top-section.php:16
 #: patterns/hidden-sample-paragraph-centered.php:10
 #: patterns/hidden-sample-paragraph.php:10
 msgid "This is a section of some simple filler text, also known as placeholder text."
