@@ -409,16 +409,20 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			viteStaticCopy({
 				targets: filesToCopy
 			}),
-			{
-				...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, `lang/${themeName}.pot`, assetsPath),
-				apply: 'build',
-				enforce: 'pre',
-			},
-			{
-				...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, 'lang/fr_FR.po', assetsPath),
-				apply: 'build',
-				enforce: 'pre',
-			}
+			chore !== 'ci'
+				? {
+					...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, `lang/${themeName}.pot`, assetsPath),
+					apply: 'build',
+					enforce: 'pre',
+				}
+				: false,
+			chore !== 'ci'
+				? {
+					...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, 'lang/fr_FR.po', assetsPath),
+					apply: 'build',
+					enforce: 'pre',
+				}
+				: false
 		].filter(Boolean),
 
 		build: {
