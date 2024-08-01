@@ -7,8 +7,8 @@
  */
 ?>
 
-<!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
-<div class="wp-block-group">
+<!-- wp:group {"className": "pattern---payment-insurance","style":{"spacing":{"blockGap":"var:preset|spacing|30"}},"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between","verticalAlignment":"center"}} -->
+<div class="wp-block-group pattern---payment-insurance">
 	<!-- wp:columns {"verticalAlignment":"center","isStackedOnMobile":false,"style":{"spacing":{"blockGap":{"top":"0","left":"var:preset|spacing|10"}}}} -->
 	<div class="wp-block-columns are-vertically-aligned-center is-not-stacked-on-mobile">
 		<!-- wp:column {"verticalAlignment":"center","width":"50%"} -->

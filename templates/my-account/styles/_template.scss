@@ -68,6 +68,10 @@ body.woocommerce-account {
                 width: initial;
                 float: none;
 
+                & > p {
+                  margin-top: calc(var(--wp--preset--spacing--10) * 2);
+                }
+
                 .wc-block-components-notice-banner {
                   align-items: center;
 
