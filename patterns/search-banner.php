@@ -41,7 +41,7 @@
 				></div>
 				<!-- /wp:spacer -->
 
-				<!-- wp:search {"label":"Search\u003e","showLabel":false,"buttonText":"Search\u003e","buttonPosition":"no-button"} /-->
+				<!-- wp:pattern {"slug":"simppple/hidden-search"} /-->
 			</div>
 			<!-- /wp:group -->
 		</div>

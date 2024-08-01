@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/theme.json",
 	"title": "Simppple",
-	"version": 2,
+	"version": 3,
 	"settings": {
 		"appearanceTools": true,
 		"border": {
@@ -131,6 +131,7 @@
 		},
 		"spacing": {
 			"blockGap": true,
+			"defaultSpacingSizes": false,
 			"margin": true,
 			"padding": true,
 			"spacingScale": {
@@ -144,7 +145,7 @@
 				},
 				{
 					"name": "Small",
-					"size": "1.875rem",
+					"size": "clamp(0.9375rem, -2.1531593407rem + 8.2417582418vw, 1.875rem)",
 					"slug": "30"
 				},
 				{
@@ -174,6 +175,7 @@
 		},
 		"typography": {
 			"dropCap": false,
+			"defaultFontSizes": false,
 			"fluid": true,
 			"fontFamilies": [
 				{
@@ -588,7 +590,6 @@
 							"text": "var(--wp--preset--color--accent)"
 						},
 						"typography": {
-							"fontSize": "var(--wp--preset--font-size--16)",
 							"textDecoration": "underline"
 						}
 					}
@@ -675,9 +676,6 @@
 							"typography": {
 								"textDecoration": "underline"
 							}
-						},
-						"typography": {
-							"textDecoration": "none"
 						}
 					}
 				},
@@ -881,7 +879,13 @@
 			"core/video": {},
 			"core/widget-area": {},
 			"core/widget-group": {},
-			"woocommerce/mini-cart": {}
+			"woocommerce/mini-cart": {},
+			"woocommerce/product-price": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--30)",
+					"fontWeight": "600"
+				}
+			}
 		},
 		"color": {
 			"background": "var(--wp--preset--color--base)",
@@ -1027,6 +1031,11 @@
 			"area": "header",
 			"name": "header",
 			"title": "Header"
+		},
+		{
+			"area": "header",
+			"name": "header-shop",
+			"title": "Header shop"
 		},
 		{
 			"area": "header",

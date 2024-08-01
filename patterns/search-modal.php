@@ -54,5 +54,5 @@ add_filter('render_block', 'pattern_search_modal_icon', 10, 2);
 ?>
 <!-- wp:navigation {"hasIcon":false,"overlayMenu":"always","className":"pattern---search-modal","layout":{"type":"flex"}} -->
 <!-- wp:navigation-link {"label":"placeholder","rel":"placeholder","url":"placeholder","title":"placeholder","kind":"custom"} /-->
-<!-- wp:search {"label":"<?php _e('Search', 'simppple') ?>","showLabel":false,"buttonText":"<?php _e('Search', 'simppple') ?>","buttonPosition":"no-button"} /-->
+<!-- wp:pattern {"slug":"simppple/hidden-search"} /-->
 <!-- /wp:navigation -->

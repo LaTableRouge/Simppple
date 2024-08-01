@@ -1,0 +1,8 @@
+body.page__checkout {
+  & > .wp-site-blocks {
+    & > main {
+      container-type: inline-size;
+      container-name: page-checkout;
+    }
+  }
+}

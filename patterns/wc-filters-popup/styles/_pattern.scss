@@ -1,0 +1,18 @@
+.pattern---wc-filters-popup {
+  .wp-block-navigation__responsive-container-open {
+    z-index: 1;
+    align-items: center;
+    padding: var(--wp--preset--spacing--10) calc(var(--wp--preset--spacing--10) * 1.5);
+    overflow: hidden;
+    border: solid 1px var(--wp--preset--color--contrast);
+    border-radius: var(--wp--custom--border-radius-form);
+    background-color: var(--wp--preset--color--white);
+    gap: 5px;
+
+    & > span {
+      &[role='img'] {
+        font-size: 14px;
+      }
+    }
+  }
+}

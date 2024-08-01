@@ -1,0 +1,17 @@
+.wp-block-spacer {
+  &[style*='height:30px'] {
+    height: var(--wp--preset--spacing--30) !important;
+  }
+
+  &[style*='height:40px'] {
+    height: var(--wp--preset--spacing--40) !important;
+  }
+
+  &[style*='height:80px'] {
+    height: var(--wp--preset--spacing--80) !important;
+  }
+
+  &[style*='height:120px'] {
+    height: var(--wp--preset--spacing--120) !important;
+  }
+}

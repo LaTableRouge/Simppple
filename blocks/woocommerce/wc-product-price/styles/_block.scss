@@ -1,0 +1,26 @@
+.wp-block-woocommerce-product-price .wc-block-components-product-price,
+.wc-block-components-product-price {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  column-gap: calc(var(--wp--preset--spacing--10) / 2);
+  font-size: var(--font-size, var(--wp--preset--font-size--20));
+  font-weight: 600;
+
+  &:not(:has(> .woocommerce-Price-amount)) {
+    column-gap: var(--wp--preset--spacing--10);
+  }
+
+  & > del {
+    color: var(--wp--preset--color--contrast-3);
+  }
+
+  & > ins {
+    order: -1;
+    text-decoration: none;
+
+    &.is-discounted {
+      margin: 0;
+    }
+  }
+}

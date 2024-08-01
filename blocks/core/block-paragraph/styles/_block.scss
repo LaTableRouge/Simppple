@@ -1,0 +1,16 @@
+.wp-block-paragraph {
+  // Specific style for paragraph block
+
+  &.social-element {
+    &.has-white-color {
+      & > a {
+        color: inherit;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__link {
+    // Specific style for links inside paragraph block
+  }
+}

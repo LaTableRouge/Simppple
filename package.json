@@ -1,6 +1,6 @@
 {
 	"name": "simppple",
-	"version": "0.0.9",
+	"version": "1.0.0",
 	"description": "A simple basic gutenberg theme",
 	"main": "vite.config.mjs",
 	"keywords": [
@@ -26,45 +26,46 @@
 		"prepare": "husky install && composer install && npm run prod"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^18.4.3",
-		"@commitlint/config-conventional": "^18.4.3",
+		"@commitlint/cli": "^19.3.0",
+		"@commitlint/config-conventional": "^19.2.2",
 		"@mlnop/string-replace": "^1.0.5",
-		"@wordpress/scripts": "^26.19.0",
-		"autoprefixer": "^10.4.16",
-		"browserslist": "^4.22.2",
-		"eslint": "^8.56.0",
+		"@mlnop/vite-edit-compiled-files-in-pot": "^1.0.0",
+		"@wordpress/scripts": "^28.4.0",
+		"autoprefixer": "^10.4.19",
+		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.1.0",
 		"eslint-config-standard": "^17.1.0",
 		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-n": "^16.4.0",
+		"eslint-plugin-n": "^16.6.2",
 		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-prettier": "^5.0.1",
+		"eslint-plugin-prettier": "^5.1.3",
 		"eslint-plugin-promise": "^6.1.1",
-		"eslint-plugin-react": "^7.33.2",
-		"eslint-plugin-simple-import-sort": "^10.0.0",
-		"eslint-plugin-unused-imports": "^3.0.0",
+		"eslint-plugin-react": "^7.34.1",
+		"eslint-plugin-simple-import-sort": "^12.0.0",
+		"eslint-plugin-unused-imports": "^3.1.0",
 		"git-precommit-checks": "^3.1.0",
-		"husky": "^8.0.3",
-		"lint-staged": "^15.2.0",
-		"prettier": "^3.1.1",
-		"sass": "^1.69.5",
-		"sass-loader": "^13.3.2",
-		"stylelint": "^15.11.0",
-		"stylelint-config-property-sort-order-smacss": "^9.1.0",
-		"stylelint-config-sass-guidelines": "^10.0.0",
-		"stylelint-config-standard": "^34.0.0",
-		"stylelint-order": "^6.0.3",
-		"validate-branch-name": "^1.3.0",
-		"vite": "^5.0.10",
+		"husky": "^9.1.4",
+		"lint-staged": "^15.2.7",
+		"prettier": "^3.3.3",
+		"sass": "^1.77.8",
+		"sass-loader": "^16.0.0",
+		"stylelint": "^16.8.1",
+		"stylelint-config-property-sort-order-smacss": "^10.0.0",
+		"stylelint-config-sass-guidelines": "^12.0.0",
+		"stylelint-config-standard": "^36.0.1",
+		"stylelint-order": "^6.0.4",
+		"validate-branch-name": "^1.3.1",
+		"vite": "^5.3.5",
 		"vite-plugin-run": "^0.4.1",
 		"vite-plugin-sass-glob-import": "^3.0.2",
-		"vite-plugin-static-copy": "^1.0.0"
+		"vite-plugin-static-copy": "^1.0.6"
 	},
 	"dependencies": {
-		"gridjs": "^6.0.6"
+		"gridjs": "^6.2.0",
+		"swiper": "^11.1.8"
 	},
 	"lint-staged": {
-		"assets/scss/**/*.scss": [
+		"assets/styles/**/*.scss": [
 			"npx stylelint --allow-empty-input --fix",
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx stylelint --allow-empty-input --fix"
@@ -89,11 +90,11 @@
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx stylelint --allow-empty-input --fix"
 		],
-		"assets/js/**/*.js": [
+		"assets/scripts/**/*.js": [
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx eslint --no-error-on-unmatched-pattern --fix"
 		],
-		"blocks/react/src/**/*.js": [
+		"blocks/react/assets/**/*.js": [
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx eslint --no-error-on-unmatched-pattern --fix"
 		],
@@ -122,14 +123,63 @@
 			"npx eslint --no-error-on-unmatched-pattern --fix"
 		]
 	},
-	"browserslist": [
-		"last 2 version",
-		"> 1%",
-		"safari 5",
-		"opera 12.1",
-		"ios 6",
-		"android 4"
-	],
+	"validate-branch-name": {
+		"pattern": "^(main|master|srv/dev|srv/pre)$|^(feature|fix|hotfix|experimental|minor|major|release)/.+$",
+		"errorMsg": "🤨 The branch you're trying to push doesn't respect our conventions, you can rename it with `git branch -m <current-name> <new-name>`"
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		],
+		"rules": {
+			"type-enum": [
+				2,
+				"always",
+				[
+					"build",
+					"chore",
+					"docs",
+					"feat",
+					"fix",
+					"refactor",
+					"revert",
+					"style",
+					"wordpress",
+					"wp"
+				]
+			]
+		}
+	},
+	"git-precommit-checks": {
+		"display": {
+			"notifications": true,
+			"offendingContent": true,
+			"rulesSummary": false,
+			"shortStats": true,
+			"verbose": false
+		},
+		"rules": [
+			{
+				"message": "Have you forgotten to finish some tasks?",
+				"nonBlocking": true,
+				"regex": "/(?:FIXME|TODO)/"
+			},
+			{
+				"message": "You have conflict markers lying around",
+				"regex": "/^[<>|=]{4,}/m"
+			},
+			{
+				"message": "Commit stopped: you've entered information that must not be committed!",
+				"regex": "/do not commit/i"
+			},
+			{
+				"filter": "/\\.js$/",
+				"message": "🤔 Hum! Didn't you forget to remove from \"console.log(...)\"?",
+				"nonBlocking": true,
+				"regex": "/^\\s*console\\.log/"
+			}
+		]
+	},
 	"prettier": {
 		"trailingComma": "none",
 		"printWidth": 100000,
@@ -204,6 +254,15 @@
 			],
 			"declaration-property-value-disallowed-list": null,
 			"max-nesting-depth": null,
+			"order/order": [
+				[
+					"dollar-variables",
+					"custom-properties",
+					"declarations",
+					"rules",
+					"at-rules"
+				]
+			],
 			"order/properties-alphabetical-order": null,
 			"property-no-unknown": null,
 			"property-no-vendor-prefix": null,
@@ -238,11 +297,11 @@
 			"selector-no-qualifying-type": null,
 			"shorthand-property-no-redundant-values": null,
 			"value-no-vendor-prefix": null
-		}
+		},
+		"ignoreFiles": [
+			"assets/styles/abstracts/**/*.scss"
+		]
 	},
-	"stylelintIgnore": [
-		"assets/scss/abstract/**/*.scss"
-	],
 	"eslintConfig": {
 		"env": {
 			"browser": true,

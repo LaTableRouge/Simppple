@@ -16,31 +16,13 @@
 	>
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:image {"id":50,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"var(--wp--custom--border-radius-picture)"}}} -->
-				<figure class="wp-block-image size-large has-custom-border">
-					<img
-						src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/placeholder.webp'); ?>"
-						alt=""
-						class="wp-image-50"
-						style="border-radius:var(--wp--custom--border-radius-picture);"
-					/>
-				</figure>
-			<!-- /wp:image -->
+			<!-- wp:pattern {"slug":"simppple/hidden-sample-picture-rounded"} /-->
 		</div>
 		<!-- /wp:column -->
 
 		<!-- wp:column -->
 		<div class="wp-block-column">
-			<!-- wp:image {"id":50,"sizeSlug":"large","linkDestination":"none","style":{"border":{"radius":"var(--wp--custom--border-radius-picture)"}}} -->
-			<figure class="wp-block-image size-large has-custom-border">
-				<img
-					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/placeholder.webp'); ?>"
-					alt=""
-					class="wp-image-50"
-					style="border-radius:var(--wp--custom--border-radius-picture);"
-				/>
-			</figure>
-			<!-- /wp:image -->
+			<!-- wp:pattern {"slug":"simppple/hidden-sample-picture-rounded"} /-->
 		</div>
 		<!-- /wp:column -->
 	</div>

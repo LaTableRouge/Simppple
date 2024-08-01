@@ -1,8 +1,9 @@
 import { resolve } from 'path'
 
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
+import { viteEditCompiledFilesInPOT } from '@mlnop/vite-edit-compiled-files-in-pot'
 import autoprefixer from 'autoprefixer'
-import { defineConfig, loadEnv } from 'vite'
+import { defineConfig } from 'vite'
 import { run } from 'vite-plugin-run'
 import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
@@ -20,7 +21,7 @@ const newVersion = process.env.npm_config_newversion
  | Destination path
  |
  */
-const themeName = 'simppple'
+const themeName = 'Simppple'
 const assetsPath = 'assets'
 const distPath = 'build'
 
@@ -50,29 +51,29 @@ const entryFiles = [
 		scripts: [
 			{
 				name: 'front',
-				input: `${assetsPath}/js`
+				input: `${assetsPath}/scripts`
 			},
 			{
 				name: 'admin',
-				input: `${assetsPath}/js`
+				input: `${assetsPath}/scripts`
 			},
 			{
 				name: 'editor',
-				input: `${assetsPath}/js`
+				input: `${assetsPath}/scripts`
 			},
 		],
 		styles: [
 			{
 				name: 'front',
-				input: `${assetsPath}/scss`
+				input: `${assetsPath}/styles`
 			},
 			{
 				name: 'admin',
-				input: `${assetsPath}/scss`
+				input: `${assetsPath}/styles`
 			},
 			{
 				name: 'editor',
-				input: `${assetsPath}/scss`
+				input: `${assetsPath}/styles`
 			},
 		]
 	}
@@ -179,7 +180,6 @@ if (chore === 'version') {
 				{
 					filePath: [
 						resolve(__dirname, 'package.json'),
-						resolve(__dirname, 'update/info.json'),
 						resolve(__dirname, 'style.css')
 					],
 					replace: [
@@ -408,28 +408,63 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			},
 			viteStaticCopy({
 				targets: filesToCopy
-			})
-		].filter(Boolean),
-
-		esbuild: isProduction
-			? {
-				minifyIdentifiers: false,
-				keepNames: true,
-				pure: ['console.log'],
-				reserveProps: /^__\(*$/
+			}),
+			{
+				...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, `lang/${themeName}.pot`, assetsPath),
+				apply: 'build',
+				enforce: 'pre',
+			},
+			{
+				...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, 'lang/fr_FR.po', assetsPath),
+				apply: 'build',
+				enforce: 'pre',
 			}
-			: null,
+		].filter(Boolean),
 
 		build: {
 			rollupOptions: {
 				input: entriesToCompile,
 			},
 			write: true,
-			minify: isProduction ? 'esbuild' : false,
+			minify: isProduction ? 'terser' : false,
+			terserOptions: isProduction
+				? {
+					keep_fnames: true,
+					enclose: true,
+					compress: {
+						pure_funcs: [
+							'console.log',
+							'__'
+							// 'console.error',
+							// 'console.warn',
+							// ...
+						]
+					},
+					// Make sure symbols under `pure_funcs`,
+					// are also under `mangle.reserved` to avoid mangling.
+					mangle: {
+						reserved: [
+							'console.log',
+							'__'
+							// 'console.error',
+							// 'console.warn',
+							// ...
+						]
+					},
+					output: {
+						comments: false
+					}
+				}
+				: null,
 			outDir: distPath,
 			emptyOutDir: true,
 			manifest: true,
+			// ssrManifest: true,
 			sourcemap: !isProduction,
+			target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari14'],
+			cssCodeSplit: true,
+			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14'],
+			// cssMinify: 'lightningcss'
 		},
 
 		server: {
@@ -455,6 +490,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			}
 		},
 
-		clearScreen: false
+		clearScreen: false,
+		appType: 'custom'
 	}
 })

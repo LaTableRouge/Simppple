@@ -1,0 +1,23 @@
+.pattern---payment-insurance {
+  --columns-gap: var(--wp--preset--spacing--30);
+  --columns-number: 1.2;
+
+  & > .wp-block-columns {
+    flex: 0 0 calc((100% - (var(--columns-gap) * (var(--columns-number) - 1))) / var(--columns-number));
+    max-width: max-content;
+
+    & > .wp-block-column {
+      & > .wp-block-image {
+        max-width: 150px;
+      }
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: initial;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    --columns-number: 3;
+  }
+}
