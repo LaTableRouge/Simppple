@@ -1,7 +1,6 @@
 import { resolve } from 'path'
 
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
-import { viteEditCompiledFilesInPOT } from '@mlnop/vite-edit-compiled-files-in-pot'
 import autoprefixer from 'autoprefixer'
 import { defineConfig } from 'vite'
 import { run } from 'vite-plugin-run'
@@ -408,21 +407,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			},
 			viteStaticCopy({
 				targets: filesToCopy
-			}),
-			chore !== 'ci'
-				? {
-					...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, `lang/${themeName}.pot`, assetsPath),
-					apply: 'build',
-					enforce: 'pre',
-				}
-				: false,
-			chore !== 'ci'
-				? {
-					...viteEditCompiledFilesInPOT(`${distPath}/.vite/manifest.json`, 'lang/fr_FR.po', assetsPath),
-					apply: 'build',
-					enforce: 'pre',
-				}
-				: false
+			})
 		].filter(Boolean),
 
 		build: {

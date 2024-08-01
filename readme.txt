@@ -15,13 +15,15 @@ Simppple is designed to be flexible, versatile and applicable to any website.
 Its collection of templates and patterns tailor to different needs.
 A multitude of possibilities open up with just a few adjustments to color and typography.
 Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
 
 = 1.0.0 =
-* Released: January 29, 2024 // TODO TOEDIT
+* Released: August 01, 2024
 
-https://github.com/LaTableRouge/Simppple/releases/tag/1.0.0 // TODO TOEDIT
+https://github.com/LaTableRouge/Simppple/releases/tag/1.0.0
+Woocommerce style compatibility
 
 = 0.0.9 =
 * Released: December 27, 2023
