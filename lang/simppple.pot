@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-07-30T12:58:11+00:00\n"
+"POT-Creation-Date: 2024-09-19T13:16:07+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.9.0\n"
 "X-Domain: simppple\n"
@@ -23,7 +23,7 @@ msgid "https://github.com/LaTableRouge/Simppple/"
 msgstr ""
 
 #. Description of the theme
-msgid "Simppple is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs. A multitude of possibilities open up with just a few adjustments to color and typography. Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4."
+msgid "Simppple is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs. A multitude of possibilities open up with just a few adjustments to color and typography. Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4. Simppple also come with a out of the box custom style for Woocommerce."
 msgstr ""
 
 #. Author of the theme
@@ -475,18 +475,18 @@ msgctxt "Pattern title"
 msgid "Woocommerce store notices"
 msgstr ""
 
-#: build/assets/editor-gXEdCeHl.js:1
+#: build/assets/editor.js:1
 msgid "Group with a shadow"
 msgstr ""
 
-#: build/assets/editor-gXEdCeHl.js:1
+#: build/assets/editor.js:1
 msgid "A variation of the group block with a drop shadow"
 msgstr ""
 
-#: build/assets/editor-gXEdCeHl.js:1
+#: build/assets/editor.js:1
 msgid "Table with pagination"
 msgstr ""
 
-#: build/assets/front-x0rVWg_e.js:1
+#: build/assets/front.js:3
 msgid "Search..."
 msgstr ""
