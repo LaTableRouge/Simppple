@@ -1,0 +1,38 @@
+[type='radio'] {
+	display: inline-grid;
+	width: var(--radio-size, 20px);
+	height: var(--radio-size, 20px);
+	margin: 0;
+	border: 2px solid var(--radio-border-color, var(--wp--preset--color--contrast-3));
+	border-radius: 4px;
+	background-color: var(--radio-bg-color, var(--wp--preset--color--white));
+	color: currentColor;
+	cursor: pointer;
+	appearance: none;
+	place-content: center;
+	aspect-ratio: 1;
+
+	&::before {
+		content: none !important;
+	}
+
+	&::after,
+	& {
+		border-radius: 200px;
+	}
+
+	&::after {
+		content: '';
+		width: calc(var(--radio-size, 20px) / 2);
+		height: calc(var(--radio-size, 20px) / 2);
+		transform: scale(0);
+		transition: var(--nomotion, transform 0.2s ease-in-out);
+		background-color: var(--radio-check-color, var(--wp--preset--color--accent));
+	}
+
+	&:checked {
+		&::after {
+			transform: scale(1);
+		}
+	}
+}

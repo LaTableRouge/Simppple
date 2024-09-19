@@ -1,61 +1,61 @@
 .pattern---wc-related-products {
-  .wc-related-products {
-    .swiper {
-      width: 100%;
+	.wc-related-products {
+		.swiper {
+			width: 100%;
 
-      .swiper-wrapper {
-        display: flex;
-        flex-wrap: initial;
-        gap: 0;
-      }
-    }
+			.swiper-wrapper {
+				display: flex;
+				flex-wrap: initial;
+				gap: 0;
+			}
+		}
 
-    ul {
-      .product {
-        text-align: left;
+		ul {
+			.product {
+				text-align: left;
 
-        .wc-block-grid__product-image {
-          display: grid;
-          aspect-ratio: 1 / 1;
-          border-radius: var(--wp--custom--border-radius-picture);
+				.wc-block-grid__product-image {
+					display: grid;
+					aspect-ratio: 1 / 1;
+					border-radius: var(--wp--custom--border-radius-picture);
 
-          a {
-            display: block;
+					a {
+						display: block;
 
-            img {
-              height: 100%;
-              object-fit: cover;
-            }
-          }
-        }
+						img {
+							height: 100%;
+							object-fit: cover;
+						}
+					}
+				}
 
-        .wc-block-grid__product-onsale {
-          top: 4px;
-          right: auto;
-          left: 4px;
-          min-width: initial;
-          min-height: initial;
-          margin: 0;
-          padding: 0.25em 0.75em;
-          border: none;
-          border-radius: 3px;
-          background-color: var(--wp--preset--color--accent);
-          color: var(--wp--preset--color--white);
-          font-size: var(--wp--preset--font-size--14);
-          font-weight: bold;
-          line-height: initial;
-          text-transform: uppercase;
-        }
+				.wc-block-grid__product-onsale {
+					top: 4px;
+					right: auto;
+					left: 4px;
+					min-width: initial;
+					min-height: initial;
+					margin: 0;
+					padding: 0.25em 0.75em;
+					border: none;
+					border-radius: 3px;
+					background-color: var(--wp--preset--color--accent);
+					color: var(--wp--preset--color--white);
+					font-size: var(--wp--preset--font-size--14);
+					font-weight: bold;
+					line-height: initial;
+					text-transform: uppercase;
+				}
 
-        .wp-block-post-title {
-          font-size: var(--wp--preset--font-size--16);
-        }
+				.wp-block-post-title {
+					font-size: var(--wp--preset--font-size--16);
+				}
 
-        .wc-block-components-product-price {
-          font-size: var(--wp--preset--font-size--20);
-          font-weight: bold;
-        }
-      }
-    }
-  }
+				.wc-block-components-product-price {
+					font-size: var(--wp--preset--font-size--20);
+					font-weight: bold;
+				}
+			}
+		}
+	}
 }

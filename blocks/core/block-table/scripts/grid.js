@@ -1,7 +1,7 @@
 import { Grid } from 'gridjs'
 import { frFR } from 'gridjs/l10n'
 
-import { __ } from '../../../../assets/scripts/common/variables'
+import { __ } from '../../../../src/scripts/common/variables'
 
 export const blockTableGridJSInit = () => {
 	const gridElements = document.querySelectorAll('.table-paginate:not(.is-init)')

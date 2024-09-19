@@ -7,12 +7,12 @@
 		}
 	],
 	"require-dev": {
-		"friendsofphp/php-cs-fixer": "v3.60.0",
+		"friendsofphp/php-cs-fixer": "v3.63.2",
 		"wp-cli/wp-cli-bundle": "v2.10.0"
 	},
 	"scripts": {
 		"lint:php": [
-			"vendor/bin/php-cs-fixer.bat fix -v --show-progress=dots --using-cache=no --config=.php-cs-fixer.php maaaps.php includes"
+			"vendor/bin/php-cs-fixer.bat fix -v --show-progress=dots --using-cache=no --config=.php-cs-fixer.php functions.php inc patterns blocks"
 		]
 	}
 }

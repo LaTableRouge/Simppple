@@ -1,13 +1,13 @@
 .wc-block-components-checkbox {
-  .wc-block-components-checkbox__mark {
-    display: none;
-  }
+	.wc-block-components-checkbox__mark {
+		display: none;
+	}
 
-  .wc-block-components-checkbox__input {
-    @extend [type='checkbox'];
-  }
+	.wc-block-components-checkbox__input {
+		@extend [type='checkbox'];
+	}
 
-  .wc-block-components-checkbox__label {
-    margin-left: var(--wp--preset--spacing--10);
-  }
+	.wc-block-components-checkbox__label {
+		margin-left: var(--wp--preset--spacing--10);
+	}
 }

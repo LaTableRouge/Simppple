@@ -1,14 +1,14 @@
 .pattern---img-img {
-  $mobile-breakpoint: md;
+	$mobile-breakpoint: md;
 
-  container-type: inline-size;
-  container-name: pattern-img-img;
+	container-type: inline-size;
+	container-name: pattern-img-img;
 
-  .wp-block-columns {
-    flex-direction: column;
+	.wp-block-columns {
+		flex-direction: column;
 
-    @include container-breakpoint-up(pattern-img-img, $mobile-breakpoint) {
-      flex-direction: row;
-    }
-  }
+		@include container-breakpoint-up(pattern-img-img, $mobile-breakpoint) {
+			flex-direction: row;
+		}
+	}
 }
