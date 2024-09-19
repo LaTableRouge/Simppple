@@ -821,12 +821,7 @@
 			},
 			"core/details": {
 				"border": {
-					"radius": "var(--wp--custom--border-radius-form)",
-					"left": {
-						"style": "solid",
-						"width": "5px",
-						"color": "var(--wp--preset--color--accent)"
-					}
+					"radius": "var(--wp--custom--border-radius-form)"
 				},
 				"spacing": {
 					"padding": {

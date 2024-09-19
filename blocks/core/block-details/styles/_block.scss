@@ -4,7 +4,9 @@
 	summary {
 		display: flex;
 		position: relative;
-		padding: 10px 20px 10px 30px;
+		padding-block: 10px;
+		padding-inline-start: 30px;
+		padding-inline-end: 20px;
 		font-size: var(--wp--preset--font-size--18);
 		cursor: pointer;
 		user-select: none;
@@ -26,7 +28,7 @@
 			content: '';
 			position: absolute;
 			top: 50%;
-			left: 0;
+			inset-inline-start: 0;
 			width: var(--cross-size);
 			height: calc(var(--cross-size) / 4);
 			border-radius: 5px;

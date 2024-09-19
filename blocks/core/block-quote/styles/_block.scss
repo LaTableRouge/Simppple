@@ -12,7 +12,7 @@
 			content: $icon-simppple-quote;
 			position: absolute;
 			top: 20px;
-			right: 20px;
+			inset-inline-end: 20px;
 			opacity: 0.1;
 			color: var(--wp--preset--color--accent);
 			font-family: $icomoon-font-family;
@@ -22,7 +22,7 @@
 
 			@include media-breakpoint-up(lg) {
 				top: initial;
-				right: var(--wp--preset--spacing--40);
+				inset-inline-end: var(--wp--preset--spacing--40);
 				bottom: var(--wp--preset--spacing--40);
 				opacity: 0.15;
 			}
