@@ -11,10 +11,15 @@
 		}
 	}
 
+	.wp-block-file__button {
+		margin-left: initial;
+		margin-inline-start: 0.75em;
+	}
+
 	a {
 		&:not(.wp-block-file__button):hover + .wp-block-file__button,
 		&.wp-block-file__button:hover {
-			padding-left: calc(30px + 12px);
+			padding-inline-start: calc(30px + 12px);
 
 			&::before,
 			&::after {
@@ -29,12 +34,12 @@
 
 		&.wp-block-file__button {
 			position: relative;
-			transition: var(--nomotion, padding-left 0.2s ease-in-out);
+			transition: var(--nomotion, padding-inline-start 0.2s ease-in-out);
 
 			&::before,
 			&::after {
 				position: absolute;
-				left: 18px;
+				inset-inline-start: 18px;
 				transition: var(--nomotion, opacity 0.2s ease-in-out);
 				opacity: 0;
 			}

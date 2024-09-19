@@ -26,37 +26,4 @@
 	&__content {
 		padding: var(--wp--preset--spacing--40) !important;
 	}
-
-	&.group-media-stretched {
-		container-type: inline-size;
-		container-name: core-block-media-text-stretched;
-
-		&:not(.is-image-fill) {
-			--compensate-padding: var(--wp--preset--spacing--40);
-		}
-
-		&:not(.has-media-on-the-right) {
-			.wp-block-media-text__media {
-				margin-left: calc(((var(--screen-size) - 100cqw) / -2) - var(--compensate-padding, 0px));
-
-				img,
-				& {
-					border-top-left-radius: 0;
-					border-bottom-left-radius: 0;
-				}
-			}
-		}
-
-		&.has-media-on-the-right {
-			.wp-block-media-text__media {
-				margin-right: calc(((var(--screen-size) - 100cqw) / -2) - var(--compensate-padding, 0px));
-
-				img,
-				& {
-					border-top-right-radius: 0;
-					border-bottom-right-radius: 0;
-				}
-			}
-		}
-	}
 }

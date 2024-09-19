@@ -16,8 +16,14 @@
 	}
 
 	&__more-text {
+		--icon: '#{$icon-simppple-arrow-right-plain}';
+
+		html[dir='rtl'] & {
+			--icon: '#{$icon-simppple-arrow-left-plain}';
+		}
+
 		.wp-block-post-excerpt__more-link {
-			display: block;
+			display: flex;
 			margin-top: var(--wp--preset--spacing--40);
 			font-weight: normal;
 			font-weight: 600;
@@ -25,14 +31,14 @@
 
 			&:hover {
 				&::after {
-					margin-left: 10px;
+					margin-inline-start: 10px;
 				}
 			}
 
 			&::after {
-				content: $icon-simppple-arrow-right-plain;
-				margin-left: 5px;
-				transition: var(--nomotion, margin-left 0.2s ease-in-out);
+				content: var(--icon);
+				margin-inline-start: 5px;
+				transition: var(--nomotion, margin-inline-start 0.2s ease-in-out);
 				font-family: $icomoon-font-family;
 				font-weight: normal;
 			}
