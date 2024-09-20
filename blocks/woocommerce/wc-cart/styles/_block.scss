@@ -37,7 +37,7 @@
 
 							@include container-breakpoint-up(page-cart, sm) {
 								width: 25%;
-								text-align: left;
+								text-align: start;
 							}
 						}
 
@@ -81,7 +81,7 @@
 
 					&-product {
 						visibility: visible;
-						text-align: left;
+						text-align: start;
 					}
 				}
 
@@ -247,7 +247,7 @@
 					position: relative;
 					width: 100%;
 					padding: 0;
-					text-align: left;
+					text-align: start;
 
 					.wc-block-components-product-image {
 						display: grid;
