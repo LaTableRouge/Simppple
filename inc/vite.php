@@ -2,7 +2,7 @@
 
 if (!defined('ABSPATH')) {
     			exit;
-		}
+					}
 
 define(			'SIMPPPLE_VITE_SERVER', 'http://localhost:5173');
 define('SIMPPPLE_DIST_FOLDER', 'build');
