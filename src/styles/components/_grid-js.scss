@@ -1,4 +1,7 @@
 .gridjs {
+	// color: inherit;
+	--inner-border: 1px solid hsla(var(--wp--custom--black-hsl), 0.85);
+
 	.gridjs-head {
 		margin-bottom: var(--wp--preset--spacing--10);
 
@@ -14,26 +17,37 @@
 				top: 50%;
 				inset-inline-end: 10px;
 				transform: translateY(-50%);
-				color: var(--wp--preset--color--contrast-2);
+				color: var(--wp--preset--color--black);
 				font-family: $icomoon-font-family;
 				pointer-events: none;
 			}
 
 			.gridjs-search-input {
 				padding-inline-end: 50px;
-				border-color: var(--wp--preset--color--contrast-3);
+				border-color: hsla(var(--wp--custom--black-hsl), 0.75);
 				font-size: var(--wp--preset--font-size--16);
 
 				&::placeholder {
-					color: var(--wp--preset--color--contrast-2);
+					color: hsla(var(--wp--custom--black-hsl), 0.75);
 				}
 			}
 		}
 	}
 
 	.gridjs-wrapper {
+		outline: var(--inner-border);
+		box-shadow: none;
+
 		.gridjs-table {
 			text-align: start;
+
+			// .gridjs-tbody {
+			// 	background-color: var(--bg);
+
+			// 	td.gridjs-td{
+			// 		background-color: inherit;
+			// 	}
+			// }
 
 			.gridjs-th-sort {
 				position: relative;
@@ -48,10 +62,18 @@
 					float: none;
 				}
 			}
+
+			// th.gridjs-th {
+			// 	background-color: var(--bg-block-color);
+			// 	color: var(--wp--preset--color--contrast);
+			// }
 		}
 	}
 
 	.gridjs-footer {
+		outline: var(--inner-border);
+		box-shadow: none;
+
 		.gridjs-pagination {
 			.gridjs-pages {
 				button {
@@ -74,10 +96,5 @@
 				}
 			}
 		}
-	}
-
-	th.gridjs-th {
-		background-color: var(--bg-color);
-		color: var(--wp--preset--color--contrast);
 	}
 }

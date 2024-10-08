@@ -34,6 +34,7 @@ body:not(.wp-admin) {
 	display: flex;
 	flex-direction: column;
 	min-height: 100%;
+	accent-color: var(--wp--preset--color--accent-2);
 
 	::selection {
 		background: var(--wp--preset--color--accent-2);

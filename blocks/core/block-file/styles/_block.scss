@@ -35,6 +35,8 @@
 		&.wp-block-file__button {
 			position: relative;
 			transition: var(--nomotion, padding-inline-start 0.2s ease-in-out);
+			// background-color: var(--wp--preset--color--accent-2);
+			// color: var(--wp--preset--color--white);
 
 			&::before,
 			&::after {

@@ -1,22 +1,23 @@
 .wp-block-table {
 	--th-padding: 18px 24px;
 	--td-padding: 12px 24px;
-	--border: 1px solid var(--border-color, var(--wp--preset--color--contrast-3));
-	--bg-color: var(--bg-color, var(--wp--preset--color--contrast-3));
-	--inner-border: 1px solid var(--inner-border-color, var(--wp--preset--color--contrast-3));
-	--inner-border-head-foot: 1px solid var(--inner-head-foot-border-color, var(--wp--preset--color--contrast));
+	--border: 1px solid var(--border-color, hsla(var(--wp--custom--contrast-hsl), 0.85));
+	--bg: var(--bg-color, var(--wp--preset--color--base));
+	--bg-block-color: var(--bg-head-foot-color, hsla(var(--wp--custom--base-3-hsl), 0.85));
+	--inner-border: 1px solid var(--inner-border-color, hsla(var(--wp--custom--contrast-hsl), 0.85));
+	--inner-border-head-foot: 1px solid var(--inner-head-foot-border-color, hsla(var(--wp--custom--contrast-hsl), 0.85));
 
 	table {
 		border-spacing: 0;
 		border-collapse: separate;
-		border-radius: var(--wp--custom--border-radius-table);
+		// border-radius: var(--wp--custom--border-radius-table);
 
 		& > thead,
 		& > tfoot {
 			border: none;
 
 			& > tr {
-				background-color: var(--bg-color, var(--wp--preset--color--contrast-3));
+				background-color: var(--bg-block-color, var(--wp--preset--color--contrast));
 
 				&:not(:last-child) {
 					& > th,
@@ -88,24 +89,8 @@
 					}
 
 					&:nth-child(2n) {
-						background-color: var(--bg-color);
+						background-color: var(--bg-block-color);
 					}
-				}
-			}
-		}
-	}
-
-	&.table-paginate {
-		.table-paginate__grid-wrapper {
-			.gridjs {
-				.gridjs-wrapper {
-					outline: var(--border);
-					box-shadow: none;
-				}
-
-				.gridjs-footer {
-					outline: var(--border);
-					box-shadow: none;
 				}
 			}
 		}

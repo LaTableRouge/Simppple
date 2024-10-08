@@ -38,7 +38,7 @@
 					"slug": "base-3"
 				},
 				{
-					"color": "#252422",
+					"color": "#1A1A1A",
 					"name": "Contrast",
 					"slug": "contrast"
 				},
@@ -48,7 +48,7 @@
 					"slug": "contrast-2"
 				},
 				{
-					"color": "#e3e2df",
+					"color": "#979797",
 					"name": "Contrast / Three",
 					"slug": "contrast-3"
 				},
@@ -96,9 +96,9 @@
 			"text": true
 		},
 		"custom": {
-			"color-base-dark": "#252422",
-			"color-base-2-dark": "#373634",
-			"color-base-3-dark": "#4a4948",
+			"color-base-dark": "#1A1A1A",
+			"color-base-2-dark": "#403D39",
+			"color-base-3-dark": "#979797",
 			"color-contrast-dark": "#ffffff",
 			"color-contrast-2-dark": "#f9f9f9",
 			"color-contrast-3-dark": "#F5ECCE",
@@ -864,9 +864,12 @@
 			"core/spacer": {},
 			"core/subhead": {},
 			"core/table": {
-				"css": "--border-color: hsla(var(--wp--custom--white-hsl), 0.85); --inner-border-color: hsla(var(--wp--custom--white-hsl), 0.85); --bg-color: hsla(var(--wp--custom--white-hsl), 0.85);",
+				"css": "--border-color: hsla(var(--wp--custom--contrast-hsl), 0.85); --inner-border-color: hsla(var(--wp--custom--contrast-hsl), 0.85); --bg-head-foot-color: hsla(var(--wp--custom--base-3-hsl), 0.85); --bg-color: var(--wp--preset--color--base);",
+				"color": {
+					"background": "var(--wp--preset--color--base)"
+				},
 				"border": {
-					"color": "hsla(var(--wp--custom--white-hsl), 0.85)",
+					"color": "hsla(var(--wp--custom--contrast-hsl), 0.85)",
 					"width": "1px",
 					"style": "solid",
 					"radius": "var(--wp--custom--border-radius-table)"
@@ -902,7 +905,7 @@
 				":active": {
 					"color": {
 						"background": "var(--wp--preset--color--accent-2)",
-						"text": "var(--wp--preset--color--base)"
+						"text": "var(--wp--preset--color--white)"
 					},
 					"border": {
 						"color": "var(--wp--preset--color--accent-2)"
@@ -920,7 +923,7 @@
 				},
 				":visited": {
 					"color": {
-						"text": "var(--wp--preset--color--base)"
+						"text": "var(--wp--preset--color--white)"
 					}
 				},
 				"border": {
@@ -928,7 +931,7 @@
 				},
 				"color": {
 					"background": "var(--wp--preset--color--accent-2)",
-					"text": "var(--wp--preset--color--base)"
+					"text": "var(--wp--preset--color--white)"
 				},
 				"spacing": {
 					"padding": {
