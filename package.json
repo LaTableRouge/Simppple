@@ -69,16 +69,16 @@
 	},
 	"lint-staged": {
 		"functions.php": [
-			"php ./vendor/bin/php-cs-fixer.bat fix -v --using-cache=no --config=.php-cs-fixer.php"
+			"php ./vendor/bin/php-cs-fixer.bat fix --allow-risky=yes --using-cache=no --config=.php-cs-fixer.php"
 		],
 		"inc/**/*.php": [
-			"php ./vendor/bin/php-cs-fixer.bat fix -v --using-cache=no --config=.php-cs-fixer.php"
+			"php ./vendor/bin/php-cs-fixer.bat fix --allow-risky=yes --using-cache=no --config=.php-cs-fixer.php"
 		],
 		"blocks/**/*.php": [
-			"php ./vendor/bin/php-cs-fixer.bat fix -v --using-cache=no --config=.php-cs-fixer.php"
+			"php ./vendor/bin/php-cs-fixer.bat fix --allow-risky=yes --using-cache=no --config=.php-cs-fixer.php"
 		],
 		"patterns/**/*.php": [
-			"php ./vendor/bin/php-cs-fixer.bat fix -v --using-cache=no --config=.php-cs-fixer.php"
+			"php ./vendor/bin/php-cs-fixer.bat fix --allow-risky=yes --using-cache=no --config=.php-cs-fixer.php"
 		],
 		"src/styles/**/*.scss": [
 			"npx stylelint --allow-empty-input --fix",

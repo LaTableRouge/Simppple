@@ -13,7 +13,7 @@
     style="background-color:var(--wp--preset--color--base-2);padding-top:var(--wp--preset--spacing--10);padding-right:0;padding-bottom:var(--wp--preset--spacing--10);padding-left:0"
 >
     <!-- wp:paragraph -->
-    <p><?php _e(					'This is a section of some simple filler text, also known as placeholder text.', 'simppple'); ?></p>
+    <p><?php _e(				'This is a section of some simple filler text, also known as placeholder text.', 'simppple'); ?></p>
     <!-- /wp:paragraph -->
 
     <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->

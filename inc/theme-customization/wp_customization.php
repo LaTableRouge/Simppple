@@ -89,7 +89,7 @@ function simppple_add_context_to_html_tag($output) {
         $output .= ' data-context="front"';
     }
 
-    if (is_rtl(				)) {
+    if (is_rtl(			)) {
         $output .= ' dir="rtl"';
     }
 
