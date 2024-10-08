@@ -13,6 +13,9 @@
 	"scripts": {
 		"lint:php": [
 			"vendor/bin/php-cs-fixer.bat fix -v --show-progress=dots --using-cache=no --config=.php-cs-fixer.php functions.php inc patterns blocks"
+		],
+		"lint-staged:php": [
+			"vendor/bin/php-cs-fixer.bat fix --using-cache=no --config=.php-cs-fixer.php"
 		]
 	}
 }

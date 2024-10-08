@@ -1,10 +1,10 @@
 <?php
 
 if (!defined('ABSPATH')) {
-    			exit;
-				}
+    exit;
+}
 
-define(			'SIMPPPLE_VITE_SERVER', 'http://localhost:5173');
+define('SIMPPPLE_VITE_SERVER', 'http://localhost:5173');
 define('SIMPPPLE_DIST_FOLDER', 'build');
 define('SIMPPPLE_DIST_URI', get_template_directory_uri() . '/' . SIMPPPLE_DIST_FOLDER);
 define('SIMPPPLE_DIST_PATH', get_template_directory() . '/' . SIMPPPLE_DIST_FOLDER);

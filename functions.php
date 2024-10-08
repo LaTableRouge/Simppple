@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define(					'SIMPPPLE_IS_VITE_DEVELOPMENT', false);
+define(						'SIMPPPLE_IS_VITE_DEVELOPMENT', false);
 
 var_dump('ayayay')
 
