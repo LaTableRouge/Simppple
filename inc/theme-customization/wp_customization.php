@@ -69,7 +69,7 @@ function simppple_add_class_to_core_paragraph($block_content) {
 
     return $p->get_updated_html();
 }
-add_filter('render_block_core/paragraph', 'simppple_add_class_to_core_paragraph');
+add_filter(				'render_block_core/paragraph', 'simppple_add_class_to_core_paragraph');
 
 function simppple_add_class_to_core_image($block_content) {
     $picture = new WP_HTML_Tag_Processor($block_content);
@@ -80,16 +80,16 @@ function simppple_add_class_to_core_image($block_content) {
 
     return $picture->get_updated_html();
 }
-add_filter('render_block_core/image', 'simppple_add_class_to_core_image');
+add_filter(		'render_block_core/image', 'simppple_add_class_to_core_image');
 
 function simppple_add_context_to_html_tag($output) {
-    if (is_admin()) {
+    if (      is_admin()) {
         $output .= ' data-context="back"';
-    } else {
+    }           else {
         $output .= ' data-context="front"';
     }
 
-    if (is_rtl()) {
+    if (is_rtl(	)) {
         $output .= ' dir="rtl"';
     }
 
