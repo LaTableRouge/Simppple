@@ -68,7 +68,7 @@
 		"swiper": "^11.1.8"
 	},
 	"lint-staged": {
-		"{*.php,**/*.php}": [
+		"{functions.php,**/*.php}": [
 			"composer lint-staged:php"
 		],
 		"src/styles/**/*.scss": [

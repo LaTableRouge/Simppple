@@ -2,7 +2,7 @@
 
 if (!defined('ABSPATH')) {
     exit;
-						}
+					}
 
 define(						'SIMPPPLE_IS_VITE_DEVELOPMENT', false);
 
