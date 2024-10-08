@@ -51,11 +51,11 @@ body.woocommerce-account {
 										}
 
 										&.is-active {
-											--bg-color: var(--wp--preset--color--accent);
+											--bg-color: var(--wp--preset--color--accent-2);
 										}
 
 										&:hover {
-											--bg-color: hsla(var(--wp--custom--accent-hsl), 0.5);
+											--bg-color: hsla(var(--wp--custom--accent-2-hsl), 0.5);
 										}
 
 										a {

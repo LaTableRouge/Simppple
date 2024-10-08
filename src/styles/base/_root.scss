@@ -56,4 +56,13 @@
 	@media (prefers-reduced-motion: reduce) {
 		--nomotion: none;
 	}
+
+	// &[data-theme='dark'] {
+	// 	--wp--preset--color--base: var(--wp--custom--color-base-dark);
+	// 	--wp--preset--color--base-2: var(--wp--custom--color-base-2-dark);
+	// 	--wp--preset--color--base-3: var(--wp--custom--color-base-3-dark);
+	// 	--wp--preset--color--contrast: var(--wp--custom--color-contrast-dark);
+	// 	--wp--preset--color--contrast-2: var(--wp--custom--color-contrast-2-dark);
+	// 	--wp--preset--color--contrast-3: var(--wp--custom--color-contrast-3-dark);
+	// }
 }

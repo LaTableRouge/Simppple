@@ -37,4 +37,18 @@ window.addEventListener('DOMContentLoaded', (e) => {
 	 * Improve the UX of the input[type="number"]
 	 * */
 	inputNumber()
+
+	// Put color scheme in localStorage
+	const userPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+	const userPreferences = userPrefersDark ? 'dark' : 'light'
+	let colorScheme = userPreferences
+
+	const storageColorScheme = localStorage.getItem('theme_color_scheme')
+	if (storageColorScheme) {
+		colorScheme = storageColorScheme
+	} else {
+		localStorage.setItem('theme_color_scheme', userPreferences)
+	}
+
+	document.documentElement.dataset.theme = colorScheme
 })

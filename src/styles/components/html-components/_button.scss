@@ -3,7 +3,7 @@
 	transition: var(--nomotion, background-color 0.2s ease-in-out);
 	border-width: 0;
 	border-radius: var(--wp--custom--border-radius-form);
-	background-color: var(--wp--preset--color--accent);
+	background-color: var(--wp--preset--color--accent-2);
 	color: var(--wp--preset--color--white);
 	font-family: inherit;
 	font-size: var(--wp--preset--font-size--16);
@@ -13,7 +13,7 @@
 
 	&:hover,
 	&:focus {
-		background-color: var(--wp--preset--color--accent-2);
+		background-color: var(--wp--preset--color--accent);
 	}
 
 	&-loading {
@@ -37,8 +37,8 @@
 	}
 
 	&-outline {
-		border: 1px solid var(--wp--preset--color--accent);
+		border: 1px solid var(--wp--preset--color--accent-2);
 		background-color: transparent;
-		color: var(--wp--preset--color--accent);
+		color: var(--wp--preset--color--accent-2);
 	}
 }

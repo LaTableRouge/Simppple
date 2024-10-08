@@ -25,7 +25,7 @@
 		transform: scale(0);
 		// transform-origin: bottom left;
 		transition: var(--nomotion, transform 0.2s ease-in-out);
-		background-color: var(--checkbox-check-color, var(--wp--preset--color--accent));
+		background-color: var(--checkbox-check-color, var(--wp--preset--color--accent-2));
 	}
 
 	&:focus {

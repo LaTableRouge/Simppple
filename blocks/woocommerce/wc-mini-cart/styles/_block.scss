@@ -10,7 +10,7 @@
 		cursor: pointer;
 
 		.wc-block-mini-cart__badge {
-			background-color: var(--wp--preset--color--accent);
+			background-color: var(--wp--preset--color--accent-2);
 			font-size: var(--wp--preset--font-size--12);
 		}
 	}
@@ -93,7 +93,7 @@
 												padding: 0.25em 0.75em;
 												border: none;
 												border-radius: 3px;
-												background-color: var(--wp--preset--color--accent);
+												background-color: var(--wp--preset--color--accent-2);
 												color: var(--wp--preset--color--white);
 												font-size: var(--wp--preset--font-size--12);
 												font-weight: bold;
@@ -211,11 +211,11 @@
 								a.wc-block-mini-cart__footer-cart {
 									border: 2px solid currentColor;
 									box-shadow: none;
-									color: var(--wp--preset--color--accent);
+									color: var(--wp--preset--color--accent-2);
 
 									&:hover,
 									&:focus {
-										background-color: hsla(var(--wp--custom--accent-hsl), 0.2);
+										background-color: hsla(var(--wp--custom--accent-2-hsl), 0.2);
 									}
 								}
 							}
