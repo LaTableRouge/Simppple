@@ -2,17 +2,15 @@
 
 if (!defined('ABSPATH')) {
     exit;
-				}
+}
 
-define(						'SIMPPPLE_IS_VITE_DEVELOPMENT', false);
-
-var_dump('ayayay')
+define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);
 
 /*
  * ================================
  *  THEME FUNCTIONS
  */
-require get_template_directory(				) . '/inc/vite.php';
+require get_template_directory() . '/inc/vite.php';
 // Front assets
 simppple_vite_enqueue_script('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer');
 

@@ -68,63 +68,15 @@
 		"swiper": "^11.1.8"
 	},
 	"lint-staged": {
-		"{*.php,**/*.php}": [
+		"{**/*.php}": [
 			"composer lint-staged:php"
 		],
-		"src/styles/**/*.scss": [
+		"{src/styles/**/*.scss,blocks/**/*.scss,parts/**/*.scss,patterns/**/*.scss,templates/**/*.scss}": [
 			"npx stylelint --allow-empty-input --fix",
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx stylelint --allow-empty-input --fix"
 		],
-		"blocks/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"parts/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"patterns/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"templates/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"src/scripts/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/react/src/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/acf/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/core/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/woocommerce/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"parts/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"patterns/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"templates/**/*.js": [
+		"{src/scripts/**/*.js,blocks/**/*.{js,jsx},parts/**/*.js,patterns/**/*.js,templates/**/*.js}": [
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx eslint --no-error-on-unmatched-pattern --fix"
 		]
