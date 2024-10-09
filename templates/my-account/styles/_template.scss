@@ -39,7 +39,7 @@ body.woocommerce-account {
 											position: absolute;
 											top: 15%;
 											bottom: 15%;
-											left: -10px;
+											inset-inline-start: -10px;
 											width: 3px;
 											transition: var(--nomotion, background-color 0.2s ease-in-out);
 											border-radius: 2px;
@@ -63,6 +63,10 @@ body.woocommerce-account {
 											padding: calc(var(--wp--preset--spacing--10) * 2) 0;
 											font-weight: 600;
 											text-decoration: none;
+
+											br {
+												display: none;
+											}
 										}
 									}
 								}
@@ -133,6 +137,19 @@ body.woocommerce-account {
 
 									fieldset {
 										margin: 0;
+									}
+
+									[type='password'] {
+										& + .show-password-input {
+											right: initial;
+											color: var(--wp--preset--color--black);
+											inset-inline-end: 0.7em;
+										}
+
+										&:has(+ .show-password-input) {
+											padding-right: 16px;
+											padding-inline-end: 2.5rem;
+										}
 									}
 
 									[type='submit'] {

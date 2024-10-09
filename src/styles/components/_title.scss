@@ -5,7 +5,6 @@
 	&.has-text-align-center {
 		&::before {
 			left: 50%;
-			inset-inline-start: initial;
 			transform: translateY(50%) translateX(-50%);
 		}
 	}

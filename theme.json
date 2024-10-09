@@ -818,7 +818,7 @@
 					"dots": {}
 				},
 				"border": {
-					"color": "currentColor",
+					"color": "var(--wp--preset--color--contrast)",
 					"bottom": {
 						"width": "0"
 					}

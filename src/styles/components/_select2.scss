@@ -4,26 +4,29 @@
 			height: initial;
 			padding: 8px 16px;
 			border-radius: 5px;
-			border-color: var(--wp--preset--color--contrast-3);
+			border-color: var(--wp--preset--color--black);
 
 			&__arrow {
 				top: 50%;
+				right: initial;
 				height: initial;
 				transform: translateY(-50%);
+				inset-inline-end: 0;
 			}
 		}
 	}
 }
 
 .select2-dropdown {
-	border-color: var(--wp--preset--color--contrast-3);
+	border-color: var(--wp--preset--color--black);
+	color: var(--wp--preset--color--black);
 
 	.select2-search {
 		.select2-search__field {
 			height: initial;
 			padding: 8px 16px;
 			border-radius: 5px;
-			border-color: var(--wp--preset--color--contrast-3);
+			border-color: var(--wp--preset--color--black);
 		}
 	}
 }

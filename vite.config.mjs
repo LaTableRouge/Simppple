@@ -1,7 +1,6 @@
-import { resolve } from 'path'
-
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import autoprefixer from 'autoprefixer'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
@@ -56,7 +55,7 @@ const entryFiles = [
 			{
 				name: 'editor',
 				input: `${assetsPath}/scripts`
-			},
+			}
 		],
 		styles: [
 			{
@@ -70,7 +69,7 @@ const entryFiles = [
 			{
 				name: 'editor',
 				input: `${assetsPath}/styles`
-			},
+			}
 		]
 	}
 ]
@@ -93,10 +92,7 @@ const entryFiles = [
  */
 const filesToEdit = [
 	{
-		filePath: [
-			resolve(__dirname, 'inc/'),
-			resolve(__dirname, 'functions.php')
-		],
+		filePath: [resolve(__dirname, 'inc/'), resolve(__dirname, 'functions.php')],
 		replace: [
 			{
 				from: /\bvar_dump\(([^)]+)\);/g,
@@ -105,7 +101,6 @@ const filesToEdit = [
 		]
 	}
 ]
-
 
 /*
  |--------------------------------------------------------------------------
@@ -136,12 +131,12 @@ const filesToCopy = [
  |--------------------------------------------------------------------------
  */
 
-export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => {
+export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => {
 	const isProduction = command === 'build'
 
 	const entriesToCompile = []
 	if (entryFiles.length) {
-		entryFiles.forEach(group => {
+		entryFiles.forEach((group) => {
 			if (group) {
 				/*
 				|--------------------------------------------------------------------------
@@ -152,7 +147,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				|
 				*/
 				if (group.scripts?.length) {
-					group.scripts.forEach(file => {
+					group.scripts.forEach((file) => {
 						if (!entriesToCompile.includes(`${file.input}/${file.name}.js`)) {
 							entriesToCompile.push(`${file.input}/${file.name}.js`)
 						}
@@ -168,7 +163,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				|
 				*/
 				if (group.styles?.length) {
-					group.styles.forEach(file => {
+					group.styles.forEach((file) => {
 						if (chore === undefined || chore === 'all' || chore.includes('scss')) {
 							if (!entriesToCompile.includes(`${file.input}/${file.name}.scss`)) {
 								entriesToCompile.push(`${file.input}/${file.name}.scss`)
@@ -192,25 +187,19 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 	 */
 	if (chore !== 'ci') {
 		if (isProduction) {
-			await stringReplaceOpenAndWrite(
-				resolve(__dirname, 'functions.php'),
-				[
-					{
-						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
-						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);"
-					}
-				]
-			)
+			await stringReplaceOpenAndWrite(resolve(__dirname, 'functions.php'), [
+				{
+					from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
+					to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);"
+				}
+			])
 		} else {
-			await stringReplaceOpenAndWrite(
-				resolve(__dirname, 'functions.php'),
-				[
-					{
-						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
-						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', true);"
-					}
-				]
-			)
+			await stringReplaceOpenAndWrite(resolve(__dirname, 'functions.php'), [
+				{
+					from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
+					to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', true);"
+				}
+			])
 		}
 	}
 
@@ -245,12 +234,12 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 		plugins: [
 			{
 				...sassGlobImports(),
-				enforce: 'pre',
+				enforce: 'pre'
 			},
 			{
 				...viteStringReplace(filesToEdit),
 				apply: 'build',
-				enforce: 'pre',
+				enforce: 'pre'
 			},
 			viteStaticCopy({
 				targets: filesToCopy
@@ -284,7 +273,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			sourcemap: !isProduction,
 			target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari14'],
 			cssCodeSplit: true,
-			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14'],
+			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14']
 			// cssMinify: 'lightningcss'
 		},
 
@@ -299,15 +288,13 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			},
 			watch: {
 				usePolling: true
-			},
+			}
 		},
 
 		css: {
 			devSourcemap: !isProduction,
 			postcss: {
-				plugins: [
-					autoprefixer
-				],
+				plugins: [autoprefixer]
 			}
 		},
 

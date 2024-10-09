@@ -76,7 +76,7 @@
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx stylelint --allow-empty-input --fix"
 		],
-		"{src/scripts/**/*.js,blocks/**/*.{js,jsx},parts/**/*.js,patterns/**/*.js,templates/**/*.js}": [
+		"{vite.config.mjs,src/scripts/**/*.js,blocks/**/*.{js,jsx},parts/**/*.js,patterns/**/*.js,templates/**/*.js}": [
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx eslint --no-error-on-unmatched-pattern --fix"
 		]
