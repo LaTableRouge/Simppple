@@ -158,8 +158,8 @@ body.woocommerce-account {
 								}
 
 								table {
-									--border-color: var(--wp--preset--color--contrast-3);
-									--bg-color: var(--wp--preset--color--contrast-3);
+									--border-color: hsla(var(--wp--custom--contrast-hsl), 0.85);
+									--bg-block-color: var(--bg-head-foot-color, hsla(var(--wp--custom--base-3-hsl), 0.85));
 									--table-padding-x: calc(var(--wp--preset--spacing--10) * 1.2);
 
 									margin: 0;
@@ -168,12 +168,13 @@ body.woocommerce-account {
 									border-collapse: separate;
 									border: 1px solid var(--border-color);
 									border-radius: var(--wp--custom--border-radius-table);
+									text-align: start;
 
 									thead {
 										--table-padding-y: calc(var(--wp--preset--spacing--10) * 2);
 
 										tr {
-											background-color: var(--bg-color);
+											background-color: var(--bg-block-color);
 										}
 									}
 
@@ -186,7 +187,19 @@ body.woocommerce-account {
 											}
 
 											&:nth-child(2n) {
-												background-color: var(--bg-color);
+												background-color: var(--bg-block-color);
+											}
+
+											&:not(:first-child) {
+												@include media-breakpoint-down(md) {
+													border-top: 3px solid var(--border-color);
+												}
+											}
+
+											th {
+												@include media-breakpoint-up(md) {
+													border-top: 1px solid var(--border-color);
+												}
 											}
 										}
 									}
@@ -207,6 +220,7 @@ body.woocommerce-account {
 											padding: var(--table-padding-y) var(--table-padding-x);
 											font-size: var(--wp--preset--font-size--14);
 											line-height: 1.1;
+											text-align: start;
 											vertical-align: middle;
 
 											&:not(:first-child) {
@@ -218,6 +232,10 @@ body.woocommerce-account {
 
 												&:empty {
 													display: none;
+												}
+
+												&:last-child {
+													margin-bottom: 0;
 												}
 											}
 
@@ -258,22 +276,28 @@ body.woocommerce-account {
 								.account-orders-table {
 									// Account order table specific style
 									.woocommerce-orders-table__cell-order-total {
-										max-width: 150px;
+										@include media-breakpoint-up(md) {
+											max-width: 150px;
+										}
 									}
 
 									.woocommerce-orders-table__cell-order-actions {
+										& > p {
+											display: inline-flex;
+											gap: 5px;
+											flex-wrap: wrap;
+
+											@include media-breakpoint-up(md) {
+												flex-direction: column;
+											}
+										}
+
 										.button {
 											display: block;
 											width: fit-content;
-											margin-right: auto;
-											margin-bottom: 0;
-											margin-left: auto;
+											margin: 0;
 											padding: 5px 10px;
 											font-size: var(--wp--preset--font-size--14);
-
-											& + .button {
-												margin-top: 5px;
-											}
 
 											&.pay {
 												background-color: var(--wp--preset--color--success);
@@ -348,6 +372,43 @@ body.woocommerce-account {
 												display: inline-block;
 												margin: 0;
 												float: none;
+											}
+										}
+									}
+								}
+
+								.woocommerce-customer-details {
+									h2 {
+										font-size: var(--wp--preset--font-size--30);
+										font-weight: bold;
+										line-height: 1.2;
+									}
+
+									address {
+										padding: calc(var(--wp--preset--spacing--10) * 1.2);
+										border: 1px solid var(--wp--preset--color--contrast-3);
+										border-radius: var(--wp--custom--border-radius-form);
+										color: var(--wp--preset--color--contrast-2);
+										text-align: start;
+
+										p {
+											&:empty {
+												display: none;
+											}
+
+											&:last-child {
+												margin-bottom: 0;
+											}
+
+											&[class^='woocommerce-customer-details--'] {
+												padding-left: 0;
+												padding-inline-start: 1.5em;
+
+												&::before {
+													margin: 0;
+													margin-inline-start: -1.5em;
+													margin-inline-end: 0.618em;
+												}
 											}
 										}
 									}

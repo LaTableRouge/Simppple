@@ -295,6 +295,11 @@ export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => 
 			devSourcemap: !isProduction,
 			postcss: {
 				plugins: [autoprefixer]
+			},
+			preprocessorOptions: {
+				scss: {
+					api: 'modern-compiler'
+				}
 			}
 		},
 
