@@ -16,9 +16,10 @@
 					margin: 0;
 					border: none;
 					border-top: 1px solid var(--wp--preset--color--accent-2);
-					border-left: 1px solid var(--wp--preset--color--accent-2);
+					border-inline-start: 1px solid var(--wp--preset--color--accent-2);
 					border-radius: 0;
 					background-color: var(--wp--preset--color--white);
+					color: var(--wp--preset--color--base-2);
 
 					&::before,
 					&::after {
@@ -26,11 +27,16 @@
 					}
 
 					&:last-child {
-						border-right: 1px solid var(--wp--preset--color--accent-2);
+						border-inline-end: 1px solid var(--wp--preset--color--accent-2);
 					}
 
 					&.active {
 						background-color: hsla(var(--wp--custom--accent-hsl), 0.1);
+						color: var(--wp--preset--color--contrast-2);
+					}
+
+					a {
+						color: inherit;
 					}
 				}
 			}
@@ -40,14 +46,19 @@
 
 				&--reviews {
 					ol.commentlist {
-						.review {
+						li.comment {
 							.comment_container {
 								img.avatar {
+									left: initial;
 									width: 40px !important;
 									padding: 0 !important;
+									float: initial;
+									inset-inline-start: 0;
 								}
 
 								.comment-text {
+									margin: 0 !important;
+									margin-inline-start: 50px !important;
 									border-top-left-radius: 0 !important;
 								}
 							}
@@ -94,7 +105,7 @@
 					table.woocommerce-product-attributes {
 						border-spacing: 0;
 						border-collapse: separate;
-						border: 1px solid var(--wp--preset--color--contrast-3);
+						border: 1px solid hsla(var(--wp--custom--contrast-hsl), 0.85);
 						border-radius: var(--wp--custom--border-radius-table);
 
 						tbody {
@@ -104,7 +115,7 @@
 								}
 
 								&:nth-child(2n) {
-									background-color: var(--wp--preset--color--contrast-3);
+									background-color: var(--bg-head-foot-color, hsla(var(--wp--custom--base-3-hsl), 0.85));
 								}
 							}
 						}

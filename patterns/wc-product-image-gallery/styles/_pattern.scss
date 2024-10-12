@@ -23,6 +23,7 @@
 			margin-bottom: 0;
 
 			.woocommerce-product-gallery__image {
+				float: none !important;
 				border-radius: var(--wp--custom--border-radius-picture);
 			}
 
@@ -51,7 +52,7 @@
 						width: 12px;
 						height: 12px;
 						transition: var(--nomotion, border-width 0.2s ease-in-out);
-						border: solid 1px;
+						border: solid 1px var(--wp--preset--color--black);
 						border-radius: 50%;
 					}
 
@@ -62,6 +63,7 @@
 					}
 
 					&:hover img,
+					img,
 					img.flex-active {
 						@include media-breakpoint-up(lg) {
 							opacity: 0;

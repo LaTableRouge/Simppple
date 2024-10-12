@@ -29,10 +29,10 @@
 		"prepare": "husky install && composer install && npm run prod"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.4.1",
-		"@commitlint/config-conventional": "^19.4.1",
-		"@wordpress/scripts": "^28.6.0",
-		"browserslist": "^4.23.3",
+		"@commitlint/cli": "^19.5.0",
+		"@commitlint/config-conventional": "^19.5.0",
+		"@wordpress/scripts": "^30.1.0",
+		"browserslist": "^4.24.0",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-standard": "^17.1.0",
@@ -57,15 +57,15 @@
 		"stylelint-config-standard": "^34.0.0",
 		"stylelint-order": "^6.0.4",
 		"validate-branch-name": "^1.3.1",
-		"vite": "^5.4.2",
-		"vite-plugin-sass-glob-import": "^3.0.2",
-		"vite-plugin-static-copy": "^1.0.6",
+		"vite": "^5.4.8",
+		"vite-plugin-sass-glob-import": "^4.0.0",
+		"vite-plugin-static-copy": "^2.0.0",
 		"autoprefixer": "^10.4.20",
 		"@mlnop/string-replace": "^1.0.5"
 	},
 	"dependencies": {
 		"gridjs": "^6.2.0",
-		"swiper": "^11.1.8"
+		"swiper": "^11.1.14"
 	},
 	"lint-staged": {
 		"**/*.php": [

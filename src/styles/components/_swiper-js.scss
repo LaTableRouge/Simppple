@@ -1,6 +1,6 @@
 .swiper {
 	--swiper-navigation-size: 18px;
-	--swiper-navigation-color: var(--wp--preset--color--white);
+	--swiper-navigation-color: var(--wp--preset--color--base-2);
 
 	display: grid;
 	grid-template-areas: 'empty-left nav-prev nav-next' 'product-grid product-grid product-grid';
@@ -33,10 +33,18 @@
 
 	.swiper-button-prev {
 		grid-area: nav-prev;
+
+		html[dir='rtl'] & {
+			grid-area: nav-next;
+		}
 	}
 
 	.swiper-button-next {
 		grid-area: nav-next;
+
+		html[dir='rtl'] & {
+			grid-area: nav-prev;
+		}
 
 		&::after {
 			transform: rotate(180deg);
