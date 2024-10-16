@@ -26,6 +26,8 @@
 					td {
 						padding-top: calc(var(--wp--preset--spacing--10) * 2);
 						padding-bottom: calc(var(--wp--preset--spacing--10) * 2);
+						border-top: none;
+						border-bottom: 1px solid var(--wp--preset--color--contrast-3);
 					}
 
 					th,
@@ -42,12 +44,11 @@
 						}
 
 						&:last-child {
-							padding-right: var(--wp--preset--spacing--10);
+							padding-inline-end: var(--wp--preset--spacing--10);
 						}
 
 						&:not(:last-child) {
-							padding-right: calc(var(--wp--preset--spacing--10) * 1.2);
-							padding-left: calc(var(--wp--preset--spacing--10) * 1.2);
+							padding-inline: calc(var(--wp--preset--spacing--10) * 1.2);
 						}
 					}
 				}
@@ -61,21 +62,23 @@
 
 						&:first-child {
 							@include container-breakpoint-up(page-cart, sm) {
-								border-top-left-radius: 5px;
-								border-bottom-left-radius: 5px;
+								border-start-start-radius: 5px;
+								border-end-start-radius: 5px;
 							}
 						}
 
 						&:nth-child(2) {
 							@include container-breakpoint-down(page-cart, sm) {
-								border-top-left-radius: 5px;
-								border-bottom-left-radius: 5px;
+								border-start-start-radius: 5px;
+								border-end-start-radius: 5px;
 							}
 						}
 
 						&:last-child {
-							border-top-right-radius: 5px;
-							border-bottom-right-radius: 5px;
+							@include container-breakpoint-up(page-cart, sm) {
+								border-start-end-radius: 5px;
+								border-end-end-radius: 5px;
+							}
 						}
 					}
 
@@ -167,8 +170,8 @@
 
 										&__input {
 											max-width: 40px;
-											border-right: 1px solid var(--wp--preset--color--contrast-3);
-											border-left: 1px solid var(--wp--preset--color--contrast-3);
+											border-inline-start: 1px solid var(--wp--preset--color--contrast-3);
+											border-inline-end: 1px solid var(--wp--preset--color--contrast-3);
 											font-size: var(--wp--preset--font-size--16);
 											font-weight: 600;
 										}
@@ -198,7 +201,7 @@
 										@include container-breakpoint-up(page-cart, sm) {
 											position: absolute;
 											bottom: calc(var(--wp--preset--spacing--10) * 2);
-											left: var(--wp--preset--spacing--10);
+											inset-inline-start: var(--wp--preset--spacing--10);
 										}
 
 										&:hover {
@@ -324,10 +327,11 @@
 					}
 
 					label {
-						left: 0;
+						inset-inline-start: 0;
 						margin-bottom: 0.5em;
 						overflow: initial;
 						transform: initial;
+						color: inherit;
 					}
 				}
 
@@ -363,10 +367,26 @@
 
 							.wc-block-components-shipping-calculator-address {
 								.wc-block-components-country-input {
+									.wc-blocks-components-select {
+										.wc-blocks-components-select__label {
+											left: initial;
+											inset-inline-start: 0.5em;
+
+											html[dir='rtl'] & {
+												transform-origin: top right;
+											}
+										}
+
+										.wc-blocks-components-select__expand {
+											right: initial;
+											inset-inline-end: 12px;
+										}
+									}
+
 									.components-base-control {
 										.components-base-control__field {
 											.components-base-control__label {
-												left: 0;
+												inset-inline-start: 0;
 												overflow: initial;
 												transform: initial;
 											}
@@ -393,8 +413,7 @@
 						}
 
 						.wc-block-components-shipping-rates-control__package {
-							padding-right: var(--wp--preset--spacing--10);
-							padding-left: var(--wp--preset--spacing--10);
+							padding-inline: var(--wp--preset--spacing--10);
 						}
 					}
 
@@ -402,11 +421,12 @@
 						&__content {
 							.wc-block-components-totals-coupon__form {
 								align-items: flex-end;
+								gap: 0;
 
 								.wc-block-components-totals-coupon__input {
 									input {
-										border-top-right-radius: 0;
-										border-bottom-right-radius: 0;
+										border-start-end-radius: 0;
+										border-end-end-radius: 0;
 
 										&:focus {
 											outline: none;
@@ -416,10 +436,10 @@
 								}
 
 								.wc-block-components-totals-coupon__button {
-									max-height: 39px;
+									height: 50px;
 									margin: 0;
-									border-top-left-radius: 0;
-									border-bottom-left-radius: 0;
+									border-start-start-radius: 0;
+									border-end-start-radius: 0;
 								}
 							}
 						}
@@ -445,13 +465,14 @@
 								position: relative;
 								width: fit-content;
 								margin-top: var(--wp--preset--spacing--10);
-								padding-right: 20px;
+								padding-inline-end: 20px;
+								color: inherit;
 
 								&::after {
 									content: $icon-simppple-arrow-right;
 									position: absolute;
 									top: 2px;
-									right: 0;
+									inset-inline-end: 0;
 									transform: rotate(90deg);
 									transition: var(--nomotion, transform 0.2s ease-in-out);
 									font-family: $icomoon-font-family;

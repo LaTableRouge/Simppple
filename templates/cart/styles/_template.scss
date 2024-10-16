@@ -1,4 +1,5 @@
-body.page__cart {
+body.page__cart,
+body[class*='page__panier'] {
 	& > .wp-site-blocks {
 		& > main {
 			container-type: inline-size;
