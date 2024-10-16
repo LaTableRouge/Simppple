@@ -20,23 +20,48 @@
 		--quantity-height: 60px;
 		--picture-size: 120px;
 
+		right: initial;
+		left: initial;
+		inset-inline-end: 0;
+		inset-inline-start: 100%;
+
+		html[dir='rtl'] & {
+			transform: translateX(max(100%, var(--drawer-width)));
+
+			@keyframes slidein {
+				0% {
+					transform: translateX(0);
+				}
+
+				100% {
+					transform: translateX(max(100%, var(--drawer-width)));
+				}
+			}
+		}
+
 		.wc-block-components-drawer__content {
 			.wc-block-mini-cart__template-part {
 				.wp-block-woocommerce-mini-cart-contents {
 					.wc-block-components-drawer__close-wrapper {
 						.wc-block-components-drawer__close {
+							right: initial;
 							padding: var(--wp--preset--spacing--40) !important;
+							inset-inline-end: 0;
 						}
 					}
 
 					.wp-block-woocommerce-filled-mini-cart-contents-block {
 						padding: var(--wp--preset--spacing--40);
+						background-color: var(--wp--preset--color--base-2);
+						color: var(--wp--preset--color--contrast);
 
 						.wc-block-mini-cart__title {
 							flex-wrap: wrap;
+							justify-content: start;
 							margin: 0;
-							padding-right: calc(var(--wp--preset--spacing--40) * 3);
 							padding-bottom: var(--wp--preset--spacing--40);
+							padding-inline-end: calc(var(--wp--preset--spacing--40) * 3);
+							text-align: start;
 						}
 
 						.wc-block-mini-cart__items {
@@ -49,7 +74,7 @@
 									margin-bottom: calc(var(--wp--preset--spacing--10) * 2);
 									padding: 0;
 									padding-top: calc(var(--wp--preset--spacing--10) * 2);
-									padding-right: var(--wp--preset--spacing--10);
+									padding-inline-end: var(--wp--preset--spacing--10);
 									gap: var(--wp--preset--spacing--10);
 
 									& + .wc-block-cart-items__row {
@@ -138,7 +163,7 @@
 											.wc-block-cart-item__quantity {
 												position: absolute;
 												bottom: 0;
-												left: 0;
+												inset-inline-start: 0;
 												padding: 0;
 
 												.wc-block-components-quantity-selector {
@@ -155,8 +180,8 @@
 
 													&__input {
 														max-width: 40px;
-														border-right: 1px solid var(--wp--preset--color--contrast-3);
-														border-left: 1px solid var(--wp--preset--color--contrast-3);
+														border-inline-end: 1px solid var(--wp--preset--color--contrast-3);
+														border-inline-start: 1px solid var(--wp--preset--color--contrast-3);
 														font-size: var(--wp--preset--font-size--16);
 														font-weight: 600;
 													}
@@ -192,8 +217,7 @@
 						}
 
 						.wc-block-mini-cart__footer {
-							padding-right: 0;
-							padding-left: 0;
+							padding-inline: 0;
 
 							.wc-block-components-totals-item {
 								margin-bottom: var(--wp--preset--spacing--40);

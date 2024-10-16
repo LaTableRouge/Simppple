@@ -7,8 +7,8 @@
 		}
 	],
 	"require-dev": {
-		"friendsofphp/php-cs-fixer": "v3.63.2",
-		"wp-cli/wp-cli-bundle": "v2.10.0"
+		"friendsofphp/php-cs-fixer": "v3.64.0",
+		"wp-cli/wp-cli-bundle": "v2.11.0"
 	},
 	"scripts": {
 		"lint:php": [
