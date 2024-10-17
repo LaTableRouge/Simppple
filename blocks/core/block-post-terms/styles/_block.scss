@@ -5,6 +5,7 @@
 			transition: var(--nomotion, background-color 0.2s ease-in-out);
 			border-radius: var(--wp--custom--border-radius-form);
 			background-color: var(--wp--preset--color--white);
+			color: var(--wp--preset--color--black);
 
 			&:hover {
 				background-color: var(--wp--preset--color--contrast-3);
