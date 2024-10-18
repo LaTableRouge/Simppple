@@ -3,7 +3,7 @@ Contributors: LaTableRouge
 Requires at least: 6.4
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.0.0
+Stable tag: 1.1.0
 WC requires at least: 8.4.0
 WC tested up to: 9.1.4
 License: GPLv3 or later
@@ -18,6 +18,13 @@ Simppple comes with some style variations to help the creativity of the site bui
 Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
+
+= 1.1.0 =
+* Released: August 01, 2024
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.1.0
+Styles adjustments
+Colors handling is better, the theme is compatible RTL.
 
 = 1.0.0 =
 * Released: August 01, 2024

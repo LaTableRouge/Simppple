@@ -54,9 +54,11 @@
 				.wp-block-navigation__responsive-dialog {
 					.wp-block-navigation__responsive-container-close {
 						@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+							right: initial;
 							border-radius: initial;
 							background-color: initial;
 							color: var(--wp--preset--color--contrast);
+							inset-inline-end: 0;
 						}
 
 						&:hover,
@@ -73,9 +75,9 @@
 				.wp-block-navigation__responsive-container-content {
 					padding-top: calc(50px + var(--logo-max-height));
 
-					& > ul {
+					ul {
 						& > li {
-							padding-right: var(--wp--preset--spacing--40);
+							// padding-right: var(--wp--preset--spacing--40);
 
 							&.has-child {
 								.wp-block-navigation__submenu-container {
@@ -88,15 +90,15 @@
 			}
 
 			.wp-block-navigation__responsive-container-content {
-				& > ul {
+				ul {
 					@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 						gap: var(--wp--preset--spacing--10);
 					}
 
 					& > li {
 						&:not(.has-child) {
-							&:last-child {
-								padding-right: 0;
+							&:last-child:not(:first-child) {
+								padding-inline-end: 0;
 							}
 						}
 
@@ -104,12 +106,16 @@
 							min-height: var(--logo-max-height);
 
 							& > .wp-block-navigation__submenu-container {
+								background-color: var(--wp--preset--color--base);
+								box-shadow: var(--wp--preset--shadow--submenu);
+
 								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-									top: calc(100% + $menu-padding-bottom);
+									top: var(--logo-max-height);
 									left: 50%;
+									min-width: 100%;
 									transform: translateX(-50%);
-									border-bottom-right-radius: 5px;
-									border-bottom-left-radius: 5px;
+									border-end-end-radius: 5px;
+									border-end-start-radius: 5px;
 								}
 
 								&::after {
@@ -139,6 +145,8 @@
 
 								& > li {
 									&.has-child {
+										min-height: initial;
+
 										& > .wp-block-navigation__submenu-container {
 											@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 												top: 0;
@@ -165,7 +173,8 @@
 												width: calc(#{$menu-padding-bottom} * 2);
 											}
 
-											&.items-justified-right {
+											&.items-justified-right,
+											&:not([class*='items-justified-']) {
 												@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 													right: 0;
 													left: initial;
@@ -234,7 +243,7 @@
 								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 									position: absolute;
 									top: 50%;
-									right: 0;
+									inset-inline-end: 0;
 									width: 15px;
 									height: 15px;
 									margin: 0;
@@ -249,17 +258,17 @@
 
 								.wp-block-navigation-submenu__toggle {
 									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-										right: 10px;
+										inset-inline-end: 10px;
 									}
 								}
 
 								li {
 									&.has-child {
-										padding-right: calc(var(--wp--preset--spacing--30) * 2);
+										padding-inline-end: calc(var(--wp--preset--spacing--30) * 2);
 
 										.wp-block-navigation-submenu__toggle {
 											@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-												right: var(--wp--preset--spacing--30);
+												inset-inline-end: var(--wp--preset--spacing--30);
 											}
 										}
 									}
