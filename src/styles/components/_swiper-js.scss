@@ -1,3 +1,5 @@
+@use '../../fonts/icomoon/variables';
+
 .swiper {
 	--swiper-navigation-size: 18px;
 	--swiper-navigation-color: var(--wp--preset--color--base-2);
@@ -21,8 +23,8 @@
 		background-color: var(--wp--preset--color--contrast-2);
 
 		&::after {
-			content: $icon-simppple-arrow-left;
-			font-family: $icomoon-font-family;
+			content: variables.$icon-simppple-arrow-left;
+			font-family: variables.$icomoon-font-family;
 		}
 
 		&.swiper-button-disabled {

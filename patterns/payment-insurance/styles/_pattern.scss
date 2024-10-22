@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .pattern---payment-insurance {
 	--columns-gap: var(--wp--preset--spacing--30);
 	--columns-number: 1.2;

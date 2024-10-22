@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 body.single-product {
 	& > .wp-site-blocks {
 		& > .woocommerce.product {

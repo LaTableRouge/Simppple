@@ -1,26 +1,29 @@
+// -----------------------------------------------------------------------------
+// Style for the WordPress editor area.
+// -----------------------------------------------------------------------------
 @charset "UTF-8";
 
 // 1. Configuration and helpers
-@import 'abstracts/functions';
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/responsive';
+@use 'abstracts/functions';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/responsive';
 
 // 2. Vendors
-@import 'vendors/reset';
+@use 'vendors/reset';
 
 // 3. Base stuff
-@import 'base/fonts';
-@import 'base/root';
-@import 'base/base';
-@import 'base/typography';
-@import 'base/helpers';
+@use 'base/fonts';
+@use 'base/root';
+@use 'base/base';
+@use 'base/typography';
+@use 'base/helpers';
 
 // 4. Components
-@import 'components/html-components/html';
-@import 'components/title';
-@import 'components/socials';
-@import 'components/notification';
+@use 'components/html-components/html';
+@use 'components/title';
+@use 'components/socials';
+@use 'components/notification';
 
 .editor-styles-wrapper {
 	/* stylelint-disable scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-disallowed-list */

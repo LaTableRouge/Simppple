@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .wp-block-latest-posts {
 	& > li {
 		padding: var(--wp--preset--spacing--40);
@@ -46,15 +48,9 @@
 		}
 
 		.wp-block-latest-posts__post-excerpt {
-			--icon: '#{$icon-simppple-arrow-right-plain}';
-
 			margin-block-start: var(--wp--style--block-gap);
 			margin-block-end: 0;
 			font-size: var(--wp--preset--font-size--20);
-
-			html[dir='rtl'] & {
-				--icon: '#{$icon-simppple-arrow-left-plain}';
-			}
 
 			& > a[rel*='noreferrer'] {
 				display: block;
@@ -73,11 +69,15 @@
 				}
 
 				&::after {
-					content: var(--icon);
+					content: var(--icon-arrow-right-plain);
 					margin-inline-start: 5px;
 					transition: var(--nomotion, margin-inline-start 0.2s ease-in-out);
-					font-family: $icomoon-font-family;
+					font-family: var(--font-icons);
 					font-weight: normal;
+
+					html[dir='rtl'] & {
+						content: var(--icon-arrow-left-plain);
+					}
 				}
 			}
 		}

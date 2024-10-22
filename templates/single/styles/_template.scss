@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 body.single {
 	main {
 		& > .wp-block-post-featured-image {

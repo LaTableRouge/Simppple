@@ -1,3 +1,9 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '../abstracts/functions' as *;
+@use '../abstracts/responsive' as *;
+@use '../abstracts/variables';
+
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass root properties.
 // -----------------------------------------------------------------------------
@@ -5,21 +11,21 @@
 :root {
 	--screen-size: calc(100vw - var(--scrollbarsize));
 
-	color-scheme: light; // not sure if it's good but prevent devices to mess up colors
-
-	@each $state-color, $value in $state-colors {
+	// colors
+	@each $state-color, $value in variables.$state-colors {
 		--color-#{$state-color}: #{$value};
 		--color-rgb-#{$state-color}: #{hex-to-rgb($value)};
 	}
 
-	@each $color, $value in $colors {
+	@each $color, $value in variables.$colors {
 		--color-#{$color}: #{$value};
 		--color-rgb-#{$color}: #{hex-to-rgb($value)};
 	}
 
-	@each $font-title, $font-info in $fonts {
-		$font-name: map-get($font-info, 'name');
-		$font-serif: map-get($font-info, 'serif');
+	// fonts
+	@each $font-title, $font-info in variables.$fonts {
+		$font-name: map.get($font-info, 'name');
+		$font-serif: map.get($font-info, 'serif');
 		@if $font-serif {
 			--font-#{$font-title}: #{$font-name}, #{$font-serif};
 		} @else {
@@ -27,20 +33,23 @@
 		}
 	}
 
-	@each $size, $value in $font-sizes {
+	@each $size, $value in variables.$font-sizes {
 		--font-level-#{$size}: #{$value};
 	}
 
-	@each $bp, $value in $grid-breakpoints {
-		--breakpoint-#{$bp}: #{$value};
-	}
-
-	@each $spacing, $value in $spacings {
+	// spacings
+	@each $spacing, $value in variables.$spacings {
 		--spacing-#{$spacing}: #{$value};
 	}
 
-	@each $size, $value in $sizes {
-		@if (type-of($value) == 'map') {
+	// breakpoints
+	@each $bp, $value in variables.$grid-breakpoints {
+		--breakpoint-#{$bp}: #{$value};
+	}
+
+	// custom sizes
+	@each $size, $value in variables.$sizes {
+		@if (meta.type-of($value) == 'map') {
 			$breakpoints: $value;
 
 			@each $breakpoint, $value in $breakpoints {
@@ -50,6 +59,24 @@
 			}
 		} @else {
 			--#{$size}: #{$value};
+		}
+	}
+
+	@each $icon, $value in variables.$icons {
+		@if (meta.type-of($value) == 'map') {
+			$dirs: $value;
+
+			@each $dir, $value in $dirs {
+				@if ($dir == 'rtl') {
+					&[dir='rtl'] {
+						--icon-#{$icon}: '#{$value}';
+					}
+				} @else {
+					--icon-#{$icon}: '#{$value}';
+				}
+			}
+		} @else {
+			--icon-#{$icon}: '#{$value}';
 		}
 	}
 

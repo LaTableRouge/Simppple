@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .wp-block-query:not(.wc-related-products) {
 	container-type: inline-size;
 	container-name: core-block-query;

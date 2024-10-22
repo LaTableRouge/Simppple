@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .wp-block-quote {
 	--icon-size: #{min-max-interpolation(80, 120, 600, 1280)};
 
@@ -9,13 +11,13 @@
 		}
 
 		&::after {
-			content: $icon-simppple-quote;
+			content: var(--icon-quote);
 			position: absolute;
 			top: 20px;
 			inset-inline-end: 20px;
 			opacity: 0.1;
 			color: var(--wp--preset--color--accent-2);
-			font-family: $icomoon-font-family;
+			font-family: var(--font-icons);
 			font-size: var(--icon-size);
 			font-style: normal;
 			line-height: 0.75;

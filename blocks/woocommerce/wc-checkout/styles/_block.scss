@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .wp-block-woocommerce-checkout {
 	.wc-block-checkout {
 		display: grid;
@@ -348,13 +350,13 @@
 								padding-inline-end: 20px;
 
 								&::after {
-									content: $icon-simppple-arrow-right;
+									content: var(--icon-arrow-right);
 									position: absolute;
 									top: 2px;
 									inset-inline-end: 0;
 									transform: rotate(90deg);
 									transition: var(--nomotion, transform 0.2s ease-in-out);
-									font-family: $icomoon-font-family;
+									font-family: var(--font-icons);
 								}
 
 								&[aria-expanded='true'] {

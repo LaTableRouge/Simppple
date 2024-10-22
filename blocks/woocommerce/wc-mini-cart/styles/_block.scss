@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .wc-block-mini-cart {
 	&[aria-hidden='true'] {
 		@extend .visually-hidden;

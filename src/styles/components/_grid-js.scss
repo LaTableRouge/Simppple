@@ -1,3 +1,5 @@
+@use '../../fonts/icomoon/variables';
+
 .gridjs {
 	// color: inherit;
 	--inner-border: 1px solid hsla(var(--wp--custom--black-hsl), 0.85);
@@ -12,13 +14,13 @@
 			float: none;
 
 			&::before {
-				content: $icon-simppple-search;
+				content: variables.$icon-simppple-search;
 				position: absolute;
 				top: 50%;
 				inset-inline-end: 10px;
 				transform: translateY(-50%);
 				color: var(--wp--preset--color--black);
-				font-family: $icomoon-font-family;
+				font-family: variables.$icomoon-font-family;
 				pointer-events: none;
 			}
 

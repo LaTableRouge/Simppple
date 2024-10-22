@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 body.search-results {
 	main {
 		container-type: inline-size;

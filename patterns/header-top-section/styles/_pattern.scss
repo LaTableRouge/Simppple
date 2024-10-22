@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .pattern---header-top-section {
 	$menu-responsive-breakpoint: lg;
 	$menu-padding-bottom: var(--wp--preset--spacing--40);
@@ -57,7 +59,7 @@
 						}
 
 						&::before {
-							font-family: $icomoon-font-family;
+							font-family: var(--font-icons);
 							font-size: 18px;
 						}
 
@@ -67,25 +69,25 @@
 
 						&[rel='icon-simppple-search'] {
 							&::before {
-								content: $icon-simppple-search;
+								content: var(--icon-search);
 							}
 						}
 
 						&[rel='icon-simppple-cart'] {
 							&::before {
-								content: $icon-simppple-cart;
+								content: var(--icon-cart);
 							}
 						}
 
 						&[rel='icon-simppple-user'] {
 							&::before {
-								content: $icon-simppple-user;
+								content: var(--icon-user);
 							}
 						}
 
 						&[rel='icon-simppple-heart'] {
 							&::before {
-								content: $icon-simppple-heart;
+								content: var(--icon-heart);
 							}
 						}
 					}

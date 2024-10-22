@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .pattern---header-main-section-centered {
 	$menu-responsive-breakpoint: lg;
 	$menu-padding-bottom: var(--wp--preset--spacing--40);

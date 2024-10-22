@@ -1,11 +1,11 @@
-@import 'variables';
+@use 'variables' as icomoon;
 
 @font-face {
-	font-family: '#{$icomoon-font-family}';
+	font-family: '#{icomoon.$icomoon-font-family}';
 	src:
-		url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?2z4419') format('truetype'),
-		url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?2z4419') format('woff'),
-		url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?2z4419##{$icomoon-font-family}') format('svg');
+		url('#{icomoon.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.ttf?2z4419') format('truetype'),
+		url('#{icomoon.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.woff?2z4419') format('woff'),
+		url('#{icomoon.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.svg?2z4419##{icomoon.$icomoon-font-family}') format('svg');
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
@@ -14,7 +14,7 @@
 [class^='icon-simppple-'],
 [class*=' icon-simppple-'] {
 	/* use !important to prevent issues with browser extensions that change fonts */
-	font-family: '#{$icomoon-font-family}' !important;
+	font-family: '#{icomoon.$icomoon-font-family}' !important;
 	speak: never;
 	font-style: normal;
 	font-weight: normal;
@@ -29,106 +29,106 @@
 
 .icon-simppple-filter {
 	&:before {
-		content: $icon-simppple-filter;
+		content: icomoon.$icon-simppple-filter;
 	}
 }
 .icon-simppple-mail {
 	&:before {
-		content: $icon-simppple-mail;
+		content: icomoon.$icon-simppple-mail;
 	}
 }
 .icon-simppple-phone {
 	&:before {
-		content: $icon-simppple-phone;
+		content: icomoon.$icon-simppple-phone;
 	}
 }
 .icon-simppple-check {
 	&:before {
-		content: $icon-simppple-check;
+		content: icomoon.$icon-simppple-check;
 	}
 }
 .icon-simppple-eye {
 	&:before {
-		content: $icon-simppple-eye;
+		content: icomoon.$icon-simppple-eye;
 	}
 }
 .icon-simppple-cross {
 	&:before {
-		content: $icon-simppple-cross;
+		content: icomoon.$icon-simppple-cross;
 	}
 }
 .icon-simppple-information {
 	&:before {
-		content: $icon-simppple-information;
+		content: icomoon.$icon-simppple-information;
 	}
 }
 .icon-simppple-search {
 	&:before {
-		content: $icon-simppple-search;
+		content: icomoon.$icon-simppple-search;
 	}
 }
 .icon-simppple-heart {
 	&:before {
-		content: $icon-simppple-heart;
+		content: icomoon.$icon-simppple-heart;
 	}
 }
 .icon-simppple-cart {
 	&:before {
-		content: $icon-simppple-cart;
+		content: icomoon.$icon-simppple-cart;
 	}
 }
 .icon-simppple-arrow-left {
 	&:before {
-		content: $icon-simppple-arrow-left;
+		content: icomoon.$icon-simppple-arrow-left;
 	}
 }
 .icon-simppple-arrow-right-plain {
 	&:before {
-		content: $icon-simppple-arrow-right-plain;
+		content: icomoon.$icon-simppple-arrow-right-plain;
 	}
 }
 .icon-simppple-arrow-left-plain {
 	&:before {
-		content: $icon-simppple-arrow-left-plain;
+		content: icomoon.$icon-simppple-arrow-left-plain;
 	}
 }
 .icon-simppple-facebook {
 	&:before {
-		content: $icon-simppple-facebook;
+		content: icomoon.$icon-simppple-facebook;
 	}
 }
 .icon-simppple-instagram {
 	&:before {
-		content: $icon-simppple-instagram;
+		content: icomoon.$icon-simppple-instagram;
 	}
 }
 .icon-simppple-linkedin {
 	&:before {
-		content: $icon-simppple-linkedin;
+		content: icomoon.$icon-simppple-linkedin;
 	}
 }
 .icon-simppple-twitter {
 	&:before {
-		content: $icon-simppple-twitter;
+		content: icomoon.$icon-simppple-twitter;
 	}
 }
 .icon-simppple-youtube {
 	&:before {
-		content: $icon-simppple-youtube;
+		content: icomoon.$icon-simppple-youtube;
 	}
 }
 .icon-simppple-arrow-right {
 	&:before {
-		content: $icon-simppple-arrow-right;
+		content: icomoon.$icon-simppple-arrow-right;
 	}
 }
 .icon-simppple-user {
 	&:before {
-		content: $icon-simppple-user;
+		content: icomoon.$icon-simppple-user;
 	}
 }
 .icon-simppple-quote {
 	&:before {
-		content: $icon-simppple-quote;
+		content: icomoon.$icon-simppple-quote;
 	}
 }

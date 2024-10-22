@@ -47,9 +47,9 @@
 			}
 
 			&::before {
-				content: $icon-simppple-arrow-right-plain;
+				content: var(--icon-arrow-right-plain);
 				transform: rotate(90deg);
-				font-family: $icomoon-font-family;
+				font-family: var(--font-icons);
 			}
 
 			&::after {

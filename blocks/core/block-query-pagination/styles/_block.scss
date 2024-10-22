@@ -17,13 +17,13 @@
 	.wp-block-query-pagination-next {
 		.is-arrow-arrow {
 			--translate-x: 5px;
-			--icon: '#{$icon-simppple-arrow-right}';
+			--icon: var(--icon-arrow-right);
 
 			margin-inline-start: 0.5rem;
 
 			html[dir='rtl'] & {
 				--translate-x: -5px;
-				--icon: '#{$icon-simppple-arrow-left}';
+				--icon: var(--icon-arrow-left);
 			}
 		}
 	}
@@ -31,12 +31,12 @@
 	.wp-block-query-pagination-previous {
 		.is-arrow-arrow {
 			--translate-x: -5px;
-			--icon: '#{$icon-simppple-arrow-left}';
+			--icon: var(--icon-arrow-left);
 
 			margin-inline-end: 0.5rem;
 
 			html[dir='rtl'] & {
-				--icon: '#{$icon-simppple-arrow-right}';
+				--icon: var(--icon-arrow-right);
 				--translate-x: 5px;
 			}
 		}
@@ -48,7 +48,7 @@
 
 		&::after {
 			content: var(--icon);
-			font-family: $icomoon-font-family;
+			font-family: var(--font-icons);
 			font-size: var(--wp--preset--font-size--12);
 		}
 	}

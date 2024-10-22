@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 body.search-results.post-type-archive-product {
 	main {
 		container-type: inline-size;

@@ -1,3 +1,5 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .pattern---wc-product-image-gallery {
 	.wp-block-woocommerce-product-image-gallery {
 		max-width: 100%;

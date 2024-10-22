@@ -1,49 +1,51 @@
+@use '../../fonts/icomoon/variables';
+
 .social-element,
 .social-element > a {
 	&::before {
 		display: inline-block;
-		font-family: $icomoon-font-family;
+		font-family: variables.$icomoon-font-family;
 	}
 
 	&[href*='linkedin'] {
 		&::before {
-			content: $icon-simppple-linkedin;
+			content: variables.$icon-simppple-linkedin;
 		}
 	}
 
 	&[href*='instagram'] {
 		&::before {
-			content: $icon-simppple-instagram;
+			content: variables.$icon-simppple-instagram;
 		}
 	}
 
 	&[href*='youtube'] {
 		&::before {
-			content: $icon-simppple-youtube;
+			content: variables.$icon-simppple-youtube;
 		}
 	}
 
 	&[href*='twitter'] {
 		&::before {
-			content: $icon-simppple-twitter;
+			content: variables.$icon-simppple-twitter;
 		}
 	}
 
 	&[href*='facebook'] {
 		&::before {
-			content: $icon-simppple-facebook;
+			content: variables.$icon-simppple-facebook;
 		}
 	}
 
 	&[href^='tel:'] {
 		&::before {
-			content: $icon-simppple-phone;
+			content: variables.$icon-simppple-phone;
 		}
 	}
 
 	&[href^='mailto:'] {
 		&::before {
-			content: $icon-simppple-mail;
+			content: variables.$icon-simppple-mail;
 		}
 	}
 }
