@@ -271,7 +271,7 @@ export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => 
 			manifest: true,
 			// ssrManifest: true,
 			sourcemap: !isProduction,
-			target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari14'],
+			target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
 			cssCodeSplit: true,
 			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14']
 			// cssMinify: 'lightningcss'

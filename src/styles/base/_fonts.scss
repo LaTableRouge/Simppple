@@ -4,8 +4,8 @@
 // If you import with url, replace ';' by '%3b';
 // -----------------------------------------------------------------------------
 
-@use '../../fonts/icomoon/style';
-@use '../../fonts/icomoon/variables' as icomoon;
+@use '/src/fonts/icomoon/style';
+@use '/src/fonts/icomoon/variables' as icomoon;
 @use '/src/styles/abstracts/variables' as variables;
 
 @font-face {
