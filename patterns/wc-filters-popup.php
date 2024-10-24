@@ -53,7 +53,7 @@ add_filter('render_block', 'pattern_filters_popup_icon', 10, 2);
 
 ?>
 
-<!-- wp:navigation {"icon":"menu","className":"pattern---wc-filters-popup","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
+<!-- wp:navigation {"icon":"menu","overlayBackgroundColor":"base","overlayTextColor":"contrast","className":"pattern---wc-filters-popup","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"left"}} -->
 <!-- wp:group {"layout":{"type":"constrained"}} -->
 <div class="wp-block-group"><!-- wp:woocommerce/filter-wrapper {"filterType":"price-filter","heading":"<?php _e('Filter by price', 'simppple'); ?>"} -->
 <div class="wp-block-woocommerce-filter-wrapper"><!-- wp:heading {"level":3} -->

@@ -120,7 +120,7 @@
 			"presets": [
 				{
 					"name": "Submenu",
-					"shadow": "hsla(var(--wp--custom--black-hsl), 0.1) 0px 4px 6px -1px, hsla(var(--wp--custom--black-hsl), 0.06) 0px 2px 4px -1px",
+					"shadow": "hsla(var(--wp--custom--contrast-hsl), 0.1) 0px 4px 6px -1px, hsla(var(--wp--custom--contrast-hsl), 0.06) 0px 2px 4px -1px",
 					"slug": "submenu"
 				},
 				{

@@ -5,6 +5,7 @@
 	$menu-padding-bottom: var(--wp--preset--spacing--10);
 
 	--logo-max-height: 60px;
+	--logo-aspect-ratio: 120 / 86;
 
 	.wp-block-site-title {
 		@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
@@ -17,7 +18,7 @@
 		.custom-logo-link {
 			display: block;
 			height: var(--logo-max-height);
-			aspect-ratio: 120 / 86;
+			aspect-ratio: var(--logo-aspect-ratio);
 
 			@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
 				position: relative;
