@@ -2,6 +2,21 @@
 	.wc-upsells {
 		margin-top: var(--wp--preset--spacing--40);
 
+		.swiper {
+			width: 100%;
+
+			.swiper-wrapper {
+				display: flex;
+				flex-wrap: initial;
+				gap: 0;
+
+				.swiper-slide {
+					margin-inline-start: 0;
+					clear: none;
+				}
+			}
+		}
+
 		.products {
 			.product {
 				text-align: start;

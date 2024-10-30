@@ -11,6 +11,11 @@ export const blockWCRelatedProductsCarouselInit = () => {
 
 				const productsWrapper = queryBlock.querySelector('.wp-block-post-template')
 				if (productsWrapper) {
+					let classes = productsWrapper.className.split(' ')
+					classes = classes.filter((string) => string.includes('columns-'))
+					classes = classes.map((classString) => Number(classString.replace('columns-', '')))
+					const columnNumberDesktop = classes.pop()
+
 					// Mise en place d'une structure pour Swiper JS (class & DOM)
 					productsWrapper.classList.add('swiper-wrapper')
 
@@ -49,6 +54,9 @@ export const blockWCRelatedProductsCarouselInit = () => {
 							},
 							768: {
 								slidesPerView: 3
+							},
+							1200: {
+								slidesPerView: columnNumberDesktop
 							}
 						}
 					})

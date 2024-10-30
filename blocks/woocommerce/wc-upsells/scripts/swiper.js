@@ -51,4 +51,5 @@ export const blockWCUpsellsCarouselInit = () => {
 		})
 	}
 }
+
 blockWCUpsellsCarouselInit()

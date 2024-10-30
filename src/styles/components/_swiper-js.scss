@@ -36,16 +36,19 @@
 	.swiper-button-prev {
 		grid-area: nav-prev;
 
-		html[dir='rtl'] & {
-			grid-area: nav-next;
+		// html[dir='rtl'] & {
+		// 	grid-area: nav-next;
+		// }
+		[dir='rtl'] & {
+			transform: rotate(180deg);
 		}
 	}
 
 	.swiper-button-next {
 		grid-area: nav-next;
 
-		html[dir='rtl'] & {
-			grid-area: nav-prev;
+		[dir='rtl'] & {
+			transform: rotate(180deg);
 		}
 
 		&::after {
