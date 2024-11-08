@@ -2,8 +2,12 @@ import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-repl
 import autoprefixer from 'autoprefixer'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
+
+// Temporary fix see pull requests below
+// https://github.com/cmalven/vite-plugin-sass-glob-import/pull/20
+// https://github.com/cmalven/vite-plugin-sass-glob-import/pull/20
+import sassGlobImports from './vite-glob-import'
 
 const chore = process.env.npm_config_chore
 
@@ -233,7 +237,12 @@ export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => 
 		base: isProduction ? './' : `/wp-content/themes/${themeName}`, // Url to apply refresh
 		plugins: [
 			{
-				...sassGlobImports(),
+				...sassGlobImports({
+					namespace(filepath, index) {
+						const fileParts = filepath.replace('.scss', '').split('/')
+						return `${fileParts.at(-4)}-${fileParts.at(-3)}`
+					}
+				}),
 				enforce: 'pre'
 			},
 			{

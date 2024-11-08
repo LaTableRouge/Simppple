@@ -1,3 +1,5 @@
+@use '/blocks/core/block-table/styles/block' as block-table;
+
 .wc-block-order-confirmation-totals-wrapper {
 	.wc-block-order-confirmation-totals {
 		@extend .wp-block-table;

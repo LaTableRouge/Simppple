@@ -29,10 +29,7 @@
 @use 'components/select2';
 @use 'components/grid-js';
 @use 'components/swiper-js';
-
-/* stylelint-disable scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-disallowed-list */
-@import '../../blocks/**/styles/_block.scss';
-@import '../../patterns/**/styles/_pattern.scss';
-@import '../../parts/**/styles/_part.scss';
-@import '../../templates/**/styles/_template.scss';
-/* stylelint-enable scss/at-import-no-partial-leading-underscore, scss/at-import-partial-extension-disallowed-list */
+@use '../../blocks/**/styles/_block.scss';
+@use '../../patterns/**/styles/_pattern.scss';
+@use '../../parts/**/styles/_part.scss';
+@use '../../templates/**/styles/_template.scss';

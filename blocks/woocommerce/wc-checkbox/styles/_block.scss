@@ -1,3 +1,5 @@
+@use '/src/styles/components/html-components/inputs/checkbox' as input;
+
 .wc-block-components-checkbox {
 	.wc-block-components-checkbox__mark {
 		display: none;
