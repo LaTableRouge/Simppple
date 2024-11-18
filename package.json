@@ -1,6 +1,6 @@
 {
 	"name": "simppple",
-	"version": "1.1.0",
+	"version": "1.1.1",
 	"description": "A simple basic gutenberg theme",
 	"main": "vite.config.mjs",
 	"keywords": [

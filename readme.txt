@@ -3,7 +3,7 @@ Contributors: latablerouge, bobbymcbobbyface
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 WC requires at least: 8.4.0
 WC tested up to: 9.4.1
 License: GPLv3 or later
@@ -19,8 +19,16 @@ Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
 
+= 1.1.1 =
+* Released: November 18, 2024
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.1.1
+Styles adjustments
+Colors handling is better, the theme is compatible RTL.
+Known bug: Woocommerce product gallery don't work well in RTL
+
 = 1.1.0 =
-* Released: August 01, 2024
+* Released: November 18, 2024
 
 https://github.com/LaTableRouge/Simppple/releases/tag/1.1.0
 Styles adjustments
