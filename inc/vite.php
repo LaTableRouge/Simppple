@@ -175,7 +175,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                     wp_register_script(
                         $fileSlug,
                         $filePath,
-                        [], // Libraries to use
+                        ['jquery'], // Libraries to use
                         time(),
                         [
                             'in_footer' => $footerEnqueue,
