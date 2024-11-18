@@ -1,0 +1,9 @@
+.woocommerce-notices-wrapper {
+	.wc-block-components-notice-banner {
+		&__content {
+			.button {
+				float: inline-end;
+			}
+		}
+	}
+}

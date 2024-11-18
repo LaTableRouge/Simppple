@@ -1,0 +1,16 @@
+@use 'sass:meta';
+
+body:not(.wp-admin),
+.editor-styles-wrapper {
+	@include meta.load-css('mark');
+	@include meta.load-css('img');
+	@include meta.load-css('button');
+	@include meta.load-css('select');
+	@include meta.load-css('quantity');
+	@include meta.load-css('fieldset');
+	@include meta.load-css('inputs/submit');
+	@include meta.load-css('inputs/checkbox');
+	@include meta.load-css('inputs/radio');
+	@include meta.load-css('inputs/text');
+	@include meta.load-css('inputs/textarea');
+}

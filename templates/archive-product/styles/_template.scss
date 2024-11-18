@@ -1,45 +1,47 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 body.post-type-archive-product {
-  & > .wp-site-blocks {
-    & > main.archive-products {
-      .wp-block-columns {
-        &:has(.wp-block-column .pattern---wc-filters-popup) {
-          $menu-responsive-breakpoint: lg;
+	& > .wp-site-blocks {
+		& > main.archive-products {
+			.wp-block-columns {
+				&:has(.wp-block-column .pattern---wc-filters-popup) {
+					$menu-responsive-breakpoint: lg;
 
-          .wp-block-column {
-            @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-              flex-basis: 100% !important;
-            }
-          }
+					@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+						flex-wrap: wrap !important;
+					}
 
-          .pattern---wc-filters-popup {
-            // Responsive custom breakpoints
-            .wp-block-navigation__responsive-container-open {
-              &:hover,
-              &:focus {
-                @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-                  background: initial;
-                }
-              }
+					.wp-block-column {
+						@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+							flex-basis: 100% !important;
+						}
+					}
 
-              @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-                display: flex !important;
-                color: var(--wp--preset--color--contrast);
-              }
-            }
+					.pattern---wc-filters-popup {
+						// Responsive custom breakpoints
+						.wp-block-navigation__responsive-container-open {
+							@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+								display: flex !important;
+								color: var(--wp--preset--color--contrast);
+							}
 
-            // full menu
-            .wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
-              @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-                display: none !important;
-              }
-            }
-          }
+							&:hover,
+							&:focus {
+								@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+									background: initial;
+								}
+							}
+						}
 
-          @include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-            flex-wrap: wrap !important;
-          }
-        }
-      }
-    }
-  }
+						// full menu
+						.wp-block-navigation__responsive-container:not(.is-menu-open.has-modal-open) {
+							@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+								display: none !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

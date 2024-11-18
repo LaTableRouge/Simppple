@@ -1,0 +1,107 @@
+@use 'sass:map';
+@use 'sass:meta';
+@use '../abstracts/functions' as *;
+@use '../abstracts/responsive' as *;
+@use '../abstracts/variables';
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass root properties.
+// -----------------------------------------------------------------------------
+
+:root {
+	--screen-size: calc(100vw - var(--scrollbarsize));
+
+	// colors
+	@each $state-color, $value in variables.$state-colors {
+		--color-#{$state-color}: #{$value};
+		--color-rgb-#{$state-color}: #{hex-to-rgb($value)};
+	}
+
+	@each $color, $value in variables.$colors {
+		--color-#{$color}: #{$value};
+		--color-rgb-#{$color}: #{hex-to-rgb($value)};
+	}
+
+	// fonts
+	@each $font-title, $font-info in variables.$fonts {
+		$font-name: map.get($font-info, 'name');
+		$font-serif: map.get($font-info, 'serif');
+		@if $font-serif {
+			--font-#{$font-title}: #{$font-name}, #{$font-serif};
+		} @else {
+			--font-#{$font-title}: #{$font-name};
+		}
+	}
+
+	@each $size, $value in variables.$font-sizes {
+		--font-level-#{$size}: #{$value};
+	}
+
+	// spacings
+	@each $spacing, $value in variables.$spacings {
+		--spacing-#{$spacing}: #{$value};
+	}
+
+	// breakpoints
+	@each $bp, $value in variables.$grid-breakpoints {
+		--breakpoint-#{$bp}: #{$value};
+	}
+
+	// custom sizes
+	@each $size, $value in variables.$sizes {
+		@if (meta.type-of($value) == 'map') {
+			$breakpoints: $value;
+
+			@each $breakpoint, $value in $breakpoints {
+				@include media-breakpoint-up($breakpoint) {
+					--#{$size}: #{$value};
+				}
+			}
+		} @else {
+			--#{$size}: #{$value};
+		}
+	}
+
+	@each $icon, $value in variables.$icons {
+		@if (meta.type-of($value) == 'map') {
+			$dirs: $value;
+
+			@each $dir, $value in $dirs {
+				@if ($dir == 'rtl') {
+					&[dir='rtl'] {
+						--icon-#{$icon}: '#{$value}';
+					}
+				} @else {
+					--icon-#{$icon}: '#{$value}';
+				}
+			}
+		} @else {
+			--icon-#{$icon}: '#{$value}';
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		--nomotion: none;
+	}
+
+	// &[data-theme='dark'] {
+	// 	--wp--custom--base-rgb: var(--wp--custom--base-dark-rgb);
+	// 	--wp--custom--base-2-rgb: var(--wp--custom--base-2-dark-rgb);
+	// 	--wp--custom--base-3-rgb: var(--wp--custom--base-3-dark-rgb);
+	// 	--wp--custom--base-hsl: var(--wp--custom--base-dark-hsl);
+	// 	--wp--custom--base-2-hsl: var(--wp--custom--base-2-dark-hsl);
+	// 	--wp--custom--base-3-hsl: var(--wp--custom--base-3-dark-hsl);
+	// 	--wp--custom--contrast-rgb: var(--wp--custom--contrast-dark-rgb);
+	// 	--wp--custom--contrast-2-rgb: var(--wp--custom--contrast-2-dark-rgb);
+	// 	--wp--custom--contrast-3-rgb: var(--wp--custom--contrast-3-dark-rgb);
+	// 	--wp--custom--contrast-hsl: var(--wp--custom--contrast-dark-hsl);
+	// 	--wp--custom--contrast-2-hsl: var(--wp--custom--contrast-2-dark-hsl);
+	// 	--wp--custom--contrast-3-hsl: var(--wp--custom--contrast-3-dark-hsl);
+	// 	--wp--preset--color--base: var(--wp--custom--color-base-dark);
+	// 	--wp--preset--color--base-2: var(--wp--custom--color-base-2-dark);
+	// 	--wp--preset--color--base-3: var(--wp--custom--color-base-3-dark);
+	// 	--wp--preset--color--contrast: var(--wp--custom--color-contrast-dark);
+	// 	--wp--preset--color--contrast-2: var(--wp--custom--color-contrast-2-dark);
+	// 	--wp--preset--color--contrast-3: var(--wp--custom--color-contrast-3-dark);
+	// }
+}

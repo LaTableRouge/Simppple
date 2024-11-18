@@ -1,15 +1,15 @@
-import { resolve } from 'path'
-
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import autoprefixer from 'autoprefixer'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
-import { run } from 'vite-plugin-run'
-import sassGlobImports from 'vite-plugin-sass-glob-import'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
+// Temporary fix see pull requests below
+// https://github.com/cmalven/vite-plugin-sass-glob-import/pull/20
+// https://github.com/cmalven/vite-plugin-sass-glob-import/pull/20
+import sassGlobImports from './vite-glob-import'
+
 const chore = process.env.npm_config_chore
-const actualVersion = process.env.npm_package_version
-const newVersion = process.env.npm_config_newversion
 
 /*
  |--------------------------------------------------------------------------
@@ -21,7 +21,7 @@ const newVersion = process.env.npm_config_newversion
  |
  */
 const themeName = 'Simppple'
-const assetsPath = 'assets'
+const assetsPath = 'src'
 const distPath = 'build'
 
 /*
@@ -59,7 +59,7 @@ const entryFiles = [
 			{
 				name: 'editor',
 				input: `${assetsPath}/scripts`
-			},
+			}
 		],
 		styles: [
 			{
@@ -73,86 +73,10 @@ const entryFiles = [
 			{
 				name: 'editor',
 				input: `${assetsPath}/styles`
-			},
+			}
 		]
 	}
 ]
-
-/*
- |--------------------------------------------------------------------------
- | Beautify config (lint/prettier files)
- |--------------------------------------------------------------------------
- | {
- |    js|php|scss: {
- |     - Config (string)
- |     - Files (array of strings)
- |    }
- | }
- |
- */
-const beautifyObject = {
-	js_lint: {
-		config: 'npx eslint --no-error-on-unmatched-pattern --fix',
-		files: [
-			...Array.from(new Set(entryFiles.flatMap(element => element.scripts.flatMap(script => script.input)))),
-			'blocks/react/src',
-			'blocks/acf',
-			'blocks/core',
-			'blocks/woocommerce',
-			'parts',
-			'patterns',
-			'templates'
-		]
-	},
-	js_prettier: {
-		config: 'npx prettier --no-error-on-unmatched-pattern --write',
-		files: [
-			...Array.from(new Set(entryFiles.flatMap(element => element.scripts.flatMap(script => script.input)))),
-			'blocks/react/src',
-			'blocks/acf',
-			'blocks/core',
-			'blocks/woocommerce',
-			'parts',
-			'patterns',
-			'templates'
-		]
-	},
-	scss_lint: {
-		config: 'npx stylelint --allow-empty-input --fix',
-		files: [
-			...Array.from(new Set(entryFiles.flatMap(element => element.styles.flatMap(style => style.input)))),
-			'blocks/react/src',
-			'blocks/acf',
-			'blocks/core',
-			'blocks/woocommerce',
-			'parts',
-			'patterns',
-			'templates'
-		]
-	},
-	scss_prettier: {
-		config: 'npx prettier --no-error-on-unmatched-pattern --write',
-		files: [
-			...Array.from(new Set(entryFiles.flatMap(element => element.styles.flatMap(style => style.input)))),
-			'blocks/react/src',
-			'blocks/acf',
-			'blocks/core',
-			'blocks/woocommerce',
-			'parts',
-			'patterns',
-			'templates'
-		]
-	},
-	php_lint: {
-		config: `${resolve(__dirname, 'vendor/bin/php-cs-fixer.bat')} fix -v --show-progress=dots --using-cache=no --config=${resolve(__dirname, '.php-cs-fixer.php')}`,
-		files: [
-			'inc',
-			'functions.php',
-			'patterns',
-			'blocks'
-		]
-	}
-}
 
 /*
  |--------------------------------------------------------------------------
@@ -170,63 +94,17 @@ const beautifyObject = {
  |  ]
  |
  */
-const filesToEdit = []
-if (chore === 'version') {
-	if (actualVersion && newVersion) {
-		const isGreaterThanOldVersion = newVersion.localeCompare(actualVersion, undefined, { numeric: true, sensitivity: 'base' })
-		if (isGreaterThanOldVersion === 1) {
-			filesToEdit.push(
-				{
-					filePath: [
-						resolve(__dirname, 'package.json'),
-						resolve(__dirname, 'style.css')
-					],
-					replace: [
-						{
-							from: /"version":\s?"[0-9]+.[0-9]+.[0-9]+"/g,
-							to: `"version": "${newVersion}"`
-						},
-						{
-							from: /Version:\s?[0-9]+.[0-9]+.[0-9]+/g,
-							to: `Version: ${newVersion}`
-						},
-						{
-							from: /Stable tag:\s?[0-9]+.[0-9]+.[0-9]+/g,
-							to: `Stable tag: ${newVersion}`
-						},
-						{
-							from: /\/commits\/[0-9]+.[0-9]+.[0-9]+/g,
-							to: `/commits/${newVersion}`
-						},
-						{
-							from: /\/download\/[0-9]+.[0-9]+.[0-9]+/g,
-							to: `/download/${newVersion}`
-						}
-					]
-				}
-			)
-		} else {
-			console.warn('The new version is not greater than the old one')
-		}
-	} else {
-		console.warn('No version number specified please add a --newversion=x.x.x to your command line')
+const filesToEdit = [
+	{
+		filePath: [resolve(__dirname, 'inc/'), resolve(__dirname, 'functions.php')],
+		replace: [
+			{
+				from: /\bvar_dump\(([^)]+)\);/g,
+				to: ''
+			}
+		]
 	}
-} else if (chore === 'all') {
-	filesToEdit.push(
-		{
-			filePath: [
-				resolve(__dirname, 'inc/'),
-				resolve(__dirname, 'functions.php')
-			],
-			replace: [
-				{
-					from: /\bvar_dump\(([^)]+)\);/g,
-					to: ''
-				}
-			]
-		}
-	)
-}
+]
 
 /*
  |--------------------------------------------------------------------------
@@ -257,12 +135,12 @@ const filesToCopy = [
  |--------------------------------------------------------------------------
  */
 
-export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => {
+export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => {
 	const isProduction = command === 'build'
 
 	const entriesToCompile = []
 	if (entryFiles.length) {
-		entryFiles.forEach(group => {
+		entryFiles.forEach((group) => {
 			if (group) {
 				/*
 				|--------------------------------------------------------------------------
@@ -273,7 +151,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				|
 				*/
 				if (group.scripts?.length) {
-					group.scripts.forEach(file => {
+					group.scripts.forEach((file) => {
 						if (!entriesToCompile.includes(`${file.input}/${file.name}.js`)) {
 							entriesToCompile.push(`${file.input}/${file.name}.js`)
 						}
@@ -289,7 +167,7 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 				|
 				*/
 				if (group.styles?.length) {
-					group.styles.forEach(file => {
+					group.styles.forEach((file) => {
 						if (chore === undefined || chore === 'all' || chore.includes('scss')) {
 							if (!entriesToCompile.includes(`${file.input}/${file.name}.scss`)) {
 								entriesToCompile.push(`${file.input}/${file.name}.scss`)
@@ -313,25 +191,19 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 	 */
 	if (chore !== 'ci') {
 		if (isProduction) {
-			await stringReplaceOpenAndWrite(
-				resolve(__dirname, 'functions.php'),
-				[
-					{
-						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
-						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);"
-					}
-				]
-			)
+			await stringReplaceOpenAndWrite(resolve(__dirname, 'functions.php'), [
+				{
+					from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?true[ ]?\);/g,
+					to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);"
+				}
+			])
 		} else {
-			await stringReplaceOpenAndWrite(
-				resolve(__dirname, 'functions.php'),
-				[
-					{
-						from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
-						to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', true);"
-					}
-				]
-			)
+			await stringReplaceOpenAndWrite(resolve(__dirname, 'functions.php'), [
+				{
+					from: /\bdefine\([ ]?'SIMPPPLE_IS_VITE_DEVELOPMENT',[ ]?false[ ]?\);/g,
+					to: "define('SIMPPPLE_IS_VITE_DEVELOPMENT', true);"
+				}
+			])
 		}
 	}
 
@@ -365,94 +237,52 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 		base: isProduction ? './' : `/wp-content/themes/${themeName}`, // Url to apply refresh
 		plugins: [
 			{
-				...sassGlobImports(),
-				enforce: 'pre',
+				...sassGlobImports({
+					namespace(filepath, index) {
+						const fileParts = filepath.replace('.scss', '').split('/')
+						return `${fileParts.at(-4)}-${fileParts.at(-3)}`
+					}
+				}),
+				enforce: 'pre'
 			},
 			{
 				...viteStringReplace(filesToEdit),
 				apply: 'build',
-				enforce: 'pre',
-			},
-			{
-				...run({
-					silent: false,
-					skipDts: true,
-					input: chore === 'all'
-						? [
-							{
-								name: 'prettier:scss',
-								run: [`${beautifyObject.scss_prettier.config} ${beautifyObject.scss_prettier.files.length > 1 ? `{${beautifyObject.scss_prettier.files.join(',')}}` : beautifyObject.scss_prettier.files.join(',')}/**/*.scss`],
-							},
-							{
-								name: 'lint:scss',
-								run: [`${beautifyObject.scss_lint.config} ${beautifyObject.scss_lint.files.length > 1 ? `{${beautifyObject.scss_lint.files.join(',')}}` : beautifyObject.scss_lint.files.join(',')}/**/*.scss`],
-							},
-							{
-								name: 'prettier:js',
-								run: [`${beautifyObject.js_prettier.config} ${beautifyObject.js_prettier.files.length > 1 ? `{${beautifyObject.js_prettier.files.join(',')}}` : beautifyObject.js_prettier.files.join(',')}/**/*.js`],
-							},
-							{
-								name: 'lint:js',
-								run: [`${beautifyObject.js_lint.config} ${beautifyObject.js_lint.files.length > 1 ? `{${beautifyObject.js_lint.files.join(',')}}` : beautifyObject.js_lint.files.join(',')}/**/*.js`],
-							},
-							{
-								name: 'lint:php',
-								run: [`${beautifyObject.php_lint.config} ${beautifyObject.php_lint.files.join(' ')}`],
-							}
-						]
-						: []
-				}),
-				apply: 'build',
-				enforce: 'pre',
+				enforce: 'pre'
 			},
 			viteStaticCopy({
 				targets: filesToCopy
 			})
 		].filter(Boolean),
 
+		esbuild: isProduction
+			? {
+				minifyIdentifiers: false,
+				keepNames: true,
+				pure: ['console.log'],
+				reserveProps: /^__\(*$/
+			}
+			: null,
+
 		build: {
 			rollupOptions: {
 				input: entriesToCompile,
+				output: {
+					entryFileNames: 'assets/[name].js',
+					chunkFileNames: 'assets/[name].js',
+					assetFileNames: 'assets/[name].[ext]'
+				}
 			},
 			write: true,
-			minify: isProduction ? 'terser' : false,
-			terserOptions: isProduction
-				? {
-					keep_fnames: true,
-					enclose: true,
-					compress: {
-						pure_funcs: [
-							'console.log',
-							'__'
-							// 'console.error',
-							// 'console.warn',
-							// ...
-						]
-					},
-					// Make sure symbols under `pure_funcs`,
-					// are also under `mangle.reserved` to avoid mangling.
-					mangle: {
-						reserved: [
-							'console.log',
-							'__'
-							// 'console.error',
-							// 'console.warn',
-							// ...
-						]
-					},
-					output: {
-						comments: false
-					}
-				}
-				: null,
+			minify: isProduction ? 'esbuild' : false,
 			outDir: distPath,
 			emptyOutDir: true,
 			manifest: true,
 			// ssrManifest: true,
 			sourcemap: !isProduction,
-			target: ['es2015', 'edge88', 'firefox78', 'chrome87', 'safari14'],
+			target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
 			cssCodeSplit: true,
-			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14'],
+			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14']
 			// cssMinify: 'lightningcss'
 		},
 
@@ -467,15 +297,18 @@ export default defineConfig(async ({ command, mode, isSsrBuild, isPreview }) => 
 			},
 			watch: {
 				usePolling: true
-			},
+			}
 		},
 
 		css: {
 			devSourcemap: !isProduction,
 			postcss: {
-				plugins: [
-					autoprefixer
-				],
+				plugins: [autoprefixer]
+			},
+			preprocessorOptions: {
+				scss: {
+					api: 'modern-compiler'
+				}
 			}
 		},
 

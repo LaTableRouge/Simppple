@@ -1,0 +1,28 @@
+.underlined-title {
+	position: relative;
+	padding-bottom: 15px;
+
+	&.has-text-align-center {
+		&::before {
+			left: 50%;
+			inset-inline-start: 50%;
+			transform: translateY(50%) translateX(-50%);
+		}
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: 0;
+		inset-inline-start: 0;
+		width: 50px;
+		height: 0;
+		transform: translateY(50%);
+		border-bottom: solid 5px var(--wp--preset--color--accent-2);
+		border-radius: 5px;
+
+		.has-accent-background-color & {
+			border-bottom: solid 5px var(--wp--preset--color--contrast);
+		}
+	}
+}

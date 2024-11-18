@@ -1,81 +1,89 @@
+@use '/src/styles/abstracts/responsive' as *;
+
 .pattern---wc-product-image-gallery {
-  .wp-block-woocommerce-product-image-gallery {
-    max-width: 100%;
+	.wp-block-woocommerce-product-image-gallery {
+		max-width: 100%;
 
-    .onsale {
-      top: 5px;
-      left: 5px !important;
-      min-width: initial;
-      min-height: initial;
-      padding: 0.25em 0.75em;
-      border: none;
-      border-radius: 3px;
-      background-color: var(--wp--preset--color--accent);
-      color: var(--wp--preset--color--white);
-      font-size: var(--wp--preset--font-size--14);
-      font-weight: bold;
-      line-height: 1.1;
-      text-align: center;
-      text-transform: uppercase;
-    }
+		.onsale {
+			top: 5px;
+			left: 5px !important;
+			min-width: initial;
+			min-height: initial;
+			padding: 0.25em 0.75em;
+			border: none;
+			border-radius: 3px;
+			background-color: var(--wp--preset--color--accent-2);
+			color: var(--wp--preset--color--white);
+			font-size: var(--wp--preset--font-size--14);
+			font-weight: bold;
+			line-height: 1.1;
+			text-align: center;
+			text-transform: uppercase;
+		}
 
-    .woocommerce-product-gallery {
-      margin-bottom: 0;
+		.woocommerce-product-gallery {
+			margin-bottom: 0;
 
-      .woocommerce-product-gallery__image {
-        border-radius: var(--wp--custom--border-radius-picture);
-      }
+			.woocommerce-product-gallery__image {
+				border-radius: var(--wp--custom--border-radius-picture);
+			}
 
-      .woocommerce-product-gallery__trigger {
-        top: 5px !important;
-        right: 5px !important;
-      }
+			.woocommerce-product-gallery__trigger {
+				top: 5px !important;
+				right: 5px !important;
 
-      .flex-control-nav.flex-control-thumbs {
-        display: flex;
-        flex-wrap: wrap;
-        margin-top: var(--wp--preset--spacing--10);
-        column-gap: calc(var(--wp--preset--spacing--10) / 2);
+				html[dir='rtl'] & {
+					right: initial !important;
+					left: 5px !important;
+				}
+			}
 
-        li {
-          &:has(img.flex-active) {
-            @include media-breakpoint-up(lg) {
-              border-width: 3px;
-            }
-          }
+			.flex-control-nav.flex-control-thumbs {
+				display: flex;
+				flex-wrap: wrap;
+				margin-top: var(--wp--preset--spacing--10);
+				column-gap: calc(var(--wp--preset--spacing--10) / 2);
 
-          &:hover img,
-          img.flex-active {
-            @include media-breakpoint-up(lg) {
-              opacity: 0;
-              cursor: pointer;
-            }
-          }
+				@include media-breakpoint-up(lg) {
+					position: absolute;
+					top: 55px;
+					inset-inline-end: 19px;
+					flex-direction: column;
+					row-gap: var(--wp--preset--spacing--10);
+					margin: 0;
+				}
 
-          img {
-            @include media-breakpoint-down(lg) {
-              border-radius: var(--wp--custom--border-radius-picture);
-            }
-          }
+				li {
+					@include media-breakpoint-up(lg) {
+						width: 12px;
+						height: 12px;
+						transition: var(--nomotion, border-width 0.2s ease-in-out);
+						border: solid 1px var(--wp--preset--color--black);
+						border-radius: 50%;
+					}
 
-          @include media-breakpoint-up(lg) {
-            width: 12px;
-            height: 12px;
-            transition: var(--nomotion, border-width 0.2s ease-in-out);
-            border: solid 1px;
-            border-radius: 50%;
-          }
-        }
+					&:has(img.flex-active) {
+						@include media-breakpoint-up(lg) {
+							border-width: 3px;
+						}
+					}
 
-        @include media-breakpoint-up(lg) {
-          position: absolute;
-          top: 55px;
-          right: 19px;
-          flex-direction: column;
-          row-gap: var(--wp--preset--spacing--10);
-          margin: 0;
-        }
-      }
-    }
-  }
+					&:hover img,
+					img,
+					img.flex-active {
+						@include media-breakpoint-up(lg) {
+							opacity: 0;
+							cursor: pointer;
+						}
+					}
+
+					img {
+						@include media-breakpoint-down(lg) {
+							border-radius: var(--wp--custom--border-radius-picture);
+						}
+					}
+				}
+			}
+		}
+	}
 }

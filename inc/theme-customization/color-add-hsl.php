@@ -40,6 +40,29 @@ function simppple_add_HSL_values_to_CSS_variables($themeJSON) {
                     }, $colorPalette);
                 }
 
+                $colorsPaletteCustom = $data['settings']['custom'];
+                if (!empty($colorsPaletteCustom)) {
+                    $colorsPaletteCustom = array_filter(
+                        $colorsPaletteCustom,
+                        function ($value, $key) {
+                            return stripos($key, 'color-') !== false;
+                        },
+                        ARRAY_FILTER_USE_BOTH
+                    );
+
+                    $tempArray = [];
+                    if (!empty($colorsPaletteCustom)) {
+                        foreach ($colorsPaletteCustom as $key => $value) {
+                            $tempArray[] = [
+                                'color' => $value,
+                                'slug' => substr($key, strlen('color-'))
+                            ];
+                        }
+                    }
+
+                    $colorPalette = array_merge($colorPalette, $tempArray);
+                }
+
                 // Loop through color palette
                 foreach ($colorPalette as $color) {
                     if (!str_contains($color['slug'], '-rgb') && !str_contains($color['slug'], '-hsl')) {

@@ -14,6 +14,7 @@ function simppple_add_RGB_values_to_CSS_variables($themeJSON) {
             $rgbColorPalette = [];
 
             $colorPalette = $data['settings']['color']['palette']['theme'];
+
             if (!empty($colorPalette)) {
                 // Query the global styles to find custom color palettes
                 $customStyles = false;
@@ -37,6 +38,29 @@ function simppple_add_RGB_values_to_CSS_variables($themeJSON) {
 
                         return $customValueKey ? $customPalette[$customValueKey] : $value;
                     }, $colorPalette);
+                }
+
+                $colorsPaletteCustom = $data['settings']['custom'];
+                if (!empty($colorsPaletteCustom)) {
+                    $colorsPaletteCustom = array_filter(
+                        $colorsPaletteCustom,
+                        function ($value, $key) {
+                            return stripos($key, 'color-') !== false;
+                        },
+                        ARRAY_FILTER_USE_BOTH
+                    );
+
+                    $tempArray = [];
+                    if (!empty($colorsPaletteCustom)) {
+                        foreach ($colorsPaletteCustom as $key => $value) {
+                            $tempArray[] = [
+                                'color' => $value,
+                                'slug' => substr($key, strlen('color-'))
+                            ];
+                        }
+                    }
+
+                    $colorPalette = array_merge($colorPalette, $tempArray);
                 }
 
                 // Loop through color palette

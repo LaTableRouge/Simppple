@@ -19,7 +19,7 @@ You can download the theme via [Wordpress.org](https://wordpress.org/themes/simp
 ## File Structure
 
 - 📂 **Simppple**
-  - 📂 [assets](./assets/)
+  - 📂 [src](./src/)
     - Contains assets that will be compiled (scss, js, fonts, img, etc...)
     - 📂 fonts
       - 📂 icomoon
@@ -87,7 +87,7 @@ ACF (Advanced Custom Fields) blocks should be created and edited in the `blocks/
 
 ### Creating REACT Blocks
 
-React blocks should be created and edited in the `blocks/react/assets/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/react/assets/README.md)).
+React blocks should be created and edited in the `blocks/react/` directory of the [child theme](https://github.com/LaTableRouge/Simppple-child) ([see README](https://github.com/LaTableRouge/Simppple-child/blob/master/blocks/react/README.md)).
 
 ### Creating Patterns
 

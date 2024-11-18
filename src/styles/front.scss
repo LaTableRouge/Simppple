@@ -1,0 +1,35 @@
+// -----------------------------------------------------------------------------
+// Style for the WordPress front area.
+// -----------------------------------------------------------------------------
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@use 'abstracts/functions';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/animations';
+@use 'abstracts/keyframes';
+@use 'abstracts/responsive';
+
+// 2. Vendors
+@use 'vendors/reset';
+
+// 3. Base stuff
+@use 'base/fonts';
+@use 'base/root';
+@use 'base/base';
+@use 'base/typography';
+@use 'base/helpers';
+
+// 4. Components
+@use 'components/html-components/html';
+@use 'components/title';
+@use 'components/notification';
+@use 'components/socials';
+@use 'components/select2';
+@use 'components/grid-js';
+@use 'components/swiper-js';
+@use '../../blocks/**/styles/_block.scss';
+@use '../../patterns/**/styles/_pattern.scss';
+@use '../../parts/**/styles/_part.scss';
+@use '../../templates/**/styles/_template.scss';

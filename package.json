@@ -1,6 +1,6 @@
 {
 	"name": "simppple",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"description": "A simple basic gutenberg theme",
 	"main": "vite.config.mjs",
 	"keywords": [
@@ -20,105 +20,65 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"watch": "vite",
-		"prod": "vite build",
-		"build": "npm run prod --chore=all",
-		"version-update": "npm run prod --chore=version",
-		"prepare": "husky install && composer install && npm run prod"
+		"build": "vite build",
+		"lint:scss": "npx stylelint --allow-empty-input --fix {src/styles/**,blocks/**/styles/**,src/styles,blocks/**/styles,parts/**/styles,parts/**/styles/**,patterns/**/styles,patterns/**/styles/**,templates/**/styles,templates/**/styles/**}*.scss",
+		"prettier:scss": "npx prettier --no-error-on-unmatched-pattern --write {src/styles/**,blocks/**/styles/**,src/styles,blocks/**/styles,parts/**/styles,parts/**/styles/**,patterns/**/styles,patterns/**/styles/**,templates/**/styles,templates/**/styles/**}/*.scss",
+		"lint:js": "npx eslint --no-error-on-unmatched-pattern --fix {src/scripts/**,blocks/**/scripts/**,src/scripts,blocks/**/scripts,parts/**/scripts,parts/**/scripts/**,patterns/**/scripts,patterns/**/scripts/**,templates/**/scripts,templates/**/scripts/**}/*.js",
+		"prettier:js": "npx prettier --no-error-on-unmatched-pattern --write {src/scripts/**,blocks/**/scripts/**,src/scripts,blocks/**/scripts,parts/**/scripts,parts/**/scripts/**,patterns/**/scripts,patterns/**/scripts/**,templates/**/scripts,templates/**/scripts/**}/*.js",
+		"beautify:all": "npm run prettier:scss && npm run lint:scss && npm run prettier:js && npm run lint:js && composer lint:php",
+		"prepare": "husky install && composer install && npm run build"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.3.0",
-		"@commitlint/config-conventional": "^19.2.2",
-		"@mlnop/string-replace": "^1.0.5",
-		"@mlnop/vite-edit-compiled-files-in-pot": "^1.0.0",
-		"@wordpress/scripts": "^28.4.0",
-		"autoprefixer": "^10.4.19",
+		"@commitlint/cli": "^19.5.0",
+		"@commitlint/config-conventional": "^19.5.0",
+		"@wordpress/scripts": "^30.3.0",
+		"browserslist": "^4.24.2",
 		"eslint": "^8.57.0",
-		"eslint-config-prettier": "^9.1.0",
+		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-standard": "^17.1.0",
-		"eslint-plugin-import": "^2.29.1",
-		"eslint-plugin-n": "^16.6.2",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-n": "^16.2.0",
 		"eslint-plugin-node": "^11.1.0",
-		"eslint-plugin-prettier": "^5.1.3",
+		"eslint-plugin-prettier": "^5.0.1",
 		"eslint-plugin-promise": "^6.1.1",
-		"eslint-plugin-react": "^7.34.1",
-		"eslint-plugin-simple-import-sort": "^12.0.0",
-		"eslint-plugin-unused-imports": "^3.1.0",
+		"eslint-plugin-react": "^7.34.3",
+		"eslint-plugin-simple-import-sort": "^10.0.0",
+		"eslint-plugin-sort-destructure-keys": "^2.0.0",
+		"eslint-plugin-unused-imports": "^3.0.0",
 		"git-precommit-checks": "^3.1.0",
-		"husky": "^9.1.4",
-		"lint-staged": "^15.2.7",
+		"husky": "^9.1.6",
+		"lint-staged": "^15.2.10",
 		"prettier": "^3.3.3",
-		"sass": "^1.77.8",
-		"sass-loader": "^16.0.0",
-		"stylelint": "^16.8.1",
+		"sass": "^1.79.5",
+		"sass-loader": "^16.0.2",
+		"stylelint": "^15.11.0",
 		"stylelint-config-property-sort-order-smacss": "^10.0.0",
-		"stylelint-config-sass-guidelines": "^12.0.0",
-		"stylelint-config-standard": "^36.0.1",
+		"stylelint-config-sass-guidelines": "^10.0.0",
+		"stylelint-config-standard": "^34.0.0",
 		"stylelint-order": "^6.0.4",
 		"validate-branch-name": "^1.3.1",
-		"vite": "^5.3.5",
-		"vite-plugin-run": "^0.4.1",
-		"vite-plugin-sass-glob-import": "^3.0.2",
-		"vite-plugin-static-copy": "^1.0.6"
+		"vite": "^5.4.9",
+		"vite-plugin-static-copy": "^2.0.0",
+		"autoprefixer": "^10.4.20",
+		"@mlnop/string-replace": "^1.0.5",
+		"ansi-colors": "^4.1.3",
+    "glob": "^11.0.0",
+    "minimatch": "^10.0.1"
 	},
 	"dependencies": {
-		"gridjs": "^6.2.0",
-		"swiper": "^11.1.8"
+		"gridjs": "^6.0.6",
+		"swiper": "^11.1.14"
 	},
 	"lint-staged": {
-		"assets/styles/**/*.scss": [
+		"**/*.php": [
+			"composer lint-staged:php"
+		],
+		"{src/styles/**/*.scss,blocks/**/*.scss,parts/**/*.scss,patterns/**/*.scss,templates/**/*.scss}": [
 			"npx stylelint --allow-empty-input --fix",
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx stylelint --allow-empty-input --fix"
 		],
-		"blocks/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"parts/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"patterns/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"templates/**/*.scss": [
-			"npx stylelint --allow-empty-input --fix",
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx stylelint --allow-empty-input --fix"
-		],
-		"assets/scripts/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/react/assets/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/acf/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/core/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"blocks/woocommerce/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"parts/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"patterns/**/*.js": [
-			"npx prettier --no-error-on-unmatched-pattern --write",
-			"npx eslint --no-error-on-unmatched-pattern --fix"
-		],
-		"templates/**/*.js": [
+		"{vite.config.mjs,src/scripts/**/*.js,blocks/**/*.{js,jsx},parts/**/*.js,patterns/**/*.js,templates/**/*.js}": [
 			"npx prettier --no-error-on-unmatched-pattern --write",
 			"npx eslint --no-error-on-unmatched-pattern --fix"
 		]
@@ -188,7 +148,12 @@
 		"semi": false,
 		"bracketSpacing": true
 	},
-	"prettierIgnore": [],
+	"browserslist": [
+		"last 2 version"
+	],
+	"prettierIgnore": [
+		"build/"
+	],
 	"stylelint": {
 		"extends": [
 			"stylelint-config-property-sort-order-smacss",
@@ -254,16 +219,14 @@
 			],
 			"declaration-property-value-disallowed-list": null,
 			"max-nesting-depth": null,
-			"order/order": [
-				[
-					"dollar-variables",
-					"custom-properties",
-					"declarations",
-					"rules",
-					"at-rules"
-				]
-			],
 			"order/properties-alphabetical-order": null,
+			"order/order": [
+				"dollar-variables",
+				"custom-properties",
+				"declarations",
+				"at-rules",
+				"rules"
+			],
 			"property-no-unknown": null,
 			"property-no-vendor-prefix": null,
 			"rule-empty-line-before": [
@@ -299,9 +262,12 @@
 			"value-no-vendor-prefix": null
 		},
 		"ignoreFiles": [
-			"assets/styles/abstracts/**/*.scss"
+			"src/styles/abstracts/**/*.scss"
 		]
 	},
+	"stylelintIgnore": [
+		"src/styles/abstract/**/*.scss"
+	],
 	"eslintConfig": {
 		"env": {
 			"browser": true,
@@ -330,8 +296,10 @@
 			"wpparams": true
 		},
 		"plugins": [
+			"react",
 			"unused-imports",
-			"simple-import-sort"
+			"simple-import-sort",
+			"sort-destructure-keys"
 		],
 		"rules": {
 			"indent": [
@@ -369,7 +337,23 @@
 				"before"
 			],
 			"react/react-in-jsx-scope": "off",
-			"react/prop-types": "off"
+			"react/prop-types": "off",
+			"react/jsx-sort-props": [
+				1,
+				{
+					"ignoreCase": true,
+					"callbacksLast": true,
+					"shorthandFirst": true,
+					"multiline": "ignore",
+					"reservedFirst": true
+				}
+			],
+			"sort-destructure-keys/sort-destructure-keys": [
+				2,
+				{
+					"caseSensitive": false
+				}
+			]
 		}
 	},
 	"eslintIgnore": [

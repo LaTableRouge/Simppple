@@ -22,7 +22,7 @@ jobs:
       - name: Compile CSS and Javascript
         run: |
           npm ci --ignore-scripts
-          npm run prod --chore=ci
+          npm run build --chore=ci
 
       # Zip the theme into a clean release
       - name: Zip release
@@ -30,7 +30,7 @@ jobs:
         with:
           type: 'zip'
           filename: '${{ env.RELEASE_NAME }}.zip'
-          path: 'LICENSE readme.txt screenshot.jpg functions.php style.css theme.json styles/ templates/*.html parts/*.html patterns/*.php blocks/react/build lang/ inc/ build/ acf-json/'
+          path: 'LICENSE readme.txt screenshot.jpg functions.php style.css theme.json styles/ templates/*.html parts/*.html patterns/*.php lang/ inc/ build/'
 
       # Publish the release
       - name: Publish release

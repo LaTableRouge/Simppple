@@ -1,0 +1,56 @@
+@use '../../fonts/icomoon/variables';
+
+.social-element,
+.social-element > a {
+	&::before {
+		display: inline-block;
+		font-family: variables.$icomoon-font-family;
+	}
+
+	&[href*='linkedin'] {
+		&::before {
+			content: variables.$icon-simppple-linkedin;
+		}
+	}
+
+	&[href*='instagram'] {
+		&::before {
+			content: variables.$icon-simppple-instagram;
+		}
+	}
+
+	&[href*='youtube'] {
+		&::before {
+			content: variables.$icon-simppple-youtube;
+		}
+	}
+
+	&[href*='twitter'] {
+		&::before {
+			content: variables.$icon-simppple-twitter;
+		}
+	}
+
+	&[href*='facebook'] {
+		&::before {
+			content: variables.$icon-simppple-facebook;
+		}
+	}
+
+	&[href^='tel:'] {
+		&::before {
+			content: variables.$icon-simppple-phone;
+		}
+	}
+
+	&[href^='mailto:'] {
+		&::before {
+			content: variables.$icon-simppple-mail;
+		}
+	}
+}
+
+.social-element > a {
+	display: inline-flex;
+	gap: 10px;
+}

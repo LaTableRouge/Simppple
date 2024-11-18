@@ -1,11 +1,11 @@
-<!-- wp:group {"tagName":"header","style":{"position":{"type":"sticky","top":"0px"}},"backgroundColor":"white","layout":{"type":"constrained"}} -->
-<header class="wp-block-group has-white-background-color has-background"><!-- wp:template-part {"slug":"header","tagName":"div"} /--></header>
+<!-- wp:group {"tagName":"header","style":{"position":{"type":"sticky","top":"0px"}},"backgroundColor":"base","layout":{"type":"constrained"}} -->
+<header class="wp-block-group has-base-background-color has-background"><!-- wp:template-part {"slug":"header","tagName":"div"} /--></header>
 <!-- /wp:group -->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"var:preset|spacing|70","bottom":"var:preset|spacing|70"}}},"className":"single-product","layout":{"type":"constrained"}} -->
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"var:preset|spacing|70"}}},"className":"single-product","layout":{"type":"constrained"}} -->
 <main
 	class="wp-block-group single-product"
-	style="margin-top:var(--wp--preset--spacing--70);margin-bottom:var(--wp--preset--spacing--70)"
+	style="margin-top:0;margin-bottom:var(--wp--preset--spacing--70)"
 >
 	<!-- wp:pattern {"slug":"simppple/wc-breadcrumbs"} /-->
 
@@ -63,7 +63,7 @@
 	<!-- wp:group {"align":"full","style":{"color":{"background":"hsla(var(\u002d\u002dwp\u002d\u002dcustom\u002d\u002daccent-hsl), 0.2)"},"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|10","right":"var:preset|spacing|10"}}},"className":"pattern\u002d\u002d-wc-breadcrumbs","layout":{"type":"constrained"}} -->
 	<div
 		class="wp-block-group alignfull pattern---wc-breadcrumbs has-background"
-		style="background-color:hsla(var(--wp--custom--accent-hsl), 0.2);padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)"
+		style="background-color:hsla(var(--wp--custom--accent-2-hsl), 0.2);padding-top:var(--wp--preset--spacing--10);padding-right:var(--wp--preset--spacing--10);padding-bottom:var(--wp--preset--spacing--10);padding-left:var(--wp--preset--spacing--10)"
 	><!-- wp:group {"layout":{"type":"default"}} -->
 		<div class="wp-block-group"><!-- wp:paragraph {"align":"center"} -->
 			<p class="has-text-align-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel enim non quam sollicitudin faucibus quis eu sem. Phasellus id auctor massa. Pellentesque sed lacus dictum, semper quam viverra, lacinia arcu.</p>
@@ -91,10 +91,10 @@
 	></div>
 	<!-- /wp:spacer -->
 
-	<!-- wp:separator {"style":{"color":{"background":"#e5e5e5"}}} -->
+	<!-- wp:separator {"style":{"color":{"background":"var(--wp--preset--color--contrast)"}}} -->
 	<hr
 		class="wp-block-separator has-text-color has-alpha-channel-opacity has-background"
-		style="background-color:#e5e5e5;color:#e5e5e5"
+		style="background-color:var(--wp--preset--color--contrast);color:var(--wp--preset--color--contrast)"
 	/>
 	<!-- /wp:separator -->
 

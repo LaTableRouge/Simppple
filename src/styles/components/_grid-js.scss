@@ -1,0 +1,102 @@
+@use '../../fonts/icomoon/variables';
+
+.gridjs {
+	// color: inherit;
+	--inner-border: 1px solid hsla(var(--wp--custom--black-hsl), 0.85);
+
+	.gridjs-head {
+		margin-bottom: var(--wp--preset--spacing--10);
+
+		.gridjs-search {
+			position: relative;
+			max-width: max-content;
+			margin-inline-start: auto;
+			float: none;
+
+			&::before {
+				content: variables.$icon-simppple-search;
+				position: absolute;
+				top: 50%;
+				inset-inline-end: 10px;
+				transform: translateY(-50%);
+				color: var(--wp--preset--color--black);
+				font-family: variables.$icomoon-font-family;
+				pointer-events: none;
+			}
+
+			.gridjs-search-input {
+				padding-inline-end: 50px;
+				border-color: hsla(var(--wp--custom--black-hsl), 0.75);
+				font-size: var(--wp--preset--font-size--16);
+
+				&::placeholder {
+					color: hsla(var(--wp--custom--black-hsl), 0.75);
+				}
+			}
+		}
+	}
+
+	.gridjs-wrapper {
+		outline: var(--inner-border);
+		box-shadow: none;
+
+		.gridjs-table {
+			text-align: start;
+
+			// .gridjs-tbody {
+			// 	background-color: var(--bg);
+
+			// 	td.gridjs-td{
+			// 		background-color: inherit;
+			// 	}
+			// }
+
+			.gridjs-th-sort {
+				position: relative;
+
+				.gridjs-th-content {
+					padding-inline-end: 14px;
+				}
+
+				.gridjs-sort {
+					position: absolute;
+					inset-inline-end: 24px;
+					float: none;
+				}
+			}
+
+			// th.gridjs-th {
+			// 	background-color: var(--bg-block-color);
+			// 	color: var(--wp--preset--color--contrast);
+			// }
+		}
+	}
+
+	.gridjs-footer {
+		outline: var(--inner-border);
+		box-shadow: none;
+
+		.gridjs-pagination {
+			.gridjs-pages {
+				button {
+					&:first-child {
+						border-top-left-radius: initial;
+						border-bottom-left-radius: initial;
+						border-end-start-radius: 6px;
+						border-start-start-radius: 6px;
+						border-inline-start: 1px solid #d2d6dc;
+					}
+
+					&:last-child {
+						border-right: initial;
+						border-top-right-radius: initial;
+						border-bottom-right-radius: initial;
+						border-end-end-radius: 6px;
+						border-start-end-radius: 6px;
+						border-inline-end: 1px solid #d2d6dc;
+					}
+				}
+			}
+		}
+	}
+}

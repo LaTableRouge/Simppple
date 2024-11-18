@@ -1,17 +1,19 @@
-.pattern---header-main-section {
-  $menu-responsive-breakpoint: lg;
+@use '/src/styles/abstracts/responsive' as *;
 
-  & > .wp-block-navigation {
-    .wp-block-navigation__responsive-container {
-      .wp-block-navigation__responsive-container-content {
-        .wp-block-navigation__container {
-          .wp-block-site-logo {
-            @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-              display: none;
-            }
-          }
-        }
-      }
-    }
-  }
+.pattern---header-main-section {
+	$menu-responsive-breakpoint: lg;
+
+	& > .wp-block-navigation {
+		.wp-block-navigation__responsive-container {
+			.wp-block-navigation__responsive-container-content {
+				.wp-block-navigation__container {
+					.wp-block-site-logo {
+						@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
 }

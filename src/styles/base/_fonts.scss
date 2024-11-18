@@ -1,0 +1,20 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+//
+// If you import with url, replace ';' by '%3b';
+// -----------------------------------------------------------------------------
+
+@use '/src/fonts/icomoon/style';
+@use '/src/fonts/icomoon/variables' as icomoon;
+@use '/src/styles/abstracts/variables' as variables;
+
+@font-face {
+	font-family: '#{icomoon.$icomoon-font-family}';
+	font-style: normal;
+	font-weight: normal;
+	src:
+		url('#{variables.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.ttf?2z4419') format('truetype'),
+		url('#{variables.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.woff?2z4419') format('woff'),
+		url('#{variables.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.svg?2z4419##{icomoon.$icomoon-font-family}') format('svg');
+	font-display: block;
+}

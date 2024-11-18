@@ -85,8 +85,12 @@ add_filter('render_block_core/image', 'simppple_add_class_to_core_image');
 function simppple_add_context_to_html_tag($output) {
     if (is_admin()) {
         $output .= ' data-context="back"';
-    } else {
+    }           else {
         $output .= ' data-context="front"';
+    }
+
+    if (is_rtl()) {
+        $output .= ' dir="rtl"';
     }
 
     return $output;
