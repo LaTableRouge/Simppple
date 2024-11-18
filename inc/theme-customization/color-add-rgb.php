@@ -40,27 +40,29 @@ function simppple_add_RGB_values_to_CSS_variables($themeJSON) {
                     }, $colorPalette);
                 }
 
-                $colorsPaletteCustom = $data['settings']['custom'];
-                if (!empty($colorsPaletteCustom)) {
-                    $colorsPaletteCustom = array_filter(
-                        $colorsPaletteCustom,
-                        function ($value, $key) {
-                            return stripos($key, 'color-') !== false;
-                        },
-                        ARRAY_FILTER_USE_BOTH
-                    );
-
-                    $tempArray = [];
+                if (array_key_exists('custom', $data['settings'])) {
+                    $colorsPaletteCustom = $data['settings']['custom'];
                     if (!empty($colorsPaletteCustom)) {
-                        foreach ($colorsPaletteCustom as $key => $value) {
-                            $tempArray[] = [
-                                'color' => $value,
-                                'slug' => substr($key, strlen('color-'))
-                            ];
-                        }
-                    }
+                        $colorsPaletteCustom = array_filter(
+                            $colorsPaletteCustom,
+                            function ($value, $key) {
+                                return stripos($key, 'color-') !== false;
+                            },
+                            ARRAY_FILTER_USE_BOTH
+                        );
 
-                    $colorPalette = array_merge($colorPalette, $tempArray);
+                        $tempArray = [];
+                        if (!empty($colorsPaletteCustom)) {
+                            foreach ($colorsPaletteCustom as $key => $value) {
+                                $tempArray[] = [
+                                    'color' => $value,
+                                    'slug' => substr($key, strlen('color-'))
+                                ];
+                            }
+                        }
+
+                        $colorPalette = array_merge($colorPalette, $tempArray);
+                    }
                 }
 
                 // Loop through color palette

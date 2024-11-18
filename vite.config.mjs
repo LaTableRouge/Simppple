@@ -1,6 +1,7 @@
+import { resolve } from 'path'
+
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import autoprefixer from 'autoprefixer'
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
@@ -20,7 +21,7 @@ const chore = process.env.npm_config_chore
  | Destination path
  |
  */
-const themeName = 'Simppple'
+const themeName = 'simppple'
 const assetsPath = 'src'
 const distPath = 'build'
 
@@ -50,6 +51,10 @@ const entryFiles = [
 		scripts: [
 			{
 				name: 'front',
+				input: `${assetsPath}/scripts`
+			},
+			{
+				name: 'parts',
 				input: `${assetsPath}/scripts`
 			},
 			{

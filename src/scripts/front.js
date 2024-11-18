@@ -8,11 +8,6 @@ import { getHeaderHeight } from './components/header'
 import { inputNumber } from './components/html-components/input-quantity'
 import { pictureErrorHandler } from './components/picture-error'
 
-import.meta.glob(['../../blocks/**/scripts/*.js', '!**/build/*.js'], { query: '?blocks', eager: true })
-import.meta.glob('../../patterns/**/scripts/*.js', { query: '?patterns', eager: true })
-import.meta.glob('../../parts/**/scripts/*.js', { query: '?parts', eager: true })
-import.meta.glob('../../templates/**/scripts/*.js', { query: '?templates', eager: true })
-
 window.addEventListener('DOMContentLoaded', (e) => {
 	/*
 	 * Add usefull values to css

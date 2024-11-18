@@ -118,7 +118,7 @@ function simppple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = fals
     }
 }
 
-function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true) {
+function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = false, $footerEnqueue = true, $type = '', $order = 20) {
     if (!$hookDev) {
         $hookDev = $hookBuild;
     }
@@ -148,9 +148,10 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
         $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
         if (!empty($manifestFileInfos)) {
             if (isset($manifestFileInfos['css'])) {
-                foreach ($manifestFileInfos['css'] as $style) {
+                foreach ($manifestFileInfos['css'] as $key => $style) {
                     $filePath = $style['path'];
                     $fileSlug = $style['slug'];
+
                     add_action(
                         $hookBuild,
                         function () use ($fileSlug, $filePath) {
@@ -162,7 +163,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                                 'all'
                             );
                         },
-                        20
+                        $order
                     );
                 }
             }
@@ -171,11 +172,11 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
             $fileSlug = $manifestFileInfos['slug'];
             add_action(
                 $hookBuild,
-                function () use ($fileSlug, $filePath, $footerEnqueue) {
+                function () use ($fileSlug, $filePath, $footerEnqueue, $type) {
                     wp_register_script(
                         $fileSlug,
                         $filePath,
-                        ['jquery'], // Libraries to use
+                        [], // Libraries to use
                         time(),
                         [
                             'in_footer' => $footerEnqueue,
@@ -203,9 +204,13 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                         ]
                     );
 
-                    wp_enqueue_script($fileSlug);
+                    if ($type === 'module') {
+                        wp_enqueue_script_module($fileSlug, $filePath);
+                    }else {
+                        wp_enqueue_script($fileSlug);
+                    }
                 },
-                20
+                $order
             );
         }
     }
