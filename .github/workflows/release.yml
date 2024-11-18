@@ -22,7 +22,7 @@ jobs:
       - name: Compile CSS and Javascript
         run: |
           npm ci --ignore-scripts
-          npm run prod --chore=ci
+          npm run build --chore=ci
 
       # Zip the theme into a clean release
       - name: Zip release

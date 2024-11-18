@@ -93,7 +93,6 @@ function simppple_add_context_to_html_tag($output) {
         $output .= ' dir="rtl"';
     }
 
-    // $output .= ' dir="rtl"';
     return $output;
 }
 add_filter('language_attributes', 'simppple_add_context_to_html_tag');

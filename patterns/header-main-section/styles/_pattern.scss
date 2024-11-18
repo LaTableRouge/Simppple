@@ -109,14 +109,13 @@
 							min-height: var(--logo-max-height);
 
 							& > .wp-block-navigation__submenu-container {
-								background-color: var(--wp--preset--color--base);
-								box-shadow: var(--wp--preset--shadow--submenu);
-
 								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 									top: var(--logo-max-height);
 									left: 50%;
 									min-width: 100%;
 									transform: translateX(-50%);
+									background-color: var(--wp--preset--color--base);
+									box-shadow: var(--wp--preset--shadow--submenu);
 									border-end-end-radius: 5px;
 									border-end-start-radius: 5px;
 								}
@@ -137,13 +136,15 @@
 
 								// UX hack
 								&::before {
-									content: '';
-									position: absolute;
-									top: 0;
-									right: 0;
-									left: 0;
-									height: calc(#{$menu-padding-bottom} * 2);
-									transform: translateY(-50%);
+									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+										content: '';
+										position: absolute;
+										top: 0;
+										right: 0;
+										left: 0;
+										height: calc(#{$menu-padding-bottom} * 2);
+										transform: translateY(-50%);
+									}
 								}
 
 								& > li {

@@ -25,13 +25,17 @@
 			margin-bottom: 0;
 
 			.woocommerce-product-gallery__image {
-				float: none !important;
 				border-radius: var(--wp--custom--border-radius-picture);
 			}
 
 			.woocommerce-product-gallery__trigger {
 				top: 5px !important;
 				right: 5px !important;
+
+				html[dir='rtl'] & {
+					right: initial !important;
+					left: 5px !important;
+				}
 			}
 
 			.flex-control-nav.flex-control-thumbs {
@@ -43,7 +47,7 @@
 				@include media-breakpoint-up(lg) {
 					position: absolute;
 					top: 55px;
-					right: 19px;
+					inset-inline-end: 19px;
 					flex-direction: column;
 					row-gap: var(--wp--preset--spacing--10);
 					margin: 0;

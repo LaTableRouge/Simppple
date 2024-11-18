@@ -44,9 +44,11 @@
 				.wp-block-navigation__responsive-dialog {
 					.wp-block-navigation__responsive-container-close {
 						@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
+							right: initial;
 							border-radius: initial;
 							background-color: initial;
 							color: var(--wp--preset--color--contrast);
+							inset-inline-end: 0;
 						}
 
 						&:hover,
@@ -61,11 +63,11 @@
 
 			&.is-menu-open {
 				.wp-block-navigation__responsive-container-content {
-					padding-top: var(--wp--preset--spacing--40);
+					padding-top: calc(50px + var(--logo-max-height));
 
-					& > ul {
+					ul {
 						& > li {
-							padding-right: var(--wp--preset--spacing--40);
+							// padding-right: var(--wp--preset--spacing--40);
 
 							&.has-child {
 								.wp-block-navigation__submenu-container {
@@ -78,37 +80,31 @@
 			}
 
 			.wp-block-navigation__responsive-container-content {
-				& > ul {
+				ul {
 					@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-						--navigation-layout-align: initial;
-
-						gap: var(--wp--preset--spacing--40);
+						gap: var(--wp--preset--spacing--10);
 					}
 
 					& > li {
-						&:first-child {
-							min-height: var(--logo-max-height);
-						}
-
-						&.wp-block-navigation-item {
-							&:has(.wp-block-site-logo) {
-								flex-grow: 1;
-								justify-content: center;
-
-								@include media-breakpoint-down(#{$menu-responsive-breakpoint}) {
-									order: -1;
-								}
+						&:not(.has-child) {
+							&:last-child:not(:first-child) {
+								padding-inline-end: 0;
 							}
 						}
 
 						&.has-child {
+							min-height: var(--logo-max-height);
+
 							& > .wp-block-navigation__submenu-container {
 								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-									top: calc(100% + $menu-padding-bottom);
+									top: var(--logo-max-height);
 									left: 50%;
+									min-width: 100%;
 									transform: translateX(-50%);
-									border-bottom-right-radius: 5px;
-									border-bottom-left-radius: 5px;
+									background-color: var(--wp--preset--color--base);
+									box-shadow: var(--wp--preset--shadow--submenu);
+									border-end-end-radius: 5px;
+									border-end-start-radius: 5px;
 								}
 
 								&::after {
@@ -127,17 +123,21 @@
 
 								// UX hack
 								&::before {
-									content: '';
-									position: absolute;
-									top: 0;
-									right: 0;
-									left: 0;
-									height: calc(#{$menu-padding-bottom} * 2);
-									transform: translateY(-50%);
+									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+										content: '';
+										position: absolute;
+										top: 0;
+										right: 0;
+										left: 0;
+										height: calc(#{$menu-padding-bottom} * 2);
+										transform: translateY(-50%);
+									}
 								}
 
 								& > li {
 									&.has-child {
+										min-height: initial;
+
 										& > .wp-block-navigation__submenu-container {
 											@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 												top: 0;
@@ -164,7 +164,8 @@
 												width: calc(#{$menu-padding-bottom} * 2);
 											}
 
-											&.items-justified-right {
+											&.items-justified-right,
+											&:not([class*='items-justified-']) {
 												@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 													right: 0;
 													left: initial;
@@ -233,7 +234,7 @@
 								@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
 									position: absolute;
 									top: 50%;
-									right: 0;
+									inset-inline-end: 0;
 									width: 15px;
 									height: 15px;
 									margin: 0;
@@ -248,19 +249,19 @@
 
 								.wp-block-navigation-submenu__toggle {
 									@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-										right: 10px;
+										inset-inline-end: 10px;
 									}
 								}
 
 								li {
 									&.has-child {
 										@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-											padding-right: calc(var(--wp--preset--spacing--30) * 2);
+											padding-inline-end: calc(var(--wp--preset--spacing--30) * 2);
 										}
 
 										.wp-block-navigation-submenu__toggle {
 											@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-												right: var(--wp--preset--spacing--30);
+												inset-inline-end: var(--wp--preset--spacing--30);
 											}
 										}
 									}

@@ -96,12 +96,6 @@
 			"text": true
 		},
 		"custom": {
-			"color-base-dark": "#1A1A1A",
-			"color-base-2-dark": "#403D39",
-			"color-base-3-dark": "#979797",
-			"color-contrast-dark": "#ffffff",
-			"color-contrast-2-dark": "#f9f9f9",
-			"color-contrast-3-dark": "#F5ECCE",
 			"border-radius-table": "5px",
 			"border-radius-picture": "10px",
 			"border-radius-group": "10px",

@@ -77,10 +77,8 @@
 						}
 
 						&:last-child {
-							@include container-breakpoint-up(page-cart, sm) {
-								border-start-end-radius: 5px;
-								border-end-end-radius: 5px;
-							}
+							border-start-end-radius: 5px;
+							border-end-end-radius: 5px;
 						}
 					}
 
@@ -236,15 +234,33 @@
 					}
 
 					&:has(.cross-sells-product:nth-child(2)) {
-						--column-number: 2;
+						@include container-breakpoint-up(page-cart, sm) {
+							--column-number: 2;
+						}
 					}
 
 					&:has(.cross-sells-product:nth-child(3)) {
-						--column-number: 3;
+						@include container-breakpoint-up(page-cart, sm) {
+							--column-number: 2;
+						}
+
+						@include container-breakpoint-up(page-cart, md) {
+							--column-number: 3;
+						}
 					}
 
 					&:has(.cross-sells-product:nth-child(4)) {
-						--column-number: 4;
+						@include container-breakpoint-up(page-cart, sm) {
+							--column-number: 2;
+						}
+
+						@include container-breakpoint-up(page-cart, md) {
+							--column-number: 3;
+						}
+
+						@include container-breakpoint-up(page-cart, lg) {
+							--column-number: 3;
+						}
 					}
 				}
 

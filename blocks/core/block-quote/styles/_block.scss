@@ -1,7 +1,8 @@
 @use '/src/styles/abstracts/responsive' as *;
+@use '/src/styles/abstracts/functions' as function;
 
 .wp-block-quote {
-	--icon-size: #{min-max-interpolation(80, 120, 600, 1280)};
+	--icon-size: #{function.min-max-interpolation(80, 120, 600, 1280)};
 
 	&:not(.is-style-plain) {
 		position: relative;
