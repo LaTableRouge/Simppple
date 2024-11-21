@@ -35,7 +35,7 @@
                 <!-- wp:woocommerce/cart-cross-sells-block -->
                 <div class="wp-block-woocommerce-cart-cross-sells-block">
                     <!-- wp:heading {"fontSize":"large"} -->
-                    <h2 class="wp-block-heading has-large-font-size"><?php echo _e('You may be interested in…', 'simppple'); ?></h2>
+                    <h2 class="wp-block-heading has-large-font-size"><?php _e('You may be interested in…', 'simppple'); ?></h2>
                     <!-- /wp:heading -->
 
                     <!-- wp:woocommerce/cart-cross-sells-products-block -->
@@ -109,7 +109,7 @@
             <!-- /wp:group -->
 
             <!-- wp:heading {"textAlign":"center","level":1,"className":"underlined-title"} -->
-            <h1 class="wp-block-heading has-text-align-center underlined-title"><?php echo _e('Your cart is empty!', 'simppple'); ?></h1>
+            <h1 class="wp-block-heading has-text-align-center underlined-title"><?php _e('Your cart is empty!', 'simppple'); ?></h1>
             <!-- /wp:heading -->
 
             <!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"}} -->
@@ -120,7 +120,7 @@
                         href="<?php if (class_exists('WooCommerce')) {
                             echo wc_get_page_permalink('shop');
                         } ?>"
-                    ><?php echo _e('Explore the products...', 'simppple'); ?></a></div>
+                    ><?php _e('Explore the products...', 'simppple'); ?></a></div>
                 <!-- /wp:button -->
             </div>
             <!-- /wp:buttons -->
@@ -134,7 +134,7 @@
             <!-- /wp:spacer -->
 
             <!-- wp:heading {"textAlign":"center","className":"underlined-title"} -->
-            <h2 class="wp-block-heading has-text-align-center underlined-title"><?php echo _e('Search products…', 'simppple'); ?></h2>
+            <h2 class="wp-block-heading has-text-align-center underlined-title"><?php _e('Search products…', 'simppple'); ?></h2>
             <!-- /wp:heading -->
 
             <!-- wp:pattern {"slug":"simppple/hidden-search-products"} /-->

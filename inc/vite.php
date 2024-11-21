@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-define('SIMPPPLE_VITE_SERVER', 'http://localhost:5173');
+define('SIMPPPLE_VITE_SERVER', 'http://localhost:5179');
 define('SIMPPPLE_DIST_FOLDER', 'build');
 define('SIMPPPLE_DIST_URI', get_template_directory_uri() . '/' . SIMPPPLE_DIST_FOLDER);
 define('SIMPPPLE_DIST_PATH', get_template_directory() . '/' . SIMPPPLE_DIST_FOLDER);
@@ -39,12 +39,14 @@ function simppple_vite_fetch_asset_from_manifest($fileThemePath, $assetType) {
                 if (isset($manifest[$fileKey]['css']) && !empty($manifest[$fileKey]['css'])) {
                     foreach ($manifest[$fileKey]['css'] as $stylePath) {
                         $styleFile = basename($stylePath);
-                        $styleFileWithoutExtension = substr($styleFile, 0, strrpos($styleFile, '.'));
-                        $styleFileWithoutVersionning = substr($styleFileWithoutExtension, 0, strpos($styleFileWithoutExtension, '-'));
+                        $styleFile = substr($styleFile, 0, strrpos($styleFile, '.'));
+                        if (strpos($styleFile, 'ver=')) {
+                            $styleFile = remove_query_arg('ver', $styleFile);
+                        }
 
                         $returnedArray['css'][] = [
                             'path' => SIMPPPLE_DIST_URI . "/{$stylePath}",
-                            'slug' => "simppple_vite_{$styleFileWithoutVersionning}_style"
+                            'slug' => "simppple_vite_{$styleFile}_style"
                         ];
                     }
                 }
@@ -148,7 +150,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
         $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
         if (!empty($manifestFileInfos)) {
             if (isset($manifestFileInfos['css'])) {
-                foreach ($manifestFileInfos['css'] as $key => $style) {
+                foreach ($manifestFileInfos['css'] as $style) {
                     $filePath = $style['path'];
                     $fileSlug = $style['slug'];
 
@@ -176,7 +178,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                     wp_register_script(
                         $fileSlug,
                         $filePath,
-                        [], // Libraries to use
+                        ['wp-i18n', 'jquery'], // Libraries to use
                         time(),
                         [
                             'in_footer' => $footerEnqueue,
@@ -207,7 +209,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                     if ($type === 'module') {
                         wp_enqueue_script_module($fileSlug, $filePath);
                     }else {
-                        wp_enqueue_script($fileSlug);
+                        wp_enqueue_script($fileSlug, $filePath);
                     }
                 },
                 $order
@@ -216,7 +218,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
     }
 }
 
-function simppple_vite_enqueue_style_editor($fileThemePath, $hook) {
+function simppple_vite_enqueue_style_editor($fileThemePath, $hook, $order = 20) {
     /*
     * ================================ Call assets with WP hooks
     */
@@ -229,7 +231,7 @@ function simppple_vite_enqueue_style_editor($fileThemePath, $hook) {
             function () use ($filePath) {
                 add_editor_style($filePath);
             },
-            20
+            $order
         );
     } else {
         echo 'Please compile (build/prod) to see the editor style';
