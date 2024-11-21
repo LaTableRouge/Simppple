@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Style for the imported libraries.
+// -----------------------------------------------------------------------------
+@charset "UTF-8";
+
+// 1. Configuration and helpers
+@use 'abstracts/functions';
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
+@use 'abstracts/animations';
+@use 'abstracts/keyframes';
+@use 'abstracts/responsive';
+
+// 2. Vendors
+
+// 3. Base stuff
+
+// 4. Components
+@use 'components/select2';
+@use 'components/grid-js';
+@use 'components/swiper-js';

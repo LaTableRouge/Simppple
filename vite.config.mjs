@@ -1,7 +1,6 @@
-import { resolve } from 'path'
-
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import autoprefixer from 'autoprefixer'
+import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
@@ -67,18 +66,22 @@ const entryFiles = [
 			}
 		],
 		styles: [
-			{
-				name: 'front',
-				input: `${assetsPath}/styles`
-			},
-			{
-				name: 'admin',
-				input: `${assetsPath}/styles`
-			},
-			{
-				name: 'editor',
-				input: `${assetsPath}/styles`
-			}
+			// {
+			// 	name: 'front',
+			// 	input: `${assetsPath}/styles`
+			// },
+			// {
+			// 	name: 'parts',
+			// 	input: `${assetsPath}/styles`
+			// },
+			// {
+			// 	name: 'admin',
+			// 	input: `${assetsPath}/styles`
+			// },
+			// {
+			// 	name: 'editor',
+			// 	input: `${assetsPath}/styles`
+			// }
 		]
 	}
 ]
@@ -294,7 +297,7 @@ export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => 
 		server: {
 			cors: true,
 			strictPort: true,
-			port: 5173,
+			port: 5179,
 			https: false,
 			open: false,
 			hmr: {

@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simppple 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
-"POT-Creation-Date: 2024-09-19T13:16:07+00:00\n"
-"PO-Revision-Date: 2024-09-19 15:17+0200\n"
+"POT-Creation-Date: 2024-11-21T08:07:32+00:00\n"
+"PO-Revision-Date: 2024-11-21 09:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -43,12 +43,12 @@ msgstr ""
 "aussi compatible par défaut avec Woocommerce."
 
 #. Author of the theme
-msgid "LaTableRouge"
-msgstr "LaTableRouge"
+msgid "latablerouge"
+msgstr "latablerouge"
 
 #. Author URI of the theme
-msgid "https://portfolio.mlnop.fr/"
-msgstr "https://portfolio.mlnop.fr/"
+msgid "https://mlnop.fr/"
+msgstr "https://mlnop.fr/"
 
 #: inc/patterns/categories-register.php:11
 msgid "Simppple - Page Sections"
@@ -300,15 +300,15 @@ msgctxt "Pattern title"
 msgid "List of posts, 1 column"
 msgstr "Liste des articles, 1 colonne"
 
-#: patterns/posts-1-col.php:30 patterns/posts-2-col.php:32
+#: patterns/posts-1-col.php:30 patterns/posts-2-col.php:37
 msgid "Read more"
 msgstr "En savoir plus"
 
-#: patterns/posts-1-col.php:44 patterns/posts-2-col.php:38
+#: patterns/posts-1-col.php:44 patterns/posts-2-col.php:45
 msgid "Newer Posts"
 msgstr "Articles plus récents"
 
-#: patterns/posts-1-col.php:46 patterns/posts-2-col.php:40
+#: patterns/posts-1-col.php:46 patterns/posts-2-col.php:47
 msgid "Older Posts"
 msgstr "Articles plus anciens"
 
@@ -501,6 +501,6 @@ msgstr "Une variante du bloc groupe avec une ombre portée"
 msgid "Table with pagination"
 msgstr "Tableau avec pagination"
 
-#: build/assets/front.js:3
+#: build/assets/parts.js:1
 msgid "Search..."
 msgstr "Rechercher…"

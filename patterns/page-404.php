@@ -31,7 +31,7 @@
 	<h2
 		class="wp-block-heading has-text-align-center underlined-title"
 		style="margin-top:0;font-style:normal;font-weight:800"
-	><?php echo _e("Oops! That page can't be found.", 'simppple'); ?></h2>
+	><?php _e("Oops! That page can't be found.", 'simppple'); ?></h2>
 	<!-- /wp:heading -->
 
 	<!-- wp:paragraph {"align":"center"} -->

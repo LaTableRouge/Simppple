@@ -1,5 +1,3 @@
-import 'swiper/css/bundle'
-import 'gridjs/dist/theme/mermaid.css'
 import '../styles/front.scss' // mandatory for the Hot Module Reload
 
 import { putScrollbarSizeInCSSVariables } from './common/functions'

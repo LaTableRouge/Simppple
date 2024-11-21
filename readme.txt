@@ -3,7 +3,7 @@ Contributors: latablerouge, bobbymcbobbyface
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.1.2
+Stable tag: 1.1.3
 WC requires at least: 8.4.0
 WC tested up to: 9.4.1
 License: GPLv3 or later
@@ -18,6 +18,12 @@ Simppple comes with some style variations to help the creativity of the site bui
 Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
+
+= 1.1.3 =
+* Released: November 21, 2024
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.1.3
+Calling library related scripts as modules to prevent side effects
 
 = 1.1.2 =
 * Released: November 18, 2024

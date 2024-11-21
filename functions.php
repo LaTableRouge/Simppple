@@ -12,8 +12,8 @@ define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);
  */
 require get_template_directory() . '/inc/vite.php';
 // Front assets
-simppple_vite_enqueue_script('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer', false, '', 20);
-simppple_vite_enqueue_script('/src/scripts/parts.js', 'wp_enqueue_scripts', 'wp_footer', false, 'module', 21);
+simppple_vite_enqueue_script('/src/scripts/parts.js', 'wp_enqueue_scripts', 'wp_footer', false, 'module');
+simppple_vite_enqueue_script('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer', false, '');
 
 // Admin assets
 simppple_vite_enqueue_script('/src/scripts/admin.js', 'admin_enqueue_scripts', 'admin_footer');

@@ -1,7 +1,7 @@
 # Simppple Theme
 
-![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.4-blue)
-![Node](https://img.shields.io/badge/node-%3E%3D%2018-brightgreen)
+![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.5-blue)
+![Node](https://img.shields.io/badge/node-%3E%3D%2022-brightgreen)
 ![PHP](https://img.shields.io/badge/php-%5E7.4-blue)
 
 Simppple is a Wordpress theme designed to be flexible, versatile and applicable to any website.
@@ -69,7 +69,6 @@ The list of development scripts is listed below:
 
 | NPM Command   | Action                                                                                                                                               |
 | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| npm run prod  | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                                  |
 | npm run build | lints, formats, and compiles `simppple` theme files (\*.php, \*.scss, \*.js) and deploys static files to the **build/** directory of the theme.      |
 | npm run watch | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
 
