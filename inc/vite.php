@@ -208,7 +208,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
 
                     if ($type === 'module') {
                         wp_enqueue_script_module($fileSlug, $filePath);
-                    }else {
+                    } else {
                         wp_enqueue_script($fileSlug, $filePath);
                     }
                 },

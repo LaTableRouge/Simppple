@@ -5,7 +5,7 @@
  * Categories: simppple-sections
  * Keywords: woocommerce, breadcrumbs
  */
-?>
+if (class_exists('WooCommerce')) { ?>
 
 <!-- wp:group {"align":"full","style":{"color":{"background":"hsla(var(--wp--custom--accent-2-hsl), 0.2)"},"spacing":{"padding":{"top":"var:preset|spacing|10","bottom":"var:preset|spacing|10","left":"var:preset|spacing|10","right":"var:preset|spacing|10"}}},"className":"pattern---wc-breadcrumbs","layout":{"type":"constrained"}} -->
 <div
@@ -17,3 +17,9 @@
 	<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+
+<?php } else { ?>
+	<!-- wp:paragraph -->
+	<p><?php _e('This pattern needs the "Woocommerce" plugin in order to work', 'simppple'); ?></p>
+	<!-- /wp:paragraph -->
+<?php }

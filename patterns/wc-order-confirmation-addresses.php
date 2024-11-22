@@ -4,7 +4,7 @@
  * Slug: simppple/wc-order-confirmation-addresses
  * Inserter: no
  */
-?>
+if (class_exists('WooCommerce')) { ?>
 
 <!-- wp:columns {"align":"","className":"woocommerce-order-confirmation-address-wrapper"} -->
 <div class="wp-block-columns woocommerce-order-confirmation-address-wrapper">
@@ -33,3 +33,9 @@
 	<!-- /wp:column -->
 </div>
 <!-- /wp:columns -->
+
+<?php } else { ?>
+	<!-- wp:paragraph -->
+	<p><?php _e('This pattern needs the "Woocommerce" plugin in order to work', 'simppple'); ?></p>
+	<!-- /wp:paragraph -->
+<?php }
