@@ -2,7 +2,7 @@
 /**
  * Title: Woocommerce store notices
  * Slug: simppple/wc-store-notices
- * Categories: simppple-sections
+ * Categories: simppple-sections, simppple-wc-patterns
  * Keywords: woocommerce, notices
  */
 

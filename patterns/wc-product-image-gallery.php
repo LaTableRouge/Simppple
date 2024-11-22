@@ -2,7 +2,7 @@
 /**
  * Title: Woocommerce product image gallery
  * Slug: simppple/wc-product-image-gallery
- * Categories: simppple-sections
+ * Categories: simppple-sections, simppple-wc-patterns
  * Keywords: woocommerce, product, gallery
  */
 if (class_exists('WooCommerce')) { ?>

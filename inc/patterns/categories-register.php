@@ -32,5 +32,19 @@ function simppple_register_pattern_category() {
             'label' => esc_html__('Simppple - Footers', 'simppple')
         ]
     );
+
+    register_block_pattern_category(
+        'simppple-wc-patterns',
+        [
+            'label' => esc_html__('Simppple - Woocommerce patterns', 'simppple')
+        ]
+    );
+
+    register_block_pattern_category(
+        'simppple-wc-templates',
+        [
+            'label' => esc_html__('Simppple - Woocommerce templates', 'simppple')
+        ]
+    );
 }
 add_action('init', 'simppple_register_pattern_category', 9);

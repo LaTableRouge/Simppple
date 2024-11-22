@@ -2,7 +2,7 @@
 /**
  * Title: Products archive banner
  * Slug: simppple/wc-archive-banner
- * Categories: simppple-sections
+ * Categories: simppple-sections, simppple-wc-patterns
  * Keywords: archive, banner, products, woocommerce
  */
 

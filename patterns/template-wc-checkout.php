@@ -2,6 +2,7 @@
 /**
  * Title: Checkout template
  * Slug: simppple/template-wc-checkout
+ * Categories: simppple-wc-templates
  * Template Types: checkout-page
  * Inserter: no
  */

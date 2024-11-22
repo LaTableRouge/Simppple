@@ -2,6 +2,7 @@
 /**
  * Title: Cart template
  * Slug: simppple/template-wc-cart
+ * Categories: simppple-wc-templates
  * Template Types: cart-page
  * Inserter: no
  */

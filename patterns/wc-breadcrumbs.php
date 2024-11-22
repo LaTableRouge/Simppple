@@ -2,7 +2,7 @@
 /**
  * Title: Woocommerce breadcrumbs
  * Slug: simppple/wc-breadcrumbs
- * Categories: simppple-sections
+ * Categories: simppple-sections, simppple-wc-patterns
  * Keywords: woocommerce, breadcrumbs
  */
 if (class_exists('WooCommerce')) { ?>

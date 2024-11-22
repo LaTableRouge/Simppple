@@ -2,7 +2,7 @@
 /**
  * Title: List of products, 3 columns
  * Slug: simppple/products-3-col
- * Categories: query, simppple-sections
+ * Categories: simppple-wc-patterns, query, simppple-sections
  * Block Types: core/query
  */
 if (class_exists('WooCommerce')) { ?>

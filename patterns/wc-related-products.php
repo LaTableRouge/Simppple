@@ -2,6 +2,7 @@
 /**
  * Title: Woocommerce related products
  * Slug: simppple/wc-related-products
+ * Categories: simppple-wc-patterns
  * Inserter: no
  */
 if (class_exists('WooCommerce')) { ?>

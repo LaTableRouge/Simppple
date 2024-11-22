@@ -2,6 +2,7 @@
 /**
  * Title: Taxonomy product template
  * Slug: simppple/template-wc-taxonomy-product
+ * Categories: simppple-wc-templates
  * Template Types: taxonomy-product-page
  * Inserter: no
  */

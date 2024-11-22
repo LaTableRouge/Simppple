@@ -2,7 +2,7 @@
 /**
  * Title: Header shop top section
  * Slug: simppple/header-shop-top-section
- * Categories: simppple-site-header
+ * Categories: simppple-wc-patterns, simppple-site-header
  * Keywords: header, menu
  */
 

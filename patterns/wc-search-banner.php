@@ -2,7 +2,7 @@
 /**
  * Title: Products research banner
  * Slug: simppple/wc-search-banner
- * Categories: simppple-sections
+ * Categories: simppple-sections, simppple-wc-patterns
  * Keywords: search, banner, products, woocommerce
  */
 

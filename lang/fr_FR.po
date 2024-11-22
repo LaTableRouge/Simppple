@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Simppple 1.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
 "POT-Creation-Date: 2024-11-21T08:07:32+00:00\n"
-"PO-Revision-Date: 2024-11-21 09:08+0100\n"
+"PO-Revision-Date: 2024-11-22 10:07+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -393,7 +393,7 @@ msgstr "Rechercher des produits..."
 #: patterns/wc-archive-banner.php
 msgctxt "Pattern title"
 msgid "Products archive banner"
-msgstr "Bannière d'archivage de produits"
+msgstr "Bannière des archives de produits"
 
 #: patterns/wc-breadcrumbs.php
 msgctxt "Pattern title"

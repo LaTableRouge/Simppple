@@ -2,6 +2,7 @@
 /**
  * Title: Order - additional informations
  * Slug: simppple/wc-order-confirmation-addresses
+ * Categories: simppple-wc-patterns
  * Inserter: no
  */
 if (class_exists('WooCommerce')) { ?>

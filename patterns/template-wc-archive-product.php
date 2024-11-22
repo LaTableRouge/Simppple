@@ -2,6 +2,7 @@
 /**
  * Title: Archive product template
  * Slug: simppple/template-wc-archive-product
+ * Categories: simppple-wc-templates
  * Template Types: archive-product-page
  * Inserter: no
  */

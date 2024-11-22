@@ -2,6 +2,7 @@
 /**
  * Title: Single product template
  * Slug: simppple/template-wc-single-product
+ * Categories: simppple-wc-templates
  * Template Types: single-product-page
  * Inserter: no
  */

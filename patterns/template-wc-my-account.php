@@ -2,6 +2,7 @@
 /**
  * Title: My account template
  * Slug: simppple/template-wc-my-account
+ * Categories: simppple-wc-templates
  * Template Types: my-account-page
  * Inserter: no
  */

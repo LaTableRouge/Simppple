@@ -2,7 +2,7 @@
 /**
  * Title: Filters popup
  * Slug: simppple/wc-filters-popup
- * Categories: simppple-sections
+ * Categories: simppple-sections, simppple-wc-patterns
  * Keywords: filters, popup, woocommerce
  * Block Types: core/navigation
  */

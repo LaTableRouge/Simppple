@@ -2,6 +2,7 @@
 /**
  * Title: Order confirmation template
  * Slug: simppple/template-wc-order-confirmation
+ * Categories: simppple-wc-templates
  * Template Types: order-confirmation-page
  * Inserter: no
  */

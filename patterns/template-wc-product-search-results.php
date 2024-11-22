@@ -2,6 +2,7 @@
 /**
  * Title: Product search results template
  * Slug: simppple/template-wc-product-search-results
+ * Categories: simppple-wc-templates
  * Template Types: product-search-results-page
  * Inserter: no
  */
