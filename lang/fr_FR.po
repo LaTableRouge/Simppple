@@ -2,10 +2,10 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simppple 1.1.0\n"
+"Project-Id-Version: Simppple 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
-"POT-Creation-Date: 2024-11-21T08:07:32+00:00\n"
-"PO-Revision-Date: 2024-11-22 10:07+0100\n"
+"POT-Creation-Date: 2024-11-24T15:03:41+00:00\n"
+"PO-Revision-Date: 2024-11-24 16:04+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -66,6 +66,14 @@ msgstr "Simppple - En-têtes"
 msgid "Simppple - Footers"
 msgstr "Simppple - Pieds de page"
 
+#: inc/patterns/categories-register.php:39
+msgid "Simppple - Woocommerce patterns"
+msgstr "Simppple - Compositions pour Woocommerce"
+
+#: inc/patterns/categories-register.php:46
+msgid "Simppple - Woocommerce templates"
+msgstr "Simppple - Modèles de pages pour Woocommerce"
+
 #: patterns/footer.php
 msgctxt "Pattern title"
 msgid "Footer"
@@ -101,7 +109,7 @@ msgctxt "Pattern title"
 msgid "Header shop top section"
 msgstr "Section supérieure de l'entête"
 
-#: patterns/header-shop-top-section.php:16 patterns/header-top-section.php:16
+#: patterns/header-shop-top-section.php:17 patterns/header-top-section.php:16
 #: patterns/hidden-sample-paragraph-centered.php:10
 #: patterns/hidden-sample-paragraph.php:10
 msgid ""
@@ -109,6 +117,19 @@ msgid ""
 msgstr ""
 "Il s'agit d'une section de texte de remplissage, également connu sous le nom "
 "de \"texte de remplissage\"."
+
+#: patterns/header-shop-top-section.php:32 patterns/products-1-col.php:46
+#: patterns/products-2-col.php:36 patterns/products-3-col.php:36
+#: patterns/wc-archive-banner.php:47 patterns/wc-breadcrumbs.php:23
+#: patterns/wc-filters-popup.php:93
+#: patterns/wc-order-additional-informations.php:22
+#: patterns/wc-order-confirmation-addresses.php:40
+#: patterns/wc-order-confirmation-downloads.php:20
+#: patterns/wc-order-confirmation-totals.php:20
+#: patterns/wc-product-image-gallery.php:18 patterns/wc-related-products.php:32
+#: patterns/wc-search-banner.php:52 patterns/wc-store-notices.php:24
+msgid "This pattern needs the \"Woocommerce\" plugin in order to work"
+msgstr "Cette composition nécessite le plugin \"Woocommerce\" pour fonctionner"
 
 #: patterns/header-top-section.php
 msgctxt "Pattern title"
@@ -369,26 +390,71 @@ msgctxt "Pattern title"
 msgid "404 template"
 msgstr "Modèle de page 404"
 
-#: patterns/template-cart.php
+#: patterns/template-wc-archive-product.php
+msgctxt "Pattern title"
+msgid "Archive product template"
+msgstr "Modèle d'archive produit"
+
+#: patterns/template-wc-archive-product.php:63
+#: patterns/template-wc-cart.php:152 patterns/template-wc-checkout.php:129
+#: patterns/template-wc-my-account.php:66
+#: patterns/template-wc-order-confirmation.php:67
+#: patterns/template-wc-product-search-results.php:77
+#: patterns/template-wc-single-product.php:136
+#: patterns/template-wc-taxonomy-product.php:51
+msgid "This template needs the \"Woocommerce\" plugin in order to work"
+msgstr "Ce modèle nécessite le plugin \"Woocommerce\" pour fonctionner"
+
+#: patterns/template-wc-cart.php
 msgctxt "Pattern title"
 msgid "Cart template"
 msgstr "Modèle de panier"
 
-#: patterns/template-cart.php:38
+#: patterns/template-wc-cart.php:40
 msgid "You may be interested in…"
 msgstr "Vous pourriez être intéressé par..."
 
-#: patterns/template-cart.php:112
+#: patterns/template-wc-cart.php:114
 msgid "Your cart is empty!"
 msgstr "Votre panier est vide !"
 
-#: patterns/template-cart.php:123
+#: patterns/template-wc-cart.php:123
 msgid "Explore the products..."
 msgstr "Découvrez les produits..."
 
-#: patterns/template-cart.php:137
+#: patterns/template-wc-cart.php:137
 msgid "Search products…"
 msgstr "Rechercher des produits..."
+
+#: patterns/template-wc-checkout.php
+msgctxt "Pattern title"
+msgid "Checkout template"
+msgstr "Modèle de validation de commande"
+
+#: patterns/template-wc-my-account.php
+msgctxt "Pattern title"
+msgid "My account template"
+msgstr "Modèle de Mon compte"
+
+#: patterns/template-wc-order-confirmation.php
+msgctxt "Pattern title"
+msgid "Order confirmation template"
+msgstr "Modèle de confirmation de commande"
+
+#: patterns/template-wc-product-search-results.php
+msgctxt "Pattern title"
+msgid "Product search results template"
+msgstr "Modèle de bannière de recherche de produits"
+
+#: patterns/template-wc-single-product.php
+msgctxt "Pattern title"
+msgid "Single product template"
+msgstr "Modèle de produit unique"
+
+#: patterns/template-wc-taxonomy-product.php
+msgctxt "Pattern title"
+msgid "Taxonomy product template"
+msgstr "Modèle de taxonomie de produit"
 
 #: patterns/wc-archive-banner.php
 msgctxt "Pattern title"
@@ -405,31 +471,31 @@ msgctxt "Pattern title"
 msgid "Filters popup"
 msgstr "Popup de filtres"
 
-#: patterns/wc-filters-popup.php:19
+#: patterns/wc-filters-popup.php:20
 msgid "Open filters"
 msgstr "Ouvrir les filtres"
 
-#: patterns/wc-filters-popup.php:26
+#: patterns/wc-filters-popup.php:27
 msgid "Close filters"
 msgstr "Fermer les filtres"
 
-#: patterns/wc-filters-popup.php:34
+#: patterns/wc-filters-popup.php:35
 msgid "Filter"
 msgstr "Filtrer"
 
-#: patterns/wc-filters-popup.php:47
+#: patterns/wc-filters-popup.php:48
 msgid "Filters"
 msgstr "Filtres"
 
-#: patterns/wc-filters-popup.php:58 patterns/wc-filters-popup.php:60
+#: patterns/wc-filters-popup.php:59 patterns/wc-filters-popup.php:61
 msgid "Filter by price"
 msgstr "Filtrer par prix"
 
-#: patterns/wc-filters-popup.php:68 patterns/wc-filters-popup.php:70
+#: patterns/wc-filters-popup.php:69 patterns/wc-filters-popup.php:71
 msgid "Filter by color"
 msgstr "Filtrer par couleur"
 
-#: patterns/wc-filters-popup.php:78 patterns/wc-filters-popup.php:80
+#: patterns/wc-filters-popup.php:79 patterns/wc-filters-popup.php:81
 msgid "Filter by size"
 msgstr "Filtrer par taille"
 
@@ -441,23 +507,23 @@ msgctxt "Pattern title"
 msgid "Order - additional informations"
 msgstr "Commande - informations complémentaires"
 
-#: patterns/wc-order-additional-informations.php:12
+#: patterns/wc-order-additional-informations.php:13
 msgid "Additional informations"
 msgstr "Informations complémentaires"
 
-#: patterns/wc-order-confirmation-addresses.php:15
+#: patterns/wc-order-confirmation-addresses.php:16
 msgid "Shipping address"
 msgstr "Adresse de livraison"
 
-#: patterns/wc-order-confirmation-addresses.php:27
+#: patterns/wc-order-confirmation-addresses.php:28
 msgid "Billing address"
 msgstr "Adresse de facturation"
 
-#: patterns/wc-order-confirmation-downloads.php:11
+#: patterns/wc-order-confirmation-downloads.php:12
 msgid "Downloads"
 msgstr "Téléchargements"
 
-#: patterns/wc-order-confirmation-totals.php:11
+#: patterns/wc-order-confirmation-totals.php:12
 msgid "Order details"
 msgstr "Détails de la commande"
 
@@ -471,7 +537,7 @@ msgctxt "Pattern title"
 msgid "Woocommerce related products"
 msgstr "Woocommerce - produits liés"
 
-#: patterns/wc-related-products.php:12
+#: patterns/wc-related-products.php:13
 msgid "Related products"
 msgstr "Produits apparentés"
 
