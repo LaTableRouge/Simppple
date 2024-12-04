@@ -20,7 +20,7 @@ Simppple also come with a out of the box custom style for Woocommerce.
 == Changelog ==
 
 = 1.2.0 =
-* Released: November 22, 2024
+* Released: December 12, 2024
 
 https://github.com/LaTableRouge/Simppple/releases/tag/1.2.0
 Adding message to patterns when Woocommerce is not installed
