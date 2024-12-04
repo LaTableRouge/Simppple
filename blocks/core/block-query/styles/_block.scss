@@ -56,6 +56,10 @@
 				overflow: hidden;
 				box-shadow: var(--wp--preset--shadow--card);
 
+				.wp-block-post-featured-image {
+					height: initial !important;
+				}
+
 				& > .wp-block-group {
 					& > .wp-block-post-terms {
 						display: flex;

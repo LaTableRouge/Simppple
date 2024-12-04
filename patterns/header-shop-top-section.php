@@ -2,11 +2,12 @@
 /**
  * Title: Header shop top section
  * Slug: simppple/header-shop-top-section
- * Categories: simppple-site-header
+ * Categories: simppple-wc-patterns, simppple-site-header
  * Keywords: header, menu
  */
 
-?>
+if (class_exists('WooCommerce')) { ?>
+
 <!-- wp:group {"style":{"spacing":{"padding":{"bottom":"var:preset|spacing|10","top":"var:preset|spacing|10","right":"0","left":"0"},"blockGap":"0"},"color":{"background":"var(--wp--preset--color--base-2)"}},"className":"pattern---header-top-section","layout":{"type":"flex","flexWrap":"nowrap"}} -->
 <div
     class="wp-block-group pattern---header-top-section has-background"
@@ -25,3 +26,9 @@
     <!-- /wp:group -->
 </div>
 <!-- /wp:group -->
+
+<?php } else { ?>
+	<!-- wp:paragraph -->
+	<p><?php _e('This pattern needs the "Woocommerce" plugin in order to work', 'simppple'); ?></p>
+	<!-- /wp:paragraph -->
+<?php }

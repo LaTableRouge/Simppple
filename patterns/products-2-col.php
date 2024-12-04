@@ -2,10 +2,10 @@
 /**
  * Title: List of products, 2 columns
  * Slug: simppple/products-2-col
- * Categories: query, simppple-sections
+ * Categories: simppple-wc-patterns, query, simppple-sections
  * Block Types: core/query
  */
-?>
+if (class_exists('WooCommerce')) { ?>
 
 <!-- wp:woocommerce/product-collection {"queryId":0,"query":{"perPage":9,"pages":0,"offset":0,"postType":"product","order":"desc","orderBy":"date","search":"","exclude":[],"inherit":false,"taxQuery":{},"isProductCollectionBlock":true,"featured":false,"woocommerceOnSale":false,"woocommerceStockStatus":["instock","outofstock","onbackorder"],"woocommerceAttributes":[],"woocommerceHandPickedProducts":[]},"tagName":"div","displayLayout":{"type":"flex","columns":2,"shrinkColumns":true},"queryContextIncludes":["collection"]} -->
 <div class="wp-block-woocommerce-product-collection"><!-- wp:woocommerce/product-template -->
@@ -30,3 +30,9 @@
 			<!-- wp:pattern {"slug":"simppple/hidden-products-no-results"} /-->
 			<!-- /wp:query-no-results --></div>
 			<!-- /wp:woocommerce/product-collection -->
+
+<?php } else { ?>
+	<!-- wp:paragraph -->
+	<p><?php _e('This pattern needs the "Woocommerce" plugin in order to work', 'simppple'); ?></p>
+	<!-- /wp:paragraph -->
+<?php }

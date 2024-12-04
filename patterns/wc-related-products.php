@@ -2,9 +2,10 @@
 /**
  * Title: Woocommerce related products
  * Slug: simppple/wc-related-products
+ * Categories: simppple-wc-patterns
  * Inserter: no
  */
-?>
+if (class_exists('WooCommerce')) { ?>
 
 <!-- wp:woocommerce/related-products {"align":"center","className":"pattern---wc-related-products"} -->
 <div class="wp-block-woocommerce-related-products aligncenter pattern---wc-related-products"><!-- wp:query {"queryId":11,"query":{"perPage":5,"pages":0,"offset":0,"postType":"product","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":false},"tagName":"section","displayLayout":{"type":"flex","columns":6},"namespace":"woocommerce/related-products","lock":{"remove":true,"move":true}} -->
@@ -25,3 +26,9 @@
 	<!-- /wp:query -->
 </div>
 <!-- /wp:woocommerce/related-products -->
+
+<?php } else { ?>
+	<!-- wp:paragraph -->
+	<p><?php _e('This pattern needs the "Woocommerce" plugin in order to work', 'simppple'); ?></p>
+	<!-- /wp:paragraph -->
+<?php }
