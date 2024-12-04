@@ -19,6 +19,13 @@ Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
 
+= 1.2.1 =
+* Released: December 12, 2024
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.2.1
+Fix Woocommerce "my account" page.
+The shortcode is not working when It comes from a pattern.
+
 = 1.2.0 =
 * Released: December 12, 2024
 
