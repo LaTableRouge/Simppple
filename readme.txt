@@ -3,7 +3,7 @@ Contributors: latablerouge, bobbymcbobbyface
 Requires at least: 6.4
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 1.2.0
+Stable tag: 1.2.2
 WC requires at least: 8.4.0
 WC tested up to: 9.4.1
 License: GPLv3 or later
@@ -19,15 +19,22 @@ Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
 
+= 1.2.2 =
+* Released: December 5, 2024
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.2.2
+Fix Woocommerce "my account" page.
+The shortcode is not working when It comes from a pattern.
+
 = 1.2.1 =
-* Released: December 12, 2024
+* Released: December 4, 2024
 
 https://github.com/LaTableRouge/Simppple/releases/tag/1.2.1
 Fix Woocommerce "my account" page.
 The shortcode is not working when It comes from a pattern.
 
 = 1.2.0 =
-* Released: December 12, 2024
+* Released: December 4, 2024
 
 https://github.com/LaTableRouge/Simppple/releases/tag/1.2.0
 Adding message to patterns when Woocommerce is not installed

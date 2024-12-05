@@ -110,7 +110,7 @@ function simppple_vite_enqueue_style($fileThemePath, $hookBuild, $hookDev = fals
                         $fileSlug,
                         $filePath,
                         [],
-                        time(),
+                        '1.2.2',
                         'all'
                     );
                 },
@@ -161,7 +161,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                                 $fileSlug,
                                 $filePath,
                                 [],
-                                time(),
+                                '1.2.2',
                                 'all'
                             );
                         },
@@ -179,7 +179,7 @@ function simppple_vite_enqueue_script($fileThemePath, $hookBuild, $hookDev = fal
                         $fileSlug,
                         $filePath,
                         ['wp-i18n', 'jquery'], // Libraries to use
-                        time(),
+                        '1.2.2',
                         [
                             'in_footer' => $footerEnqueue,
                             'strategy' => 'defer'

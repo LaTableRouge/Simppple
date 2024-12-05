@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simppple 1.2.1\n"
+"Project-Id-Version: Simppple 1.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"

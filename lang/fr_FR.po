@@ -2,7 +2,7 @@
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simppple 1.2.1\n"
+"Project-Id-Version: Simppple 1.2.2\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
 "POT-Creation-Date: 2024-11-24T15:03:41+00:00\n"
 "PO-Revision-Date: 2024-11-24 16:04+0100\n"
