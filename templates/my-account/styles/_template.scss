@@ -1,7 +1,8 @@
 @use '/src/styles/abstracts/responsive' as *;
 @use '/src/styles/components/title' as title;
 
-body.woocommerce-account {
+body.woocommerce-account,
+body.page-template-my-account {
 	&.logged-in {
 		.my-account__deco-wrapper {
 			display: none;
@@ -31,6 +32,7 @@ body.woocommerce-account {
 
 								ul {
 									margin: 0;
+									list-style: none;
 
 									li {
 										position: relative;
