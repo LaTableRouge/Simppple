@@ -19,6 +19,12 @@ Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
 
+= 1.2.3 =
+* Released: December 17, 2024
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.2.3
+Adding message to the my account page template when Woocommerce is not installed
+
 = 1.2.2 =
 * Released: December 5, 2024
 
