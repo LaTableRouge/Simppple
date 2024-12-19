@@ -1,50 +1,36 @@
 <?php
+/**
+ * Register block pattern categories
+ *
+ * @package Simppple
+ * @subpackage Patterns
+ */
+
+declare(strict_types=1);
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-function simppple_register_pattern_category() {
-    register_block_pattern_category(
-        'simppple-sections',
-        [
-            'label' => esc_html__('Simppple - Page Sections', 'simppple')
-        ]
-    );
+/**
+ * Register custom block pattern categories
+ *
+ * @return void
+ */
+function simppple_register_pattern_category(): void {
+    $categories = [
+        'simppple-sections' => __('Simppple - Page Sections', 'simppple'),
+        'simppple-templates' => __('Simppple - Page Templates', 'simppple'),
+        'simppple-site-header' => __('Simppple - Headers', 'simppple'),
+        'simppple-site-footer' => __('Simppple - Footers', 'simppple'),
+        'simppple-wc-patterns' => __('Simppple - Woocommerce patterns', 'simppple'),
+        'simppple-wc-templates' => __('Simppple - Woocommerce templates', 'simppple')
+    ];
 
-    register_block_pattern_category(
-        'simppple-templates',
-        [
-            'label' => esc_html__('Simppple - Page Templates', 'simppple')
-        ]
-    );
-
-    register_block_pattern_category(
-        'simppple-site-header',
-        [
-            'label' => esc_html__('Simppple - Headers', 'simppple')
-        ]
-    );
-
-    register_block_pattern_category(
-        'simppple-site-footer',
-        [
-            'label' => esc_html__('Simppple - Footers', 'simppple')
-        ]
-    );
-
-    register_block_pattern_category(
-        'simppple-wc-patterns',
-        [
-            'label' => esc_html__('Simppple - Woocommerce patterns', 'simppple')
-        ]
-    );
-
-    register_block_pattern_category(
-        'simppple-wc-templates',
-        [
-            'label' => esc_html__('Simppple - Woocommerce templates', 'simppple')
-        ]
-    );
+    foreach ($categories as $slug => $label) {
+        register_block_pattern_category($slug, [
+            'label' => esc_html($label)
+        ]);
+    }
 }
 add_action('init', 'simppple_register_pattern_category', 9);

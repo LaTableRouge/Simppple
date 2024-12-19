@@ -1,146 +1,157 @@
 <?php
+/**
+ * Add HSL color values to theme.json
+ *
+ * @package Simppple
+ * @subpackage Theme_Customization
+ */
+
+declare(strict_types=1);
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-// https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
-function simppple_add_HSL_values_to_CSS_variables($themeJSON) {
-    $data = $themeJSON->get_data();
+/**
+ * Convert hex color to HSL values
+ *
+ * @param string $hex_color Hex color code
+ * @return string HSL color values (format: "H,S%,L%")
+ */
+function simppple_hex_to_hsl(string $hex_color): string {
+    $hex = str_replace('#', '', $hex_color);
+    $length = strlen($hex);
 
-    if (!empty($data)) {
+    // Convert hex to RGB first
+    $rgb = $length > 3
+        ? str_split($hex, 2)
+        : str_split($hex);
 
-        if (isset($data['settings']['color']['palette']['theme'])) {
-            $hslColorPalette = [];
+    // Convert hex to decimal values
+    $r = hexdec($rgb[0]) / 255;
+    $g = hexdec($rgb[1]) / 255;
+    $b = hexdec($rgb[2]) / 255;
 
-            $colorPalette = $data['settings']['color']['palette']['theme'];
-            if (!empty($colorPalette)) {
+    // Find greatest and smallest values
+    $max = max($r, $g, $b);
+    $min = min($r, $g, $b);
 
-                // Query the global styles to find custom color palettes
-                $customStyles = false;
-                $activeThemeSlug = get_stylesheet();
-                $dbCustomStyles = get_posts([
-                    'name' => "wp-global-styles-{$activeThemeSlug}",
-                    'post_type' => 'wp_global_styles',
-                    'post_status' => 'publish'
-                ]);
+    // Calculate HSL values
+    $l = ($max + $min) / 2;
 
-                if (!empty($dbCustomStyles)) {
-                    $customStyles = json_decode($dbCustomStyles[0]->post_content, true);
-                }
+    if ($max === $min) {
+        // Achromatic color (gray)
+        $h = $s = 0;
+    } else {
+        $d = $max - $min;
+        $s = $l > 0.5 ? $d / (2 - $max - $min) : $d / ($max + $min);
 
-                // find occurences in custom palette and replace them in the original one
-                if ($customStyles && isset($customStyles['settings']['color']['palette']['theme'])) {
-                    $customPalette = $customStyles['settings']['color']['palette']['theme'];
+        // Calculate hue
+        $h = match ($max) {
+            $r => ($g - $b) / $d + ($g < $b ? 6 : 0),
+            $g => ($b - $r) / $d + 2,
+            default => ($r - $g) / $d + 4
+        };
 
-                    $colorPalette = array_map(function ($value) use ($customPalette) {
-                        $customValueKey = array_search($value['slug'], array_column($customPalette, 'slug'));
-
-                        return $customValueKey ? $customPalette[$customValueKey] : $value;
-                    }, $colorPalette);
-                }
-
-                if (array_key_exists('custom', $data['settings'])) {
-                    $colorsPaletteCustom = $data['settings']['custom'];
-                    if (!empty($colorsPaletteCustom)) {
-                        $colorsPaletteCustom = array_filter(
-                            $colorsPaletteCustom,
-                            function ($value, $key) {
-                                return stripos($key, 'color-') !== false;
-                            },
-                            ARRAY_FILTER_USE_BOTH
-                        );
-
-                        $tempArray = [];
-                        if (!empty($colorsPaletteCustom)) {
-                            foreach ($colorsPaletteCustom as $key => $value) {
-                                $tempArray[] = [
-                                    'color' => $value,
-                                    'slug' => substr($key, strlen('color-'))
-                                ];
-                            }
-                        }
-
-                        $colorPalette = array_merge($colorPalette, $tempArray);
-                    }
-                }
-
-                // Loop through color palette
-                foreach ($colorPalette as $color) {
-                    if (!str_contains($color['slug'], '-rgb') && !str_contains($color['slug'], '-hsl')) {
-                        // Convert values in hsl
-                        $hexColor = str_replace('#', '', $color['color']);
-                        if (strlen($hexColor) > 3) {
-                            $hexColor = str_split($hexColor, 2);
-                        } else {
-                            $hexColor = str_split($hexColor);
-                        }
-
-                        $R = hexdec($hexColor[0]);
-                        $G = hexdec($hexColor[1]);
-                        $B = hexdec($hexColor[2]);
-                        $RGB = [$R, $G, $B];
-
-                        // scale value 0 to 255 to floats from 0 to 1
-                        $r = $RGB[0] / 255;
-                        $g = $RGB[1] / 255;
-                        $b = $RGB[2] / 255;
-
-                        // using https://gist.github.com/brandonheyer/5254516
-                        $max = max($r, $g, $b);
-                        $min = min($r, $g, $b);
-
-                        // lum
-                        $l = ($max + $min) / 2;
-
-                        // sat
-                        $d = $max - $min;
-                        if ($d == 0) {
-                            $h = $s = 0; // achromatic
-                        } else {
-                            $s = $d / (1 - abs((2 * $l) - 1));
-                            // hue
-                            switch ($max) {
-                                case $r:
-                                    $h = 60 * fmod((($g - $b) / $d), 6);
-                                    if ($b > $g) {
-                                        $h += 360;
-                                    }
-                                    break;
-                                case $g:
-                                    $h = 60 * (($b - $r) / $d + 2);
-                                    break;
-                                case $b:
-                                    $h = 60 * (($r - $g) / $d + 4);
-                                    break;
-                            }
-                        }
-
-                        $hsl = [round($h), round($s * 100), round($l * 100)];
-                        $hslColor = ($hsl[0]) . ',' . ($hsl[1]) . '%,' . ($hsl[2]) . '%';
-
-                        $hslColorPalette["{$color['slug']}-hsl"] = $hslColor;
-                    }
-                }
-            }
-
-            if (!empty($hslColorPalette)) {
-                // Sort array
-                ksort($hslColorPalette);
-
-                // Update interpreted theme.json values
-                return $themeJSON->update_with(
-                    [
-                        'version' => 2,
-                        'settings' => [
-                            'custom' => $hslColorPalette,
-                        ],
-                    ]
-                );
-            }
+        $h = round($h * 60);
+        if ($h < 0) {
+            $h += 360;
         }
     }
 
-    return $themeJSON;
+    return sprintf(
+        '%d,%d%%,%d%%',
+        $h,
+        round($s * 100),
+        round($l * 100)
+    );
+}
+
+/**
+ * Get custom color palette from global styles
+ *
+ * @return array<int, array<string, string>>
+ */
+function simppple_get_custom_color_palette_hsl(): array {
+    $active_theme_slug = get_stylesheet();
+    $custom_styles = get_posts([
+        'name' => "wp-global-styles-{$active_theme_slug}",
+        'post_type' => 'wp_global_styles',
+        'post_status' => 'publish'
+    ]);
+
+    if (empty($custom_styles)) {
+        return [];
+    }
+
+    $styles = json_decode($custom_styles[0]->post_content, true);
+
+    return $styles['settings']['color']['palette']['theme'] ?? [];
+}
+
+/**
+ * Add HSL values to CSS variables in theme.json
+ *
+ * @param WP_Theme_JSON_Data $theme_json Theme JSON data object
+ * @return WP_Theme_JSON_Data Modified theme JSON data
+ */
+function simppple_add_HSL_values_to_CSS_variables(WP_Theme_JSON_Data $theme_json): WP_Theme_JSON_Data {
+    $data = $theme_json->get_data();
+
+    if (empty($data) || !isset($data['settings']['color']['palette']['theme'])) {
+        return $theme_json;
+    }
+
+    $hsl_color_palette = [];
+    $color_palette = $data['settings']['color']['palette']['theme'];
+
+    // Get custom colors if they exist
+    $custom_palette = simppple_get_custom_color_palette_hsl();
+    if (!empty($custom_palette)) {
+        $color_palette = array_map(
+            function ($value) use ($custom_palette) {
+                $custom_value_key = array_search($value['slug'], array_column($custom_palette, 'slug'));
+
+                return $custom_value_key !== false ? $custom_palette[$custom_value_key] : $value;
+            },
+            $color_palette
+        );
+    }
+
+    // Add custom colors from settings if they exist
+    if (isset($data['settings']['custom'])) {
+        $custom_colors = array_filter(
+            $data['settings']['custom'],
+            fn($key) => str_starts_with($key, 'color-'),
+            ARRAY_FILTER_USE_KEY
+        );
+
+        foreach ($custom_colors as $key => $value) {
+            $color_palette[] = [
+                'color' => $value,
+                'slug' => substr($key, strlen('color-'))
+            ];
+        }
+    }
+
+    // Convert colors to HSL
+    foreach ($color_palette as $color) {
+        if (!str_contains($color['slug'], '-rgb') && !str_contains($color['slug'], '-hsl')) {
+            $hsl_color_palette["{$color['slug']}-hsl"] = simppple_hex_to_hsl($color['color']);
+        }
+    }
+
+    if (!empty($hsl_color_palette)) {
+        ksort($hsl_color_palette);
+
+        return $theme_json->update_with([
+            'version' => 2,
+            'settings' => [
+                'custom' => $hsl_color_palette,
+            ],
+        ]);
+    }
+
+    return $theme_json;
 }
 add_filter('wp_theme_json_data_theme', 'simppple_add_HSL_values_to_CSS_variables');

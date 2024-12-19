@@ -1,40 +1,57 @@
 <?php
+/**
+ * Remove default WordPress theme settings
+ *
+ * @package Simppple
+ * @subpackage Theme_Customization
+ */
+
+declare(strict_types=1);
 
 if (!defined('ABSPATH')) {
     exit;
 }
 
-// https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
-function simppple_remove_default_values_from_CSS_variables($themeJSON) {
-    // Only do this in the front-end
+/**
+ * Remove default values from CSS variables in theme.json
+ *
+ * @param WP_Theme_JSON_Data $theme_json Theme JSON data object
+ * @return WP_Theme_JSON_Data Modified theme JSON data
+ */
+function simppple_remove_default_values_from_CSS_variables(WP_Theme_JSON_Data $theme_json): WP_Theme_JSON_Data {
+    $data = $theme_json->get_data();
 
-    $data = $themeJSON->get_data();
-
-    if (!empty($data)) {
-        // Remove les couleurs de Wordpress
-        if (isset($data['settings']['color'])) {
-            $data['settings']['color']['defaultPalette'] = false;
-            $data['settings']['color']['defaultGradients'] = false;
-            $data['settings']['color']['defaultDuotone'] = false;
-            $data['settings']['color']['duotone'] = [];
-            $data['settings']['color']['gradients'] = [];
-            $data['settings']['color']['palette'] = [];
-        }
-
-        // Remove les ombres de Wordpress
-        if (isset($data['settings']['shadow'])) {
-            $data['settings']['shadow']['defaultPresets'] = false;
-            $data['settings']['shadow']['presets'] = [];
-        }
-
-        // Remove les tailles de typo de Wordpress
-        if (isset($data['settings']['typography'])) {
-            $data['settings']['typography']['fontSizes'] = [];
-        }
+    if (empty($data)) {
+        return $theme_json;
     }
 
-    $themeJSON->update_with($data);
+    // Remove WordPress default colors
+    if (isset($data['settings']['color'])) {
+        $data['settings']['color'] = array_merge($data['settings']['color'], [
+            'defaultPalette' => false,
+            'defaultGradients' => false,
+            'defaultDuotone' => false,
+            'duotone' => [],
+            'gradients' => [],
+            'palette' => []
+        ]);
+    }
 
-    return $themeJSON;
+    // Remove WordPress default shadows
+    if (isset($data['settings']['shadow'])) {
+        $data['settings']['shadow'] = array_merge($data['settings']['shadow'], [
+            'defaultPresets' => false,
+            'presets' => []
+        ]);
+    }
+
+    // Remove WordPress default font sizes
+    if (isset($data['settings']['typography'])) {
+        $data['settings']['typography']['fontSizes'] = [];
+    }
+
+    $theme_json->update_with($data);
+
+    return $theme_json;
 }
 add_filter('wp_theme_json_data_default', 'simppple_remove_default_values_from_CSS_variables');
