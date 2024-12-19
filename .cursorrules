@@ -1,0 +1,313 @@
+## Role and Expertise:You are an elite software engineer and product manager with the following expertise:- Extensive experience in implementing multi-provider architectures for Large Language Models (LLMs)- Master of functional programming, especially in TypeScript- Deep understanding of TypeScript and its ecosystem- Expert at creating code libraries with APIs that delight developers- Advocate for composability, immutability, and simple pragmatic solutions- Prefer Function over Class if possible- Prefer Types over Interfaces if possible## Coding Standards:### Naming Conventions:- Use kebab-case for file names (e.g., `my-component.ts`)- Use camelCase for variables and function names (e.g., `myVariable`, `myFunction()`)- Use UpperCamelCase (PascalCase) for classes, types, and interfaces (e.g., `MyClass`, `MyInterface`)- Use ALL_CAPS for constants and enum values (e.g., `MAX_COUNT`, `Color.RED`)### File Organization:- Group related functionality into modules- Use index files to simplify imports- Separate concerns: keep business logic, UI components, and utilities in different directories### Code Style:- Prefer `const` over `let` when variables won't be reassigned- Use arrow functions for better lexical scoping and concise syntax- Utilize TypeScript's type system fully: use interfaces, type aliases, and generics where appropriate- Implement error handling with custom error types- Write pure functions where possible to improve testability and reduce side effects### Best Practices:- Follow the Single Responsibility Principle- Use dependency injection to improve testability and flexibility- Implement proper error handling and logging- Write comprehensive unit tests for all business logic- Use async/await for asynchronous operations instead of callbacks or raw promises- Leverage TypeScript's strict mode for enhanced type checking### Documentation:- Use JSDoc comments for functions, classes, and complex types- Include examples in documentation where appropriate- Keep README files up-to-date with setup instructions, usage examples, and contribution guidelines## Library Usage:Utilize the following libraries effectively:- axios (^1.7.5): For HTTP requests, implement interceptors for global error handling and authentication- js-yaml (^4.1.0): For parsing and stringifying YAML, use type-safe schemas- mime-types (^2.1.35): For MIME type detection and file extension mapping- node-gyp (^10.2.0): For native addon build tool, ensure proper setup in your build pipeline- uuid (^10.0.0): For generating unique identifiers, prefer v4 for random UUIDs- zod (^3.23.8): For runtime type checking and data validation, create reusable schemas
+- You are operating in a WordPress plugin context, that has a Guzzle-based HTTP client, WP REST endpoint addition(s), and new Gutenberg editor blocks.- Always use WordPress coding standards when writing PHP, JavaScript, and TypeScript.- Always type hint PHP code.- Prefer writing TypeScript over JavaScript.- Favor functional paradigms over object-oriented ones, favor composition over inheritance, but be consistent with WordPress ecosystem best practices.- Optimize for readability.
+
+{
+  "eslint": {
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "standard",
+      "eslint:recommended",
+      "plugin:react/recommended"
+    ],
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "sourceType": "module"
+    },
+    "globals": {
+      "wp": true,
+      "jQuery": true,
+      "block_params": true,
+      "plugin_params": true,
+      "fw_data": true
+    },
+    "plugins": [
+      "react",
+      "unused-imports",
+      "simple-import-sort",
+      "sort-destructure-keys"
+    ],
+    "rules": {
+      "object-shorthand": 0,
+      "space-before-function-paren": "off",
+      "comma-dangle": [
+        "error",
+        "only-multiline"
+      ],
+      "generator-star-spacing": [
+        "error",
+        {
+          "before": false,
+          "after": true
+        }
+      ],
+      "unused-imports/no-unused-imports": "warn",
+      "simple-import-sort/imports": "error",
+      "simple-import-sort/exports": "error",
+      "no-console": "warn",
+      "operator-linebreak": [
+        "error",
+        "before"
+      ],
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "react/jsx-sort-props": [
+        1,
+        {
+          "ignoreCase": true,
+          "callbacksLast": true,
+          "shorthandFirst": true,
+          "multiline": "ignore",
+          "reservedFirst": true
+        }
+      ],
+      "sort-destructure-keys/sort-destructure-keys": [
+        2,
+        {
+          "caseSensitive": false
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "trailingComma": "none",
+    "printWidth": 180,
+    "tabWidth": 2,
+    "singleQuote": true,
+    "semi": false,
+    "bracketSpacing": true
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-config-property-sort-order-smacss",
+      "stylelint-config-sass-guidelines"
+    ],
+    "plugins": [
+      "stylelint-order"
+    ],
+    "rules": {
+      "at-rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "blockless-after-same-name-blockless"
+          ],
+          "ignore": [
+            "after-comment",
+            "first-nested"
+          ],
+          "ignoreAtRules": [
+            "else",
+            "if"
+          ],
+          "severity": "warning"
+        }
+      ],
+      "block-no-empty": true,
+      "color-named": null,
+      "custom-property-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "after-custom-property"
+          ],
+          "ignore": [
+            "after-comment",
+            "first-nested",
+            "inside-single-line-block"
+          ],
+          "severity": "warning"
+        }
+      ],
+      "declaration-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "after-declaration"
+          ],
+          "ignore": [
+            "after-comment",
+            "first-nested",
+            "inside-single-line-block"
+          ],
+          "severity": "warning"
+        }
+      ],
+      "declaration-no-important": [
+        true,
+        {
+          "message": "Do you really need this to be important ? 🤔",
+          "severity": "warning"
+        }
+      ],
+      "declaration-property-value-disallowed-list": null,
+      "max-nesting-depth": null,
+      "order/properties-alphabetical-order": null,
+      "order/order": [
+        "dollar-variables",
+        "custom-properties",
+        "declarations",
+        "at-rules",
+        "rules"
+      ],
+      "property-no-unknown": null,
+      "property-no-vendor-prefix": null,
+      "rule-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "after-comment",
+            "first-nested"
+          ],
+          "severity": "warning"
+        }
+      ],
+      "scss/at-extend-no-missing-placeholder": null,
+      "scss/at-function-pattern": null,
+      "scss/at-import-partial-extension-blacklist": null,
+      "scss/at-mixin-pattern": null,
+      "scss/dollar-variable-pattern": null,
+      "scss/no-global-function-names": null,
+      "scss/percent-placeholder-pattern": null,
+      "scss/selector-no-redundant-nesting-selector": null,
+      "selector-class-pattern": null,
+      "selector-disallowed-list": [
+        "/\\*/",
+        {
+          "message": "The universal selector (*) is known to be slow 🦥",
+          "severity": "warning"
+        }
+      ],
+      "selector-max-compound-selectors": null,
+      "selector-max-id": null,
+      "selector-no-qualifying-type": null,
+      "shorthand-property-no-redundant-values": null,
+      "value-no-vendor-prefix": null
+    },
+    "ignoreFiles": [
+      "src/**/abstracts/**/*.scss",
+      "assets/**/abstracts/**/*.scss"
+    ]
+  },
+  "php-cs-fixer": {
+    "rules": {
+      "array_indentation": true,
+      "array_push": true,
+      "array_syntax": { "syntax": "short" },
+      "binary_operator_spaces": { "default": "single_space" },
+      "blank_line_after_namespace": true,
+      "blank_line_after_opening_tag": true,
+      "blank_line_before_statement": { "statements": ["return"] },
+      "single_space_around_construct": true,
+      "control_structure_braces": true,
+      "braces_position": {
+        "functions_opening_brace": "same_line",
+        "control_structures_opening_brace": "same_line",
+        "anonymous_functions_opening_brace": "same_line",
+        "classes_opening_brace": "same_line",
+        "anonymous_classes_opening_brace": "same_line"
+      },
+      "declare_parentheses": true,
+      "statement_indentation": true,
+      "no_multiple_statements_per_line": true,
+      "cast_spaces": { "space": "single" },
+      "class_attributes_separation": { "elements": { "trait_import": "none" } },
+      "concat_space": { "spacing": "one" },
+      "constant_case": true,
+      "elseif": true,
+      "encoding": true,
+      "explicit_string_variable": true,
+      "full_opening_tag": true,
+      "heredoc_indentation": { "indentation": "start_plus_one" },
+      "include": true,
+      "increment_style": { "style": "post" },
+      "indentation_type": true,
+      "line_ending": true,
+      "linebreak_after_opening_tag": true,
+      "logical_operators": true,
+      "lowercase_cast": true,
+      "lowercase_keywords": true,
+      "lowercase_static_reference": true,
+      "multiline_whitespace_before_semicolons": { "strategy": "no_multi_line" },
+      "native_function_casing": true,
+      "no_alias_functions": true,
+      "no_alternative_syntax": true,
+      "no_closing_tag": true,
+      "no_empty_phpdoc": true,
+      "no_empty_statement": true,
+      "no_extra_blank_lines": { "tokens": ["extra", "throw", "use"] },
+      "no_mixed_echo_print": { "use": "echo" },
+      "no_multiline_whitespace_around_double_arrow": true,
+      "no_short_bool_cast": true,
+      "no_singleline_whitespace_before_semicolons": true,
+      "no_spaces_after_function_name": true,
+      "no_spaces_around_offset": true,
+      "no_trailing_comma_in_singleline": true,
+      "no_trailing_whitespace": true,
+      "no_trailing_whitespace_in_comment": true,
+      "no_unneeded_control_parentheses": true,
+      "no_useless_return": true,
+      "no_whitespace_before_comma_in_array": true,
+      "no_whitespace_in_blank_line": true,
+      "normalize_index_brace": true,
+      "not_operator_with_successor_space": false,
+      "object_operator_without_whitespace": true,
+      "short_scalar_cast": true,
+      "simple_to_complex_string_variable": true,
+      "simplified_null_return": false,
+      "single_import_per_statement": true,
+      "single_line_after_imports": true,
+      "single_line_comment_style": { "comment_types": ["hash"] },
+      "single_quote": true,
+      "space_after_semicolon": true,
+      "spaces_inside_parentheses": false,
+      "standardize_not_equals": true,
+      "switch_case_semicolon_to_colon": true,
+      "switch_case_space": true,
+      "ternary_operator_spaces": true,
+      "trailing_comma_in_multiline": false,
+      "trim_array_spaces": true,
+      "unary_operator_spaces": true,
+      "whitespace_after_comma_in_array": true
+    }
+  },
+  "editorconfig": {
+    "root": true,
+    "charset": "utf-8",
+    "end_of_line": "lf",
+    "insert_final_newline": true,
+    "indent_style": "space",
+    "indent_size": 4,
+    "trim_trailing_whitespace": true,
+    "overrides": {
+      "*.php": {
+        "insert_final_newline": true,
+        "trim_trailing_whitespace": true
+      },
+      "*.md": {
+        "trim_trailing_whitespace": false
+      },
+      "*.{yml,yaml}": {
+        "indent_size": 2
+      },
+      "*.{css,scss,sass}": {
+        "indent_size": 2
+      },
+      "*.{js,jsx}": {
+        "indent_size": 2
+      },
+      "*.json": {
+        "indent_size": 2
+      }
+    }
+  }
+}

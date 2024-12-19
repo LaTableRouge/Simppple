@@ -108,7 +108,7 @@ export const inputNumber = () => {
 					})
 
 					// Disable/enable buttons
-					inputNumber.addEventListener(eventToListen, (e) => {
+					inputNumber.addEventListener(eventToListen, () => {
 						if (inputNumber.value >= max) {
 							inputNumber.value = max
 							quantityUp.setAttribute('disabled', '')
