@@ -4,17 +4,35 @@
 // If you import with url, replace ';' by '%3b';
 // -----------------------------------------------------------------------------
 
+@use 'sass:map';
+@use '/src/styles/abstracts/variables' as *;
+@use '/src/fonts/icomoon/variables' with (
+	$icomoon-font-path: '#{$fonts-path}/icomoon/fonts',
+	$icomoon-font-family: map.get($fonts, 'icons', 'name')
+);
 @use '/src/fonts/icomoon/style';
-@use '/src/fonts/icomoon/variables' as icomoon;
-@use '/src/styles/abstracts/variables' as variables;
 
-@font-face {
-	font-family: '#{icomoon.$icomoon-font-family}';
-	font-style: normal;
-	font-weight: normal;
-	src:
-		url('#{variables.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.ttf?2z4419') format('truetype'),
-		url('#{variables.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.woff?2z4419') format('woff'),
-		url('#{variables.$icomoon-font-path}/#{icomoon.$icomoon-font-family}.svg?2z4419##{icomoon.$icomoon-font-family}') format('svg');
-	font-display: block;
-}
+// Create a map to store IcoMoon variables
+$icons: (
+	'filter': variables.$icon-simppple-filter,
+	'mail': variables.$icon-simppple-mail,
+	'phone': variables.$icon-simppple-phone,
+	'check': variables.$icon-simppple-check,
+	'eye': variables.$icon-simppple-eye,
+	'cross': variables.$icon-simppple-cross,
+	'information': variables.$icon-simppple-information,
+	'search': variables.$icon-simppple-search,
+	'heart': variables.$icon-simppple-heart,
+	'cart': variables.$icon-simppple-cart,
+	'arrow-left': variables.$icon-simppple-arrow-left,
+	'arrow-right': variables.$icon-simppple-arrow-right,
+	'arrow-left-plain': variables.$icon-simppple-arrow-left-plain,
+	'arrow-right-plain': variables.$icon-simppple-arrow-right-plain,
+	'facebook': variables.$icon-simppple-facebook,
+	'instagram': variables.$icon-simppple-instagram,
+	'linkedin': variables.$icon-simppple-linkedin,
+	'twitter': variables.$icon-simppple-twitter,
+	'youtube': variables.$icon-simppple-youtube,
+	'user': variables.$icon-simppple-user,
+	'quote': variables.$icon-simppple-quote
+);

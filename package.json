@@ -25,19 +25,19 @@
 		"prettier:scss": "npx prettier --no-error-on-unmatched-pattern --write {src/styles/**,blocks/**/styles/**,src/styles,blocks/**/styles,parts/**/styles,parts/**/styles/**,patterns/**/styles,patterns/**/styles/**,templates/**/styles,templates/**/styles/**}/*.scss",
 		"lint:js": "npx eslint --no-error-on-unmatched-pattern --fix {src/scripts/**,blocks/**/scripts/**,src/scripts,blocks/**/scripts,parts/**/scripts,parts/**/scripts/**,patterns/**/scripts,patterns/**/scripts/**,templates/**/scripts,templates/**/scripts/**}/*.{ts,tsx,js,jsx}",
 		"prettier:js": "npx prettier --no-error-on-unmatched-pattern --write {src/scripts/**,blocks/**/scripts/**,src/scripts,blocks/**/scripts,parts/**/scripts,parts/**/scripts/**,patterns/**/scripts,patterns/**/scripts/**,templates/**/scripts,templates/**/scripts/**}/*.{ts,tsx,js,jsx}",
-		"beautify:all": "npm run prettier:scss && npm run lint:scss && npm run prettier:js && npm run lint:js && composer lint:php",
+		"beautify:all": "npm run prettier:scss && npm run lint:scss && npm run prettier:js && npm run lint:js && composer lint:php && composer phpstan",
 		"prepare": "husky install && composer install && npm run build"
 	},
 	"devDependencies": {
-		"@commitlint/cli": "^19.5.0",
-		"@commitlint/config-conventional": "^19.5.0",
-		"@mlnop/string-replace": "^1.0.5",
+		"@commitlint/cli": "^19.8.0",
+		"@commitlint/config-conventional": "^19.8.0",
+		"@mlnop/string-replace": "^2.0.0",
+		"@mlnop/vite-plugin-sass-glob-import": "^6.0.0",
 		"@types/swiper": "^6.0.0",
 		"@typescript-eslint/parser": "^6.21.0",
 		"@wordpress/scripts": "^30.3.0",
-		"ansi-colors": "^4.1.3",
 		"autoprefixer": "^10.4.20",
-		"browserslist": "^4.24.2",
+		"browserslist": "^4.24.4",
 		"eslint": "^8.57.0",
 		"eslint-config-prettier": "^9.0.0",
 		"eslint-config-standard": "^17.1.0",
@@ -51,10 +51,8 @@
 		"eslint-plugin-sort-destructure-keys": "^2.0.0",
 		"eslint-plugin-unused-imports": "^3.0.0",
 		"git-precommit-checks": "^3.1.0",
-		"glob": "^11.0.0",
 		"husky": "^9.1.6",
 		"lint-staged": "^15.2.10",
-		"minimatch": "^10.0.1",
 		"prettier": "^3.3.3",
 		"sass": "^1.79.5",
 		"sass-loader": "^16.0.2",
@@ -63,9 +61,9 @@
 		"stylelint-config-sass-guidelines": "^10.0.0",
 		"stylelint-config-standard": "^34.0.0",
 		"stylelint-order": "^6.0.4",
-		"validate-branch-name": "^1.3.1",
-		"vite": "^5.4.9",
-		"vite-plugin-static-copy": "^2.0.0"
+		"validate-branch-name": "^1.3.2",
+		"vite": "^6.2.1",
+		"vite-plugin-static-copy": "^2.3.0"
 	},
 	"dependencies": {
 		"gridjs": "^6.0.6",
@@ -74,6 +72,9 @@
 	"lint-staged": {
 		"**/*.php": [
 			"composer lint-staged:php"
+		],
+		"{inc/**/*.php,patterns/**/*.php}": [
+			"composer phpstan"
 		],
 		"{src/styles/**/*.scss,blocks/**/*.scss,parts/**/*.scss,patterns/**/*.scss,templates/**/*.scss}": [
 			"npx stylelint --allow-empty-input --fix",

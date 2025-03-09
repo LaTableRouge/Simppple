@@ -40,9 +40,6 @@ function simppple_vite_fetch_asset_from_manifest(string $fileThemePath, string $
 
     /** @var array<string, array{file: string, css?: array<string>}> $manifest */
     $manifest = json_decode(file_get_contents($manifestPath), true);
-    if (!is_array($manifest)) {
-        return $returnedArray;
-    }
 
     $fileKey = array_reduce(
         array_keys($manifest),

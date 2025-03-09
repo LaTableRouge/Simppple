@@ -1,13 +1,9 @@
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
+import sassGlobImports from '@mlnop/vite-plugin-sass-glob-import'
 import autoprefixer from 'autoprefixer'
 import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
-
-// Temporary fix see pull requests below
-// https://github.com/cmalven/vite-plugin-sass-glob-import/pull/20
-// https://github.com/cmalven/vite-plugin-sass-glob-import/pull/20
-import sassGlobImports from './vite-glob-import'
 
 const chore = process.env.npm_config_chore
 
@@ -143,7 +139,7 @@ const filesToCopy = [
  |--------------------------------------------------------------------------
  */
 
-export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => {
+export default defineConfig(async ({ command }) => {
 	const isProduction = command === 'build'
 
 	const entriesToCompile = []
@@ -246,7 +242,7 @@ export default defineConfig(async ({ command, isPreview, isSsrBuild, mode }) => 
 		plugins: [
 			{
 				...sassGlobImports({
-					namespace(filepath, index) {
+					namespace(filepath) {
 						const fileParts = filepath.replace('.scss', '').split('/')
 						return `${fileParts.at(-4)}-${fileParts.at(-3)}`
 					}

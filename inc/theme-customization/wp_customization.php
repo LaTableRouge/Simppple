@@ -69,7 +69,7 @@ function simppple_add_class_to_core_paragraph(string $block_content): string {
 
     if ($p->next_tag()) {
         $p->add_class('wp-block-paragraph');
-        if ($p->next_tag('a')) {
+        if ($p->next_tag(['tag_name' => 'a'])) {
             $p->add_class('wp-block-paragraph__link');
         }
     }
@@ -87,7 +87,7 @@ add_filter('render_block_core/paragraph', 'simppple_add_class_to_core_paragraph'
 function simppple_add_class_to_core_image(string $block_content): string {
     $picture = new WP_HTML_Tag_Processor($block_content);
 
-    if ($picture->next_tag('img')) {
+    if ($picture->next_tag(['tag_name' => 'img'])) {
         $picture->set_attribute('loading', 'lazy');
     }
 
