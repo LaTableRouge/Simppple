@@ -8,6 +8,8 @@
 
 declare(strict_types=1);
 
+namespace Simppple\Patterns;
+
 if (!defined('ABSPATH')) {
     exit;
 }
@@ -17,7 +19,7 @@ if (!defined('ABSPATH')) {
  *
  * @return void
  */
-function simppple_register_pattern_category(): void {
+function register_pattern_category(): void {
     $categories = [
         'simppple-sections' => __('Simppple - Page Sections', 'simppple'),
         'simppple-templates' => __('Simppple - Page Templates', 'simppple'),
@@ -33,4 +35,4 @@ function simppple_register_pattern_category(): void {
         ]);
     }
 }
-add_action('init', 'simppple_register_pattern_category', 9);
+add_action('init', __NAMESPACE__ . '\register_pattern_category', 9);

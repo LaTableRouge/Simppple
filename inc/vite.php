@@ -3,9 +3,12 @@
  * Vite integration for WordPress theme
  *
  * @package Simppple
+ * @subpackage Vite
  */
 
 declare(strict_types=1);
+
+namespace Simppple\Vite;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -27,7 +30,7 @@ define('SIMPPPLE_DIST_PATH', get_template_directory() . '/' . SIMPPPLE_DIST_FOLD
  *  css?: array<array{path: string, slug: string}>
  * }
  */
-function simppple_vite_fetch_asset_from_manifest(string $fileThemePath, string $assetType): array {
+function fetch_asset_from_manifest(string $fileThemePath, string $assetType): array {
     $returnedArray = [];
 
     $fileName = basename($fileThemePath);
@@ -77,7 +80,7 @@ function simppple_vite_fetch_asset_from_manifest(string $fileThemePath, string $
  *
  * @return void
  */
-function simppple_vite_enqueue_dev_dependencies(): void {
+function enqueue_dev_dependencies(): void {
     wp_enqueue_script('jquery');
     wp_enqueue_script('wp-i18n');
     wp_enqueue_script('wp-blocks');
@@ -106,7 +109,7 @@ function simppple_vite_enqueue_dev_dependencies(): void {
  * @param string|false $hookDev WordPress hook for dev mode
  * @return void
  */
-function simppple_vite_enqueue_style(string $fileThemePath, string $hookBuild, string|false $hookDev = false): void {
+function enqueue_style(string $fileThemePath, string $hookBuild, string|false $hookDev = false): void {
     $hookDev = $hookDev ?: $hookBuild;
 
     $adminAsset = str_contains($hookBuild, 'admin')
@@ -129,7 +132,7 @@ function simppple_vite_enqueue_style(string $fileThemePath, string $hookBuild, s
         return;
     }
 
-    $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'style');
+    $manifestFileInfos = fetch_asset_from_manifest($fileThemePath, 'style');
     if (empty($manifestFileInfos)) {
         return;
     }
@@ -163,7 +166,7 @@ function simppple_vite_enqueue_style(string $fileThemePath, string $hookBuild, s
  * @param int $order Action priority
  * @return void
  */
-function simppple_vite_enqueue_script(
+function enqueue_script(
     string $fileThemePath,
     string $hookBuild,
     string|false $hookDev = false,
@@ -184,8 +187,8 @@ function simppple_vite_enqueue_script(
     if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT === true) {
         $themePath = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 
-        remove_action($hookDev, 'simppple_vite_enqueue_dev_dependencies');
-        add_action($hookDev, 'simppple_vite_enqueue_dev_dependencies');
+        remove_action($hookDev, __NAMESPACE__ . '\enqueue_dev_dependencies');
+        add_action($hookDev, __NAMESPACE__ . '\enqueue_dev_dependencies');
         add_action($hookDev, function () use ($themePath, $fileThemePath): void {
             printf(
                 '<script type="module" crossorigin src="%s"></script>',
@@ -196,7 +199,7 @@ function simppple_vite_enqueue_script(
         return;
     }
 
-    $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
+    $manifestFileInfos = fetch_asset_from_manifest($fileThemePath, 'script');
     if (empty($manifestFileInfos)) {
         return;
     }
@@ -275,8 +278,8 @@ function simppple_vite_enqueue_script(
  * @param int $order Action priority
  * @return void
  */
-function simppple_vite_enqueue_style_editor(string $fileThemePath, string $hook, int $order = 20): void {
-    $manifestFileInfos = simppple_vite_fetch_asset_from_manifest($fileThemePath, 'script');
+function enqueue_style_editor(string $fileThemePath, string $hook, int $order = 20): void {
+    $manifestFileInfos = fetch_asset_from_manifest($fileThemePath, 'script');
     if (empty($manifestFileInfos)) {
         echo 'Please compile (build/prod) to see the editor style';
 

@@ -3,10 +3,12 @@
  * Theme customization functions
  *
  * @package Simppple
- * @subpackage Theme_Customization
+ * @subpackage ThemeCustomization
  */
 
 declare(strict_types=1);
+
+namespace Simppple\ThemeCustomization;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -17,7 +19,7 @@ if (!defined('ABSPATH')) {
  *
  * @return void
  */
-function simppple_theme_setup(): void {
+function theme_setup(): void {
     // Editor styles and custom spacing support
     add_theme_support('editor-styles');
     add_theme_support('custom-spacing');
@@ -28,19 +30,19 @@ function simppple_theme_setup(): void {
     // Load theme text domain
     load_child_theme_textdomain('simppple', get_template_directory() . '/lang');
 }
-add_action('after_setup_theme', 'simppple_theme_setup', 20);
+add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup', 20);
 
 /**
  * Customize login page
  *
  * @return void
  */
-function simppple_customize_login_page(): void {
+function customize_login_page(): void {
     add_filter('login_headerurl', fn(): string => home_url());
     add_filter('login_headertext', fn(): string => (string) get_option('blogname'));
     add_filter('login_display_language_dropdown', '__return_false');
 }
-add_action('login_enqueue_scripts', 'simppple_customize_login_page');
+add_action('login_enqueue_scripts', __NAMESPACE__ . '\customize_login_page');
 
 /**
  * Add current post slug to body class
@@ -48,7 +50,7 @@ add_action('login_enqueue_scripts', 'simppple_customize_login_page');
  * @param array<string> $classes Array of body classes
  * @return array<string>
  */
-function simppple_add_slug_body_class(array $classes): array {
+function add_slug_body_class(array $classes): array {
     global $post;
     if (isset($post) && isset($post->post_type, $post->post_name)) {
         $classes[] = $post->post_type . '__' . $post->post_name;
@@ -56,7 +58,7 @@ function simppple_add_slug_body_class(array $classes): array {
 
     return $classes;
 }
-add_filter('body_class', 'simppple_add_slug_body_class');
+add_filter('body_class', __NAMESPACE__ . '\add_slug_body_class');
 
 /**
  * Add classes to core paragraph block
@@ -64,8 +66,8 @@ add_filter('body_class', 'simppple_add_slug_body_class');
  * @param string $block_content Block content to filter
  * @return string Modified block content
  */
-function simppple_add_class_to_core_paragraph(string $block_content): string {
-    $p = new WP_HTML_Tag_Processor($block_content);
+function add_class_to_core_paragraph(string $block_content): string {
+    $p = new \WP_HTML_Tag_Processor($block_content);
 
     if ($p->next_tag()) {
         $p->add_class('wp-block-paragraph');
@@ -76,7 +78,7 @@ function simppple_add_class_to_core_paragraph(string $block_content): string {
 
     return $p->get_updated_html();
 }
-add_filter('render_block_core/paragraph', 'simppple_add_class_to_core_paragraph');
+add_filter('render_block_core/paragraph', __NAMESPACE__ . '\add_class_to_core_paragraph');
 
 /**
  * Add lazy loading to core image block
@@ -84,8 +86,8 @@ add_filter('render_block_core/paragraph', 'simppple_add_class_to_core_paragraph'
  * @param string $block_content Block content to filter
  * @return string Modified block content
  */
-function simppple_add_class_to_core_image(string $block_content): string {
-    $picture = new WP_HTML_Tag_Processor($block_content);
+function add_class_to_core_image(string $block_content): string {
+    $picture = new \WP_HTML_Tag_Processor($block_content);
 
     if ($picture->next_tag(['tag_name' => 'img'])) {
         $picture->set_attribute('loading', 'lazy');
@@ -93,7 +95,7 @@ function simppple_add_class_to_core_image(string $block_content): string {
 
     return $picture->get_updated_html();
 }
-add_filter('render_block_core/image', 'simppple_add_class_to_core_image');
+add_filter('render_block_core/image', __NAMESPACE__ . '\add_class_to_core_image');
 
 /**
  * Add context attributes to HTML tag
@@ -101,7 +103,7 @@ add_filter('render_block_core/image', 'simppple_add_class_to_core_image');
  * @param string $output Current output of language_attributes()
  * @return string Modified language attributes
  */
-function simppple_add_context_to_html_tag(string $output): string {
+function add_context_to_html_tag(string $output): string {
     $output .= is_admin() ? ' data-context="back"' : ' data-context="front"';
 
     if (is_rtl()) {
@@ -110,4 +112,4 @@ function simppple_add_context_to_html_tag(string $output): string {
 
     return $output;
 }
-add_filter('language_attributes', 'simppple_add_context_to_html_tag');
+add_filter('language_attributes', __NAMESPACE__ . '\add_context_to_html_tag');

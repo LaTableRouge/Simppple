@@ -3,10 +3,12 @@
  * Remove default WordPress theme settings
  *
  * @package Simppple
- * @subpackage Theme_Customization
+ * @subpackage ThemeCustomization
  */
 
 declare(strict_types=1);
+
+namespace Simppple\ThemeCustomization;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -15,10 +17,10 @@ if (!defined('ABSPATH')) {
 /**
  * Remove default values from CSS variables in theme.json
  *
- * @param WP_Theme_JSON_Data $theme_json Theme JSON data object
- * @return WP_Theme_JSON_Data Modified theme JSON data
+ * @param \WP_Theme_JSON_Data $theme_json Theme JSON data object
+ * @return \WP_Theme_JSON_Data Modified theme JSON data
  */
-function simppple_remove_default_values_from_CSS_variables(WP_Theme_JSON_Data $theme_json): WP_Theme_JSON_Data {
+function remove_default_values_from_CSS_variables(\WP_Theme_JSON_Data $theme_json): \WP_Theme_JSON_Data {
     $data = $theme_json->get_data();
 
     if (empty($data)) {
@@ -54,4 +56,4 @@ function simppple_remove_default_values_from_CSS_variables(WP_Theme_JSON_Data $t
 
     return $theme_json;
 }
-add_filter('wp_theme_json_data_default', 'simppple_remove_default_values_from_CSS_variables');
+add_filter('wp_theme_json_data_default', __NAMESPACE__ . '\remove_default_values_from_CSS_variables');

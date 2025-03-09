@@ -3,10 +3,12 @@
  * Add HSL color values to theme.json
  *
  * @package Simppple
- * @subpackage Theme_Customization
+ * @subpackage ThemeCustomization
  */
 
 declare(strict_types=1);
+
+namespace Simppple\ThemeCustomization;
 
 if (!defined('ABSPATH')) {
     exit;
@@ -18,7 +20,7 @@ if (!defined('ABSPATH')) {
  * @param string $hex_color Hex color code
  * @return string HSL color values (format: "H,S%,L%")
  */
-function simppple_hex_to_hsl(string $hex_color): string {
+function hex_to_hsl(string $hex_color): string {
     $hex = str_replace('#', '', $hex_color);
     $length = strlen($hex);
 
@@ -72,7 +74,7 @@ function simppple_hex_to_hsl(string $hex_color): string {
  *
  * @return array<int, array<string, string>>
  */
-function simppple_get_custom_color_palette_hsl(): array {
+function get_custom_color_palette_hsl(): array {
     $active_theme_slug = get_stylesheet();
     $custom_styles = get_posts([
         'name' => "wp-global-styles-{$active_theme_slug}",
@@ -92,10 +94,10 @@ function simppple_get_custom_color_palette_hsl(): array {
 /**
  * Add HSL values to CSS variables in theme.json
  *
- * @param WP_Theme_JSON_Data $theme_json Theme JSON data object
- * @return WP_Theme_JSON_Data Modified theme JSON data
+ * @param \WP_Theme_JSON_Data $theme_json Theme JSON data object
+ * @return \WP_Theme_JSON_Data Modified theme JSON data
  */
-function simppple_add_HSL_values_to_CSS_variables(WP_Theme_JSON_Data $theme_json): WP_Theme_JSON_Data {
+function add_HSL_values_to_CSS_variables(\WP_Theme_JSON_Data $theme_json): \WP_Theme_JSON_Data {
     $data = $theme_json->get_data();
 
     if (empty($data) || !isset($data['settings']['color']['palette']['theme'])) {
@@ -106,7 +108,7 @@ function simppple_add_HSL_values_to_CSS_variables(WP_Theme_JSON_Data $theme_json
     $color_palette = $data['settings']['color']['palette']['theme'];
 
     // Get custom colors if they exist
-    $custom_palette = simppple_get_custom_color_palette_hsl();
+    $custom_palette = get_custom_color_palette_hsl();
     if (!empty($custom_palette)) {
         $color_palette = array_map(
             function ($value) use ($custom_palette) {
@@ -137,7 +139,7 @@ function simppple_add_HSL_values_to_CSS_variables(WP_Theme_JSON_Data $theme_json
     // Convert colors to HSL
     foreach ($color_palette as $color) {
         if (!str_contains($color['slug'], '-rgb') && !str_contains($color['slug'], '-hsl')) {
-            $hsl_color_palette["{$color['slug']}-hsl"] = simppple_hex_to_hsl($color['color']);
+            $hsl_color_palette["{$color['slug']}-hsl"] = hex_to_hsl($color['color']);
         }
     }
 
@@ -154,4 +156,4 @@ function simppple_add_HSL_values_to_CSS_variables(WP_Theme_JSON_Data $theme_json
 
     return $theme_json;
 }
-add_filter('wp_theme_json_data_theme', 'simppple_add_HSL_values_to_CSS_variables');
+add_filter('wp_theme_json_data_theme', __NAMESPACE__ . '\add_HSL_values_to_CSS_variables');
