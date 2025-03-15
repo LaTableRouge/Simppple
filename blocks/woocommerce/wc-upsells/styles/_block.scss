@@ -1,62 +1,62 @@
 .woocommerce {
-	.wc-upsells {
-		margin-top: var(--wp--preset--spacing--40);
+  .wc-upsells {
+    margin-top: var(--wp--preset--spacing--40);
 
-		.swiper {
-			width: 100%;
+    .swiper {
+      width: 100%;
 
-			.swiper-wrapper {
-				display: flex;
-				flex-wrap: initial;
-				gap: 0;
+      .swiper-wrapper {
+        display: flex;
+        flex-wrap: initial;
+        gap: 0;
 
-				.swiper-slide {
-					margin-inline-start: 0;
-					clear: none;
-				}
-			}
-		}
+        .swiper-slide {
+          margin-inline-start: 0;
+          clear: none;
+        }
+      }
+    }
 
-		.products {
-			.product {
-				text-align: start;
+    .products {
+      .product {
+        text-align: start;
 
-				.onsale {
-					top: 4px;
-					right: auto;
-					left: 4px;
-					min-width: initial;
-					min-height: initial;
-					margin: 0;
-					padding: 0.25em 0.75em;
-					border: none;
-					border-radius: 3px;
-					background-color: var(--wp--preset--color--accent-2);
-					color: var(--wp--preset--color--white);
-					font-size: var(--wp--preset--font-size--14);
-					font-weight: bold;
-					line-height: initial;
-					text-transform: uppercase;
-				}
+        .onsale {
+          top: 4px;
+          right: auto;
+          left: 4px;
+          min-width: initial;
+          min-height: initial;
+          margin: 0;
+          padding: 0.25em 0.75em;
+          border: none;
+          border-radius: 3px;
+          background-color: var(--wp--preset--color--accent-2);
+          color: var(--wp--preset--color--white);
+          font-size: var(--wp--preset--font-size--14);
+          font-weight: bold;
+          line-height: initial;
+          text-transform: uppercase;
+        }
 
-				img {
-					aspect-ratio: 1 / 1;
-					border-radius: var(--wp--custom--border-radius-picture);
-				}
+        img {
+          aspect-ratio: 1 / 1;
+          border-radius: var(--wp--custom--border-radius-picture);
+        }
 
-				.woocommerce-loop-product__title {
-					font-size: var(--wp--preset--font-size--16);
-				}
+        .woocommerce-loop-product__title {
+          font-size: var(--wp--preset--font-size--16);
+        }
 
-				.price {
-					font-size: var(--wp--preset--font-size--20);
-					font-weight: bold;
-				}
+        .price {
+          font-size: var(--wp--preset--font-size--20);
+          font-weight: bold;
+        }
 
-				.add_to_cart_button {
-					display: inline-block;
-				}
-			}
-		}
-	}
+        .add_to_cart_button {
+          display: inline-block;
+        }
+      }
+    }
+  }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Vite integration for WordPress theme
  *
@@ -120,7 +121,7 @@ function enqueue_style(string $fileThemePath, string $hookBuild, string|false $h
         return;
     }
 
-    if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT === true) {
+    if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT) {
         $themePath = parse_url(get_template_directory_uri(), PHP_URL_PATH);
         add_action($hookDev, function () use ($themePath, $fileThemePath): void {
             printf(
@@ -184,7 +185,7 @@ function enqueue_script(
         return;
     }
 
-    if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT === true) {
+    if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT) {
         $themePath = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 
         remove_action($hookDev, __NAMESPACE__ . '\enqueue_dev_dependencies');

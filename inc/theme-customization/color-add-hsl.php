@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Add HSL color values to theme.json
  *

@@ -1,9 +1,9 @@
 body.page__checkout,
 body[class*='page__commander'] {
-	& > .wp-site-blocks {
-		& > main {
-			container-type: inline-size;
-			container-name: page-checkout;
-		}
-	}
+  & > .wp-site-blocks {
+    & > main {
+      container-type: inline-size;
+      container-name: page-checkout;
+    }
+  }
 }

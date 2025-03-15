@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Register block pattern categories
  *

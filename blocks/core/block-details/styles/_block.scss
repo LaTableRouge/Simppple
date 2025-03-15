@@ -1,57 +1,57 @@
 .wp-block-details {
-	--cross-size: 20px;
+  --cross-size: 20px;
 
-	summary {
-		display: flex;
-		position: relative;
-		padding-block: 10px;
-		padding-inline-start: 30px;
-		padding-inline-end: 20px;
-		font-size: var(--wp--preset--font-size--18);
-		cursor: pointer;
-		user-select: none;
+  summary {
+    display: flex;
+    position: relative;
+    padding-block: 10px;
+    padding-inline-start: 30px;
+    padding-inline-end: 20px;
+    font-size: var(--wp--preset--font-size--18);
+    cursor: pointer;
+    user-select: none;
 
-		&::-webkit-details-marker {
-			display: none;
-		}
+    &::-webkit-details-marker {
+      display: none;
+    }
 
-		&:focus {
-			outline: solid 3px var(--highlight);
-		}
+    &:focus {
+      outline: solid 3px var(--highlight);
+    }
 
-		&::selection {
-			background-color: var(--highlight);
-		}
+    &::selection {
+      background-color: var(--highlight);
+    }
 
-		&::before,
-		&::after {
-			content: '';
-			position: absolute;
-			top: 50%;
-			inset-inline-start: 0;
-			width: var(--cross-size);
-			height: calc(var(--cross-size) / 4);
-			border-radius: 5px;
-			background-color: var(--wp--preset--color--accent-2);
-		}
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      inset-inline-start: 0;
+      width: var(--cross-size);
+      height: calc(var(--cross-size) / 4);
+      border-radius: 5px;
+      background-color: var(--wp--preset--color--accent-2);
+    }
 
-		&::before {
-			transform: translateY(-50%) rotate(180deg);
-			transition: var(--nomotion, transform 0.2s ease-in-out);
-		}
+    &::before {
+      transform: translateY(-50%) rotate(180deg);
+      transition: var(--nomotion, transform 0.2s ease-in-out);
+    }
 
-		&::after {
-			transform: translateY(-50%) rotate(90deg);
-			transition: var(--nomotion, transform 0.3s ease-in-out);
-		}
-	}
+    &::after {
+      transform: translateY(-50%) rotate(90deg);
+      transition: var(--nomotion, transform 0.3s ease-in-out);
+    }
+  }
 
-	&[open] {
-		summary {
-			&::after,
-			&::before {
-				transform: translateY(-50%) rotate(0deg);
-			}
-		}
-	}
+  &[open] {
+    summary {
+      &::after,
+      &::before {
+        transform: translateY(-50%) rotate(0deg);
+      }
+    }
+  }
 }

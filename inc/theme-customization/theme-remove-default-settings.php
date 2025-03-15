@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Remove default WordPress theme settings
  *

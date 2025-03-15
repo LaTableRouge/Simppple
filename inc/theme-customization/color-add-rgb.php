@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Add RGB color values to theme.json
  *
