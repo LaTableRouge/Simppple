@@ -3,6 +3,7 @@
 @use '../abstracts/functions' as *;
 @use '../abstracts/responsive' as *;
 @use '../abstracts/variables';
+@use '../base/fonts';
 
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass root properties.
@@ -62,7 +63,7 @@
 		}
 	}
 
-	@each $icon, $value in variables.$icons {
+	@each $icon, $value in fonts.$icons {
 		@if (meta.type-of($value) == 'map') {
 			$dirs: $value;
 

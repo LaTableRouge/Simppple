@@ -1,104 +1,124 @@
 <?php
 
+/**
+ * Add RGB color values to theme.json
+ *
+ * @package Simppple
+ * @subpackage ThemeCustomization
+ */
+
+declare(strict_types=1);
+
+namespace Simppple\ThemeCustomization;
+
 if (!defined('ABSPATH')) {
     exit;
 }
 
-// https://fullsiteediting.com/lessons/how-to-filter-theme-json-with-php/
-function simppple_add_RGB_values_to_CSS_variables($themeJSON) {
-    $data = $themeJSON->get_data();
+/**
+ * Convert hex color to RGB values
+ *
+ * @param string $hex_color Hex color code
+ * @return string RGB color values
+ */
+function hex_to_rgb(string $hex_color): string {
+    $hex = str_replace('#', '', $hex_color);
+    $length = strlen($hex);
 
-    if (!empty($data)) {
+    $rgb = $length > 3
+        ? str_split($hex, 2)
+        : str_split($hex);
 
-        if (isset($data['settings']['color']['palette']['theme'])) {
-            $rgbColorPalette = [];
+    $rgb = array_map('hexdec', $rgb);
 
-            $colorPalette = $data['settings']['color']['palette']['theme'];
+    return implode(',', $rgb);
+}
 
-            if (!empty($colorPalette)) {
-                // Query the global styles to find custom color palettes
-                $customStyles = false;
-                $activeThemeSlug = get_stylesheet();
-                $dbCustomStyles = get_posts([
-                    'name' => "wp-global-styles-{$activeThemeSlug}",
-                    'post_type' => 'wp_global_styles',
-                    'post_status' => 'publish'
-                ]);
+/**
+ * Get custom color palette from global styles
+ *
+ * @return array<int, array<string, string>>
+ */
+function get_custom_color_palette_rgb(): array {
+    $active_theme_slug = get_stylesheet();
+    $custom_styles = get_posts([
+        'name' => "wp-global-styles-{$active_theme_slug}",
+        'post_type' => 'wp_global_styles',
+        'post_status' => 'publish'
+    ]);
 
-                if (!empty($dbCustomStyles)) {
-                    $customStyles = json_decode($dbCustomStyles[0]->post_content, true);
-                }
+    if (empty($custom_styles)) {
+        return [];
+    }
 
-                // find occurences in custom palette and replace them in the original one
-                if ($customStyles && isset($customStyles['settings']['color']['palette']['theme'])) {
-                    $customPalette = $customStyles['settings']['color']['palette']['theme'];
+    $styles = json_decode($custom_styles[0]->post_content, true);
 
-                    $colorPalette = array_map(function ($value) use ($customPalette) {
-                        $customValueKey = array_search($value['slug'], array_column($customPalette, 'slug'));
+    return $styles['settings']['color']['palette']['theme'] ?? [];
+}
 
-                        return $customValueKey ? $customPalette[$customValueKey] : $value;
-                    }, $colorPalette);
-                }
+/**
+ * Add RGB values to CSS variables in theme.json
+ *
+ * @param \WP_Theme_JSON_Data $theme_json Theme JSON data object
+ * @return \WP_Theme_JSON_Data Modified theme JSON data
+ */
+function add_RGB_values_to_CSS_variables(\WP_Theme_JSON_Data $theme_json): \WP_Theme_JSON_Data {
+    $data = $theme_json->get_data();
 
-                if (array_key_exists('custom', $data['settings'])) {
-                    $colorsPaletteCustom = $data['settings']['custom'];
-                    if (!empty($colorsPaletteCustom)) {
-                        $colorsPaletteCustom = array_filter(
-                            $colorsPaletteCustom,
-                            function ($value, $key) {
-                                return stripos($key, 'color-') !== false;
-                            },
-                            ARRAY_FILTER_USE_BOTH
-                        );
+    if (empty($data) || !isset($data['settings']['color']['palette']['theme'])) {
+        return $theme_json;
+    }
 
-                        $tempArray = [];
-                        if (!empty($colorsPaletteCustom)) {
-                            foreach ($colorsPaletteCustom as $key => $value) {
-                                $tempArray[] = [
-                                    'color' => $value,
-                                    'slug' => substr($key, strlen('color-'))
-                                ];
-                            }
-                        }
+    $rgb_color_palette = [];
+    $color_palette = $data['settings']['color']['palette']['theme'];
 
-                        $colorPalette = array_merge($colorPalette, $tempArray);
-                    }
-                }
+    // Get custom colors if they exist
+    $custom_palette = get_custom_color_palette_rgb();
+    if (!empty($custom_palette)) {
+        $color_palette = array_map(
+            function ($value) use ($custom_palette) {
+                $custom_value_key = array_search($value['slug'], array_column($custom_palette, 'slug'));
 
-                // Loop through color palette
-                foreach ($colorPalette as $color) {
-                    if (!str_contains($color['slug'], '-hsl') && !str_contains($color['slug'], '-rgb')) {
-                        // Convert values in rgb
-                        $hexColor = str_replace('#', '', $color['color']);
-                        if (strlen($hexColor) > 3) {
-                            $tempColor = str_split($hexColor, 2);
-                        } else {
-                            $tempColor = str_split($hexColor);
-                        }
-                        $rgbColor = hexdec($tempColor[0]) . ',' . hexdec($tempColor[1]) . ',' . hexdec($tempColor[2]);
+                return $custom_value_key !== false ? $custom_palette[$custom_value_key] : $value;
+            },
+            $color_palette
+        );
+    }
 
-                        $rgbColorPalette["{$color['slug']}-rgb"] = $rgbColor;
-                    }
-                }
-            }
+    // Add custom colors from settings if they exist
+    if (isset($data['settings']['custom'])) {
+        $custom_colors = array_filter(
+            $data['settings']['custom'],
+            fn($key) => str_starts_with($key, 'color-'),
+            ARRAY_FILTER_USE_KEY
+        );
 
-            if (!empty($rgbColorPalette)) {
-                // Sort array
-                ksort($rgbColorPalette);
-
-                // Update interpreted theme.json values
-                return $themeJSON->update_with(
-                    [
-                        'version' => 2,
-                        'settings' => [
-                            'custom' => $rgbColorPalette,
-                        ],
-                    ]
-                );
-            }
+        foreach ($custom_colors as $key => $value) {
+            $color_palette[] = [
+                'color' => $value,
+                'slug' => substr($key, strlen('color-'))
+            ];
         }
     }
 
-    return $themeJSON;
+    // Convert colors to RGB
+    foreach ($color_palette as $color) {
+        if (!str_contains($color['slug'], '-rgb') && !str_contains($color['slug'], '-hsl')) {
+            $rgb_color_palette["{$color['slug']}-rgb"] = hex_to_rgb($color['color']);
+        }
+    }
+
+    if (!empty($rgb_color_palette)) {
+        ksort($rgb_color_palette);
+
+        return $theme_json->update_with([
+            'version' => 2,
+            'settings' => [
+                'custom' => $rgb_color_palette,
+            ],
+        ]);
+    }
+
+    return $theme_json;
 }
-add_filter('wp_theme_json_data_theme', 'simppple_add_RGB_values_to_CSS_variables');
+add_filter('wp_theme_json_data_theme', __NAMESPACE__ . '\add_RGB_values_to_CSS_variables');

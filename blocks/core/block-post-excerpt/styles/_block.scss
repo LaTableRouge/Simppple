@@ -1,45 +1,45 @@
 .wp-block-post-excerpt {
-	$line-number: 3;
+  $line-number: 3;
 
-	&__excerpt {
-		@supports (-webkit-line-clamp: #{$line-number}) {
-			display: -webkit-box;
-			-webkit-box-orient: vertical;
-			-webkit-line-clamp: #{$line-number};
-			overflow: hidden;
-		}
+  &__excerpt {
+    @supports (-webkit-line-clamp: #{$line-number}) {
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: #{$line-number};
+      overflow: hidden;
+    }
 
-		@supports not (-webkit-line-clamp: #{$line-number}) {
-			height: 70px;
-			overflow: hidden;
-		}
-	}
+    @supports not (-webkit-line-clamp: #{$line-number}) {
+      height: 70px;
+      overflow: hidden;
+    }
+  }
 
-	&__more-text {
-		.wp-block-post-excerpt__more-link {
-			display: flex;
-			margin-top: var(--wp--preset--spacing--40);
-			font-weight: normal;
-			font-weight: 600;
-			text-decoration: none;
+  &__more-text {
+    .wp-block-post-excerpt__more-link {
+      display: flex;
+      margin-top: var(--wp--preset--spacing--40);
+      font-weight: normal;
+      font-weight: 600;
+      text-decoration: none;
 
-			&:hover {
-				&::after {
-					margin-inline-start: 10px;
-				}
-			}
+      &:hover {
+        &::after {
+          margin-inline-start: 10px;
+        }
+      }
 
-			&::after {
-				content: var(--icon-arrow-right-plain);
-				margin-inline-start: 5px;
-				transition: var(--nomotion, margin-inline-start 0.2s ease-in-out);
-				font-family: var(--font-icons);
-				font-weight: normal;
+      &::after {
+        content: var(--icon-arrow-right-plain);
+        margin-inline-start: 5px;
+        transition: var(--nomotion, margin-inline-start 0.2s ease-in-out);
+        font-family: var(--font-icons);
+        font-weight: normal;
 
-				html[dir='rtl'] & {
-					content: var(--icon-arrow-left-plain);
-				}
-			}
-		}
-	}
+        html[dir='rtl'] & {
+          content: var(--icon-arrow-left-plain);
+        }
+      }
+    }
+  }
 }

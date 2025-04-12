@@ -1,10 +1,10 @@
 .wp-block-button {
-	&.is-style-outline {
-		.wp-element-button {
-			&:hover,
-			&:focus {
-				background-color: hsla(var(--wp--custom--accent-2-hsl), 0.2);
-			}
-		}
-	}
+  &.is-style-outline {
+    .wp-element-button {
+      &:hover,
+      &:focus {
+        background-color: hsla(var(--wp--custom--accent-2-hsl), 0.2);
+      }
+    }
+  }
 }

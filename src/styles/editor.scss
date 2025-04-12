@@ -28,8 +28,10 @@
 @use 'components/notification';
 
 .editor-styles-wrapper {
-	@include meta.load-css('../../blocks/**/styles/_block.scss');
-	@include meta.load-css('../../blocks/**/styles/_editor.scss');
-	@include meta.load-css('../../patterns/**/styles/_pattern.scss');
-	@include meta.load-css('../../patterns/**/styles/_editor.scss');
+  // stylelint-disable scss/load-no-partial-leading-underscore
+  @include meta.load-css('../../blocks/**/styles/_block.scss');
+  @include meta.load-css('../../blocks/**/styles/_editor.scss');
+  @include meta.load-css('../../patterns/**/styles/_pattern.scss');
+  @include meta.load-css('../../patterns/**/styles/_editor.scss');
+  // stylelint-enable scss/load-no-partial-leading-underscore
 }

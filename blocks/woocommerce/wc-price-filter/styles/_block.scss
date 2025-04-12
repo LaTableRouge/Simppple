@@ -1,19 +1,19 @@
 .wc-block-price-filter {
-	&__range-input-wrapper {
-		z-index: 0;
+  &__range-input-wrapper {
+    z-index: 0;
 
-		.wc-block-price-filter__range-input-progress {
-			left: initial;
-			inset-inline-start: 0;
+    .wc-block-price-filter__range-input-progress {
+      left: initial;
+      inset-inline-start: 0;
 
-			html[dir='rtl'] & {
-				--track-background: linear-gradient(to left, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 100% /100% 100%;
-			}
-		}
+      html[dir='rtl'] & {
+        --track-background: linear-gradient(to left, transparent var(--low), var(--range-color) 0, var(--range-color) var(--high), transparent 0) no-repeat 0 100% /100% 100%;
+      }
+    }
 
-		.wc-block-price-filter__range-input {
-			left: initial;
-			inset-inline-start: 0;
-		}
-	}
+    .wc-block-price-filter__range-input {
+      left: initial;
+      inset-inline-start: 0;
+    }
+  }
 }

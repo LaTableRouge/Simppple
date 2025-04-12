@@ -1,20 +1,20 @@
 @use '/src/styles/abstracts/responsive' as *;
 
 body.single {
-	main {
-		& > .wp-block-post-featured-image {
-			aspect-ratio: 16 / 9;
-			overflow: hidden;
+  main {
+    & > .wp-block-post-featured-image {
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
 
-			@include media-breakpoint-up(lg) {
-				aspect-ratio: 1920 / 555;
-			}
+      @include media-breakpoint-up(lg) {
+        aspect-ratio: 1920 / 555;
+      }
 
-			img {
-				height: 100%;
-				object-fit: cover;
-				object-position: bottom;
-			}
-		}
-	}
+      img {
+        height: 100%;
+        object-fit: cover;
+        object-position: bottom;
+      }
+    }
+  }
 }

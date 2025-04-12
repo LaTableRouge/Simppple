@@ -1,40 +1,13 @@
-@use '/src/fonts/icomoon/variables' as icomoon;
-
 // Img
-$pictures-path: '../img';
+$pictures-path: '/src/img';
 
 //Fonts
-$fonts-path: '../fonts';
-$icomoon-font-path: '#{$fonts-path}/icomoon/fonts';
+$fonts-path: '/src/fonts';
 // Inside a modern Wordpress theme, text fonts are defined in the theme.json file. Use the css variables instead
 $fonts: (
 	'icons': (
-		'name': icomoon.$icomoon-font-family
+		'name': 'icomoon'
 	)
-);
-
-$icons: (
-	'filter': icomoon.$icon-simppple-filter,
-	'mail': icomoon.$icon-simppple-mail,
-	'phone': icomoon.$icon-simppple-phone,
-	'check': icomoon.$icon-simppple-check,
-	'eye': icomoon.$icon-simppple-eye,
-	'cross': icomoon.$icon-simppple-cross,
-	'information': icomoon.$icon-simppple-information,
-	'search': icomoon.$icon-simppple-search,
-	'heart': icomoon.$icon-simppple-heart,
-	'cart': icomoon.$icon-simppple-cart,
-	'arrow-left': icomoon.$icon-simppple-arrow-left,
-	'arrow-right': icomoon.$icon-simppple-arrow-right,
-	'arrow-left-plain': icomoon.$icon-simppple-arrow-left-plain,
-	'arrow-right-plain': icomoon.$icon-simppple-arrow-right-plain,
-	'facebook': icomoon.$icon-simppple-facebook,
-	'instagram': icomoon.$icon-simppple-instagram,
-	'linkedin': icomoon.$icon-simppple-linkedin,
-	'twitter': icomoon.$icon-simppple-twitter,
-	'youtube': icomoon.$icon-simppple-youtube,
-	'user': icomoon.$icon-simppple-user,
-	'quote': icomoon.$icon-simppple-quote
 );
 
 // Font-sizes must be converted to rem, use function calculateRem or min-max-interpolation

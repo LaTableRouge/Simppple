@@ -6,7 +6,7 @@ import { getHeaderHeight } from './components/header'
 import { inputNumber } from './components/html-components/input-quantity'
 import { pictureErrorHandler } from './components/picture-error'
 
-window.addEventListener('DOMContentLoaded', (e) => {
+window.addEventListener('DOMContentLoaded', () => {
 	/*
 	 * Add usefull values to css
 	 * - scrollbar size

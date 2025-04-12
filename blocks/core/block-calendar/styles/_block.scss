@@ -1,47 +1,47 @@
 .wp-block-calendar {
-	table.wp-calendar-table {
-		caption {
-			margin-block-end: var(--wp--preset--spacing--10);
-		}
+  table.wp-calendar-table {
+    caption {
+      margin-block-end: var(--wp--preset--spacing--10);
+    }
 
-		&:not(.has-background) {
-			--primary-bg-color: var(--wp--preset--color--base);
-			--secondary-bg-color: var(--wp--preset--color--contrast);
+    &:not(.has-background) {
+      --primary-bg-color: var(--wp--preset--color--base);
+      --secondary-bg-color: var(--wp--preset--color--contrast);
 
-			thead {
-				tr {
-					th {
-						background-color: var(--secondary-bg-color);
-					}
-				}
-			}
+      thead {
+        tr {
+          th {
+            background-color: var(--secondary-bg-color);
+          }
+        }
+      }
 
-			tbody {
-				tr {
-					td {
-						background-color: var(--primary-bg-color);
-					}
-				}
-			}
-		}
+      tbody {
+        tr {
+          td {
+            background-color: var(--primary-bg-color);
+          }
+        }
+      }
+    }
 
-		&:not(.has-text-color) {
-			--primary-color: var(--wp--preset--color--contrast);
-			--secondary-color: var(--wp--preset--color--base);
+    &:not(.has-text-color) {
+      --primary-color: var(--wp--preset--color--contrast);
+      --secondary-color: var(--wp--preset--color--base);
 
-			color: var(--primary-color);
+      color: var(--primary-color);
 
-			thead {
-				tr {
-					th {
-						color: var(--secondary-color);
-					}
-				}
-			}
-		}
-	}
+      thead {
+        tr {
+          th {
+            color: var(--secondary-color);
+          }
+        }
+      }
+    }
+  }
 
-	.wp-calendar-nav {
-		margin-block-start: var(--wp--preset--spacing--10);
-	}
+  .wp-calendar-nav {
+    margin-block-start: var(--wp--preset--spacing--10);
+  }
 }

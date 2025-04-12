@@ -1,8 +1,8 @@
 .woocommerce-order-confirmation-address-wrapper {
-	.wc-block-order-confirmation-shipping-address,
-	.wc-block-order-confirmation-billing-address {
-		border: 1px solid var(--wp--preset--color--contrast-3);
-		border-radius: var(--wp--custom--border-radius-form);
-		color: var(--wp--preset--color--contrast-2);
-	}
+  .wc-block-order-confirmation-shipping-address,
+  .wc-block-order-confirmation-billing-address {
+    border: 1px solid var(--wp--preset--color--contrast-3);
+    border-radius: var(--wp--custom--border-radius-form);
+    color: var(--wp--preset--color--contrast-2);
+  }
 }

@@ -1,19 +1,19 @@
 @use '/src/styles/abstracts/responsive' as *;
 
 .pattern---header-main-section {
-	$menu-responsive-breakpoint: lg;
+  $menu-responsive-breakpoint: lg;
 
-	& > .wp-block-navigation {
-		.wp-block-navigation__responsive-container {
-			.wp-block-navigation__responsive-container-content {
-				.wp-block-navigation__container {
-					.wp-block-site-logo {
-						@include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-							display: none;
-						}
-					}
-				}
-			}
-		}
-	}
+  & > .wp-block-navigation {
+    .wp-block-navigation__responsive-container {
+      .wp-block-navigation__responsive-container-content {
+        .wp-block-navigation__container {
+          .wp-block-site-logo {
+            @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }

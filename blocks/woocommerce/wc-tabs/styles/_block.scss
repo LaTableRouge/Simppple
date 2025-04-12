@@ -1,127 +1,127 @@
 .woocommerce {
-	.wp-block-woocommerce-product-details {
-		.woocommerce-tabs.wc-tabs-wrapper {
-			ul.wc-tabs {
-				display: flex;
-				padding: 0;
-				border-bottom: 1px solid var(--wp--preset--color--accent-2);
-				border-color: var(--wp--preset--color--accent-2);
-				font-size: var(--wp--preset--font-size--14);
+  .wp-block-woocommerce-product-details {
+    .woocommerce-tabs.wc-tabs-wrapper {
+      ul.wc-tabs {
+        display: flex;
+        padding: 0;
+        border-bottom: 1px solid var(--wp--preset--color--accent-2);
+        border-color: var(--wp--preset--color--accent-2);
+        font-size: var(--wp--preset--font-size--14);
 
-				&::before {
-					content: none;
-				}
+        &::before {
+          content: none;
+        }
 
-				li {
-					margin: 0;
-					border: none;
-					border-top: 1px solid var(--wp--preset--color--accent-2);
-					border-inline-start: 1px solid var(--wp--preset--color--accent-2);
-					border-radius: 0;
-					background-color: var(--wp--preset--color--white);
-					// color: var(--wp--preset--color--base-2);
+        li {
+          margin: 0;
+          border: none;
+          border-top: 1px solid var(--wp--preset--color--accent-2);
+          border-inline-start: 1px solid var(--wp--preset--color--accent-2);
+          border-radius: 0;
+          background-color: var(--wp--preset--color--white);
+          // color: var(--wp--preset--color--base-2);
 
-					&::before,
-					&::after {
-						content: none;
-					}
+          &::before,
+          &::after {
+            content: none;
+          }
 
-					&:last-child {
-						border-inline-end: 1px solid var(--wp--preset--color--accent-2);
-					}
+          &:last-child {
+            border-inline-end: 1px solid var(--wp--preset--color--accent-2);
+          }
 
-					&.active {
-						background-color: hsla(var(--wp--custom--accent-hsl), 0.1);
-						color: var(--wp--preset--color--contrast-2);
-					}
+          &.active {
+            background-color: hsla(var(--wp--custom--accent-hsl), 0.1);
+            color: var(--wp--preset--color--contrast-2);
+          }
 
-					a {
-						color: inherit;
-					}
-				}
-			}
+          a {
+            color: inherit;
+          }
+        }
+      }
 
-			.woocommerce-Tabs-panel {
-				margin-bottom: var(--wp--preset--spacing--30);
+      .woocommerce-Tabs-panel {
+        margin-bottom: var(--wp--preset--spacing--30);
 
-				&--reviews {
-					ol.commentlist {
-						li.comment {
-							.comment_container {
-								img.avatar {
-									left: initial;
-									width: 40px !important;
-									padding: 0 !important;
-									float: initial;
-									inset-inline-start: 0;
-								}
+        &--reviews {
+          ol.commentlist {
+            li.comment {
+              .comment_container {
+                img.avatar {
+                  left: initial;
+                  width: 40px !important;
+                  padding: 0 !important;
+                  float: initial;
+                  inset-inline-start: 0;
+                }
 
-								.comment-text {
-									margin: 0 !important;
-									margin-inline-start: 50px !important;
-									border-top-left-radius: 0 !important;
-								}
-							}
-						}
-					}
+                .comment-text {
+                  margin: 0 !important;
+                  margin-inline-start: 50px !important;
+                  border-top-left-radius: 0 !important;
+                }
+              }
+            }
+          }
 
-					.comment-respond {
-						.comment-form {
-							.comment-form-rating {
-								margin-top: var(--wp--preset--spacing--10);
+          .comment-respond {
+            .comment-form {
+              .comment-form-rating {
+                margin-top: var(--wp--preset--spacing--10);
 
-								& > label {
-									display: block;
-									margin-bottom: 0.2rem;
-								}
-							}
+                & > label {
+                  display: block;
+                  margin-bottom: 0.2rem;
+                }
+              }
 
-							.comment-form-cookies-consent {
-								padding-top: var(--wp--preset--spacing--10);
-							}
+              .comment-form-cookies-consent {
+                padding-top: var(--wp--preset--spacing--10);
+              }
 
-							.form-submit {
-								padding-top: var(--wp--preset--spacing--10);
-							}
+              .form-submit {
+                padding-top: var(--wp--preset--spacing--10);
+              }
 
-							& > p {
-								label {
-									.required {
-										color: var(--wp--preset--color--error);
-										font-size: var(--wp--preset--font-size--20);
-									}
-								}
+              & > p {
+                label {
+                  .required {
+                    color: var(--wp--preset--color--error);
+                    font-size: var(--wp--preset--font-size--20);
+                  }
+                }
 
-								input[type='text'],
-								input[type='email'] {
-									display: block;
-								}
-							}
-						}
-					}
-				}
+                input[type='text'],
+                input[type='email'] {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
 
-				&--additional_information {
-					table.woocommerce-product-attributes {
-						border-spacing: 0;
-						border-collapse: separate;
-						border: 1px solid hsla(var(--wp--custom--contrast-hsl), 0.85);
-						border-radius: var(--wp--custom--border-radius-table);
+        &--additional_information {
+          table.woocommerce-product-attributes {
+            border-spacing: 0;
+            border-collapse: separate;
+            border: 1px solid hsla(var(--wp--custom--contrast-hsl), 0.85);
+            border-radius: var(--wp--custom--border-radius-table);
 
-						tbody {
-							tr {
-								&:nth-child(2n + 1) {
-									background: none;
-								}
+            tbody {
+              tr {
+                &:nth-child(2n + 1) {
+                  background: none;
+                }
 
-								&:nth-child(2n) {
-									background-color: var(--bg-head-foot-color, hsla(var(--wp--custom--base-3-hsl), 0.85));
-								}
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+                &:nth-child(2n) {
+                  background-color: var(--bg-head-foot-color, hsla(var(--wp--custom--base-3-hsl), 0.85));
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
