@@ -121,7 +121,6 @@ function enqueue_style(string $fileThemePath, string $hookBuild, string|false $h
         return;
     }
 
-    // @phpstan-ignore-next-line booleanAnd.rightAlwaysFalse
     if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT) {
         $themePath = parse_url(get_template_directory_uri(), PHP_URL_PATH);
         add_action($hookDev, function () use ($themePath, $fileThemePath): void {
@@ -149,7 +148,7 @@ function enqueue_style(string $fileThemePath, string $hookBuild, string|false $h
                 $fileSlug,
                 $filePath,
                 [],
-                '1.2.4',
+                '1.2.5',
                 'all'
             );
         },
@@ -186,7 +185,6 @@ function enqueue_script(
         return;
     }
 
-    // @phpstan-ignore-next-line booleanAnd.rightAlwaysFalse
     if (defined('SIMPPPLE_IS_VITE_DEVELOPMENT') && SIMPPPLE_IS_VITE_DEVELOPMENT) {
         $themePath = parse_url(get_template_directory_uri(), PHP_URL_PATH);
 
@@ -217,7 +215,7 @@ function enqueue_script(
                         $style['slug'],
                         $style['path'],
                         [],
-                        '1.2.4',
+                        '1.2.5',
                         'all'
                     );
                 },
@@ -236,7 +234,7 @@ function enqueue_script(
                 $fileSlug,
                 $filePath,
                 ['wp-i18n', 'jquery'],
-                '1.2.4',
+                '1.2.5',
                 [
                     'in_footer' => $footerEnqueue,
                     'strategy' => 'defer'
