@@ -1,6 +1,6 @@
 {
 	"name": "simppple",
-	"version": "1.2.4",
+	"version": "1.2.5",
 	"description": "A simple basic gutenberg theme",
 	"main": "vite.config.mjs",
 	"keywords": [
@@ -34,7 +34,7 @@
 		"@mlnop/string-replace": "^2.0.0",
 		"@mlnop/vite-plugin-sass-glob-import": "^6.0.0",
 		"@types/swiper": "^6.0.0",
-		"@wordpress/scripts": "^30.13.0",
+		"@wordpress/scripts": "^30.15.0",
 		"autoprefixer": "^10.4.21",
 		"browserslist": "^4.24.4",
 		"eslint": "^8.57.1",
