@@ -18,10 +18,9 @@ if (!defined('ABSPATH')) {
 /**
  * Remove default values from CSS variables in theme.json
  *
- * @param \WP_Theme_JSON_Data $theme_json Theme JSON data object
- * @return \WP_Theme_JSON_Data Modified theme JSON data
+ * @param  $theme_json Theme JSON data object
  */
-function remove_default_values_from_CSS_variables(\WP_Theme_JSON_Data $theme_json): \WP_Theme_JSON_Data {
+function remove_default_values_from_CSS_variables($theme_json) {
     $data = $theme_json->get_data();
 
     if (empty($data)) {

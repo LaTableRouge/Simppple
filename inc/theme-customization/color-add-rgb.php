@@ -59,10 +59,9 @@ function get_custom_color_palette_rgb(): array {
 /**
  * Add RGB values to CSS variables in theme.json
  *
- * @param \WP_Theme_JSON_Data $theme_json Theme JSON data object
- * @return \WP_Theme_JSON_Data Modified theme JSON data
+ * @param $theme_json Theme JSON data object
  */
-function add_RGB_values_to_CSS_variables(\WP_Theme_JSON_Data $theme_json): \WP_Theme_JSON_Data {
+function add_RGB_values_to_CSS_variables($theme_json) {
     $data = $theme_json->get_data();
 
     if (empty($data) || !isset($data['settings']['color']['palette']['theme'])) {
