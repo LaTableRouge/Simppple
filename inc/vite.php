@@ -148,7 +148,7 @@ function enqueue_style(string $fileThemePath, string $hookBuild, string|false $h
                 $fileSlug,
                 $filePath,
                 [],
-                '1.2.5',
+                '1.2.6',
                 'all'
             );
         },
@@ -215,7 +215,7 @@ function enqueue_script(
                         $style['slug'],
                         $style['path'],
                         [],
-                        '1.2.5',
+                        '1.2.6',
                         'all'
                     );
                 },
@@ -234,7 +234,7 @@ function enqueue_script(
                 $fileSlug,
                 $filePath,
                 ['wp-i18n', 'jquery'],
-                '1.2.5',
+                '1.2.6',
                 [
                     'in_footer' => $footerEnqueue,
                     'strategy' => 'defer'

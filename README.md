@@ -2,7 +2,7 @@
 
 ![WordPress Version](https://img.shields.io/badge/wordpress-%3E%3D%206.5-blue)
 ![Node](https://img.shields.io/badge/node-%3E%3D%2022-brightgreen)
-![PHP](https://img.shields.io/badge/php-%5E7.4-blue)
+![PHP](https://img.shields.io/badge/php-%5E8.0-blue)
 
 Simppple is a Wordpress theme designed to be flexible, versatile and applicable to any website.
 Its collection of templates and patterns tailor to different needs.
