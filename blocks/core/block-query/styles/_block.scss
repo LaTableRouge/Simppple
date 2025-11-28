@@ -1,5 +1,5 @@
-@use '/src/styles/abstracts/responsive' as *;
-@use '/src/styles/components/html-components/button' as button;
+@use '../../../../src/styles/abstracts/responsive' as *;
+@use '../../../../src/styles/components/html-components/button' as button;
 
 .wp-block-query:not(.wc-related-products) {
   container-type: inline-size;

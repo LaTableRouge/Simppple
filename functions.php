@@ -12,16 +12,21 @@ define('SIMPPPLE_IS_VITE_DEVELOPMENT', false);
  * ================================
  *  THEME FUNCTIONS
  */
+use Simppple\Vite\Vite;
+
 require_once get_template_directory() . '/inc/vite.php';
+
+$vite = new Vite();
+
 // Front assets
-Vite\enqueue_script('/src/scripts/parts.js', 'wp_enqueue_scripts', 'wp_footer', false, 'module');
-Vite\enqueue_script('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer', false, '');
+$vite->enqueueScript('/src/scripts/parts.js', 'wp_enqueue_scripts', 'wp_footer', false, 'module');
+$vite->enqueueScript('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer', false, '');
 
 // Admin assets
-Vite\enqueue_script('/src/scripts/admin.js', 'admin_enqueue_scripts', 'admin_footer');
+$vite->enqueueScript('/src/scripts/admin.js', 'admin_enqueue_scripts', 'admin_footer');
 
 // Editor assets
-Vite\enqueue_script('/src/scripts/editor.js', 'enqueue_block_editor_assets');
+$vite->enqueueScript('/src/scripts/editor.js', 'enqueue_block_editor_assets');
 
 // Theme customization
 require_once get_template_directory() . '/inc/theme-customization/wp_customization.php';
@@ -31,3 +36,4 @@ require_once get_template_directory() . '/inc/theme-customization/color-add-hsl.
 
 // Patterns
 require_once get_template_directory() . '/inc/patterns/categories-register.php';
+
