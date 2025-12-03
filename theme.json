@@ -548,6 +548,11 @@
 				}
 			},
 			"core/loginout": {},
+			"core/math": {
+				"typography": {
+					"fontSize": "var(--wp--preset--font-size--26)"
+				}
+			},
 			"core/media-text": {},
 			"core/missing": {},
 			"core/more": {},
