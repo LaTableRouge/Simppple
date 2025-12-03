@@ -1,4 +1,4 @@
-@use '/src/styles/abstracts/responsive' as *;
+@use '../../../../src/styles/abstracts/responsive' as *;
 
 .wp-block-woocommerce-cart {
   .wc-block-cart {
@@ -16,6 +16,7 @@
 
       table.wc-block-cart-items {
         border-collapse: collapse;
+        border-bottom: none;
 
         tr {
           display: revert;
@@ -213,6 +214,10 @@
             }
 
             &.wc-block-cart-item__total {
+              display: table-cell;
+              margin: 0;
+              vertical-align: bottom;
+
               .wc-block-cart-item__total-price-and-sale-badge-wrapper {
                 .wc-block-components-product-price {
                   font-weight: bold;

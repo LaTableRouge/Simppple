@@ -1,5 +1,5 @@
-@use '/src/styles/abstracts/responsive' as *;
-@use '/src/styles/components/title' as title;
+@use '../../../src/styles/abstracts/responsive' as *;
+@use '../../../src/styles/components/title' as title;
 
 body.woocommerce-account,
 body.page-template-my-account {

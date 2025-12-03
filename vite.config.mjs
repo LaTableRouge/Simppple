@@ -1,7 +1,8 @@
+import { resolve } from 'path'
+
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import sassGlobImports from '@mlnop/vite-plugin-sass-glob-import'
 import autoprefixer from 'autoprefixer'
-import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
@@ -261,11 +262,11 @@ export default defineConfig(async ({ command }) => {
 
 		esbuild: isProduction
 			? {
-				minifyIdentifiers: false,
-				keepNames: true,
-				pure: ['console.log'],
-				reserveProps: /^__\(*$/
-			}
+					minifyIdentifiers: false,
+					keepNames: true,
+					pure: ['console.log'],
+					reserveProps: /^__\(*$/
+				}
 			: null,
 
 		build: {
@@ -286,8 +287,9 @@ export default defineConfig(async ({ command }) => {
 			sourcemap: !isProduction,
 			target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14'],
 			cssCodeSplit: true,
-			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14']
-			// cssMinify: 'lightningcss'
+			cssMinify: isProduction,
+			cssTarget: ['edge88', 'firefox78', 'chrome87', 'safari14'],
+			chunkSizeWarningLimit: 1000
 		},
 
 		server: {
@@ -311,7 +313,8 @@ export default defineConfig(async ({ command }) => {
 			},
 			preprocessorOptions: {
 				scss: {
-					api: 'modern-compiler'
+					api: 'modern-compiler',
+					outputStyle: isProduction ? 'compressed' : 'expanded'
 				}
 			}
 		},

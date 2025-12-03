@@ -1,5 +1,5 @@
-@use '/src/styles/abstracts/responsive' as *;
-@use '/src/styles/abstracts/functions' as function;
+@use '../../../../src/styles/abstracts/responsive' as *;
+@use '../../../../src/styles/abstracts/functions' as function;
 
 .wp-block-quote {
   --icon-size: #{function.min-max-interpolation(80, 120, 600, 1280)};
