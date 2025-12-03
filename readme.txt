@@ -20,7 +20,7 @@ Simppple also come with a out of the box custom style for Woocommerce.
 == Changelog ==
 
 = 1.2.7 =
-* Released: November 28, 2025
+* Released: December 03, 2025
 
 https://github.com/LaTableRouge/Simppple/releases/tag/1.2.7
 * Fixing fatal error when the theme was enabled with Gutenberg plugin
