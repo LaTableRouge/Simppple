@@ -111,7 +111,7 @@ function add_RGB_values_to_CSS_variables($theme_json) {
         ksort($rgb_color_palette);
 
         return $theme_json->update_with([
-            'version' => 2,
+            'version' => 3,
             'settings' => [
                 'custom' => $rgb_color_palette,
             ],

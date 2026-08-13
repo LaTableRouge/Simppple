@@ -96,7 +96,7 @@ if (!class_exists('WooCommerce')) { ?>
 			<div class="wp-block-group">
 				<!-- wp:image {"align":"center","width":"309px","height":266,"scale":"contain","sizeSlug":"full","linkDestination":"none"} -->
 				<figure class="wp-block-image aligncenter size-full is-resized">
-					<img src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/empty-cart.svg'); ?>" alt="" style="object-fit:contain;width:309px;height:266px"/>
+					<img src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img' . '/empty-cart.svg'); ?>" alt="" style="object-fit:contain;width:309px;height:266px"/>
 				</figure>
 				<!-- /wp:image -->
 			</div>

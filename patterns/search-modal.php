@@ -9,43 +9,41 @@
 
 function pattern_search_modal_icon($html, $block) {
     if (
-        'core/navigation' === $block['blockName']
-        && isset($block['attrs']['className'])
-        && strpos($block['attrs']['className'], 'pattern---search-modal') !== false
+        'core/navigation' !== $block['blockName']
+        || !isset($block['attrs']['className'])
+        || !str_contains($block['attrs']['className'], 'pattern---search-modal')
     ) {
-        // Replace labels
-        $parsedHTML = new WP_HTML_Tag_Processor($html);
-        if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-open'])) {
-            $parsedHTML->set_attribute('aria-label', esc_attr__('Open search', 'simppple'));
-        }
-
-        if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-container'])) {
-            if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-close'])) {
-                if ($parsedHTML->next_tag(['tag_name' => 'div', 'class_name' => 'wp-block-navigation__responsive-dialog'])) {
-                    if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-close'])) {
-                        $parsedHTML->set_attribute('aria-label', esc_attr__('Close search', 'simppple'));
-                    }
-                }
-            }
-        }
-        $html = $parsedHTML->get_updated_html();
-
-        // Replace the icon if the icon option is used
-        $icon = '><span class="icon-simppple-search" role="img" aria-label="' . esc_attr__('Search', 'simppple') . '"></span>';
-        $html = str_replace(
-            '><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4" y="7.5" width="16" height="1.5" /><rect x="4" y="15" width="16" height="1.5" /></svg>',
-            $icon,
-            $html
-        );
-        $html = str_replace(
-            '><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 5v1.5h14V5H5zm0 7.8h14v-1.5H5v1.5zM5 19h14v-1.5H5V19z" /></svg>',
-            $icon,
-            $html
-        );
-
-        // Replace the menu text, if the text option is used
-        $html = str_replace('>' . __('Menu', 'simppple'), $icon, $html);
+        return $html;
     }
+
+    $parsedHTML = new WP_HTML_Tag_Processor($html);
+    if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-open'])) {
+        $parsedHTML->set_attribute('aria-label', esc_attr__('Open search', 'simppple'));
+    }
+
+    if ($parsedHTML->next_tag(['tag_name' => 'button', 'class_name' => 'wp-block-navigation__responsive-container-close'])) {
+        $parsedHTML->set_attribute('aria-label', esc_attr__('Close search', 'simppple'));
+    }
+    $html = $parsedHTML->get_updated_html();
+
+    $icon = '<span class="icon-simppple-search" role="img" aria-label="' . esc_attr__('Search', 'simppple') . '"></span>';
+
+    // Replace any core open-button SVG (attribute order / paths may change across WP versions).
+    $html = preg_replace(
+        '/(<button\b[^>]*\bwp-block-navigation__responsive-container-open\b[^>]*>)\s*<svg\b[^>]*>.*?<\/svg>/is',
+        '$1' . $icon,
+        $html,
+        1
+    ) ?? $html;
+
+    // Text-mode overlay trigger: replace the Menu label when present.
+    $menu_label = esc_html__('Menu');
+    $html = preg_replace(
+        '/(<button\b[^>]*\bwp-block-navigation__responsive-container-open\b[^>]*>)\s*' . preg_quote($menu_label, '/') . '/i',
+        '$1' . $icon,
+        $html,
+        1
+    ) ?? $html;
 
     return $html;
 }

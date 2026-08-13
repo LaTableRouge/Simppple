@@ -153,10 +153,13 @@
 
                     @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
                       anchor-name: --nested-menu-item-anchor;
+                      anchor-scope: --nested-menu-item-anchor;
                     }
 
                     & > .wp-block-navigation__submenu-container {
                       @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                        inset: auto;
+                        transform: none;
                         position-anchor: --nested-menu-item-anchor;
                         position-area: top start;
                       }
@@ -186,7 +189,8 @@
                       &:not([class*='items-justified-']) {
                         @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
                           position-area: top end;
-                          position-try-fallbacks:
+                          position-try:
+                            most-inline-size,
                             flip-inline,
                             bottom end,
                             top start;
@@ -210,7 +214,8 @@
                       &.items-justified-left {
                         @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
                           position-area: top start;
-                          position-try-fallbacks:
+                          position-try:
+                            most-inline-size,
                             flip-inline,
                             bottom start,
                             top end;

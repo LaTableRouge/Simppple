@@ -19,8 +19,8 @@ require_once get_template_directory() . '/inc/vite.php';
 $vite = new Vite();
 
 // Front assets
-$vite->enqueueScript('/src/scripts/parts.js', 'wp_enqueue_scripts', 'wp_footer', false, 'module');
-$vite->enqueueScript('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer', false, '');
+$vite->enqueueScript('/src/scripts/parts.js', 'enqueue_block_assets', 'wp_footer', false, 'module');
+$vite->enqueueScript('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer', false, 'module');
 
 // Admin assets
 $vite->enqueueScript('/src/scripts/admin.js', 'admin_enqueue_scripts', 'admin_footer');

@@ -18,7 +18,7 @@
 		>
 			<!-- wp:image {"aspectRatio":"4/3","scale":"contain","sizeSlug":"large","linkDestination":"none"} -->
 			<figure class="wp-block-image size-large"><img
-					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/secure-payment.svg'); ?>"
+					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img' . '/secure-payment.svg'); ?>"
 					alt=""
 					style="aspect-ratio:4/3;object-fit:contain"
 				/></figure>
@@ -57,7 +57,7 @@
 		>
 			<!-- wp:image {"aspectRatio":"4/3","scale":"contain","sizeSlug":"large","linkDestination":"none"} -->
 			<figure class="wp-block-image size-large"><img
-					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/fast-delivery.svg'); ?>"
+					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img' . '/fast-delivery.svg'); ?>"
 					alt=""
 					style="aspect-ratio:4/3;object-fit:contain"
 				/></figure>
@@ -96,7 +96,7 @@
 		>
 			<!-- wp:image {"aspectRatio":"4/3","scale":"contain","sizeSlug":"large","linkDestination":"none"} -->
 			<figure class="wp-block-image size-large"><img
-					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/nice-hand.svg'); ?>"
+					src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img' . '/nice-hand.svg'); ?>"
 					alt=""
 					style="aspect-ratio:4/3;object-fit:contain"
 				/></figure>

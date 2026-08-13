@@ -19,20 +19,3 @@ wp.blocks.registerBlockVariation('core/table', {
 		className: 'table-paginate'
 	}
 })
-
-// Gutenberg ready
-if (document.querySelector('.block-editor__container')) {
-	let blocksLoaded = false
-	const blocksLoadedInterval = setInterval(function () {
-		const editorWrapper = document.querySelector('.editor-styles-wrapper')
-		if (editorWrapper) {
-			blocksLoaded = true
-
-			// DO code here
-		}
-
-		if (blocksLoaded) {
-			clearInterval(blocksLoadedInterval)
-		}
-	}, 500)
-}

@@ -7,7 +7,7 @@
  */
 
 if (class_exists('WooCommerce')) { ?>
-	<!-- wp:cover {"url":"<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/placeholder.webp'); ?>","id":878,"dimRatio":50,"focalPoint":{"x":0.5,"y":0.5},"minHeight":300,"minHeightUnit":"px","contentPosition":"top center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40","right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"className":"pattern\u002d\u002d-wc-archive-banner"} -->
+	<!-- wp:cover {"url":"<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img/placeholder.webp'); ?>","id":878,"dimRatio":50,"focalPoint":{"x":0.5,"y":0.5},"minHeight":300,"minHeightUnit":"px","contentPosition":"top center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|30","bottom":"var:preset|spacing|40","right":"var:preset|spacing|30","left":"var:preset|spacing|30"}}},"className":"pattern\u002d\u002d-wc-archive-banner"} -->
 	<div
 		class="wp-block-cover alignfull is-light has-custom-content-position is-position-top-center pattern---wc-archive-banner"
 		style="padding-top:var(--wp--preset--spacing--30);padding-right:var(--wp--preset--spacing--30);padding-bottom:var(--wp--preset--spacing--40);padding-left:var(--wp--preset--spacing--30);min-height:300px"
@@ -19,7 +19,7 @@ if (class_exists('WooCommerce')) { ?>
 		<img
 			class="wp-block-cover__image-background wp-image-878"
 			alt=""
-			src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/placeholder.webp'); ?>"
+			src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img/placeholder.webp'); ?>"
 			style="object-position:50% 50%"
 			data-object-fit="cover"
 			data-object-position="50% 50%"
