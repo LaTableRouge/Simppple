@@ -17,7 +17,7 @@ const chore = process.env.npm_config_chore
  | Destination path
  |
  */
-const themeName = 'simppple'
+const themeName = 'Simppple'
 const assetsPath = 'src'
 const distPath = 'build'
 
@@ -298,9 +298,7 @@ export default defineConfig(async ({ command }) => {
 			port: 5179,
 			https: false,
 			open: false,
-			hmr: {
-				host: 'localhost'
-			},
+			hmr: false,
 			watch: {
 				usePolling: true
 			}

@@ -61,7 +61,11 @@
 	$factor: calc(1 / ($max-breakpoint - $min-breakpoint) * ($max-value - $min-value));
 	$calc-value: string.unquote('#{$min-value - ($min-breakpoint * $factor)} + #{calc((100 * $container-unit) * $factor)}');
 
-	@return clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
+	@if $min-value > $max-value {
+		@return clamp(#{$max-value}, #{$calc-value}, #{$min-value});
+	}
+
+	@return clamp(#{$min-value}, #{$calc-value}, #{$max-value});
 }
 
 // Get variables from object
