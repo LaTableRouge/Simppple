@@ -25,11 +25,12 @@ class Vite {
     private string $paramsName;
     private array $params;
     private string $textDomain;
+    private bool $paramsEnqueued = false;
 
     public function __construct() {
         $this->distUri = get_template_directory_uri() . '/' . self::DIST_FOLDER;
         $this->distPath = get_template_directory() . '/' . self::DIST_FOLDER;
-        $this->version = '1.2.7';
+        $this->version = '1.2.8';
         $this->paramsName = 'wpparams';
         $this->params = [
             'ajax_url' => admin_url('admin-ajax.php'),
@@ -37,10 +38,11 @@ class Vite {
             'rest_nonce' => wp_create_nonce('wp_rest'),
             'template_directory' => get_template_directory_uri(),
             'plugins_directory' => plugins_url(),
-            'pictures_directory' => get_template_directory_uri() . '/build/assets/img',
+            'pictures_directory' => get_template_directory_uri() . '/build/assets/src/img',
             'posts_per_page' => get_option('posts_per_page'),
         ];
         $this->textDomain = 'simppple';
+
     }
 
     /**
@@ -128,7 +130,6 @@ class Vite {
         $hookDev = $hookDev ?: $hookBuild;
 
         $adminAsset = str_contains($hookBuild, 'admin')
-            || str_contains($hookBuild, 'block')
             || str_contains($hookBuild, 'editor');
 
         if ($adminAsset && !is_admin()) {
@@ -193,7 +194,6 @@ class Vite {
         $hookDev = $hookDev ?: $hookBuild;
 
         $adminAsset = str_contains($hookBuild, 'admin')
-            || str_contains($hookBuild, 'block')
             || str_contains($hookBuild, 'editor');
 
         if ($adminAsset && !is_admin()) {
@@ -246,25 +246,36 @@ class Vite {
         add_action(
             $hookBuild,
             function () use ($fileSlug, $filePath, $footerEnqueue, $type): void {
+
                 if ($type === 'module') {
+                    // Script modules cannot use wp_localize_script. Print the classic global
+                    // so existing JS (`wpparams`, `wp.i18n`) keeps working.
+                    wp_enqueue_script('wp-i18n');
+                    $this->enqueueParamsAsGlobal();
+
                     wp_register_script_module(
                         $fileSlug,
                         $filePath,
-                        [], // Script modules use different dependency system
+                        [],
                         $this->version
                     );
 
-                    // Set script translations for script modules
-                    wp_set_script_translations(
-                        $fileSlug,
-                        $this->textDomain,
-                        get_template_directory() . '/lang'
-                    );
+                    add_filter(
+                        "script_module_data_{$fileSlug}",
+                        function (array $data) use ($fileSlug, $filePath): array {
+                            $translationsPath = get_template_directory() . '/lang';
+                            $jsonTranslations = $this->loadScriptTranslations($fileSlug, $filePath, $this->textDomain, $translationsPath);
 
-                    wp_localize_script(
-                        $fileSlug,
-                        $this->paramsName,
-                        $this->params
+                            if ($jsonTranslations) {
+                                $data['translations'] = json_decode($jsonTranslations, true);
+                                $data['textDomain'] = $this->textDomain;
+                            }
+
+                            $data['params'] = $this->params;
+                            $data['paramsName'] = $this->paramsName;
+
+                            return $data;
+                        }
                     );
 
                     wp_enqueue_script_module($fileSlug);
@@ -298,6 +309,54 @@ class Vite {
             },
             $order
         );
+    }
+
+    /**
+     * Print `wpparams` as a classic global. `wp_localize_script` does not run for script modules.
+     */
+    private function enqueueParamsAsGlobal(): void {
+        if ($this->paramsEnqueued) {
+            return;
+        }
+
+        $this->paramsEnqueued = true;
+        $handle = 'simppple_vite_params';
+
+        wp_register_script($handle, '', [], $this->version, false);
+        wp_localize_script($handle, $this->paramsName, $this->params);
+        wp_enqueue_script($handle);
+    }
+
+    /**
+     * Load script translations for a given handle
+     *
+     * @param string $handle Script handle
+     * @param string $src Script source URL
+     * @param string $domain Text domain
+     * @param string $path Path to translation files
+     * @return string|false JSON-encoded translations or false on failure
+     */
+    private function loadScriptTranslations(string $handle, string $src, string $domain, string $path): string|false {
+        if (!function_exists('load_script_textdomain')) {
+            return false;
+        }
+
+        // Temporarily register a script with the actual source to use load_script_textdomain
+        // This is needed because load_script_textdomain requires a registered script
+        // and uses the script's src to determine the translation file name
+        $tempHandle = $handle . '_temp_translations';
+        wp_register_script($tempHandle, $src, [], $this->version);
+
+        // Set translations path on the registered script
+        wp_set_script_translations($tempHandle, $domain, $path);
+
+        // Load translations using WordPress function
+        $translations = load_script_textdomain($tempHandle, $domain, $path);
+
+        // Clean up temporary script
+        wp_deregister_script($tempHandle);
+
+        return $translations;
     }
 
     /**

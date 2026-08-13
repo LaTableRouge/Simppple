@@ -29,7 +29,7 @@ function theme_setup(): void {
     remove_theme_support('core-block-patterns');
 
     // Load theme text domain
-    load_child_theme_textdomain('simppple', get_template_directory() . '/lang');
+    load_theme_textdomain('simppple', get_template_directory() . '/lang');
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\theme_setup', 20);
 

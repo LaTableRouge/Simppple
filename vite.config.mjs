@@ -1,4 +1,5 @@
-import { resolve } from 'path'
+import { dirname, resolve } from 'path'
+import { fileURLToPath } from 'url'
 
 import { stringReplaceOpenAndWrite, viteStringReplace } from '@mlnop/string-replace'
 import sassGlobImports from '@mlnop/vite-plugin-sass-glob-import'
@@ -7,6 +8,7 @@ import { defineConfig } from 'vite'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 const chore = process.env.npm_config_chore
+const __dirname = import.meta.dirname ?? dirname(fileURLToPath(import.meta.url))
 
 /*
  |--------------------------------------------------------------------------
@@ -17,7 +19,7 @@ const chore = process.env.npm_config_chore
  | Destination path
  |
  */
-const themeName = 'Simppple'
+const themeName = 'simppple'
 const assetsPath = 'src'
 const distPath = 'build'
 
@@ -260,26 +262,30 @@ export default defineConfig(async ({ command }) => {
 			})
 		].filter(Boolean),
 
-		esbuild: isProduction
-			? {
-					minifyIdentifiers: false,
-					keepNames: true,
-					pure: ['console.log'],
-					reserveProps: /^__\(*$/
-				}
-			: null,
-
 		build: {
-			rollupOptions: {
+			rolldownOptions: {
 				input: entriesToCompile,
 				output: {
 					entryFileNames: 'assets/[name].js',
 					chunkFileNames: 'assets/[name].js',
-					assetFileNames: 'assets/[name].[ext]'
+					assetFileNames: 'assets/[name].[ext]',
+					keepNames: isProduction,
+					minify: isProduction
+						? {
+								mangle: false,
+								compress: {
+									dropConsole: false,
+									keepNames: {
+										function: true,
+										class: true
+									}
+								}
+							}
+						: false
 				}
 			},
 			write: true,
-			minify: isProduction ? 'esbuild' : false,
+			minify: isProduction ? 'oxc' : false,
 			outDir: distPath,
 			emptyOutDir: true,
 			manifest: true,
@@ -311,8 +317,9 @@ export default defineConfig(async ({ command }) => {
 			},
 			preprocessorOptions: {
 				scss: {
-					api: 'modern-compiler',
-					outputStyle: isProduction ? 'compressed' : 'expanded'
+					// `modern-compiler` requires `sass-embedded`; this project uses `sass`.
+					api: 'modern',
+					style: isProduction ? 'compressed' : 'expanded'
 				}
 			}
 		},

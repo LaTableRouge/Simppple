@@ -1,11 +1,11 @@
 === Simppple ===
 Contributors: latablerouge, bobbymcbobbyface
-Requires at least: 6.4
-Tested up to: 6.9
+Requires at least: 6.6
+Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.2.7
+Stable tag: 1.2.8
 WC requires at least: 8.4.0
-WC tested up to: 9.8.1
+WC tested up to: 11.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -18,6 +18,15 @@ Simppple comes with some style variations to help the creativity of the site bui
 Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
+
+= 1.2.8 =
+* Released: August 13, 2026
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.2.8
+* WP 7.1 compatibility: Requires at least 6.6, spacing preset 70, small/medium/large font sizes
+* Harden Navigation icon filters for search/filters overlays
+* Fix theme.json update_with version, textdomain load, editor iframe stub
+* Vite 8 config: ESM __dirname + Sass modern API (not modern-compiler)
 
 = 1.2.7 =
 * Released: December 03, 2025

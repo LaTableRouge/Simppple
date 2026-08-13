@@ -72,6 +72,7 @@ module.exports = defineConfig([
 			'no-console': 'warn',
 			'operator-linebreak': ['error', 'before'],
 			'react/react-in-jsx-scope': 'off',
+			'react/jsx-uses-vars': 'error',
 			'react/prop-types': 'off',
 			'react/jsx-sort-props': [
 				'warn',

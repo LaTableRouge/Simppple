@@ -12,7 +12,7 @@
 	<!-- wp:image {"align":"center","width":"300px","height":"300px","scale":"cover","sizeSlug":"full","linkDestination":"none","className":"is-resized is-style-rounded"} -->
 	<figure class="wp-block-image aligncenter size-full is-resized is-style-rounded">
 		<img
-			src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/img' . '/404.webp'); ?>"
+			src="<?php echo esc_url(get_template_directory_uri() . '/build/assets/src/img' . '/404.webp'); ?>"
 			alt=""
 			class=""
 			style="object-fit:cover;width:300px;height:300px"

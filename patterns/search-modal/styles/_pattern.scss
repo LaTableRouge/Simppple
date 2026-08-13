@@ -11,6 +11,7 @@
 
     &.is-menu-open {
       background-color: transparent !important;
+      z-index: 1000000;
     }
 
     .wp-block-navigation__responsive-close {

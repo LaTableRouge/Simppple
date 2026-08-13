@@ -138,9 +138,17 @@
                   &.has-child {
                     min-height: initial;
 
+                    @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
+                      anchor-name: --nested-menu-item-anchor;
+                      anchor-scope: --nested-menu-item-anchor;
+                    }
+
                     & > .wp-block-navigation__submenu-container {
                       @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                        top: 0;
+                        inset: auto;
+                        transform: none;
+                        position-anchor: --nested-menu-item-anchor;
+                        position-area: top start;
                       }
 
                       &::after {
@@ -167,9 +175,12 @@
                       &.items-justified-right,
                       &:not([class*='items-justified-']) {
                         @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                          right: 0;
-                          left: initial;
-                          transform: translateX(100%);
+                          position-area: top end;
+                          position-try:
+                            most-inline-size,
+                            flip-inline,
+                            bottom end,
+                            top start;
                           border-top-right-radius: 5px;
                           border-bottom-right-radius: 5px;
                         }
@@ -189,8 +200,12 @@
 
                       &.items-justified-left {
                         @include media-breakpoint-up(#{$menu-responsive-breakpoint}) {
-                          left: 0;
-                          transform: translateX(-100%);
+                          position-area: top start;
+                          position-try:
+                            most-inline-size,
+                            flip-inline,
+                            bottom start,
+                            top end;
                           border-top-left-radius: 5px;
                           border-bottom-left-radius: 5px;
                         }

@@ -147,7 +147,7 @@ function add_HSL_values_to_CSS_variables($theme_json) {
         ksort($hsl_color_palette);
 
         return $theme_json->update_with([
-            'version' => 2,
+            'version' => 3,
             'settings' => [
                 'custom' => $hsl_color_palette,
             ],

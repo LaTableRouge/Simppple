@@ -39,6 +39,7 @@
           padding-block: 20px;
           padding-inline-start: 20px;
           padding-inline-end: 75px;
+          border-radius: inherit;
         }
 
         .wp-block-search__button {
@@ -86,6 +87,12 @@
   }
 
   &.wp-block-search__button-only {
+    .wp-block-search__button {
+      &.has-icon {
+        align-items: center;
+      }
+    }
+
     &.wp-block-search__searchfield-hidden {
       .wp-block-search__inside-wrapper {
         .wp-block-search__input {
@@ -136,13 +143,10 @@
   }
 
   &__inside-wrapper {
-    border-radius: inherit;
-
     .wp-block-search__input {
       padding: 20px;
       overflow: hidden;
       border: none;
-      border-radius: inherit;
       background-color: var(--wp--preset--color--white);
       box-shadow: var(--wp--preset--shadow--input);
       color: var(--wp--preset--color--black);
