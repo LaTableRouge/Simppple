@@ -1,64 +1,69 @@
-# Copyright (C) 2024 latablerouge
+# Copyright (C) 2026 latablerouge
 # This file is distributed under the GNU General Public License v3 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Simppple 1.2.3\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/Simppple\n"
+"Project-Id-Version: Simppple 1.2.8\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/simppple\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-24T15:03:41+00:00\n"
+"POT-Creation-Date: 2026-08-14T11:33:33+02:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.9.0\n"
+"X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: simppple\n"
 
 #. Theme Name of the theme
+#: style.css:2
 msgid "Simppple"
 msgstr ""
 
 #. Theme URI of the theme
+#: style.css:3
 msgid "https://github.com/LaTableRouge/Simppple/"
 msgstr ""
 
 #. Description of the theme
+#: style.css:6
 msgid "Simppple is designed to be flexible, versatile and applicable to any website. Its collection of templates and patterns tailor to different needs. A multitude of possibilities open up with just a few adjustments to color and typography. Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4. Simppple also come with a out of the box custom style for Woocommerce."
 msgstr ""
 
 #. Author of the theme
+#: style.css:4
 msgid "latablerouge"
 msgstr ""
 
 #. Author URI of the theme
+#: style.css:5
 msgid "https://mlnop.fr/"
 msgstr ""
 
-#: inc/patterns/categories-register.php:11
+#: inc/patterns/categories-register.php:25
 msgid "Simppple - Page Sections"
 msgstr ""
 
-#: inc/patterns/categories-register.php:18
+#: inc/patterns/categories-register.php:26
 msgid "Simppple - Page Templates"
 msgstr ""
 
-#: inc/patterns/categories-register.php:25
+#: inc/patterns/categories-register.php:27
 msgid "Simppple - Headers"
 msgstr ""
 
-#: inc/patterns/categories-register.php:32
+#: inc/patterns/categories-register.php:28
 msgid "Simppple - Footers"
 msgstr ""
 
-#: inc/patterns/categories-register.php:39
+#: inc/patterns/categories-register.php:29
 msgid "Simppple - Woocommerce patterns"
 msgstr ""
 
-#: inc/patterns/categories-register.php:46
+#: inc/patterns/categories-register.php:30
 msgid "Simppple - Woocommerce templates"
 msgstr ""
 
-#: patterns/footer.php
+#: patterns/footer.php:3
 msgctxt "Pattern title"
 msgid "Footer"
 msgstr ""
@@ -78,17 +83,17 @@ msgctxt "simple content"
 msgid "Privacy Policy"
 msgstr ""
 
-#: patterns/header-main-section-centered.php
+#: patterns/header-main-section-centered.php:3
 msgctxt "Pattern title"
 msgid "Header centered main section"
 msgstr ""
 
-#: patterns/header-main-section.php
+#: patterns/header-main-section.php:3
 msgctxt "Pattern title"
 msgid "Header main section"
 msgstr ""
 
-#: patterns/header-shop-top-section.php
+#: patterns/header-shop-top-section.php:3
 msgctxt "Pattern title"
 msgid "Header shop top section"
 msgstr ""
@@ -106,7 +111,7 @@ msgstr ""
 #: patterns/products-3-col.php:36
 #: patterns/wc-archive-banner.php:47
 #: patterns/wc-breadcrumbs.php:23
-#: patterns/wc-filters-popup.php:93
+#: patterns/wc-filters-popup.php:91
 #: patterns/wc-order-additional-informations.php:22
 #: patterns/wc-order-confirmation-addresses.php:40
 #: patterns/wc-order-confirmation-downloads.php:20
@@ -118,12 +123,12 @@ msgstr ""
 msgid "This pattern needs the \"Woocommerce\" plugin in order to work"
 msgstr ""
 
-#: patterns/header-top-section.php
+#: patterns/header-top-section.php:3
 msgctxt "Pattern title"
 msgid "Header top section"
 msgstr ""
 
-#: patterns/hidden-comments.php
+#: patterns/hidden-comments.php:3
 msgctxt "Pattern title"
 msgid "Comments"
 msgstr ""
@@ -132,8 +137,8 @@ msgstr ""
 msgid "Comments"
 msgstr ""
 
-#: patterns/hidden-no-results.php
-#: patterns/hidden-products-no-results.php
+#: patterns/hidden-no-results.php:3
+#: patterns/hidden-products-no-results.php:3
 msgctxt "Pattern title"
 msgid "No results"
 msgstr ""
@@ -143,7 +148,7 @@ msgctxt "Message explaining that there are no results returned from a search"
 msgid "No posts were found."
 msgstr ""
 
-#: patterns/hidden-post-navigation.php
+#: patterns/hidden-post-navigation.php:3
 msgctxt "Pattern title"
 msgid "Post navigation"
 msgstr ""
@@ -168,7 +173,7 @@ msgctxt "Message explaining that there are no results returned from a search"
 msgid "No products were found."
 msgstr ""
 
-#: patterns/hidden-sample-paragraph-centered.php
+#: patterns/hidden-sample-paragraph-centered.php:3
 msgctxt "Pattern title"
 msgid "Sample paragraph centered"
 msgstr ""
@@ -178,18 +183,18 @@ msgstr ""
 msgid "It shares some characteristics of a real written text but is random or otherwise generated."
 msgstr ""
 
-#: patterns/hidden-sample-paragraph.php
+#: patterns/hidden-sample-paragraph.php:3
 msgctxt "Pattern title"
 msgid "Sample paragraph"
 msgstr ""
 
-#: patterns/hidden-sample-picture-rounded.php
-#: patterns/hidden-sample-picture.php
+#: patterns/hidden-sample-picture-rounded.php:3
+#: patterns/hidden-sample-picture.php:3
 msgctxt "Pattern title"
 msgid "Sample picture"
 msgstr ""
 
-#: patterns/hidden-sample-title.php
+#: patterns/hidden-sample-title.php:3
 msgctxt "Pattern title"
 msgid "Sample title"
 msgstr ""
@@ -198,7 +203,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: patterns/hidden-search-products.php
+#: patterns/hidden-search-products.php:3
 msgctxt "Pattern title"
 msgid "Search products"
 msgstr ""
@@ -214,26 +219,26 @@ msgstr ""
 #: patterns/hidden-search-products.php:9
 #: patterns/hidden-search.php:9
 #: patterns/page-404.php:41
-#: patterns/search-modal.php:34
+#: patterns/search-modal.php:29
 msgid "Search"
 msgstr ""
 
-#: patterns/hidden-search.php
+#: patterns/hidden-search.php:3
 msgctxt "Pattern title"
 msgid "Search"
 msgstr ""
 
-#: patterns/img-img.php
+#: patterns/img-img.php:3
 msgctxt "Pattern title"
 msgid "Image/Image"
 msgstr ""
 
-#: patterns/masonry-text.php
+#: patterns/masonry-text.php:3
 msgctxt "Pattern title"
 msgid "Masonry/Text"
 msgstr ""
 
-#: patterns/page-404.php
+#: patterns/page-404.php:3
 msgctxt "Pattern title"
 msgid "404"
 msgstr ""
@@ -258,12 +263,79 @@ msgstr ""
 msgid "Back to home page"
 msgstr ""
 
-#: patterns/page-home-business.php
+#: patterns/page-home-business.php:3
 msgctxt "Pattern title"
 msgid "Business home"
 msgstr ""
 
-#: patterns/payment-insurance.php
+#: patterns/page-wc-archive-product.php:3
+msgctxt "Pattern title"
+msgid "Archive product template"
+msgstr ""
+
+#: patterns/page-wc-archive-product.php:12
+#: patterns/page-wc-cart.php:12
+#: patterns/page-wc-checkout.php:12
+#: patterns/page-wc-my-account.php:12
+#: patterns/page-wc-order-confirmation.php:12
+#: patterns/page-wc-product-search-results.php:12
+#: patterns/page-wc-single-product.php:12
+#: patterns/page-wc-taxonomy-product.php:12
+msgid "This template needs the \"Woocommerce\" plugin in order to work"
+msgstr ""
+
+#: patterns/page-wc-cart.php:3
+msgctxt "Pattern title"
+msgid "Cart template"
+msgstr ""
+
+#: patterns/page-wc-cart.php:32
+msgid "You may be interested in…"
+msgstr ""
+
+#: patterns/page-wc-cart.php:106
+msgid "Your cart is empty!"
+msgstr ""
+
+#: patterns/page-wc-cart.php:116
+msgid "Explore the products..."
+msgstr ""
+
+#: patterns/page-wc-cart.php:131
+msgid "Search products…"
+msgstr ""
+
+#: patterns/page-wc-checkout.php:3
+msgctxt "Pattern title"
+msgid "Checkout template"
+msgstr ""
+
+#: patterns/page-wc-my-account.php:3
+msgctxt "Pattern title"
+msgid "My account template"
+msgstr ""
+
+#: patterns/page-wc-order-confirmation.php:3
+msgctxt "Pattern title"
+msgid "Order confirmation page"
+msgstr ""
+
+#: patterns/page-wc-product-search-results.php:3
+msgctxt "Pattern title"
+msgid "Product search results page"
+msgstr ""
+
+#: patterns/page-wc-single-product.php:3
+msgctxt "Pattern title"
+msgid "Single product page"
+msgstr ""
+
+#: patterns/page-wc-taxonomy-product.php:3
+msgctxt "Pattern title"
+msgid "Taxonomy product template"
+msgstr ""
+
+#: patterns/payment-insurance.php:3
 msgctxt "Pattern title"
 msgid "Payment insurance"
 msgstr ""
@@ -280,7 +352,7 @@ msgstr ""
 msgid "Money back guarantee"
 msgstr ""
 
-#: patterns/post-date-author-terms.php
+#: patterns/post-date-author-terms.php:3
 msgctxt "Pattern title"
 msgid "Display the date, author & terms of the post"
 msgstr ""
@@ -294,12 +366,12 @@ msgstr ""
 msgid "in"
 msgstr ""
 
-#: patterns/post-date-author.php
+#: patterns/post-date-author.php:3
 msgctxt "Pattern title"
 msgid "Display the date, author of the post"
 msgstr ""
 
-#: patterns/posts-1-col.php
+#: patterns/posts-1-col.php:3
 msgctxt "Pattern title"
 msgid "List of posts, 1 column"
 msgstr ""
@@ -319,12 +391,12 @@ msgstr ""
 msgid "Older Posts"
 msgstr ""
 
-#: patterns/posts-2-col.php
+#: patterns/posts-2-col.php:3
 msgctxt "Pattern title"
 msgid "List of posts, 2 columns"
 msgstr ""
 
-#: patterns/products-1-col.php
+#: patterns/products-1-col.php:3
 msgctxt "Pattern title"
 msgid "List of products, 1 column"
 msgstr ""
@@ -341,160 +413,85 @@ msgstr ""
 msgid "Next page"
 msgstr ""
 
-#: patterns/products-2-col.php
+#: patterns/products-2-col.php:3
 msgctxt "Pattern title"
 msgid "List of products, 2 columns"
 msgstr ""
 
-#: patterns/products-3-col.php
+#: patterns/products-3-col.php:3
 msgctxt "Pattern title"
 msgid "List of products, 3 columns"
 msgstr ""
 
-#: patterns/search-banner.php
+#: patterns/search-banner.php:3
 msgctxt "Pattern title"
 msgid "Research banner"
 msgstr ""
 
-#: patterns/search-modal.php
+#: patterns/search-modal.php:3
 msgctxt "Pattern title"
 msgid "Search popup"
 msgstr ""
 
-#: patterns/search-modal.php:19
+#: patterns/search-modal.php:21
 msgid "Open search"
 msgstr ""
 
-#: patterns/search-modal.php:26
+#: patterns/search-modal.php:25
 msgid "Close search"
 msgstr ""
 
-#: patterns/search-modal.php:47
+#: patterns/search-modal.php:40
+#: patterns/wc-filters-popup.php:41
 msgid "Menu"
 msgstr ""
 
-#: patterns/template-404.php
-msgctxt "Pattern title"
-msgid "404 template"
-msgstr ""
-
-#: patterns/template-wc-archive-product.php
-msgctxt "Pattern title"
-msgid "Archive product template"
-msgstr ""
-
-#: patterns/template-wc-archive-product.php:63
-#: patterns/template-wc-cart.php:152
-#: patterns/template-wc-checkout.php:129
-#: patterns/template-wc-my-account.php:66
-#: patterns/template-wc-order-confirmation.php:67
-#: patterns/template-wc-product-search-results.php:77
-#: patterns/template-wc-single-product.php:136
-#: patterns/template-wc-taxonomy-product.php:51
-msgid "This template needs the \"Woocommerce\" plugin in order to work"
-msgstr ""
-
-#: patterns/template-wc-cart.php
-msgctxt "Pattern title"
-msgid "Cart template"
-msgstr ""
-
-#: patterns/template-wc-cart.php:40
-msgid "You may be interested in…"
-msgstr ""
-
-#: patterns/template-wc-cart.php:114
-msgid "Your cart is empty!"
-msgstr ""
-
-#: patterns/template-wc-cart.php:123
-msgid "Explore the products..."
-msgstr ""
-
-#: patterns/template-wc-cart.php:137
-msgid "Search products…"
-msgstr ""
-
-#: patterns/template-wc-checkout.php
-msgctxt "Pattern title"
-msgid "Checkout template"
-msgstr ""
-
-#: patterns/template-wc-my-account.php
-msgctxt "Pattern title"
-msgid "My account template"
-msgstr ""
-
-#: patterns/template-wc-order-confirmation.php
-msgctxt "Pattern title"
-msgid "Order confirmation template"
-msgstr ""
-
-#: patterns/template-wc-product-search-results.php
-msgctxt "Pattern title"
-msgid "Product search results template"
-msgstr ""
-
-#: patterns/template-wc-single-product.php
-msgctxt "Pattern title"
-msgid "Single product template"
-msgstr ""
-
-#: patterns/template-wc-taxonomy-product.php
-msgctxt "Pattern title"
-msgid "Taxonomy product template"
-msgstr ""
-
-#: patterns/wc-archive-banner.php
+#: patterns/wc-archive-banner.php:3
 msgctxt "Pattern title"
 msgid "Products archive banner"
 msgstr ""
 
-#: patterns/wc-breadcrumbs.php
+#: patterns/wc-breadcrumbs.php:3
 msgctxt "Pattern title"
 msgid "Woocommerce breadcrumbs"
 msgstr ""
 
-#: patterns/wc-filters-popup.php
+#: patterns/wc-filters-popup.php:3
 msgctxt "Pattern title"
 msgid "Filters popup"
 msgstr ""
 
-#: patterns/wc-filters-popup.php:20
+#: patterns/wc-filters-popup.php:22
 msgid "Open filters"
 msgstr ""
 
-#: patterns/wc-filters-popup.php:27
+#: patterns/wc-filters-popup.php:26
 msgid "Close filters"
 msgstr ""
 
-#: patterns/wc-filters-popup.php:35
+#: patterns/wc-filters-popup.php:30
 msgid "Filter"
 msgstr ""
 
-#: patterns/wc-filters-popup.php:48
-msgid "Filters"
-msgstr ""
-
+#: patterns/wc-filters-popup.php:57
 #: patterns/wc-filters-popup.php:59
-#: patterns/wc-filters-popup.php:61
 msgid "Filter by price"
 msgstr ""
 
+#: patterns/wc-filters-popup.php:67
 #: patterns/wc-filters-popup.php:69
-#: patterns/wc-filters-popup.php:71
 msgid "Filter by color"
 msgstr ""
 
+#: patterns/wc-filters-popup.php:77
 #: patterns/wc-filters-popup.php:79
-#: patterns/wc-filters-popup.php:81
 msgid "Filter by size"
 msgstr ""
 
-#: patterns/wc-order-additional-informations.php
-#: patterns/wc-order-confirmation-addresses.php
-#: patterns/wc-order-confirmation-downloads.php
-#: patterns/wc-order-confirmation-totals.php
+#: patterns/wc-order-additional-informations.php:3
+#: patterns/wc-order-confirmation-addresses.php:3
+#: patterns/wc-order-confirmation-downloads.php:3
+#: patterns/wc-order-confirmation-totals.php:3
 msgctxt "Pattern title"
 msgid "Order - additional informations"
 msgstr ""
@@ -519,12 +516,12 @@ msgstr ""
 msgid "Order details"
 msgstr ""
 
-#: patterns/wc-product-image-gallery.php
+#: patterns/wc-product-image-gallery.php:3
 msgctxt "Pattern title"
 msgid "Woocommerce product image gallery"
 msgstr ""
 
-#: patterns/wc-related-products.php
+#: patterns/wc-related-products.php:3
 msgctxt "Pattern title"
 msgid "Woocommerce related products"
 msgstr ""
@@ -533,7 +530,7 @@ msgstr ""
 msgid "Related products"
 msgstr ""
 
-#: patterns/wc-search-banner.php
+#: patterns/wc-search-banner.php:3
 msgctxt "Pattern title"
 msgid "Products research banner"
 msgstr ""
@@ -542,7 +539,7 @@ msgstr ""
 msgid "Shop"
 msgstr ""
 
-#: patterns/wc-store-notices.php
+#: patterns/wc-store-notices.php:3
 msgctxt "Pattern title"
 msgid "Woocommerce store notices"
 msgstr ""
@@ -559,6 +556,6 @@ msgstr ""
 msgid "Table with pagination"
 msgstr ""
 
-#: build/assets/parts.js:1
+#: build/assets/parts.js:2
 msgid "Search..."
 msgstr ""

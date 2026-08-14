@@ -25,13 +25,13 @@ $vite->enqueueScript('/src/scripts/front.js', 'wp_enqueue_scripts', 'wp_footer',
 // Admin assets
 $vite->enqueueScript('/src/scripts/admin.js', 'admin_enqueue_scripts', 'admin_footer');
 
-// Editor assets
+// Editor: JS in the chrome, CSS in the iframe canvas
 $vite->enqueueScript('/src/scripts/editor.js', 'enqueue_block_editor_assets');
+$vite->enqueueStyleEditor('/src/scripts/editor.js');
 
 // Theme customization
 require_once get_template_directory() . '/inc/theme-customization/wp_customization.php';
 require_once get_template_directory() . '/inc/theme-customization/theme-remove-default-settings.php';
-require_once get_template_directory() . '/inc/theme-customization/color-add-rgb.php';
 require_once get_template_directory() . '/inc/theme-customization/color-add-hsl.php';
 
 // Patterns

@@ -37,7 +37,7 @@ function pattern_search_modal_icon($html, $block) {
     ) ?? $html;
 
     // Text-mode overlay trigger: replace the Menu label when present.
-    $menu_label = esc_html__('Menu');
+    $menu_label = esc_html__('Menu', 'simppple');
     $html = preg_replace(
         '/(<button\b[^>]*\bwp-block-navigation__responsive-container-open\b[^>]*>)\s*' . preg_quote($menu_label, '/') . '/i',
         '$1' . $icon,
