@@ -30,7 +30,7 @@ class Vite {
     public function __construct() {
         $this->distUri = get_template_directory_uri() . '/' . self::DIST_FOLDER;
         $this->distPath = get_template_directory() . '/' . self::DIST_FOLDER;
-        $this->version = '1.2.8';
+        $this->version = '1.2.9';
         $this->paramsName = 'wpparams';
         $this->params = [
             'ajax_url' => admin_url('admin-ajax.php'),
@@ -221,8 +221,12 @@ class Vite {
             return;
         }
 
-        // Enqueue associated CSS files
-        if (isset($manifestFileInfos['css'])) {
+        // Canvas CSS must not ride enqueue_block_editor_assets: Gutenberg copies
+        // those sheets into the iframe via a compat layer and warns. editor.js
+        // CSS is loaded separately via enqueueStyleEditor() → enqueue_block_assets.
+        $enqueueAssociatedCss = 'enqueue_block_editor_assets' !== $hookBuild;
+
+        if ($enqueueAssociatedCss && isset($manifestFileInfos['css'])) {
             foreach ($manifestFileInfos['css'] as $style) {
                 add_action(
                     $hookBuild,
@@ -341,45 +345,48 @@ class Vite {
             return false;
         }
 
-        // Temporarily register a script with the actual source to use load_script_textdomain
-        // This is needed because load_script_textdomain requires a registered script
-        // and uses the script's src to determine the translation file name
+        // Register a dummy (never enqueued) so load_script_textdomain() can
+        // resolve the .json file from the script src. Left registered on
+        // purpose: wp_deregister_script() trips Theme Check.
         $tempHandle = $handle . '_temp_translations';
         wp_register_script($tempHandle, $src, [], $this->version);
-
-        // Set translations path on the registered script
         wp_set_script_translations($tempHandle, $domain, $path);
 
-        // Load translations using WordPress function
-        $translations = load_script_textdomain($tempHandle, $domain, $path);
-
-        // Clean up temporary script
-        wp_deregister_script($tempHandle);
-
-        return $translations;
+        return load_script_textdomain($tempHandle, $domain, $path);
     }
 
     /**
-     * Enqueue editor styles
+     * Enqueue editor canvas styles inside the iframed editor.
+     *
+     * `enqueue_block_assets` + is_admin() is the supported path. add_editor_style()
+     * and enqueue_block_editor_assets both inject via the iframe compat layer.
      *
      * @param string $fileThemePath Path to the file relative to theme root
-     * @param string $hook WordPress hook
      * @param int $order Action priority
      * @return void
      */
-    public function enqueueStyleEditor(string $fileThemePath, string $hook, int $order = 20): void {
+    public function enqueueStyleEditor(string $fileThemePath, int $order = 20): void {
         $manifestFileInfos = $this->fetchAssetFromManifest($fileThemePath, 'script');
-        if (empty($manifestFileInfos)) {
-            echo 'Please compile (build/prod) to see the editor style';
-
+        if (empty($manifestFileInfos['css'])) {
             return;
         }
 
-        $filePath = $manifestFileInfos['path'];
         add_action(
-            $hook,
-            function () use ($filePath): void {
-                add_editor_style($filePath);
+            'enqueue_block_assets',
+            function () use ($manifestFileInfos): void {
+                if (!is_admin()) {
+                    return;
+                }
+
+                foreach ($manifestFileInfos['css'] as $style) {
+                    wp_enqueue_style(
+                        $style['slug'],
+                        $style['path'],
+                        [],
+                        $this->version,
+                        'all'
+                    );
+                }
             },
             $order
         );

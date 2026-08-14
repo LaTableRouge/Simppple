@@ -7,14 +7,17 @@
 Simppple is a Wordpress theme designed to be flexible, versatile and applicable to any website.
 Its collection of templates and patterns tailor to different needs.
 A multitude of possibilities open up with just a few adjustments to color and typography.
-Simppple comes with some style variations to help the creativity of the site building process, it's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
+Simppple comes with some style variations to help the creativity of the site building process.
+It's fully compatible with the site editor, and takes advantage of new design tools introduced in WordPress 6.4.
 
-**This parent theme is not meant to be modified inside a Wordpress project.** If you want to add new acf/react blocks or patterns please put it inside the child theme folder ([Child theme template](https://github.com/LaTableRouge/Simppple-child)).
-<br>
-<br>
+**This parent theme is not meant to be modified inside a Wordpress project.**
+If you want to add new acf/react blocks or patterns please put it inside the child theme folder
+([Child theme template](https://github.com/LaTableRouge/Simppple-child)).
+
 **This parent theme will have it's own updates** (maybe once a year idk 🤷‍♀️).
-<br>
-You can download the theme via [Wordpress.org](https://wordpress.org/themes/simppple/) or [Github](https://github.com/LaTableRouge/Simppple/releases/latest/)
+
+You can download the theme via [Wordpress.org](https://wordpress.org/themes/simppple/) or
+[Github](https://github.com/LaTableRouge/Simppple/releases/latest/)
 
 ## File Structure
 
@@ -67,11 +70,11 @@ We use [vite.js](https://vite.dev/) to facilitate and optimize our development.
 
 The list of development scripts is listed below:
 
-| NPM Command                | Action                                                                                                                                               |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| npm run watch              | starts a local development server accessible directly on **local.your-host.com**, compiles and reloads static files (\*.scss, \*.js) on each change. |
-| npm run build              | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to the **build/** directory of the theme.                            |
-| npm run beautify:all       | lints, formats theme files (\*.php, \*.scss, \*.js)                                                                                                  |
+| NPM Command          | Action                                                                                                 |
+| -------------------- | ------------------------------------------------------------------------------------------------------ |
+| npm run watch        | starts a local dev server on **local.your-host.com**, compiles and reloads \*.scss / \*.js on change.  |
+| npm run build        | compiles `simppple` theme files (\*.scss, \*.js) and deploys static files to **build/**.               |
+| npm run beautify:all | lints and formats theme files (\*.php, \*.scss, \*.js)                                                 |
 
 ### 🐶 Husky & Git Hooks
 
@@ -79,9 +82,13 @@ We use [Husky](https://github.com/typicode/husky) to manage Git hooks, ensuring 
 
 #### Installation and Usage
 
-It is **strongly recommended** to install all dependencies with `npm install` before starting development. This will set up Husky and all necessary tools to ensure code quality.
+It is **strongly recommended** to install all dependencies with `npm install` before starting development.
+This will set up Husky and all necessary tools to ensure code quality.
 
-Husky will automatically run checks when you attempt to commit changes. **Important:** Commits will fail if any linting errors or code quality issues are detected. You must fix all issues before your code can be committed to the repository. This strict approach ensures that only high-quality code enters the codebase.
+Husky will automatically run checks when you attempt to commit changes.
+
+**Important:** Commits will fail if any linting errors or code quality issues are detected.
+You must fix all issues before your code can be committed to the repository.
 
 If you need to bypass these checks in exceptional circumstances (not recommended), you can use the `--no-verify` flag with your git commit command.
 
@@ -96,12 +103,12 @@ The pre-commit hook runs automatically when you attempt to commit changes, perfo
 
 Lint-staged runs specific scripts based on file types:
 
-| File Type        | Scripts Run                                                                       |
-| ---------------- | --------------------------------------------------------------------------------- |
-| \*.php           | PHP-CS-Fixer to ensure consistent formatting & PHPStan to enforce coding standard |
-| \*.scss          | Stylelint to enforce consistent styling                                           |
-| _.js, _.jsx      | ESLint to check for JavaScript errors and enforce coding standards                |
-| \*.{js,jsx,scss} | Prettier to ensure consistent formatting                                          |
+| File Type        | Scripts Run                                                                |
+| ---------------- | -------------------------------------------------------------------------- |
+| \*.php           | PHP-CS-Fixer for formatting and PHPStan for coding standards               |
+| \*.scss          | Stylelint to enforce consistent styling                                    |
+| \*.js, \*.jsx    | ESLint to check for JavaScript errors and enforce coding standards         |
+| \*.{js,jsx,scss} | Prettier to ensure consistent formatting                                   |
 
 This ensures that all code committed to the repository meets our quality standards and maintains a consistent style.
 
@@ -142,7 +149,7 @@ We follow the [Conventional Commits](https://www.conventionalcommits.org/) stand
 
 Example of a complete commit message:
 
-```
+```text
 feat(auth): add password reset functionality
 
 Implement the password reset flow including email notification
@@ -191,13 +198,13 @@ Templates can be created and edited in the `templates/` ([see README](./template
 To generate the .pot file (from the theme's directory):
 
 ```bash
-wp i18n make-pot . lang/simppple.pot --domain=simppple --exclude=node_modules,vendor,lang --include=*.php,build
+wp i18n make-pot . lang/simppple.pot --domain=simppple --exclude=node_modules,vendor,lang --include=*.php,build --allow-root
 ```
 
 To generate the translation json files for JS (from the theme's directory):
 
 ```bash
-wp i18n make-json lang/ --no-purge
+wp i18n make-json lang/ --allow-root
 ```
 
 ### Creating Child Themes

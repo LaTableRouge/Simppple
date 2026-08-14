@@ -1,6 +1,9 @@
 @use '../../../../src/styles/abstracts/responsive' as *;
 
 .wp-block-latest-posts {
+  container-type: inline-size;
+  container-name: core-block-latest-posts;
+
   & > li {
     padding: var(--wp--preset--spacing--40);
     overflow: hidden;
@@ -155,7 +158,7 @@
         --columns-number: 2;
       }
 
-      @include container-breakpoint-up(core-block-ayaya, xl) {
+      @include container-breakpoint-up(core-block-latest-posts, xl) {
         --columns-number: 3;
       }
     }
@@ -165,11 +168,11 @@
         --columns-number: 2;
       }
 
-      @include container-breakpoint-up(core-block-ayaya, lg) {
+      @include container-breakpoint-up(core-block-latest-posts, lg) {
         --columns-number: 3;
       }
 
-      @include container-breakpoint-up(core-block-ayaya, xl) {
+      @include container-breakpoint-up(core-block-latest-posts, xl) {
         --columns-number: 4;
       }
     }
@@ -179,7 +182,7 @@
         --columns-number: 2;
       }
 
-      @include container-breakpoint-up(core-block-ayaya, xl) {
+      @include container-breakpoint-up(core-block-latest-posts, xl) {
         --columns-number: 6;
       }
     }

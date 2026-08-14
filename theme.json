@@ -103,7 +103,8 @@
 			"border-radius-form": "5px"
 		},
 		"dimensions": {
-			"minHeight": true
+			"minHeight": true,
+			"minWidth": true
 		},
 		"layout": {
 			"contentSize": "960px",
@@ -290,7 +291,11 @@
 			"lineHeight": true,
 			"writingMode": true
 		},
-		"useRootPaddingAwareAlignments": true
+		"useRootPaddingAwareAlignments": true,
+		"viewport": {
+			"mobile": "600px",
+			"tablet": "782px"
+		}
 	},
 	"styles": {
 		"blocks": {
@@ -318,6 +323,21 @@
 								"top": "8px"
 							}
 						}
+					}
+				},
+				":hover": {
+					"color": {
+						"background": "hsla(var(--wp--custom--accent-2-hsl), 0.7)"
+					}
+				},
+				":focus": {
+					"color": {
+						"background": "hsla(var(--wp--custom--accent-2-hsl), 0.7)"
+					}
+				},
+				":focus-visible": {
+					"color": {
+						"background": "hsla(var(--wp--custom--accent-2-hsl), 0.7)"
 					}
 				},
 				"spacing": {
@@ -595,6 +615,11 @@
 								"textDecoration": "underline dashed"
 							}
 						},
+						":focus-visible": {
+							"typography": {
+								"textDecoration": "underline dashed"
+							}
+						},
 						":hover": {
 							"typography": {
 								"textDecoration": "underline"
@@ -609,7 +634,13 @@
 					"fontSize": "var(--wp--preset--font-size--16)"
 				}
 			},
-			"core/navigation-link": {},
+			"core/navigation-link": {
+				"-current": {
+					"typography": {
+						"fontWeight": "600"
+					}
+				}
+			},
 			"core/nextpage": {},
 			"core/page-list": {},
 			"core/paragraph": {
@@ -951,6 +982,11 @@
 					}
 				},
 				":focus": {
+					"color": {
+						"background": "hsla(var(--wp--custom--accent-2-hsl), 0.7)"
+					}
+				},
+				":focus-visible": {
 					"color": {
 						"background": "hsla(var(--wp--custom--accent-2-hsl), 0.7)"
 					}

@@ -82,11 +82,3 @@
 @function hex-to-rgb($hexColor) {
 	@return '#{color.red($hexColor)},#{color.green($hexColor)},#{color.blue($hexColor)}';
 }
-
-@function hex-to-hsl($hexColor) {
-	$h: strip-unit(color.hue($hexColor));
-	$s: color.saturation($hexColor);
-	$l: color.lightness($hexColor);
-
-	@return '#{calc($h / 100 * 100%)} #{$s} #{$l}';
-}

@@ -3,7 +3,7 @@ Contributors: latablerouge, bobbymcbobbyface
 Requires at least: 6.6
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.2.8
+Stable tag: 1.2.9
 WC requires at least: 8.4.0
 WC tested up to: 11.0.1
 License: GPLv3 or later
@@ -18,6 +18,16 @@ Simppple comes with some style variations to help the creativity of the site bui
 Simppple also come with a out of the box custom style for Woocommerce.
 
 == Changelog ==
+
+= 1.2.9 =
+* Released: August 14, 2026
+
+https://github.com/LaTableRouge/Simppple/releases/tag/1.2.9
+* WP 7.1: configurable viewports (600px / 782px), minWidth, button hover/focus-visible, navigation current item
+* Load editor canvas CSS via enqueue_block_assets (iframed post editor)
+* Avoid wp_deregister_script for Theme Check
+* Remove unused dark-mode/admin-bar JS, RGB color pipeline, and dead Sass mixins
+* Fix Latest Posts container queries (core-block-latest-posts)
 
 = 1.2.8 =
 * Released: August 13, 2026

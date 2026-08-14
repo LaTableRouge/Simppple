@@ -1,7 +1,6 @@
 import '../styles/front.scss' // mandatory for the Hot Module Reload
 
 import { putScrollbarSizeInCSSVariables } from './common/functions'
-import { adminBar } from './components/admin-bar'
 import { getHeaderHeight } from './components/header'
 import { inputNumber } from './components/html-components/input-quantity'
 import { pictureErrorHandler } from './components/picture-error'
@@ -14,12 +13,6 @@ window.addEventListener('DOMContentLoaded', () => {
 	 * */
 	putScrollbarSizeInCSSVariables()
 	getHeaderHeight()
-
-	/*
-	 * Add '.has-admin-bar' class to html tag if admin bar is present
-	 * Not mandatory if :has() has is fully supported in css
-	 * */
-	adminBar()
 
 	/*
 	 * Display a placeholder picture if the picture is 404
